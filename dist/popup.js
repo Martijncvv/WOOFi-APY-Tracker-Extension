@@ -586,8 +586,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const WooNetworkFieldHeader = () => {
-    // const [logoUrl, setLogoUrl] = useState()
-    // useEffect(() => {}, [])
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "woonetwork-field-header-values" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "woonetwork-field-header-value woonetwork-field-header-logo" }, "Total Volume"),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "woonetwork-field-header-value" }, "WOOFi"),
@@ -775,12 +773,6 @@ const App = () => {
 const root = document.createElement('div');
 document.body.appendChild(root);
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), root);
-// 252a36
-// 252a36
-// #f1f3f7
-// ##252A36
-// border radius 8px
-// "host_permissions": ["http://*.woo.org/*"],
 
 
 /***/ }),

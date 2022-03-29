@@ -133,7 +133,11 @@ const App = () => {
 						apy={`${tokenInfo.apy.toPrecision(3)}%`}
 					/>
 				))}
-			<LinksField twitterHandle="WOOnetwork" discordHandle="woonetwork" telegramHandle="woonetwork" />
+			<LinksField
+				twitterHandle="WOOnetwork"
+				discordHandle="woonetwork"
+				telegramHandle="woonetwork"
+			/>
 			<FooterField />
 		</>
 	)
@@ -142,11 +146,3 @@ const App = () => {
 const root = document.createElement('div')
 document.body.appendChild(root)
 ReactDOM.render(<App />, root)
-
-// 252a36
-
-// 252a36
-// #f1f3f7
-// ##252A36
-// border radius 8px
-// "host_permissions": ["http://*.woo.org/*"],

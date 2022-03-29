@@ -4,14 +4,13 @@
 	"version": "1.0.0",
 	"manifest_version": 3,
 	"icons": {
-		"16": "images/WOOFi_logo.png",
-		"48": "images/WOOFi_logo.png",
-		"128": "images/WOOFi_logo.png"
+		"16": "images/WOOFi_mcfly_logo_128.png",
+		"48": "images/WOOFi_mcfly_logo_128.png",
+		"128": "images/WOOFi_mcfly_logo_128.png"
 	},
 	"action": {
 		"default_popup": "popup.html",
 		"default_title": "Display general WOO Network info.",
-		"default_icon": "images/WOOFi_logo.png"
-	},
-	"host_permissions": ["http://*.woo.org/*"]
+		"default_icon": "images/WOOFi_mcfly_logo_128.png"
+	}
 }

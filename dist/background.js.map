@@ -1,0 +1,1 @@
+{"version":3,"file":"background.js","sources":["webpack://ukraine-donation-wallet-tracker-extension/./src/background/background.ts"],"sourcesContent":["console.log('BACKGROUND script is running');\n"],"mappings":";;;;;AAAA;;;A","sourceRoot":""}

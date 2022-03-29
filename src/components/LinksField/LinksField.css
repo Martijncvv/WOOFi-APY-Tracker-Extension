@@ -1,0 +1,19 @@
+#links-field {
+	padding: 8px 0 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #3c404b;
+	border-top: 1px solid #73bef4;
+}
+
+.link-icon {
+	height: 18px;
+	margin: 0 6px;
+	cursor: pointer;
+}
+
+.link-icon:hover {
+	-webkit-filter: drop-shadow(0px 3px 5px rgba(0, 87, 183, 0.8));
+	filter: drop-shadow(0px 3px 5px rgba(0, 87, 183, 0.8));
+}

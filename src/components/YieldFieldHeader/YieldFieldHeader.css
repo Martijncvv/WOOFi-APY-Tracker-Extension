@@ -1,0 +1,30 @@
+.yield-field-header-values {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 10px 20px;
+
+	margin: 0 16px;
+	padding: 10px 0 4px 0;
+
+	color: #fefefe;
+	background-color: #313641;
+	border-bottom: 1px solid #73bef4;
+}
+
+.yield-field-header-value {
+	margin: 0;
+	padding: 0;
+	width: 30%;
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+.yield-field-header-logo {
+	width: 40%;
+	padding-left: 6px;
+}
+.yield-field-header-logo img {
+	height: 18px;
+	width: 18px;
+}

@@ -1,0 +1,17 @@
+#footer-field {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 10px;
+	background-color: #3c404b;
+}
+
+#WooFi_footer_icon {
+	height: 10px;
+}
+
+p {
+	margin: 8px 0;
+	color: white;
+}

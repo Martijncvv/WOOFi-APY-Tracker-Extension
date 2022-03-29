@@ -1,0 +1,17 @@
+{
+	"name": "WOOFi APY Tracker Extension",
+	"description": "Display general WOO Network info and APY's of WOOFi Earn pairs.",
+	"version": "1.0.0",
+	"manifest_version": 3,
+	"icons": {
+		"16": "images/WOOFi_logo.png",
+		"48": "images/WOOFi_logo.png",
+		"128": "images/WOOFi_logo.png"
+	},
+	"action": {
+		"default_popup": "popup.html",
+		"default_title": "Display general WOO Network info.",
+		"default_icon": "images/WOOFi_logo.png"
+	},
+	"host_permissions": ["http://*.woo.org/*"]
+}

@@ -1,7 +1,7 @@
 {
 	"name": "WOOFi APY Tracker Extension",
 	"description": "Display general WOO Network info and APY's of WOOFi Earn pairs.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"manifest_version": 3,
 	"icons": {
 		"16": "images/WOOFi_mcfly_logo_128.png",

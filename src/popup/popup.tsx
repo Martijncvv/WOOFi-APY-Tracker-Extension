@@ -27,11 +27,9 @@ import { amountFormatter } from '../utils/amountFormatter'
 const App = () => {
 	const [bscNetworkEarnInfo, setBscNetworkEarnInfo] = useState([])
 	const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = useState([])
-	const [wooFiStakedInfo, setWooFiStakedInfo] = useState()
 	const [wooFi1DTotalVolume, setWooFi1DTotalVolume] = useState(0)
 	const [wooNetworkInfo, setWooNetworkInfo] = useState()
 	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState(0)
-	// const [wooNetwork, setWooNetworkVolume] = useState()
 
 	useEffect(() => {
 		getFuturesInfo()
@@ -109,7 +107,7 @@ const App = () => {
 				/>
 			)}
 
-			<YieldFieldHeader logo={BscIcon} />
+			<YieldFieldHeader logo={BscIcon} value_2={'TVL'} value_3={'APY'} />
 
 			{bscNetworkEarnInfo.length > 0 &&
 				bscNetworkEarnInfo.map((tokenInfo, index) => (
@@ -122,7 +120,7 @@ const App = () => {
 					/>
 				))}
 
-			<YieldFieldHeader logo={AvaxIcon} />
+			<YieldFieldHeader logo={AvaxIcon} value_2={''} value_3={''} />
 			{avaxNetworkEarnInfo.length > 0 &&
 				avaxNetworkEarnInfo.map((tokenInfo, index) => (
 					<InfoField

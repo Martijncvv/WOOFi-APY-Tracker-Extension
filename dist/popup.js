@@ -627,12 +627,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _YieldFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./YieldFieldHeader.css */ "./src/components/YieldFieldHeader/YieldFieldHeader.css");
 
 
-const YieldFieldHeader = ({ logo }) => {
+const YieldFieldHeader = ({ logo, value_2, value_3, }) => {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-values" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value yield-field-header-logo" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: logo })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value" }, "TVL"),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value" }, "APY")));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value" }, value_2),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value" }, value_3)));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (YieldFieldHeader);
 // #E13F3F
@@ -761,10 +761,10 @@ const App = () => {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_HeaderField__WEBPACK_IMPORTED_MODULE_4__.default, null),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_WooNetworkFieldHeader__WEBPACK_IMPORTED_MODULE_7__.default, null),
         wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, symbol: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(wooNetworkInfo.data.amount)}`, tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(wooFi1DTotalVolume / Math.pow(10, 18))}`, apy: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(wooNetworkFuturesVolume)} ` })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: BscIcon }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: BscIcon, value_2: 'TVL', value_3: 'APY' }),
         bscNetworkEarnInfo.length > 0 &&
             bscNetworkEarnInfo.map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index, symbol: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, 18))}`, apy: `${tokenInfo.apy.toPrecision(3)}%` }))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: AvaxIcon }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: AvaxIcon, value_2: '', value_3: '' }),
         avaxNetworkEarnInfo.length > 0 &&
             avaxNetworkEarnInfo.map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index, symbol: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, 18))}`, apy: `${tokenInfo.apy.toPrecision(3)}%` }))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_LinksField__WEBPACK_IMPORTED_MODULE_8__.default, { twitterHandle: "WOOnetwork", discordHandle: "woonetwork", telegramHandle: "woonetwork" }),

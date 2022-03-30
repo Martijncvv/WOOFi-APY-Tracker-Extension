@@ -9,6 +9,7 @@ interface YieldFieldHeaderProps {
 	value_2: string
 	value_3: string
 	functionCallback: any
+	displayCalculator: boolean
 }
 
 const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
@@ -16,6 +17,7 @@ const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
 	value_2,
 	value_3,
 	functionCallback,
+	displayCalculator,
 }) => {
 	return (
 		<div className="yield-field-header-values">
@@ -27,7 +29,10 @@ const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
 				{value_3}
 				{functionCallback && (
 					<IconButton
-						style={{ padding: '0 0 3px 8px', color: '#3c404b' }}
+						style={{
+							padding: '0 0 3px 8px',
+							color: displayCalculator ? '#73bef4' : '#3c404b',
+						}}
 						aria-label="Calculate Yield"
 						onClick={() => functionCallback()}
 						size="small"

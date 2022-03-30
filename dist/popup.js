@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 7px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tborder-bottom: 1px solid #73bef4;\n\tfont-size: 15px;\n\tpadding: 3px 0px;\n\tpadding-left: 6px;\n\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tdisplay: flex;\n\t/* justify-content: flex-start; */\n\tjustify-content: space-between;\n\tpadding: 0 0 0 6px;\n}\n.input-field {\n\tmin-width: 25%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n#input-amount {\n\tpadding: 0 2px;\n\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 0 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 0 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/InteractionField/InteractionField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,sBAAsB;CACtB,cAAc;CACd,kBAAkB;;CAElB,YAAY;AACb;AACA;CACC,gCAAgC;CAChC,eAAe;CACf,gBAAgB;CAChB,iBAAiB;;CAEjB,iBAAiB;AAClB;;AAEA;CACC,aAAa;CACb,iCAAiC;CACjC,8BAA8B;CAC9B,kBAAkB;AACnB;AACA;CACC,cAAc;CACd,cAAc;CACd,eAAe;AAChB;AACA;CACC,cAAc;;CAEd,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,cAAc;CACd,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,cAAc;CACd,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB","sourcesContent":["#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 7px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tborder-bottom: 1px solid #73bef4;\n\tfont-size: 15px;\n\tpadding: 3px 0px;\n\tpadding-left: 6px;\n\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tdisplay: flex;\n\t/* justify-content: flex-start; */\n\tjustify-content: space-between;\n\tpadding: 0 0 0 6px;\n}\n.input-field {\n\tmin-width: 25%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n#input-amount {\n\tpadding: 0 2px;\n\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 0 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 0 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 0px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tborder-bottom: 1px solid #73bef4;\n\tfont-size: 15px;\n\tpadding: 3px 0px;\n\tpadding-left: 6px;\n\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tdisplay: flex;\n\t/* justify-content: flex-start; */\n\tjustify-content: space-between;\n\tpadding: 0 0 0 6px;\n}\n.input-field {\n\tmin-width: 25%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n#input-amount {\n\tpadding: 1px 2px;\n\n\twidth: 40px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/InteractionField/InteractionField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,sBAAsB;CACtB,cAAc;CACd,kBAAkB;;CAElB,YAAY;AACb;AACA;CACC,gCAAgC;CAChC,eAAe;CACf,gBAAgB;CAChB,iBAAiB;;CAEjB,iBAAiB;AAClB;;AAEA;CACC,aAAa;CACb,iCAAiC;CACjC,8BAA8B;CAC9B,kBAAkB;AACnB;AACA;CACC,cAAc;CACd,cAAc;CACd,eAAe;AAChB;AACA;CACC,gBAAgB;;CAEhB,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,gBAAgB;CAChB,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,gBAAgB;CAChB,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB","sourcesContent":["#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 0px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tborder-bottom: 1px solid #73bef4;\n\tfont-size: 15px;\n\tpadding: 3px 0px;\n\tpadding-left: 6px;\n\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tdisplay: flex;\n\t/* justify-content: flex-start; */\n\tjustify-content: space-between;\n\tpadding: 0 0 0 6px;\n}\n.input-field {\n\tmin-width: 25%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n#input-amount {\n\tpadding: 1px 2px;\n\n\twidth: 40px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -778,14 +778,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const YieldFieldHeader = ({ logo, value_2, value_3, functionCallback, }) => {
+const YieldFieldHeader = ({ logo, value_2, value_3, functionCallback, displayCalculator, }) => {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-values" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value yield-field-header-logo" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: logo })),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value" }, value_2),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value" },
             value_3,
-            functionCallback && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_IconButton__WEBPACK_IMPORTED_MODULE_2__.default, { style: { padding: '0 0 3px 8px', color: '#3c404b' }, "aria-label": "Calculate Yield", onClick: () => functionCallback(), size: "small" },
+            functionCallback && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_IconButton__WEBPACK_IMPORTED_MODULE_2__.default, { style: {
+                    padding: '0 0 3px 8px',
+                    color: displayCalculator ? '#73bef4' : '#3c404b',
+                }, "aria-label": "Calculate Yield", onClick: () => functionCallback(), size: "small" },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_icons_material_CalculateOutlined__WEBPACK_IMPORTED_MODULE_3__.default, { fontSize: "small" }))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (YieldFieldHeader);
@@ -858,7 +861,7 @@ const App = () => {
     const [wooFi1DTotalVolume, setWooFi1DTotalVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
     const [wooNetworkInfo, setWooNetworkInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
     const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-    const [dispayCalculator, setDispayCalculator] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
+    const [displayCalculator, setDisplayCalculator] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         getFuturesInfo();
         getWooNetworkInfo();
@@ -866,7 +869,7 @@ const App = () => {
         getaWooFiApyInfo();
     }, []);
     const handleCalculatorChange = () => {
-        setDispayCalculator(!dispayCalculator);
+        setDisplayCalculator(!displayCalculator);
     };
     function getaWooFiApyInfo() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -916,13 +919,13 @@ const App = () => {
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_HeaderField__WEBPACK_IMPORTED_MODULE_4__.default, null),
-        dispayCalculator && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InteractionField__WEBPACK_IMPORTED_MODULE_9__.default, null),
+        displayCalculator && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InteractionField__WEBPACK_IMPORTED_MODULE_9__.default, null),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_WooNetworkFieldHeader__WEBPACK_IMPORTED_MODULE_7__.default, null),
         wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, symbol: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooNetworkInfo.data.amount)}`, tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooFi1DTotalVolume / Math.pow(10, 18))}`, apy: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooNetworkFuturesVolume)} ` })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: BscIcon, value_2: 'TVL', value_3: 'APY', functionCallback: handleCalculatorChange }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: BscIcon, value_2: 'TVL', value_3: 'APY', functionCallback: handleCalculatorChange, displayCalculator: displayCalculator }),
         bscNetworkEarnInfo.length > 0 &&
             bscNetworkEarnInfo.map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index, symbol: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, 18))}`, apy: `${tokenInfo.apy.toPrecision(3)}%` }))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: AvaxIcon, value_2: '', value_3: '', functionCallback: '' }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: AvaxIcon, value_2: '', value_3: '', functionCallback: '', displayCalculator: displayCalculator }),
         avaxNetworkEarnInfo.length > 0 &&
             avaxNetworkEarnInfo.map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index, symbol: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, 18))}`, apy: `${tokenInfo.apy.toPrecision(3)}%` }))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_LinksField__WEBPACK_IMPORTED_MODULE_8__.default, { twitterHandle: "WOOnetwork", discordHandle: "woonetwork", telegramHandle: "woonetwork" }),

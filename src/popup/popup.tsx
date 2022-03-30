@@ -32,7 +32,9 @@ const App = () => {
 	const [wooNetworkInfo, setWooNetworkInfo] = useState()
 	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState(0)
 
-	const [dispayCalculator, setDispayCalculator] = React.useState<boolean>(false)
+	const [displayCalculator, setDisplayCalculator] = React.useState<boolean>(
+		false
+	)
 
 	useEffect(() => {
 		getFuturesInfo()
@@ -42,7 +44,7 @@ const App = () => {
 	}, [])
 
 	const handleCalculatorChange = () => {
-		setDispayCalculator(!dispayCalculator)
+		setDisplayCalculator(!displayCalculator)
 	}
 
 	async function getaWooFiApyInfo() {
@@ -103,7 +105,7 @@ const App = () => {
 	return (
 		<>
 			<HeaderField />
-			{dispayCalculator && <InteractionField />}
+			{displayCalculator && <InteractionField />}
 
 			<WooNetworkFieldHeader />
 			{wooNetworkInfo && (
@@ -120,6 +122,7 @@ const App = () => {
 				value_2={'TVL'}
 				value_3={'APY'}
 				functionCallback={handleCalculatorChange}
+				displayCalculator={displayCalculator}
 			/>
 
 			{bscNetworkEarnInfo.length > 0 &&
@@ -138,6 +141,7 @@ const App = () => {
 				value_2={''}
 				value_3={''}
 				functionCallback={''}
+				displayCalculator={displayCalculator}
 			/>
 			{avaxNetworkEarnInfo.length > 0 &&
 				avaxNetworkEarnInfo.map((tokenInfo, index) => (

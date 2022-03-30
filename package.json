@@ -1,7 +1,7 @@
 {
-	"name": "ukraine-donation-wallet-tracker-extension",
-	"version": "1.0.2",
-	"description": "Extension to track ukraine's crypto donation wallet.",
+	"name": "WOOFi APY Tracker Extension",
+	"version": "1.0.1",
+	"description": "Display general WOO Network info and APY's of WOOFi Earn pairs.",
 	"scripts": {
 		"start": "webpack --watch --progress --config webpack.dev.js",
 		"build": "webpack --watch --progress --config webpack.prod.js"
@@ -31,7 +31,7 @@
 	"dependencies": {
 		"@emotion/react": "^11.7.1",
 		"@emotion/styled": "^11.6.0",
-		"@mui/icons-material": "^5.3.1",
+		"@mui/icons-material": "^5.5.1",
 		"@mui/material": "^5.3.1",
 		"ethers": "^5.5.4",
 		"metamask-extension-provider": "^3.0.0",

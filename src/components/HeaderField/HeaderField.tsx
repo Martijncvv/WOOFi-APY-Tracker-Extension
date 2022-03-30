@@ -9,8 +9,8 @@ const HeaderField: React.FC<{}> = ({}) => {
 				<img src={WOOFiIcon} />
 			</div>
 
-			<div>
-				<h1>WOOFi APYs</h1>
+			<div id="header-text">
+				<h1>WOOFi Stats</h1>
 			</div>
 		</div>
 	)

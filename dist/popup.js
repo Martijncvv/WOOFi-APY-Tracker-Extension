@@ -47,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n\tmargin: 0;\n\tfont-size: 20px;\n\tcolor: rgb(248, 248, 248);\n}\n\nimg {\n\tbackground: white;\n\theight: 40px;\n\tborder-radius: 20px;\n}\n\n#header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: flex-start;\n\n\theight: 66px;\n\n\tbackground-image: linear-gradient(\n\t\t40deg,\n\t\t#4e8ff7,\n\t\t#4e8ff7 30%,\n\t\t#e0a555 70%,\n\t\t#e0a555\n\t);\n}\n\n#img-box {\n\t/* height: 42px;\n\twidth: 42px; */\n\tmargin: 0 16px;\n\tpadding: 6px;\n\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\tborder-radius: 5px;\n\t/* border-radius: 21px; */\n\t/* background-color: rgb(248, 248, 248); */\n}\n", "",{"version":3,"sources":["webpack://./src/components/HeaderField/HeaderField.css"],"names":[],"mappings":"AAAA;CACC,SAAS;CACT,eAAe;CACf,yBAAyB;AAC1B;;AAEA;CACC,iBAAiB;CACjB,YAAY;CACZ,mBAAmB;AACpB;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,2BAA2B;;CAE3B,YAAY;;CAEZ;;;;;;EAMC;AACF;;AAEA;CACC;eACc;CACd,cAAc;CACd,YAAY;;CAEZ,aAAa;CACb,uBAAuB;CACvB,mBAAmB;;CAEnB,kBAAkB;CAClB,yBAAyB;CACzB,0CAA0C;AAC3C","sourcesContent":["h1 {\n\tmargin: 0;\n\tfont-size: 20px;\n\tcolor: rgb(248, 248, 248);\n}\n\nimg {\n\tbackground: white;\n\theight: 40px;\n\tborder-radius: 20px;\n}\n\n#header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: flex-start;\n\n\theight: 66px;\n\n\tbackground-image: linear-gradient(\n\t\t40deg,\n\t\t#4e8ff7,\n\t\t#4e8ff7 30%,\n\t\t#e0a555 70%,\n\t\t#e0a555\n\t);\n}\n\n#img-box {\n\t/* height: 42px;\n\twidth: 42px; */\n\tmargin: 0 16px;\n\tpadding: 6px;\n\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\tborder-radius: 5px;\n\t/* border-radius: 21px; */\n\t/* background-color: rgb(248, 248, 248); */\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n\tmargin: 0;\n\tfont-size: 26px;\n\tcolor: rgb(248, 248, 248);\n}\n\nimg {\n\tbackground: white;\n\theight: 40px;\n\tborder-radius: 20px;\n}\n\n#header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: flex-start;\n\n\theight: 66px;\n\n\tbackground-image: linear-gradient(\n\t\t40deg,\n\t\t#4e8ff7,\n\t\t#4e8ff7 30%,\n\t\t#e0a555 70%,\n\t\t#e0a555\n\t);\n}\n\n#header-text {\n\tpadding-left: 12px;\n}\n\n#img-box {\n\tmargin: 0 16px;\n\tpadding: 6px;\n\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\tborder-radius: 5px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/HeaderField/HeaderField.css"],"names":[],"mappings":"AAAA;CACC,SAAS;CACT,eAAe;CACf,yBAAyB;AAC1B;;AAEA;CACC,iBAAiB;CACjB,YAAY;CACZ,mBAAmB;AACpB;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,2BAA2B;;CAE3B,YAAY;;CAEZ;;;;;;EAMC;AACF;;AAEA;CACC,kBAAkB;AACnB;;AAEA;CACC,cAAc;CACd,YAAY;;CAEZ,aAAa;CACb,uBAAuB;CACvB,mBAAmB;;CAEnB,kBAAkB;AACnB","sourcesContent":["h1 {\n\tmargin: 0;\n\tfont-size: 26px;\n\tcolor: rgb(248, 248, 248);\n}\n\nimg {\n\tbackground: white;\n\theight: 40px;\n\tborder-radius: 20px;\n}\n\n#header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: flex-start;\n\n\theight: 66px;\n\n\tbackground-image: linear-gradient(\n\t\t40deg,\n\t\t#4e8ff7,\n\t\t#4e8ff7 30%,\n\t\t#e0a555 70%,\n\t\t#e0a555\n\t);\n}\n\n#header-text {\n\tpadding-left: 12px;\n}\n\n#img-box {\n\tmargin: 0 16px;\n\tpadding: 6px;\n\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\tborder-radius: 5px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -74,6 +74,32 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 12px 0 7px;\n\t/* border-radius: 4px; */\n\t/* border-bottom: 1px solid rgb(231, 231, 231); */\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n}\n.info-field-symbol {\n\twidth: 40%;\n\tpadding-left: 8px;\n\t/* padding: 0px 0 0px 4px; */\n}\n", "",{"version":3,"sources":["webpack://./src/components/InfoField/InfoField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,mBAAmB;CACnB,wBAAwB;CACxB,iDAAiD;AAClD;;AAEA;CACC,YAAY;CACZ,SAAS;CACT,UAAU;CACV,UAAU;CACV,eAAe;CACf,0BAA0B;AAC3B;AACA;CACC,UAAU;CACV,iBAAiB;CACjB,4BAA4B;AAC7B","sourcesContent":[".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 12px 0 7px;\n\t/* border-radius: 4px; */\n\t/* border-bottom: 1px solid rgb(231, 231, 231); */\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n}\n.info-field-symbol {\n\twidth: 40%;\n\tpadding-left: 8px;\n\t/* padding: 0px 0 0px 4px; */\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/InteractionField/InteractionField.css":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/InteractionField/InteractionField.css ***!
+  \****************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 7px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tborder-bottom: 1px solid #73bef4;\n\tfont-size: 15px;\n\tpadding: 3px 0px;\n\tpadding-left: 6px;\n\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tdisplay: flex;\n\t/* justify-content: flex-start; */\n\tjustify-content: space-between;\n\tpadding: 0 0 0 6px;\n}\n.input-field {\n\tmin-width: 25%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n#input-amount {\n\tpadding: 0 2px;\n\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 0 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 0 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/InteractionField/InteractionField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,sBAAsB;CACtB,cAAc;CACd,kBAAkB;;CAElB,YAAY;AACb;AACA;CACC,gCAAgC;CAChC,eAAe;CACf,gBAAgB;CAChB,iBAAiB;;CAEjB,iBAAiB;AAClB;;AAEA;CACC,aAAa;CACb,iCAAiC;CACjC,8BAA8B;CAC9B,kBAAkB;AACnB;AACA;CACC,cAAc;CACd,cAAc;CACd,eAAe;AAChB;AACA;CACC,cAAc;;CAEd,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,cAAc;CACd,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,cAAc;CACd,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB","sourcesContent":["#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 7px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tborder-bottom: 1px solid #73bef4;\n\tfont-size: 15px;\n\tpadding: 3px 0px;\n\tpadding-left: 6px;\n\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tdisplay: flex;\n\t/* justify-content: flex-start; */\n\tjustify-content: space-between;\n\tpadding: 0 0 0 6px;\n}\n.input-field {\n\tmin-width: 25%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n#input-amount {\n\tpadding: 0 2px;\n\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 0 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 0 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -125,7 +151,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".woonetwork-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 6px 4px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.woonetwork-field-header-value {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.woonetwork-field-header-logo {\n\twidth: 40%;\n}\n.woonetwork-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/WooNetworkFieldHeader/WooNetworkFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,uBAAuB;;CAEvB,cAAc;CACd,yBAAyB;CACzB,gCAAgC;AACjC;;AAEA;CACC,SAAS;CACT,UAAU;CACV,UAAU;CACV,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;AACA;CACC,UAAU;AACX;AACA;CACC,YAAY;CACZ,WAAW;AACZ","sourcesContent":[".woonetwork-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 6px 4px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.woonetwork-field-header-value {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.woonetwork-field-header-logo {\n\twidth: 40%;\n}\n.woonetwork-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".woonetwork-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 4px 4px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.woonetwork-field-header-value {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.woonetwork-field-header-logo {\n\twidth: 40%;\n}\n.woonetwork-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/WooNetworkFieldHeader/WooNetworkFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,uBAAuB;;CAEvB,cAAc;CACd,yBAAyB;CACzB,gCAAgC;AACjC;;AAEA;CACC,SAAS;CACT,UAAU;CACV,UAAU;CACV,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;AACA;CACC,UAAU;AACX;AACA;CACC,YAAY;CACZ,WAAW;AACZ","sourcesContent":[".woonetwork-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 4px 4px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.woonetwork-field-header-value {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.woonetwork-field-header-logo {\n\twidth: 40%;\n}\n.woonetwork-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -151,7 +177,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".yield-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 4px 0;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.yield-field-header-value {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.yield-field-header-logo {\n\twidth: 40%;\n\tpadding-left: 6px;\n}\n.yield-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/YieldFieldHeader/YieldFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,qBAAqB;;CAErB,cAAc;CACd,yBAAyB;CACzB,gCAAgC;AACjC;;AAEA;CACC,SAAS;CACT,UAAU;CACV,UAAU;CACV,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;AACA;CACC,UAAU;CACV,iBAAiB;AAClB;AACA;CACC,YAAY;CACZ,WAAW;AACZ","sourcesContent":[".yield-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 4px 0;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.yield-field-header-value {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.yield-field-header-logo {\n\twidth: 40%;\n\tpadding-left: 6px;\n}\n.yield-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".yield-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 2px 0;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.yield-field-header-value {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.yield-field-header-logo {\n\twidth: 40%;\n\tpadding-left: 6px;\n}\n.yield-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/YieldFieldHeader/YieldFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,qBAAqB;;CAErB,cAAc;CACd,yBAAyB;CACzB,gCAAgC;AACjC;;AAEA;CACC,SAAS;CACT,UAAU;CACV,UAAU;CACV,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;AACA;CACC,UAAU;CACV,iBAAiB;AAClB;AACA;CACC,YAAY;CACZ,WAAW;AACZ","sourcesContent":[".yield-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 2px 0;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.yield-field-header-value {\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.yield-field-header-logo {\n\twidth: 40%;\n\tpadding-left: 6px;\n}\n.yield-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -268,6 +294,35 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_InfoField_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./src/components/InteractionField/InteractionField.css":
+/*!**************************************************************!*\
+  !*** ./src/components/InteractionField/InteractionField.css ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_InteractionField_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./InteractionField.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/InteractionField/InteractionField.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_InteractionField_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_InteractionField_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -451,8 +506,8 @@ const HeaderField = ({}) => {
     return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "header" },
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "img-box" },
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: WOOFiIcon })),
-        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, "WOOFi APYs"))));
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "header-text" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, "WOOFi Stats"))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderField);
 
@@ -491,7 +546,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const InfoField = ({ symbol, apy, tvl, index }) => {
-    console.log(index);
     return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-values", style: parseInt(index) % 2
             ? { backgroundColor: '#313641' }
             : { backgroundColor: '#3C404B', borderRadius: '4px' } },
@@ -517,6 +571,99 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InfoField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InfoField */ "./src/components/InfoField/InfoField.tsx");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_InfoField__WEBPACK_IMPORTED_MODULE_0__.default);
+
+
+/***/ }),
+
+/***/ "./src/components/InteractionField/InteractionField.tsx":
+/*!**************************************************************!*\
+  !*** ./src/components/InteractionField/InteractionField.tsx ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _InteractionField_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InteractionField.css */ "./src/components/InteractionField/InteractionField.css");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+
+
+const InteractionField = ({}) => {
+    const [inputAmount, setInputAmount] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1000);
+    const [inputApy, setInputApy] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(6.81);
+    const [inputDays, setInputDays] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(30);
+    const [yieldResult, setYieldResult] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)();
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+        calculateProfit();
+    }, []);
+    function handleSearchInputKeyUpEvent(event) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (inputAmount && inputApy && inputDays) {
+                calculateProfit();
+            }
+            // }
+        });
+    }
+    function calculateProfit() {
+        setYieldResult((0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(parseFloat(inputAmount) *
+            (parseFloat(inputApy) / 100 / 365) *
+            parseFloat(inputDays)));
+        console.log('inputAmount', inputAmount);
+        console.log('inputApy', inputApy);
+        console.log('inputDays', inputDays);
+        console.log('yieldResult', yieldResult);
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "interaction-field" },
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "interaction-field-header", className: "interaction-field-row" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "Calculate Yield")),
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "interaction-field-row" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "Amount"),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "APY"),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "Days"),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "Yield")),
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "interaction-field-row" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" },
+                "$",
+                ' ',
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-amount", placeholder: "$", autoComplete: "off", value: inputAmount, onKeyUp: (event) => handleSearchInputKeyUpEvent(event), onChange: (event) => setInputAmount(event.target.value), onClick: () => setInputAmount('') })),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-apy", placeholder: "%", autoComplete: "off", value: inputApy, onKeyUp: (event) => handleSearchInputKeyUpEvent(event), onChange: (event) => setInputApy(event.target.value), onClick: () => setInputApy('') })),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-days", placeholder: "#", autoComplete: "off", value: inputDays, onKeyUp: (event) => handleSearchInputKeyUpEvent(event), onChange: (event) => setInputDays(event.target.value), onClick: () => setInputDays('') })),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "apy-profit-field", className: "input-field" },
+                "$",
+                yieldResult))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InteractionField);
+
+
+/***/ }),
+
+/***/ "./src/components/InteractionField/index.tsx":
+/*!***************************************************!*\
+  !*** ./src/components/InteractionField/index.tsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _InteractionField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InteractionField */ "./src/components/InteractionField/InteractionField.tsx");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_InteractionField__WEBPACK_IMPORTED_MODULE_0__.default);
 
 
 /***/ }),
@@ -625,17 +772,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _YieldFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./YieldFieldHeader.css */ "./src/components/YieldFieldHeader/YieldFieldHeader.css");
+/* harmony import */ var _mui_material_IconButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/IconButton */ "./node_modules/@mui/material/IconButton/IconButton.js");
+/* harmony import */ var _mui_icons_material_CalculateOutlined__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/icons-material/CalculateOutlined */ "./node_modules/@mui/icons-material/CalculateOutlined.js");
 
 
-const YieldFieldHeader = ({ logo, value_2, value_3, }) => {
+
+
+const YieldFieldHeader = ({ logo, value_2, value_3, functionCallback, }) => {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-values" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value yield-field-header-logo" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: logo })),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value" }, value_2),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value" }, value_3)));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "yield-field-header-value" },
+            value_3,
+            functionCallback && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_IconButton__WEBPACK_IMPORTED_MODULE_2__.default, { style: { padding: '0 0 3px 8px', color: '#3c404b' }, "aria-label": "Calculate Yield", onClick: () => functionCallback(), size: "small" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_icons_material_CalculateOutlined__WEBPACK_IMPORTED_MODULE_3__.default, { fontSize: "small" }))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (YieldFieldHeader);
-// #E13F3F
 
 
 /***/ }),
@@ -673,8 +826,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/YieldFieldHeader */ "./src/components/YieldFieldHeader/index.tsx");
 /* harmony import */ var _components_WooNetworkFieldHeader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/WooNetworkFieldHeader */ "./src/components/WooNetworkFieldHeader/index.tsx");
 /* harmony import */ var _components_LinksField__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/LinksField */ "./src/components/LinksField/index.tsx");
-/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/api */ "./src/utils/api.ts");
-/* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
+/* harmony import */ var _components_InteractionField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/InteractionField */ "./src/components/InteractionField/index.tsx");
+/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/api */ "./src/utils/api.ts");
+/* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -693,6 +847,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
+
 const BscIcon = __webpack_require__(/*! ../static/images/BNB_logo.png */ "./src/static/images/BNB_logo.png");
 const AvaxIcon = __webpack_require__(/*! ../static/images/AVAX_logo.png */ "./src/static/images/AVAX_logo.png");
 
@@ -700,37 +855,39 @@ const AvaxIcon = __webpack_require__(/*! ../static/images/AVAX_logo.png */ "./sr
 const App = () => {
     const [bscNetworkEarnInfo, setBscNetworkEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
     const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [wooFiStakedInfo, setWooFiStakedInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
     const [wooFi1DTotalVolume, setWooFi1DTotalVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
     const [wooNetworkInfo, setWooNetworkInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
     const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
-    // const [wooNetwork, setWooNetworkVolume] = useState()
+    const [dispayCalculator, setDispayCalculator] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         getFuturesInfo();
         getWooNetworkInfo();
         getWooFiVolumesInfo();
         getaWooFiApyInfo();
     }, []);
+    const handleCalculatorChange = () => {
+        setDispayCalculator(!dispayCalculator);
+    };
     function getaWooFiApyInfo() {
         return __awaiter(this, void 0, void 0, function* () {
-            let bscNetworkFetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_9__.fetchBscNetworkInfo)();
+            let bscNetworkFetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_10__.fetchBscNetworkInfo)();
             let bscTokensInfo = Object.values(bscNetworkFetchedInfo.data.auto_compounding);
             setBscNetworkEarnInfo(bscTokensInfo.sort(compare));
-            let avaxNetworkFetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_9__.fetchAvaxNetworkInfo)();
+            let avaxNetworkFetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_10__.fetchAvaxNetworkInfo)();
             let avaxTokensInfo = Object.values(avaxNetworkFetchedInfo.data.auto_compounding);
             setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compare));
         });
     }
     function getWooNetworkInfo() {
         return __awaiter(this, void 0, void 0, function* () {
-            let wooNetworkfetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_9__.fetchWooNetworkInfo)();
+            let wooNetworkfetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_10__.fetchWooNetworkInfo)();
             setWooNetworkInfo(wooNetworkfetchedInfo);
         });
     }
     function getFuturesInfo() {
         return __awaiter(this, void 0, void 0, function* () {
             let totalFuturesVolume = 0;
-            let wooNetworkfetchedFuturesInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_9__.fetchWooNetworkFutureInfo)();
+            let wooNetworkfetchedFuturesInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_10__.fetchWooNetworkFutureInfo)();
             for (let i = 0; i < wooNetworkfetchedFuturesInfo.rows.length; i++) {
                 totalFuturesVolume +=
                     wooNetworkfetchedFuturesInfo.rows[i]['24h_volumn'] *
@@ -741,8 +898,8 @@ const App = () => {
     }
     function getWooFiVolumesInfo() {
         return __awaiter(this, void 0, void 0, function* () {
-            let bsc1DVolumefetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_9__.fetchBsc1DVolume)();
-            let avax1DVolumefetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_9__.fetchAvax1DVolume)();
+            let bsc1DVolumefetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_10__.fetchBsc1DVolume)();
+            let avax1DVolumefetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_10__.fetchAvax1DVolume)();
             let totalWooFiVolume = parseInt(bsc1DVolumefetchedInfo.data['24h_volume_usd']) +
                 parseInt(avax1DVolumefetchedInfo.data['24h_volume_usd']);
             setWooFi1DTotalVolume(totalWooFiVolume);
@@ -759,14 +916,15 @@ const App = () => {
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_HeaderField__WEBPACK_IMPORTED_MODULE_4__.default, null),
+        dispayCalculator && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InteractionField__WEBPACK_IMPORTED_MODULE_9__.default, null),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_WooNetworkFieldHeader__WEBPACK_IMPORTED_MODULE_7__.default, null),
-        wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, symbol: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(wooNetworkInfo.data.amount)}`, tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(wooFi1DTotalVolume / Math.pow(10, 18))}`, apy: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(wooNetworkFuturesVolume)} ` })),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: BscIcon, value_2: 'TVL', value_3: 'APY' }),
+        wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, symbol: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooNetworkInfo.data.amount)}`, tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooFi1DTotalVolume / Math.pow(10, 18))}`, apy: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooNetworkFuturesVolume)} ` })),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: BscIcon, value_2: 'TVL', value_3: 'APY', functionCallback: handleCalculatorChange }),
         bscNetworkEarnInfo.length > 0 &&
-            bscNetworkEarnInfo.map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index, symbol: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, 18))}`, apy: `${tokenInfo.apy.toPrecision(3)}%` }))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: AvaxIcon, value_2: '', value_3: '' }),
+            bscNetworkEarnInfo.map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index, symbol: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, 18))}`, apy: `${tokenInfo.apy.toPrecision(3)}%` }))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: AvaxIcon, value_2: '', value_3: '', functionCallback: '' }),
         avaxNetworkEarnInfo.length > 0 &&
-            avaxNetworkEarnInfo.map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index, symbol: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_10__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, 18))}`, apy: `${tokenInfo.apy.toPrecision(3)}%` }))),
+            avaxNetworkEarnInfo.map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index, symbol: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), tvl: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, 18))}`, apy: `${tokenInfo.apy.toPrecision(3)}%` }))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_LinksField__WEBPACK_IMPORTED_MODULE_8__.default, { twitterHandle: "WOOnetwork", discordHandle: "woonetwork", telegramHandle: "woonetwork" }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FooterField__WEBPACK_IMPORTED_MODULE_3__.default, null)));
 };
@@ -790,7 +948,7 @@ __webpack_require__.r(__webpack_exports__);
 function amountFormatter(amount) {
     switch (true) {
         case amount === 0 || amount === null || amount === undefined:
-            return 'Fetching';
+            return 'Loading';
         case amount >= 1000000000000000:
             return `${(amount / 1000000000000000).toPrecision(3)} Q`;
         case amount >= 1000000000000:
@@ -1170,7 +1328,7 @@ module.exports = __webpack_require__.p + "fde82952efe37937ab5e.png";
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkukraine_donation_wallet_tracker_extension"] = self["webpackChunkukraine_donation_wallet_tracker_extension"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkWOOFi_APY_Tracker_Extension"] = self["webpackChunkWOOFi_APY_Tracker_Extension"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
@@ -1180,7 +1338,7 @@ module.exports = __webpack_require__.p + "fde82952efe37937ab5e.png";
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_react-dom_index_js","vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_cssW-926fd9"], () => (__webpack_require__("./src/popup/popup.tsx")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_react-dom_index_js","vendors-node_modules_mui_icons-material_CalculateOutlined_js-node_modules_mui_material_IconBu-c3b027"], () => (__webpack_require__("./src/popup/popup.tsx")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

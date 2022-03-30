@@ -2,7 +2,6 @@ import './InfoField.css'
 import React from 'react'
 
 const InfoField = ({ symbol, apy, tvl, index }) => {
-	console.log(index)
 	return (
 		<div
 			className="info-field-values"

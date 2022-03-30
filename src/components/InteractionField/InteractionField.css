@@ -1,0 +1,58 @@
+#interaction-field {
+	display: flex;
+	flex-direction: column;
+	margin: 0 16px;
+	padding: 8px 0 7px;
+
+	color: white;
+}
+#interaction-field-header {
+	border-bottom: 1px solid #73bef4;
+	font-size: 15px;
+	padding: 3px 0px;
+	padding-left: 6px;
+
+	font-weight: bold;
+}
+
+.interaction-field-row {
+	display: flex;
+	/* justify-content: flex-start; */
+	justify-content: space-between;
+	padding: 0 0 0 6px;
+}
+.input-field {
+	min-width: 25%;
+	padding: 2px 0;
+	font-size: 15px;
+}
+#input-amount {
+	padding: 0 2px;
+
+	width: 35px;
+
+	color: white;
+	background-color: #3c404b;
+	border: none;
+	border-radius: 4px;
+}
+
+#input-apy {
+	padding: 0 2px;
+	width: 35px;
+
+	color: white;
+	background-color: #3c404b;
+	border: none;
+	border-radius: 4px;
+}
+
+#input-days {
+	padding: 0 2px;
+	width: 35px;
+
+	color: white;
+	background-color: #3c404b;
+	border: none;
+	border-radius: 4px;
+}

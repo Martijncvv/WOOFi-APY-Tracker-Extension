@@ -8,6 +8,7 @@ import InfoField from '../components/InfoField'
 import YieldFieldHeader from '../components/YieldFieldHeader'
 import WooNetworkFieldHeader from '../components/WooNetworkFieldHeader'
 import LinksField from '../components/LinksField'
+import InteractionField from '../components/InteractionField'
 
 const BscIcon = require('../static/images/BNB_logo.png')
 const AvaxIcon = require('../static/images/AVAX_logo.png')
@@ -31,12 +32,18 @@ const App = () => {
 	const [wooNetworkInfo, setWooNetworkInfo] = useState()
 	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState(0)
 
+	const [dispayCalculator, setDispayCalculator] = React.useState<boolean>(false)
+
 	useEffect(() => {
 		getFuturesInfo()
 		getWooNetworkInfo()
 		getWooFiVolumesInfo()
 		getaWooFiApyInfo()
 	}, [])
+
+	const handleCalculatorChange = () => {
+		setDispayCalculator(!dispayCalculator)
+	}
 
 	async function getaWooFiApyInfo() {
 		let bscNetworkFetchedInfo: any = await fetchBscNetworkInfo()
@@ -96,6 +103,7 @@ const App = () => {
 	return (
 		<>
 			<HeaderField />
+			{dispayCalculator && <InteractionField />}
 
 			<WooNetworkFieldHeader />
 			{wooNetworkInfo && (
@@ -107,7 +115,12 @@ const App = () => {
 				/>
 			)}
 
-			<YieldFieldHeader logo={BscIcon} value_2={'TVL'} value_3={'APY'} />
+			<YieldFieldHeader
+				logo={BscIcon}
+				value_2={'TVL'}
+				value_3={'APY'}
+				functionCallback={handleCalculatorChange}
+			/>
 
 			{bscNetworkEarnInfo.length > 0 &&
 				bscNetworkEarnInfo.map((tokenInfo, index) => (
@@ -120,7 +133,12 @@ const App = () => {
 					/>
 				))}
 
-			<YieldFieldHeader logo={AvaxIcon} value_2={''} value_3={''} />
+			<YieldFieldHeader
+				logo={AvaxIcon}
+				value_2={''}
+				value_3={''}
+				functionCallback={''}
+			/>
 			{avaxNetworkEarnInfo.length > 0 &&
 				avaxNetworkEarnInfo.map((tokenInfo, index) => (
 					<InfoField

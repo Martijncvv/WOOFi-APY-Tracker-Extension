@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import './YieldFieldHeader.css'
 
+import IconButton from '@mui/material/IconButton'
+import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined'
+
 interface YieldFieldHeaderProps {
 	logo: string
 	value_2: string
 	value_3: string
+	functionCallback: any
 }
 
 const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
 	logo,
 	value_2,
 	value_3,
+	functionCallback,
 }) => {
 	return (
 		<div className="yield-field-header-values">
@@ -18,11 +23,21 @@ const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
 				<img src={logo} />
 			</div>
 			<div className="yield-field-header-value">{value_2}</div>
-			<div className="yield-field-header-value">{value_3}</div>
+			<div className="yield-field-header-value">
+				{value_3}
+				{functionCallback && (
+					<IconButton
+						style={{ padding: '0 0 3px 8px', color: '#3c404b' }}
+						aria-label="Calculate Yield"
+						onClick={() => functionCallback()}
+						size="small"
+					>
+						<CalculateOutlinedIcon fontSize="small" />
+					</IconButton>
+				)}
+			</div>
 		</div>
 	)
 }
 
 export default YieldFieldHeader
-
-// #E13F3F

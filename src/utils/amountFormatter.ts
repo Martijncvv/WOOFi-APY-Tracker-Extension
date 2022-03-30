@@ -1,7 +1,7 @@
 export function amountFormatter(amount: number): string {
 	switch (true) {
 		case amount === 0 || amount === null || amount === undefined:
-			return 'Fetching'
+			return 'Loading'
 		case amount >= 1000000000000000:
 			return `${(amount / 1000000000000000).toPrecision(3)} Q`
 		case amount >= 1000000000000:

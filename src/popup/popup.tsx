@@ -26,11 +26,13 @@ import {
 import { amountFormatter } from '../utils/amountFormatter'
 
 const App = () => {
-	const [bscNetworkEarnInfo, setBscNetworkEarnInfo] = useState([])
-	const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = useState([])
-	const [wooFi1DTotalVolume, setWooFi1DTotalVolume] = useState(0)
-	const [wooNetworkInfo, setWooNetworkInfo] = useState()
-	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState(0)
+	const [bscNetworkEarnInfo, setBscNetworkEarnInfo] = useState<any[]>([])
+	const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = useState<any[]>([])
+	const [wooFi1DTotalVolume, setWooFi1DTotalVolume] = useState<number>(0)
+	const [wooNetworkInfo, setWooNetworkInfo] = useState<any>()
+	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState<
+		number
+	>(0)
 
 	const [displayCalculator, setDisplayCalculator] = React.useState<boolean>(
 		false

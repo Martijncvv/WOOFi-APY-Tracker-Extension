@@ -5,7 +5,7 @@ const WooNetworkFieldHeader = () => {
 	return (
 		<div className="woonetwork-field-header-values">
 			<div className="woonetwork-field-header-value woonetwork-field-header-logo">
-				Total Volume
+				Network Vol.
 			</div>
 			<div className="woonetwork-field-header-value">WOOFi</div>
 			<div className="woonetwork-field-header-value">Futures</div>

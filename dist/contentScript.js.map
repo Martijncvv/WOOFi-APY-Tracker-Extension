@@ -1,1 +1,0 @@
-{"version":3,"file":"contentScript.js","sources":["webpack://WOOFi APY Tracker Extension/./src/contentScript/contentScript.ts"],"sourcesContent":["console.log('CONTENTSCRIPT is running');\n"],"mappings":";;;;;AAAA;;;A","sourceRoot":""}

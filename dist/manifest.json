@@ -1,5 +1,5 @@
 {
-	"name": "WOOFi APY Tracker Extension",
+	"name": "WOOFi APY Tracker",
 	"description": "Display general WOO Network info and APY's of WOOFi Earn pairs.",
 	"version": "1.0.1",
 	"manifest_version": 3,

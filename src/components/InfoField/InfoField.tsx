@@ -1,7 +1,7 @@
 import './InfoField.css'
 import React from 'react'
 
-const InfoField = ({ symbol, apy, tvl, index }) => {
+const InfoField = ({ value_1, value_2, value_3, value_4, index }) => {
 	return (
 		<div
 			className="info-field-values"
@@ -11,9 +11,10 @@ const InfoField = ({ symbol, apy, tvl, index }) => {
 					: { backgroundColor: '#3C404B', borderRadius: '4px' }
 			}
 		>
-			<div className="info-field-value info-field-symbol">{symbol}</div>
-			<div className="info-field-value">{tvl}</div>
-			<div className="info-field-value">{apy}</div>
+			<div className="info-field-value info-field-symbol">{value_1}</div>
+			<div className="info-field-value">{value_2}</div>
+			<div className="info-field-value">{value_3}</div>
+			{value_4 && <div className="info-field-value">{value_4}</div>}
 		</div>
 	)
 }

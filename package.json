@@ -1,7 +1,7 @@
 {
 	"name": "WOOFi APY Tracker Extension",
-	"version": "1.0.1",
-	"description": "Display general WOO Network info and APY's of WOOFi Earn pairs.",
+	"version": "1.0.2",
+	"description": "Display general WOO Network info and APY's of WOOFi Earn.",
 	"scripts": {
 		"start": "webpack --watch --progress --config webpack.dev.js",
 		"build": "webpack --watch --progress --config webpack.prod.js"

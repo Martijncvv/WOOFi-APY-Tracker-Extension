@@ -50,18 +50,26 @@ const App = () => {
 	}
 
 	async function getaWooFiApyInfo() {
-		let bscNetworkFetchedInfo: any = await fetchBscNetworkInfo()
+		let bscNetworkFetchedInfo: any
+		let avaxNetworkFetchedInfo: any
+
+		try {
+			;[bscNetworkFetchedInfo, avaxNetworkFetchedInfo] = await Promise.all([
+				fetchBscNetworkInfo(),
+				fetchAvaxNetworkInfo(),
+			])
+		} catch (err) {
+			console.log(err)
+		}
+
 		let bscTokensInfo = Object.values(
 			bscNetworkFetchedInfo.data.auto_compounding
 		)
-
 		setBscNetworkEarnInfo(bscTokensInfo.sort(compare))
 
-		let avaxNetworkFetchedInfo: any = await fetchAvaxNetworkInfo()
 		let avaxTokensInfo = Object.values(
 			avaxNetworkFetchedInfo.data.auto_compounding
 		)
-
 		setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compare))
 	}
 
@@ -113,9 +121,10 @@ const App = () => {
 			{wooNetworkInfo && (
 				<InfoField
 					index={2}
-					symbol={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
-					tvl={`$${amountFormatter(wooFi1DTotalVolume / 10 ** 18)}`}
-					apy={`$${amountFormatter(wooNetworkFuturesVolume)} `}
+					value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
+					value_2={`$${amountFormatter(wooFi1DTotalVolume / 10 ** 18)}`}
+					value_3={`$${amountFormatter(wooNetworkFuturesVolume)} `}
+					value_4={'$XX,Y M'}
 				/>
 			)}
 
@@ -132,9 +141,10 @@ const App = () => {
 					<InfoField
 						key={index}
 						index={index}
-						symbol={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
-						tvl={`$${amountFormatter(parseInt(tokenInfo.tvl) / 10 ** 18)}`}
-						apy={`${tokenInfo.apy.toPrecision(3)}%`}
+						value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
+						value_2={`$${amountFormatter(parseInt(tokenInfo.tvl) / 10 ** 18)}`}
+						value_3={`${tokenInfo.apy.toPrecision(3)}%`}
+						value_4={''}
 					/>
 				))}
 
@@ -150,9 +160,10 @@ const App = () => {
 					<InfoField
 						key={index}
 						index={index}
-						symbol={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
-						tvl={`$${amountFormatter(parseInt(tokenInfo.tvl) / 10 ** 18)}`}
-						apy={`${tokenInfo.apy.toPrecision(3)}%`}
+						value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
+						value_2={`$${amountFormatter(parseInt(tokenInfo.tvl) / 10 ** 18)}`}
+						value_3={`${tokenInfo.apy.toPrecision(3)}%`}
+						value_4={''}
 					/>
 				))}
 			<LinksField

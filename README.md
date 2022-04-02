@@ -1,6 +1,6 @@
 # WOOFi APY Tracker Extension
 
-Display general WOO Network info and APY's of WOOFi Earn pairs.
+Display general WOO Network info, APY's and staking amount of WOOFi, and calculate potential Yield rewards.
 
 [WOOFi APY Tracker Extension](https://chrome.google.com/webstore/detail/woofi-apy-tracker-extensi/ebhimcjdodfppheghgcbdfiegcchaplh?hl=en&authuser=0)
 

@@ -37,16 +37,16 @@ const InteractionField: React.FC<{}> = ({}) => {
 	return (
 		<div id="interaction-field">
 			<div id="interaction-field-header" className="interaction-field-row">
-				<div className="input-field">Calculate Yield</div>
+				<div>Calculate Yield</div>
 			</div>
 			<div className="interaction-field-row">
-				<div className="input-field">Amount</div>
+				<div className="input-field input-field-amount ">Amount</div>
 				<div className="input-field">APY</div>
 				<div className="input-field">Days</div>
 				<div className="input-field">Yield</div>
 			</div>
 			<div className="interaction-field-row">
-				<div className="input-field">
+				<div className="input-field input-field-amount">
 					${' '}
 					<input
 						id="input-amount"

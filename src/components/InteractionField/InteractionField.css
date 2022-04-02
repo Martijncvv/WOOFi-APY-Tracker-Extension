@@ -7,32 +7,36 @@
 	color: white;
 }
 #interaction-field-header {
-	border-bottom: 1px solid #73bef4;
-	font-size: 15px;
-	padding: 3px 0px;
-	padding-left: 6px;
+	padding: 0 0 4px 4px;
 
+	font-size: 15px;
+	border-bottom: 1px solid #73bef4;
 	font-weight: bold;
 }
 
 .interaction-field-row {
+	padding-left: 4px;
 	display: flex;
-	/* justify-content: flex-start; */
+	flex-direction: row;
 	justify-content: space-between;
-	padding: 0 0 0 6px;
+	gap: 10px 20px;
 }
 .input-field {
-	min-width: 25%;
+	width: 30%;
 	padding: 2px 0;
 	font-size: 15px;
 }
-#input-amount {
-	padding: 1px 2px;
+.input-field-amount {
+	width: 40%;
+}
 
+#input-amount {
 	width: 40px;
+	padding: 1px 2px;
 
 	color: white;
 	background-color: #3c404b;
+
 	border: none;
 	border-radius: 4px;
 }

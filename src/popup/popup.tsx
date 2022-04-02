@@ -15,10 +15,10 @@ const AvaxIcon = require('../static/images/AVAX_logo.png')
 
 import {
 	fetchBscNetworkInfo,
-	fetchBscStakedInfo,
+	fetchWooBscStakedInfo,
 	fetchBsc1DVolume,
 	fetchAvaxNetworkInfo,
-	fetchAvaxStakedInfo,
+	fetchWooAvaxStakedInfo,
 	fetchAvax1DVolume,
 	fetchWooNetworkInfo,
 	fetchWooNetworkFutureInfo,
@@ -27,6 +27,8 @@ import { amountFormatter } from '../utils/amountFormatter'
 
 const App = () => {
 	const [bscNetworkEarnInfo, setBscNetworkEarnInfo] = useState<any[]>([])
+	const [stakedWooAmount, setStakedWooAmount] = useState<number>(0)
+
 	const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = useState<any[]>([])
 	const [wooFi1DTotalVolume, setWooFi1DTotalVolume] = useState<number>(0)
 	const [wooNetworkInfo, setWooNetworkInfo] = useState<any>()
@@ -43,6 +45,7 @@ const App = () => {
 		getWooNetworkInfo()
 		getWooFiVolumesInfo()
 		getaWooFiApyInfo()
+		getStakedWooInfo()
 	}, [])
 
 	const handleCalculatorChange = () => {
@@ -71,6 +74,37 @@ const App = () => {
 			avaxNetworkFetchedInfo.data.auto_compounding
 		)
 		setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compare))
+	}
+
+	async function getStakedWooInfo() {
+		let stakedWooBscFetchedInfo: any
+		let stakedWooAvaxFetchedInfo: any
+
+		try {
+			;[stakedWooBscFetchedInfo, stakedWooAvaxFetchedInfo] = await Promise.all([
+				fetchWooBscStakedInfo(),
+				fetchWooAvaxStakedInfo(),
+			])
+		} catch (err) {
+			console.log(err)
+		}
+
+		console.log('stakedWooBscFetchedInfo', stakedWooBscFetchedInfo)
+		setStakedWooAmount(
+			(parseInt(stakedWooBscFetchedInfo.data.woo.total_staked) +
+				parseInt(stakedWooAvaxFetchedInfo.data.woo.total_staked)) /
+				10 ** 18
+		)
+
+		// let bscStakedWooInfo = Object.values(
+		// 	stakedWooBscFetchedInfo.data.auto_compounding
+		// )
+		// setBscNetworkEarnInfo(bscTokensInfo.sort(compare))
+
+		// let avaxTokensInfo = Object.values(
+		// 	avaxNetworkFetchedInfo.data.auto_compounding
+		// )
+		// setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compare))
 	}
 
 	async function getWooNetworkInfo() {
@@ -124,7 +158,7 @@ const App = () => {
 					value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
 					value_2={`$${amountFormatter(wooFi1DTotalVolume / 10 ** 18)}`}
 					value_3={`$${amountFormatter(wooNetworkFuturesVolume)} `}
-					value_4={'$XX,Y M'}
+					value_4={`${amountFormatter(stakedWooAmount)} `}
 				/>
 			)}
 

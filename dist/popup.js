@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 12px 0 7px;\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n}\n.info-field-symbol {\n\twidth: 35%;\n\tpadding-left: 8px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/InfoField/InfoField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,mBAAmB;AACpB;;AAEA;CACC,YAAY;CACZ,SAAS;CACT,UAAU;CACV,UAAU;CACV,eAAe;CACf,0BAA0B;AAC3B;AACA;CACC,UAAU;CACV,iBAAiB;AAClB","sourcesContent":[".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 12px 0 7px;\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n}\n.info-field-symbol {\n\twidth: 35%;\n\tpadding-left: 8px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 11px 0 7px;\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n}\n.info-field-symbol {\n\twidth: 35%;\n\tpadding-left: 8px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/InfoField/InfoField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,mBAAmB;AACpB;;AAEA;CACC,YAAY;CACZ,SAAS;CACT,UAAU;CACV,UAAU;CACV,eAAe;CACf,0BAA0B;AAC3B;AACA;CACC,UAAU;CACV,iBAAiB;AAClB","sourcesContent":[".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 11px 0 7px;\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n}\n.info-field-symbol {\n\twidth: 35%;\n\tpadding-left: 8px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 0px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tborder-bottom: 1px solid #73bef4;\n\tfont-size: 15px;\n\tpadding: 3px 0px;\n\tpadding-left: 6px;\n\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tdisplay: flex;\n\t/* justify-content: flex-start; */\n\tjustify-content: space-between;\n\tpadding: 0 0 0 6px;\n}\n.input-field {\n\tmin-width: 25%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n#input-amount {\n\tpadding: 1px 2px;\n\n\twidth: 40px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/InteractionField/InteractionField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,sBAAsB;CACtB,cAAc;CACd,kBAAkB;;CAElB,YAAY;AACb;AACA;CACC,gCAAgC;CAChC,eAAe;CACf,gBAAgB;CAChB,iBAAiB;;CAEjB,iBAAiB;AAClB;;AAEA;CACC,aAAa;CACb,iCAAiC;CACjC,8BAA8B;CAC9B,kBAAkB;AACnB;AACA;CACC,cAAc;CACd,cAAc;CACd,eAAe;AAChB;AACA;CACC,gBAAgB;;CAEhB,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,gBAAgB;CAChB,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,gBAAgB;CAChB,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB","sourcesContent":["#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 0px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tborder-bottom: 1px solid #73bef4;\n\tfont-size: 15px;\n\tpadding: 3px 0px;\n\tpadding-left: 6px;\n\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tdisplay: flex;\n\t/* justify-content: flex-start; */\n\tjustify-content: space-between;\n\tpadding: 0 0 0 6px;\n}\n.input-field {\n\tmin-width: 25%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n#input-amount {\n\tpadding: 1px 2px;\n\n\twidth: 40px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 0px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tpadding: 0 0 4px 4px;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/InteractionField/InteractionField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,sBAAsB;CACtB,cAAc;CACd,kBAAkB;;CAElB,YAAY;AACb;AACA;CACC,oBAAoB;;CAEpB,eAAe;CACf,gCAAgC;CAChC,iBAAiB;AAClB;;AAEA;CACC,iBAAiB;CACjB,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;AACf;AACA;CACC,UAAU;CACV,cAAc;CACd,eAAe;AAChB;AACA;CACC,UAAU;AACX;;AAEA;CACC,WAAW;CACX,gBAAgB;;CAEhB,YAAY;CACZ,yBAAyB;;CAEzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,gBAAgB;CAChB,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;;AAEA;CACC,gBAAgB;CAChB,WAAW;;CAEX,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB","sourcesContent":["#interaction-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmargin: 0 16px;\n\tpadding: 8px 0 0px;\n\n\tcolor: white;\n}\n#interaction-field-header {\n\tpadding: 0 0 4px 4px;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n}\n\n.interaction-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-apy {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n\n#input-days {\n\tpadding: 1px 2px;\n\twidth: 35px;\n\n\tcolor: white;\n\tbackground-color: #3c404b;\n\tborder: none;\n\tborder-radius: 4px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -628,14 +628,14 @@ const InteractionField = ({}) => {
     }
     return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "interaction-field" },
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "interaction-field-header", className: "interaction-field-row" },
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "Calculate Yield")),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, "Calculate Yield")),
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "interaction-field-row" },
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "Amount"),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field input-field-amount " }, "Amount"),
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "APY"),
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "Days"),
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" }, "Yield")),
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "interaction-field-row" },
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field input-field-amount" },
                 "$",
                 ' ',
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-amount", placeholder: "$", autoComplete: "off", value: inputAmount, onKeyUp: (event) => handleSearchInputKeyUpEvent(event), onChange: (event) => setInputAmount(event.target.value), onClick: () => setInputAmount('') })),
@@ -859,6 +859,7 @@ const AvaxIcon = __webpack_require__(/*! ../static/images/AVAX_logo.png */ "./sr
 
 const App = () => {
     const [bscNetworkEarnInfo, setBscNetworkEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+    const [stakedWooAmount, setStakedWooAmount] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
     const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
     const [wooFi1DTotalVolume, setWooFi1DTotalVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
     const [wooNetworkInfo, setWooNetworkInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
@@ -869,6 +870,7 @@ const App = () => {
         getWooNetworkInfo();
         getWooFiVolumesInfo();
         getaWooFiApyInfo();
+        getStakedWooInfo();
     }, []);
     const handleCalculatorChange = () => {
         setDisplayCalculator(!displayCalculator);
@@ -891,6 +893,34 @@ const App = () => {
             setBscNetworkEarnInfo(bscTokensInfo.sort(compare));
             let avaxTokensInfo = Object.values(avaxNetworkFetchedInfo.data.auto_compounding);
             setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compare));
+        });
+    }
+    function getStakedWooInfo() {
+        return __awaiter(this, void 0, void 0, function* () {
+            let stakedWooBscFetchedInfo;
+            let stakedWooAvaxFetchedInfo;
+            try {
+                ;
+                [stakedWooBscFetchedInfo, stakedWooAvaxFetchedInfo] = yield Promise.all([
+                    (0,_utils_api__WEBPACK_IMPORTED_MODULE_10__.fetchWooBscStakedInfo)(),
+                    (0,_utils_api__WEBPACK_IMPORTED_MODULE_10__.fetchWooAvaxStakedInfo)(),
+                ]);
+            }
+            catch (err) {
+                console.log(err);
+            }
+            console.log('stakedWooBscFetchedInfo', stakedWooBscFetchedInfo);
+            setStakedWooAmount((parseInt(stakedWooBscFetchedInfo.data.woo.total_staked) +
+                parseInt(stakedWooAvaxFetchedInfo.data.woo.total_staked)) /
+                Math.pow(10, 18));
+            // let bscStakedWooInfo = Object.values(
+            // 	stakedWooBscFetchedInfo.data.auto_compounding
+            // )
+            // setBscNetworkEarnInfo(bscTokensInfo.sort(compare))
+            // let avaxTokensInfo = Object.values(
+            // 	avaxNetworkFetchedInfo.data.auto_compounding
+            // )
+            // setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compare))
         });
     }
     function getWooNetworkInfo() {
@@ -933,7 +963,7 @@ const App = () => {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_HeaderField__WEBPACK_IMPORTED_MODULE_4__.default, null),
         displayCalculator && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InteractionField__WEBPACK_IMPORTED_MODULE_9__.default, null),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_WooNetworkFieldHeader__WEBPACK_IMPORTED_MODULE_7__.default, null),
-        wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooNetworkInfo.data.amount)}`, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooFi1DTotalVolume / Math.pow(10, 18))}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooNetworkFuturesVolume)} `, value_4: '$XX,Y M' })),
+        wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooNetworkInfo.data.amount)}`, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooFi1DTotalVolume / Math.pow(10, 18))}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(wooNetworkFuturesVolume)} `, value_4: `${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(stakedWooAmount)} ` })),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { logo: BscIcon, value_2: 'TVL', value_3: 'APY', functionCallback: handleCalculatorChange, displayCalculator: displayCalculator }),
         bscNetworkEarnInfo.length > 0 &&
             bscNetworkEarnInfo.map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index, value_1: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_11__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, 18))}`, value_3: `${tokenInfo.apy.toPrecision(3)}%`, value_4: '' }))),
@@ -996,8 +1026,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "fetchAvaxNetworkInfo": () => (/* binding */ fetchAvaxNetworkInfo),
 /* harmony export */   "fetchWooNetworkInfo": () => (/* binding */ fetchWooNetworkInfo),
 /* harmony export */   "fetchWooNetworkFutureInfo": () => (/* binding */ fetchWooNetworkFutureInfo),
-/* harmony export */   "fetchBscStakedInfo": () => (/* binding */ fetchBscStakedInfo),
-/* harmony export */   "fetchAvaxStakedInfo": () => (/* binding */ fetchAvaxStakedInfo),
+/* harmony export */   "fetchWooBscStakedInfo": () => (/* binding */ fetchWooBscStakedInfo),
+/* harmony export */   "fetchWooAvaxStakedInfo": () => (/* binding */ fetchWooAvaxStakedInfo),
 /* harmony export */   "fetchAvax1DVolume": () => (/* binding */ fetchAvax1DVolume),
 /* harmony export */   "fetchBsc1DVolume": () => (/* binding */ fetchBsc1DVolume)
 /* harmony export */ });
@@ -1058,7 +1088,7 @@ function fetchWooNetworkFutureInfo() {
         return data;
     });
 }
-function fetchBscStakedInfo() {
+function fetchWooBscStakedInfo() {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield fetch(WOOFI_BSC_STAKING_API);
         if (!res.ok) {
@@ -1068,7 +1098,7 @@ function fetchBscStakedInfo() {
         return data;
     });
 }
-function fetchAvaxStakedInfo() {
+function fetchWooAvaxStakedInfo() {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield fetch(WOOFI_AVAX_STAKING_API);
         if (!res.ok) {

@@ -48,7 +48,7 @@ export async function fetchWooNetworkFutureInfo(): Promise<{}> {
 	return data
 }
 
-export async function fetchBscStakedInfo(): Promise<{}> {
+export async function fetchWooBscStakedInfo(): Promise<{}> {
 	const res = await fetch(WOOFI_BSC_STAKING_API)
 	if (!res.ok) {
 		throw new Error(`Fetch error, Bsc staking info}`)
@@ -57,7 +57,7 @@ export async function fetchBscStakedInfo(): Promise<{}> {
 	const data = await res.json()
 	return data
 }
-export async function fetchAvaxStakedInfo(): Promise<{}> {
+export async function fetchWooAvaxStakedInfo(): Promise<{}> {
 	const res = await fetch(WOOFI_AVAX_STAKING_API)
 	if (!res.ok) {
 		throw new Error(`Fetch error, Avax staking info}`)

@@ -1,6 +1,6 @@
 {
 	"name": "WOOFi APY Tracker",
-	"description": "Display general WOO Network info and APY's of WOOFi Earn.",
+	"description": "Display general WOO Network info, APY's and staking amount of WOOFi, and calculate potential Yield rewards.",
 	"version": "1.0.2",
 	"manifest_version": 3,
 	"icons": {
@@ -12,5 +12,14 @@
 		"default_popup": "popup.html",
 		"default_title": "Display general WOO Network info.",
 		"default_icon": "images/WOOFi_mcfly_logo_128.png"
+	},
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+K",
+				"mac": "MacCtrl+Shift+K"
+			},
+			"description": "Opens crypto explorer"
+		}
 	}
 }

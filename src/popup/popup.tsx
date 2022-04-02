@@ -95,16 +95,6 @@ const App = () => {
 				parseInt(stakedWooAvaxFetchedInfo.data.woo.total_staked)) /
 				10 ** 18
 		)
-
-		// let bscStakedWooInfo = Object.values(
-		// 	stakedWooBscFetchedInfo.data.auto_compounding
-		// )
-		// setBscNetworkEarnInfo(bscTokensInfo.sort(compare))
-
-		// let avaxTokensInfo = Object.values(
-		// 	avaxNetworkFetchedInfo.data.auto_compounding
-		// )
-		// setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compare))
 	}
 
 	async function getWooNetworkInfo() {

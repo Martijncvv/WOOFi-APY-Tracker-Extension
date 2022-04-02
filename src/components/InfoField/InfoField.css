@@ -13,8 +13,11 @@
 	margin: 0;
 	padding: 0 0 0 3px;
 	width: 30%;
+
 	font-size: 14px;
 	text-transform: capitalize;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .info-field-symbol {
 	width: 35%;

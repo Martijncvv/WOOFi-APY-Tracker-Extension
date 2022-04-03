@@ -64,6 +64,8 @@ const App = () => {
 		} catch (err) {
 			console.log(err)
 		}
+		console.log('bscNetworkFetchedInfo', bscNetworkFetchedInfo)
+		console.log('avaxNetworkFetchedInfo', avaxNetworkFetchedInfo)
 
 		let bscTokensInfo = Object.values(
 			bscNetworkFetchedInfo.data.auto_compounding
@@ -166,7 +168,9 @@ const App = () => {
 						key={index}
 						index={index}
 						value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
-						value_2={`$${amountFormatter(parseInt(tokenInfo.tvl) / 10 ** 18)}`}
+						value_2={`$${amountFormatter(
+							parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
+						)}`}
 						value_3={`${tokenInfo.apy.toPrecision(3)}%`}
 						value_4={''}
 					/>
@@ -185,7 +189,9 @@ const App = () => {
 						key={index}
 						index={index}
 						value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
-						value_2={`$${amountFormatter(parseInt(tokenInfo.tvl) / 10 ** 18)}`}
+						value_2={`$${amountFormatter(
+							parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
+						)}`}
 						value_3={`${tokenInfo.apy.toPrecision(3)}%`}
 						value_4={''}
 					/>
@@ -203,3 +209,13 @@ const App = () => {
 const root = document.createElement('div')
 document.body.appendChild(root)
 ReactDOM.render(<App />, root)
+
+// "1000000000000000000"
+// "1000000000000000000"
+// BSC 6.78 K
+// 6.786.915.419.737.330.902.314
+// share price: 1000000000000000000
+
+// AVAX 2.54 M
+// 2.540.556.141231
+// Share price: 1000000000000000000

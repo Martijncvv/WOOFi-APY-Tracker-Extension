@@ -39,6 +39,7 @@ const App = () => {
 	const [displayCalculator, setDisplayCalculator] = React.useState<boolean>(
 		false
 	)
+	const [sortingOption, setSortingOption] = React.useState<string>('')
 
 	useEffect(() => {
 		getFuturesInfo()
@@ -47,10 +48,6 @@ const App = () => {
 		getaWooFiApyInfo()
 		getStakedWooInfo()
 	}, [])
-
-	const handleCalculatorChange = () => {
-		setDisplayCalculator(!displayCalculator)
-	}
 
 	async function getaWooFiApyInfo() {
 		let bscNetworkFetchedInfo: any
@@ -61,21 +58,20 @@ const App = () => {
 				fetchBscNetworkInfo(),
 				fetchAvaxNetworkInfo(),
 			])
+			console.log('bscNetworkFetchedInfo', bscNetworkFetchedInfo)
 		} catch (err) {
 			console.log(err)
 		}
-		console.log('bscNetworkFetchedInfo', bscNetworkFetchedInfo)
-		console.log('avaxNetworkFetchedInfo', avaxNetworkFetchedInfo)
 
 		let bscTokensInfo = Object.values(
 			bscNetworkFetchedInfo.data.auto_compounding
 		)
-		setBscNetworkEarnInfo(bscTokensInfo.sort(compare))
+		setBscNetworkEarnInfo(bscTokensInfo.sort(compareApy))
 
 		let avaxTokensInfo = Object.values(
 			avaxNetworkFetchedInfo.data.auto_compounding
 		)
-		setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compare))
+		setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compareApy))
 	}
 
 	async function getStakedWooInfo() {
@@ -90,8 +86,6 @@ const App = () => {
 		} catch (err) {
 			console.log(err)
 		}
-
-		console.log('stakedWooBscFetchedInfo', stakedWooBscFetchedInfo)
 		setStakedWooAmount(
 			(parseInt(stakedWooBscFetchedInfo.data.woo.total_staked) +
 				parseInt(stakedWooAvaxFetchedInfo.data.woo.total_staked)) /
@@ -127,7 +121,16 @@ const App = () => {
 		setWooFi1DTotalVolume(totalWooFiVolume)
 	}
 
-	const compare = (a, b) => {
+	const handleCalculatorChange = () => {
+		setDisplayCalculator(!displayCalculator)
+	}
+
+	const handleSortingChange = (_sortingOption) => {
+		setSortingOption(_sortingOption)
+		console.log('_sortingOption', _sortingOption)
+	}
+
+	const compareApy = (a, b) => {
 		if (a.apy > b.apy) {
 			return -1
 		}
@@ -156,9 +159,10 @@ const App = () => {
 
 			<YieldFieldHeader
 				logo={BscIcon}
-				value_2={'TVL'}
-				value_3={'APY'}
-				functionCallback={handleCalculatorChange}
+				value_2={'tvl'}
+				value_3={'apy'}
+				displayCalculatorCallback={handleCalculatorChange}
+				sortingOptionCallback={handleSortingChange}
 				displayCalculator={displayCalculator}
 			/>
 
@@ -180,7 +184,8 @@ const App = () => {
 				logo={AvaxIcon}
 				value_2={''}
 				value_3={''}
-				functionCallback={''}
+				displayCalculatorCallback={''}
+				sortingOptionCallback={''}
 				displayCalculator={displayCalculator}
 			/>
 			{avaxNetworkEarnInfo.length > 0 &&
@@ -209,13 +214,3 @@ const App = () => {
 const root = document.createElement('div')
 document.body.appendChild(root)
 ReactDOM.render(<App />, root)
-
-// "1000000000000000000"
-// "1000000000000000000"
-// BSC 6.78 K
-// 6.786.915.419.737.330.902.314
-// share price: 1000000000000000000
-
-// AVAX 2.54 M
-// 2.540.556.141231
-// Share price: 1000000000000000000

@@ -19,3 +19,7 @@ Display general WOO Network info, APY's and staking amount of WOOFi, and calcula
 <p align="center">
   <img src="woofi-extension-preview_4.png" alt="WOOFi APY Tracker" width="800" >
 </p>
+
+// 1. Staked on woox
+// 2. Number of woox stakers
+// 3. Total woo burned, woo burn wallet

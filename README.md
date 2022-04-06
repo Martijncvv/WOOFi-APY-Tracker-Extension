@@ -1,6 +1,6 @@
 # WOOFi APY Tracker Extension
 
-Display general WOO Network info, APY's and staking amount of WOOFi, and calculate potential Yield rewards.
+Display general WOO Network info and sort WOOFi Earn Pairs by APY, TVL or Name. Calculate potential Yield rewards and check the staked amount of WOO on WOOFi.
 
 [WOOFi APY Tracker Extension](https://chrome.google.com/webstore/detail/woofi-apy-tracker-extensi/ebhimcjdodfppheghgcbdfiegcchaplh?hl=en&authuser=0)
 
@@ -20,6 +20,8 @@ Display general WOO Network info, APY's and staking amount of WOOFi, and calcula
   <img src="woofi-extension-preview_4.png" alt="WOOFi APY Tracker" width="800" >
 </p>
 
-// 1. Staked on woox
-// 2. Number of woox stakers
-// 3. Total woo burned, woo burn wallet
+### To Do
+
+1.  Staked on woox
+2.  Number of woox stakers
+3.  Total woo burned; woo burn wallet

@@ -3,6 +3,7 @@ import './YieldFieldHeader.css'
 
 import IconButton from '@mui/material/IconButton'
 import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined'
+import SortIcon from '@mui/icons-material/Sort'
 
 interface YieldFieldHeaderProps {
 	logo: string
@@ -37,9 +38,21 @@ const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
 				className="yield-field-header-value"
 				onClick={() => handleHeaderClick(value_2)}
 			>
-				{value_2}
+				{value_2 && (
+					<>
+						{value_2}
+						<SortIcon
+							style={{
+								padding: '0',
+								margin: '0 0 -1px -6px',
+								color: '#3c404b',
+							}}
+							fontSize="small"
+						/>
+					</>
+				)}
 			</div>
-			<div className="yield-field-header-value yield-field-header-value-apy">
+			<div className="yield-field-header-value">
 				<div onClick={() => handleHeaderClick(value_3)}>{value_3}</div>
 				{displayCalculatorCallback && (
 					<IconButton
@@ -56,7 +69,7 @@ const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
 							fontSize="small"
 							style={{
 								padding: '0',
-								margin: '0',
+								margin: '0 0 -1px 0',
 							}}
 						/>
 					</IconButton>

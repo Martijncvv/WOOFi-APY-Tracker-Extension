@@ -28,10 +28,6 @@ const InteractionField: React.FC<{}> = ({}) => {
 					parseFloat(inputDays)
 			)
 		)
-		console.log('inputAmount', inputAmount)
-		console.log('inputApy', inputApy)
-		console.log('inputDays', inputDays)
-		console.log('yieldResult', yieldResult)
 	}
 
 	return (

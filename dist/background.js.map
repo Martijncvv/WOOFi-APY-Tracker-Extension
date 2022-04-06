@@ -1,1 +1,0 @@
-{"version":3,"file":"background.js","sources":["webpack://WOOFi APY Tracker Extension/./src/background/background.ts"],"sourcesContent":["console.log('BACKGROUND script is running');\n"],"mappings":";;;;;AAAA;;;A","sourceRoot":""}

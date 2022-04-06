@@ -39,7 +39,7 @@ const App = () => {
 	const [displayCalculator, setDisplayCalculator] = React.useState<boolean>(
 		false
 	)
-	const [sortingOption, setSortingOption] = React.useState<string>('')
+	const [sortingOption, setSortingOption] = React.useState<string>('apy')
 
 	useEffect(() => {
 		getFuturesInfo()
@@ -59,6 +59,7 @@ const App = () => {
 				fetchAvaxNetworkInfo(),
 			])
 			console.log('bscNetworkFetchedInfo', bscNetworkFetchedInfo)
+			console.log('avaxNetworkFetchedInfo', avaxNetworkFetchedInfo)
 		} catch (err) {
 			console.log(err)
 		}
@@ -66,12 +67,12 @@ const App = () => {
 		let bscTokensInfo = Object.values(
 			bscNetworkFetchedInfo.data.auto_compounding
 		)
-		setBscNetworkEarnInfo(bscTokensInfo.sort(compareApy))
+		setBscNetworkEarnInfo(bscTokensInfo)
 
 		let avaxTokensInfo = Object.values(
 			avaxNetworkFetchedInfo.data.auto_compounding
 		)
-		setAvaxNetworkEarnInfo(avaxTokensInfo.sort(compareApy))
+		setAvaxNetworkEarnInfo(avaxTokensInfo)
 	}
 
 	async function getStakedWooInfo() {
@@ -130,6 +131,19 @@ const App = () => {
 		console.log('_sortingOption', _sortingOption)
 	}
 
+	const sortQuotes = (quotes) => {
+		console.log('quotes', quotes)
+		console.log('sortingOption', sortingOption)
+		switch (sortingOption) {
+			case 'tvl':
+				return quotes.sort(compareTvl)
+			case 'quote':
+				return quotes.sort(compareSymbol)
+			default:
+				return quotes.sort(compareApy)
+		}
+	}
+
 	const compareApy = (a, b) => {
 		if (a.apy > b.apy) {
 			return -1
@@ -137,7 +151,32 @@ const App = () => {
 		if (a.apy < b.apy) {
 			return 1
 		}
+		return 0
+	}
 
+	const compareTvl = (a, b) => {
+		if (
+			parseInt(a.tvl) / 10 ** a.decimals >
+			parseInt(b.tvl) / 10 ** b.decimals
+		) {
+			return -1
+		}
+		if (
+			parseInt(a.tvl) / 10 ** a.decimals <
+			parseInt(b.tvl) / 10 ** b.decimals
+		) {
+			return 1
+		}
+		return 0
+	}
+
+	const compareSymbol = (a, b) => {
+		if (a.symbol[0] < b.symbol[0]) {
+			return -1
+		}
+		if (a.symbol[0] > b.symbol[0]) {
+			return 1
+		}
 		return 0
 	}
 
@@ -167,7 +206,7 @@ const App = () => {
 			/>
 
 			{bscNetworkEarnInfo.length > 0 &&
-				bscNetworkEarnInfo.map((tokenInfo, index) => (
+				sortQuotes(bscNetworkEarnInfo).map((tokenInfo, index) => (
 					<InfoField
 						key={index}
 						index={index}
@@ -189,7 +228,7 @@ const App = () => {
 				displayCalculator={displayCalculator}
 			/>
 			{avaxNetworkEarnInfo.length > 0 &&
-				avaxNetworkEarnInfo.map((tokenInfo, index) => (
+				sortQuotes(avaxNetworkEarnInfo).map((tokenInfo, index) => (
 					<InfoField
 						key={index}
 						index={index}

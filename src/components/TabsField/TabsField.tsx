@@ -1,0 +1,48 @@
+import './TabsField.css'
+import React, { useState, useEffect } from 'react'
+
+interface ChainDataProps {
+	chainId: string
+	chainName: string
+	icon: string
+}
+interface ChainsDataProps {
+	chainsInfo: ChainDataProps[]
+	activeTabCallback: any
+	activeTab: string
+}
+
+const TabsField: React.FC<ChainsDataProps> = ({
+	chainsInfo,
+	activeTabCallback,
+	activeTab,
+}) => {
+	console.log('chainsInfo', chainsInfo)
+	console.log('activeTab', activeTab)
+
+	async function handleTabClick(chainId) {
+		activeTabCallback(chainId)
+	}
+
+	return (
+		<div className="tabs-field">
+			{chainsInfo.map((tab, index) => (
+				<div
+					className="tab"
+					key={index}
+					onClick={() => handleTabClick(tab.chainId)}
+					style={
+						tab.chainId === activeTab
+							? { backgroundColor: '#3C404B' }
+							: { backgroundColor: '#313641' }
+					}
+				>
+					<img className="tab-image" src={tab.icon} />
+					<span className="tab-name">{tab.chainName}</span>
+				</div>
+			))}
+		</div>
+	)
+}
+
+export default TabsField

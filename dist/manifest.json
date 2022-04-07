@@ -1,7 +1,7 @@
 {
 	"name": "WOOFi APY Tracker",
 	"description": "Display general WOO Network info, APY's and staking amount of WOOFi, and calculate potential Yield rewards.",
-	"version": "1.0.4",
+	"version": "1.1.0",
 	"manifest_version": 3,
 	"icons": {
 		"16": "images/WOOFi_mcfly_logo_128.png",

@@ -35,52 +35,54 @@ const InteractionField: React.FC<{}> = ({}) => {
 			<div id="interaction-field-header" className="interaction-field-row">
 				<div>Calculate Yield</div>
 			</div>
-			<div className="interaction-field-row">
-				<div className="input-field input-field-amount ">Amount</div>
-				<div className="input-field">APY</div>
-				<div className="input-field">Days</div>
-				<div className="input-field">Yield</div>
-			</div>
-			<div className="interaction-field-row">
-				<div className="input-field input-field-amount">
-					${' '}
-					<input
-						id="input-amount"
-						placeholder="$"
-						autoComplete="off"
-						value={inputAmount}
-						onKeyUp={(event) => handleSearchInputKeyUpEvent(event)}
-						onChange={(event) => setInputAmount(event.target.value)}
-						onClick={() => setInputAmount('')}
-					/>
+			<div className="interaction-field-values ">
+				<div className="interaction-field-row">
+					<div className="input-field input-field-amount ">Amount</div>
+					<div className="input-field">APY</div>
+					<div className="input-field">Days</div>
+					<div className="input-field">Yield</div>
 				</div>
+				<div className="interaction-field-row">
+					<div className="input-field input-field-amount">
+						${' '}
+						<input
+							id="input-amount"
+							placeholder="$"
+							autoComplete="off"
+							value={inputAmount}
+							onKeyUp={(event) => handleSearchInputKeyUpEvent(event)}
+							onChange={(event) => setInputAmount(event.target.value)}
+							onClick={() => setInputAmount('')}
+						/>
+					</div>
 
-				<div className="input-field">
-					<input
-						id="input-apy"
-						placeholder="%"
-						autoComplete="off"
-						value={inputApy}
-						onKeyUp={(event) => handleSearchInputKeyUpEvent(event)}
-						onChange={(event) => setInputApy(event.target.value)}
-						onClick={() => setInputApy('')}
-					/>
-				</div>
+					<div className="input-field">
+						<input
+							id="input-apy"
+							placeholder="%"
+							autoComplete="off"
+							value={inputApy}
+							onKeyUp={(event) => handleSearchInputKeyUpEvent(event)}
+							onChange={(event) => setInputApy(event.target.value)}
+							onClick={() => setInputApy('')}
+						/>
+					</div>
 
-				<div className="input-field">
-					<input
-						id="input-days"
-						placeholder="#"
-						autoComplete="off"
-						value={inputDays}
-						onKeyUp={(event) => handleSearchInputKeyUpEvent(event)}
-						onChange={(event) => setInputDays(event.target.value)}
-						onClick={() => setInputDays('')}
-					/>
-				</div>
+					<div className="input-field">
+						<input
+							id="input-days"
+							placeholder="#"
+							autoComplete="off"
+							value={inputDays}
+							onKeyUp={(event) => handleSearchInputKeyUpEvent(event)}
+							onChange={(event) => setInputDays(event.target.value)}
+							onClick={() => setInputDays('')}
+						/>
+					</div>
 
-				<div id="apy-profit-field" className="input-field">
-					${yieldResult}
+					<div id="apy-profit-field" className="input-field">
+						${yieldResult}
+					</div>
 				</div>
 			</div>
 		</div>

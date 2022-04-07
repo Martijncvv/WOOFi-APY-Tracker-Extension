@@ -9,9 +9,12 @@ import YieldFieldHeader from '../components/YieldFieldHeader'
 import WooNetworkFieldHeader from '../components/WooNetworkFieldHeader'
 import LinksField from '../components/LinksField'
 import InteractionField from '../components/InteractionField'
+import TabsField from '../components/TabsField'
+import ChainsDataProps from '../components/TabsField'
 
 const BscIcon = require('../static/images/BNB_logo.png')
 const AvaxIcon = require('../static/images/AVAX_logo.png')
+const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
 
 import {
 	fetchBscNetworkInfo,
@@ -27,9 +30,11 @@ import { amountFormatter } from '../utils/amountFormatter'
 
 const App = () => {
 	const [bscNetworkEarnInfo, setBscNetworkEarnInfo] = useState<any[]>([])
-	const [stakedWooAmount, setStakedWooAmount] = useState<number>(0)
-
+	const [bscNetworkEarnTvl, setBscNetworkEarnTvl] = useState<string>('')
 	const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = useState<any[]>([])
+	const [avaxNetworkEarnTvl, setAvaxNetworkEarnTvl] = useState<string>('')
+
+	const [stakedWooAmount, setStakedWooAmount] = useState<number>(0)
 	const [wooFi1DTotalVolume, setWooFi1DTotalVolume] = useState<number>(0)
 	const [wooNetworkInfo, setWooNetworkInfo] = useState<any>()
 	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState<
@@ -40,16 +45,19 @@ const App = () => {
 		false
 	)
 	const [sortingOption, setSortingOption] = React.useState<string>('apy')
+	const [chainsInfo, setChainsInfo] = React.useState<any>([])
+	const [activeTab, setActiveTab] = React.useState<string>('avax')
 
 	useEffect(() => {
+		getChainsInfo()
 		getFuturesInfo()
 		getWooNetworkInfo()
 		getWooFiVolumesInfo()
-		getaWooFiApyInfo()
+		getaWooFiEarnInfo()
 		getStakedWooInfo()
 	}, [])
 
-	async function getaWooFiApyInfo() {
+	async function getaWooFiEarnInfo() {
 		let bscNetworkFetchedInfo: any
 		let avaxNetworkFetchedInfo: any
 
@@ -68,11 +76,13 @@ const App = () => {
 			bscNetworkFetchedInfo.data.auto_compounding
 		)
 		setBscNetworkEarnInfo(bscTokensInfo)
+		setBscNetworkEarnTvl(bscNetworkFetchedInfo.data.total_deposit)
 
 		let avaxTokensInfo = Object.values(
 			avaxNetworkFetchedInfo.data.auto_compounding
 		)
 		setAvaxNetworkEarnInfo(avaxTokensInfo)
+		setAvaxNetworkEarnTvl(avaxNetworkFetchedInfo.data.total_deposit)
 	}
 
 	async function getStakedWooInfo() {
@@ -128,12 +138,15 @@ const App = () => {
 
 	const handleSortingChange = (_sortingOption) => {
 		setSortingOption(_sortingOption)
-		console.log('_sortingOption', _sortingOption)
+		// console.log('_sortingOption', _sortingOption)
+	}
+	const handleActiveTabChange = (chainId) => {
+		setActiveTab(chainId)
 	}
 
 	const sortQuotes = (quotes) => {
-		console.log('quotes', quotes)
-		console.log('sortingOption', sortingOption)
+		// console.log('quotes', quotes)
+		// console.log('sortingOption', sortingOption)
 		switch (sortingOption) {
 			case 'tvl':
 				return quotes.sort(compareTvl)
@@ -180,10 +193,22 @@ const App = () => {
 		return 0
 	}
 
+	const getChainsInfo = () => {
+		let chainIds = ['avax', 'bnb']
+		let chainNames = ['Avalanche', 'BNB Chain']
+		let chainLogos = [AvaxIcon, BnbChainIcon]
+
+		for (let i = 0; i < chainIds.length; i++) {
+			setChainsInfo((chainsInfo) => [
+				...chainsInfo,
+				{ chainId: chainIds[i], chainName: chainNames[i], icon: chainLogos[i] },
+			])
+		}
+	}
+
 	return (
 		<>
 			<HeaderField />
-			{displayCalculator && <InteractionField />}
 
 			<WooNetworkFieldHeader />
 			{wooNetworkInfo && (
@@ -196,50 +221,75 @@ const App = () => {
 				/>
 			)}
 
+			{displayCalculator && <InteractionField />}
+			<TabsField
+				chainsInfo={chainsInfo}
+				activeTabCallback={handleActiveTabChange}
+				activeTab={activeTab}
+			/>
+
 			<YieldFieldHeader
-				logo={BscIcon}
+				value_1={`vault`}
 				value_2={'tvl'}
 				value_3={'apy'}
 				displayCalculatorCallback={handleCalculatorChange}
 				sortingOptionCallback={handleSortingChange}
 				displayCalculator={displayCalculator}
 			/>
-
-			{bscNetworkEarnInfo.length > 0 &&
-				sortQuotes(bscNetworkEarnInfo).map((tokenInfo, index) => (
+			{activeTab === 'avax' && avaxNetworkEarnInfo.length > 0 && (
+				<>
 					<InfoField
-						key={index}
-						index={index}
-						value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
+						index={0}
+						value_1={'Total'}
 						value_2={`$${amountFormatter(
-							parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
+							parseInt(avaxNetworkEarnTvl) / 10 ** 18
 						)}`}
-						value_3={`${tokenInfo.apy.toPrecision(3)}%`}
+						value_3={`#${avaxNetworkEarnInfo.length}`}
 						value_4={''}
 					/>
-				))}
 
-			<YieldFieldHeader
-				logo={AvaxIcon}
-				value_2={''}
-				value_3={''}
-				displayCalculatorCallback={''}
-				sortingOptionCallback={''}
-				displayCalculator={displayCalculator}
-			/>
-			{avaxNetworkEarnInfo.length > 0 &&
-				sortQuotes(avaxNetworkEarnInfo).map((tokenInfo, index) => (
+					{sortQuotes(avaxNetworkEarnInfo).map((tokenInfo, index) => (
+						<InfoField
+							key={index}
+							index={index + 1}
+							value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
+							value_2={`$${amountFormatter(
+								parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
+							)}`}
+							value_3={`${tokenInfo.apy.toPrecision(3)}%`}
+							value_4={''}
+						/>
+					))}
+				</>
+			)}
+
+			{activeTab === 'bnb' && bscNetworkEarnInfo.length > 0 && (
+				<>
 					<InfoField
-						key={index}
-						index={index}
-						value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
+						index={0}
+						value_1={'Total'}
 						value_2={`$${amountFormatter(
-							parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
+							parseInt(bscNetworkEarnTvl) / 10 ** 18
 						)}`}
-						value_3={`${tokenInfo.apy.toPrecision(3)}%`}
+						value_3={`#${bscNetworkEarnInfo.length}`}
 						value_4={''}
 					/>
-				))}
+
+					{sortQuotes(bscNetworkEarnInfo).map((tokenInfo, index) => (
+						<InfoField
+							key={index}
+							index={index + 1}
+							value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
+							value_2={`$${amountFormatter(
+								parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
+							)}`}
+							value_3={`${tokenInfo.apy.toPrecision(3)}%`}
+							value_4={''}
+						/>
+					))}
+				</>
+			)}
+
 			<LinksField
 				twitterHandle="WOOnetwork"
 				discordHandle="woonetwork"

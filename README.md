@@ -25,3 +25,6 @@ Display general WOO Network info and sort WOOFi Earn Pairs by APY, TVL or Name. 
 1.  Staked on woox
 2.  Number of woox stakers
 3.  Total woo burned; woo burn wallet
+
+WOOFi TVL there; like a total BNB Chain and Total Avalanche
+Tabs for BNB Chain and Avalanche rather than scrolling

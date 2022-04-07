@@ -6,7 +6,7 @@ import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined'
 import SortIcon from '@mui/icons-material/Sort'
 
 interface YieldFieldHeaderProps {
-	logo: string
+	value_1: string
 	value_2: string
 	value_3: string
 	displayCalculatorCallback: any
@@ -15,15 +15,15 @@ interface YieldFieldHeaderProps {
 }
 
 const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
-	logo,
+	value_1,
 	value_2,
 	value_3,
 	displayCalculatorCallback,
 	sortingOptionCallback,
 	displayCalculator,
 }) => {
-	async function handleHeaderClick(sortingOtion) {
-		sortingOptionCallback(sortingOtion)
+	async function handleHeaderClick(sortingOption) {
+		sortingOptionCallback(sortingOption)
 	}
 
 	return (
@@ -32,10 +32,10 @@ const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
 				className="yield-field-header-value yield-field-header-logo"
 				onClick={() => handleHeaderClick('quote')}
 			>
-				<img src={logo} />
+				<div>{value_1}</div>
 			</div>
 			<div
-				className="yield-field-header-value"
+				className="yield-field-header-value yield-field-tooltip"
 				onClick={() => handleHeaderClick(value_2)}
 			>
 				{value_2 && (
@@ -69,7 +69,7 @@ const YieldFieldHeader: React.FC<YieldFieldHeaderProps> = ({
 							fontSize="small"
 							style={{
 								padding: '0',
-								margin: '0 0 -1px 0',
+								margin: '0 0 -1px 8px',
 							}}
 						/>
 					</IconButton>

@@ -8,7 +8,7 @@ const InfoField = ({ value_1, value_2, value_3, value_4, index }) => {
 			style={
 				parseInt(index) % 2
 					? { backgroundColor: '#313641' }
-					: { backgroundColor: '#3C404B', borderRadius: '4px' }
+					: { backgroundColor: '#3C404B', borderRadius: '5px' }
 			}
 		>
 			<div className="info-field-value info-field-symbol">{value_1}</div>

@@ -1,0 +1,35 @@
+.tabs-field {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 14px 0 4px;
+}
+.tab {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 20px;
+	width: 30%;
+	padding: 4px 2px;
+	margin: 0 4px 0 0;
+	border-radius: 14px;
+
+	font-size: 14px;
+	font-weight: 500;
+	color: #fefefe;
+	background-color: #3c404b;
+	cursor: pointer;
+}
+.tab:hover {
+	-webkit-filter: brightness(90%);
+	-webkit-transition: all 0.3s ease;
+}
+.tab-image {
+	height: 18px;
+	width: 18px;
+}
+.tab-name {
+	padding-left: 4px;
+}

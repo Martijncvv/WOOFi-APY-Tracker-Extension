@@ -12,6 +12,13 @@
 	font-size: 15px;
 	border-bottom: 1px solid #73bef4;
 	font-weight: bold;
+	background-color: #313641;
+}
+
+.interaction-field-values {
+	padding: 0 0 4px 0;
+	background-color: #3c404b;
+	border-radius: 0 0 5px 5px;
 }
 
 .interaction-field-row {
@@ -23,40 +30,55 @@
 }
 .input-field {
 	width: 30%;
+
 	padding: 2px 0;
 	font-size: 15px;
 }
+
 .input-field-amount {
 	width: 40%;
 }
 
 #input-amount {
 	width: 40px;
-	padding: 1px 2px;
+	padding: 1px 2px 1px 3px;
 
 	color: white;
-	background-color: #3c404b;
+	background-color: #494d55;
 
 	border: none;
 	border-radius: 4px;
+}
+#input-amount:focus {
+	outline: none;
 }
 
 #input-apy {
-	padding: 1px 2px;
 	width: 35px;
+	padding: 1px 2px 1px 3px;
 
 	color: white;
-	background-color: #3c404b;
+	background-color: #494d55;
 	border: none;
 	border-radius: 4px;
 }
+#input-apy:focus {
+	outline: none;
+}
 
 #input-days {
-	padding: 1px 2px;
 	width: 35px;
+	padding: 1px 2px 1px 3px;
 
 	color: white;
-	background-color: #3c404b;
+	background-color: #494d55;
 	border: none;
 	border-radius: 4px;
+}
+#input-days:focus {
+	outline: none;
+}
+
+#apy-profit-field {
+	padding: 3px 2px 0;
 }

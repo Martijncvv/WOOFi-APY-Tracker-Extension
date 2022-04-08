@@ -10,9 +10,8 @@ import WooNetworkFieldHeader from '../components/WooNetworkFieldHeader'
 import LinksField from '../components/LinksField'
 import InteractionField from '../components/InteractionField'
 import TabsField from '../components/TabsField'
-import ChainsDataProps from '../components/TabsField'
+import VolumeChartField from '../components/VolumeChartField'
 
-const BscIcon = require('../static/images/BNB_logo.png')
 const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
 
@@ -34,12 +33,14 @@ const App = () => {
 	const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = useState<any[]>([])
 	const [avaxNetworkEarnTvl, setAvaxNetworkEarnTvl] = useState<string>('')
 
-	const [stakedWooAmount, setStakedWooAmount] = useState<number>(0)
-	const [wooFi1DTotalVolume, setWooFi1DTotalVolume] = useState<number>(0)
+	const [stakedWooAmount, setStakedWooAmount] = useState<number>(null)
+	const [woofi1DTotalVolume, setWoofi1DTotalVolume] = useState<number>(null)
 	const [wooNetworkInfo, setWooNetworkInfo] = useState<any>()
 	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState<
 		number
-	>(0)
+	>(null)
+	const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = useState<number>(null)
+	const [woofiTVL, setWoofiTVL] = useState<number>(null)
 
 	const [displayCalculator, setDisplayCalculator] = React.useState<boolean>(
 		false
@@ -49,15 +50,15 @@ const App = () => {
 	const [activeTab, setActiveTab] = React.useState<string>('avax')
 
 	useEffect(() => {
+		getaWoofiEarnInfo()
 		getChainsInfo()
 		getFuturesInfo()
 		getWooNetworkInfo()
 		getWooFiVolumesInfo()
-		getaWooFiEarnInfo()
 		getStakedWooInfo()
 	}, [])
 
-	async function getaWooFiEarnInfo() {
+	async function getaWoofiEarnInfo() {
 		let bscNetworkFetchedInfo: any
 		let avaxNetworkFetchedInfo: any
 
@@ -83,6 +84,11 @@ const App = () => {
 		)
 		setAvaxNetworkEarnInfo(avaxTokensInfo)
 		setAvaxNetworkEarnTvl(avaxNetworkFetchedInfo.data.total_deposit)
+
+		setWoofiTVL(
+			bscNetworkFetchedInfo.data.total_deposit +
+				avaxNetworkFetchedInfo.data.total_deposit
+		)
 	}
 
 	async function getStakedWooInfo() {
@@ -112,14 +118,19 @@ const App = () => {
 
 	async function getFuturesInfo() {
 		let totalFuturesVolume = 0
+		let totalFuturesOI = 0
 		let wooNetworkfetchedFuturesInfo: any = await fetchWooNetworkFutureInfo()
-
+		console.log('wooNetworkfetchedFuturesInfo', wooNetworkfetchedFuturesInfo)
 		for (let i = 0; i < wooNetworkfetchedFuturesInfo.rows.length; i++) {
+			totalFuturesOI +=
+				wooNetworkfetchedFuturesInfo.rows[i]['open_interest'] *
+				wooNetworkfetchedFuturesInfo.rows[i]['mark_price']
 			totalFuturesVolume +=
 				wooNetworkfetchedFuturesInfo.rows[i]['24h_volumn'] *
 				wooNetworkfetchedFuturesInfo.rows[i]['mark_price']
 		}
 		setWooNetworkFuturesVolume(totalFuturesVolume)
+		setWooNetworkFuturesOi(totalFuturesOI)
 	}
 
 	async function getWooFiVolumesInfo() {
@@ -129,7 +140,7 @@ const App = () => {
 			parseInt(bsc1DVolumefetchedInfo.data['24h_volume_usd']) +
 			parseInt(avax1DVolumefetchedInfo.data['24h_volume_usd'])
 
-		setWooFi1DTotalVolume(totalWooFiVolume)
+		setWoofi1DTotalVolume(totalWooFiVolume)
 	}
 
 	const handleCalculatorChange = () => {
@@ -212,10 +223,22 @@ const App = () => {
 
 			<WooNetworkFieldHeader />
 			{wooNetworkInfo && (
+				<VolumeChartField
+					networkVolume={wooNetworkInfo.data.amount}
+					wooxVolume={
+						wooNetworkInfo.data.amount -
+						wooNetworkFuturesVolume -
+						woofi1DTotalVolume / 10 ** 18
+					}
+					woofiVolume={woofi1DTotalVolume / 10 ** 18}
+					futuresVolume={wooNetworkFuturesVolume}
+				/>
+			)}
+			{wooNetworkInfo && (
 				<InfoField
 					index={2}
 					value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
-					value_2={`$${amountFormatter(wooFi1DTotalVolume / 10 ** 18)}`}
+					value_2={`$${amountFormatter(woofi1DTotalVolume / 10 ** 18)}`}
 					value_3={`$${amountFormatter(wooNetworkFuturesVolume)} `}
 					value_4={`${amountFormatter(stakedWooAmount)} `}
 				/>
@@ -303,3 +326,25 @@ const App = () => {
 const root = document.createElement('div')
 document.body.appendChild(root)
 ReactDOM.render(<App />, root)
+
+// volumeWoofi		tvlWoofi		stakingAprWoofi	stakedWoofi
+// networkVolume	futureVolume	futuresOi		stakedWoox
+
+// networkVolume
+// volumeWoofi
+// futureVolume
+// stakedWoofi
+
+// futuresOi
+// stakedWoox
+// tvlWoofi
+// stakingAprWoofi
+
+// networkVolume volumeWoox volumeWoofi futureVolume
+
+// futuresOi
+// stakedWoofi
+// tvlWoofi
+// stakingAprWoofi
+
+// stakedWoox

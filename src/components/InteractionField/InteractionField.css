@@ -8,6 +8,7 @@
 }
 #interaction-field-header {
 	padding: 0 0 4px 4px;
+	margin: 0 5px;
 
 	font-size: 15px;
 	border-bottom: 1px solid #73bef4;
@@ -18,7 +19,8 @@
 .interaction-field-values {
 	padding: 0 0 4px 0;
 	background-color: #3c404b;
-	border-radius: 0 0 5px 5px;
+	/* border-radius: 0 0 5px 5px; */
+	border-radius: 5px;
 }
 
 .interaction-field-row {

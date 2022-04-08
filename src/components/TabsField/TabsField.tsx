@@ -17,9 +17,6 @@ const TabsField: React.FC<ChainsDataProps> = ({
 	activeTabCallback,
 	activeTab,
 }) => {
-	console.log('chainsInfo', chainsInfo)
-	console.log('activeTab', activeTab)
-
 	async function handleTabClick(chainId) {
 		activeTabCallback(chainId)
 	}

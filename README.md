@@ -16,9 +16,6 @@ Display general WOO Network info and sort WOOFi Earn Pairs by APY, TVL or Name. 
 <p align="center">
   <img src="woofi-extension-preview_3.png" alt="WOOFi APY Tracker" width="800" >
 </p>
-<p align="center">
-  <img src="woofi-extension-preview_4.png" alt="WOOFi APY Tracker" width="800" >
-</p>
 
 ### To Do
 

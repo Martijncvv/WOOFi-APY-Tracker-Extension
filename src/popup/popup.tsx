@@ -17,31 +17,23 @@ const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
 const FtmIcon = require('../static/images/FTM_logo.png')
 
 import {
-	fetchBscNetworkInfo,
-	fetchAvaxNetworkInfo,
-	fetchFtmNetworkInfo,
-	fetchWooBscStakedInfo,
-	fetchWooAvaxStakedInfo,
-	fetchWooFtmStakedInfo,
-	fetchBsc1DVolume,
-	fetchAvax1DVolume,
-	fetchFtm1DVolume,
+	fetchWooFiChainInfo,
+	fetchWooFiChainStakedInfo,
+	fetchWoofiChain1DVolume,
 	fetchWooNetworkInfo,
 	fetchWooNetworkFutureInfo,
 } from '../utils/api'
 import { amountFormatter } from '../utils/amountFormatter'
 
 const App = () => {
-	const [bscNetworkEarnInfo, setBscNetworkEarnInfo] = useState<any[]>([])
-	const [bscNetworkEarnTvl, setBscNetworkEarnTvl] = useState<string>('')
-	const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = useState<any[]>([])
-	const [avaxNetworkEarnTvl, setAvaxNetworkEarnTvl] = useState<string>('')
-	const [ftmNetworkEarnInfo, setFtmNetworkEarnInfo] = useState<any[]>([])
-	const [ftmNetworkEarnTvl, setFtmNetworkEarnTvl] = useState<string>('')
+	let chainIds = ['avax', 'bsc', 'fantom']
+	let chainNames = ['Avalanche', 'BNB Chain', 'Fantom']
+	let chainLogos = [AvaxIcon, BnbChainIcon, FtmIcon]
 
-	const [stakedWooAmount, setStakedWooAmount] = useState<number>(null)
-	const [woofi1DTotalVolume, setWoofi1DTotalVolume] = useState<number>(null)
 	const [wooNetworkInfo, setWooNetworkInfo] = useState<any>()
+	const [wooFiEarnInfo, setWooFiEarnInfo] = useState<any>({})
+	const [woofi1DTotalVolume, setWoofi1DTotalVolume] = useState<number>(null)
+	const [stakedWooAmount, setStakedWooAmount] = useState<number>(null)
 	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState<
 		number
 	>(null)
@@ -56,7 +48,7 @@ const App = () => {
 	const [activeTab, setActiveTab] = React.useState<string>('avax')
 
 	useEffect(() => {
-		getaWoofiEarnInfo()
+		getWoofiEarnInfo()
 		getChainsInfo()
 		getFuturesInfo()
 		getWooNetworkInfo()
@@ -64,90 +56,53 @@ const App = () => {
 		getStakedWooInfo()
 	}, [])
 
-	async function getaWoofiEarnInfo() {
-		let bscNetworkFetchedInfo: any
-		let avaxNetworkFetchedInfo: any
-		let ftmNetworkFetchedInfo: any
-
+	async function getWoofiEarnInfo() {
 		try {
-			;[
-				bscNetworkFetchedInfo,
-				avaxNetworkFetchedInfo,
-				ftmNetworkFetchedInfo,
-			] = await Promise.all([
-				fetchBscNetworkInfo(),
-				fetchAvaxNetworkInfo(),
-				fetchFtmNetworkInfo(),
-			])
-			console.log('bscNetworkFetchedInfo', bscNetworkFetchedInfo)
-			console.log('avaxNetworkFetchedInfo', avaxNetworkFetchedInfo)
-			console.log('ftmNetworkFetchedInfo', ftmNetworkFetchedInfo)
+			for (let chainId of chainIds) {
+				let chainEarnInfo = {}
+				chainEarnInfo[chainId] = await fetchWooFiChainInfo(chainId)
+
+				console.log('chainEarnInfo', chainEarnInfo)
+
+				setWooFiEarnInfo((wooFiEarnInfo) => ({
+					...wooFiEarnInfo,
+					...chainEarnInfo,
+				}))
+
+				setWoofiTVL(
+					(woofiTVL) => woofiTVL + chainEarnInfo[chainId].data.total_deposit
+				)
+			}
 		} catch (err) {
 			console.log(err)
 		}
-
-		let bscTokensInfo = Object.values(
-			bscNetworkFetchedInfo.data.auto_compounding
-		)
-		setBscNetworkEarnInfo(bscTokensInfo)
-		setBscNetworkEarnTvl(bscNetworkFetchedInfo.data.total_deposit)
-
-		let avaxTokensInfo = Object.values(
-			avaxNetworkFetchedInfo.data.auto_compounding
-		)
-		setAvaxNetworkEarnInfo(avaxTokensInfo)
-		setAvaxNetworkEarnTvl(avaxNetworkFetchedInfo.data.total_deposit)
-
-		let ftmTokensInfo = Object.values(
-			ftmNetworkFetchedInfo.data.auto_compounding
-		)
-		setFtmNetworkEarnInfo(ftmTokensInfo)
-		setFtmNetworkEarnTvl(ftmNetworkFetchedInfo.data.total_deposit)
-
-		setWoofiTVL(
-			bscNetworkFetchedInfo.data.total_deposit +
-				avaxNetworkFetchedInfo.data.total_deposit +
-				ftmNetworkFetchedInfo.data.total_deposit
-		)
 	}
 
 	async function getStakedWooInfo() {
-		let stakedWooBscFetchedInfo: any
-		let stakedWooAvaxFetchedInfo: any
-		let stakedWooFtmFetchedInfo: any
-
 		try {
-			;[
-				stakedWooBscFetchedInfo,
-				stakedWooAvaxFetchedInfo,
-				stakedWooFtmFetchedInfo,
-			] = await Promise.all([
-				fetchWooBscStakedInfo(),
-				fetchWooAvaxStakedInfo(),
-				fetchWooFtmStakedInfo(),
-			])
+			for (let chainId of chainIds) {
+				let stakedWooChainInfo: any = await fetchWooFiChainStakedInfo(chainId)
+
+				setStakedWooAmount(
+					(stakedWooAmount) =>
+						stakedWooAmount +
+						parseInt(stakedWooChainInfo.data.woo.total_staked) / 10 ** 18
+				)
+			}
 		} catch (err) {
 			console.log(err)
 		}
-		setStakedWooAmount(
-			(parseInt(stakedWooBscFetchedInfo.data.woo.total_staked) +
-				parseInt(stakedWooAvaxFetchedInfo.data.woo.total_staked) +
-				parseInt(stakedWooFtmFetchedInfo.data.woo.total_staked)) /
-				10 ** 18
-		)
 	}
 
 	async function getWooNetworkInfo() {
-		let wooNetworkfetchedInfo: any = await fetchWooNetworkInfo()
-
-		setWooNetworkInfo(wooNetworkfetchedInfo)
+		setWooNetworkInfo(await fetchWooNetworkInfo())
 	}
 
 	async function getFuturesInfo() {
 		let totalFuturesVolume = 0
 		let totalFuturesOI = 0
 		let wooNetworkfetchedFuturesInfo: any = await fetchWooNetworkFutureInfo()
-		console.log('wooNetworkfetchedFuturesInfo', wooNetworkfetchedFuturesInfo)
+
 		for (let i = 0; i < wooNetworkfetchedFuturesInfo.rows.length; i++) {
 			totalFuturesOI +=
 				wooNetworkfetchedFuturesInfo.rows[i]['open_interest'] *
@@ -161,16 +116,15 @@ const App = () => {
 	}
 
 	async function getWooFiVolumesInfo() {
-		let bsc1DVolumefetchedInfo: any = await fetchBsc1DVolume()
-		let avax1DVolumefetchedInfo: any = await fetchAvax1DVolume()
-		let ftm1DVolumefetchedInfo: any = await fetchFtm1DVolume()
+		for (let chainId of chainIds) {
+			let chain1DVolumeInfo: any = await fetchWoofiChain1DVolume(chainId)
 
-		let totalWooFiVolume =
-			parseInt(bsc1DVolumefetchedInfo.data['24h_volume_usd']) +
-			parseInt(avax1DVolumefetchedInfo.data['24h_volume_usd']) +
-			parseInt(ftm1DVolumefetchedInfo.data['24h_volume_usd'])
-
-		setWoofi1DTotalVolume(totalWooFiVolume)
+			setWoofi1DTotalVolume(
+				(woofi1DTotalVolume) =>
+					woofi1DTotalVolume +
+					parseInt(chain1DVolumeInfo.data['24h_volume_usd'])
+			)
+		}
 	}
 
 	const handleCalculatorChange = () => {
@@ -232,10 +186,6 @@ const App = () => {
 	}
 
 	const getChainsInfo = () => {
-		let chainIds = ['avax', 'bnb', 'ftm']
-		let chainNames = ['Avalanche', 'BNB Chain', 'Fantom']
-		let chainLogos = [AvaxIcon, BnbChainIcon, FtmIcon]
-
 		for (let i = 0; i < chainIds.length; i++) {
 			setChainsInfo((chainsInfo) => [
 				...chainsInfo,
@@ -286,73 +236,25 @@ const App = () => {
 				sortingOptionCallback={handleSortingChange}
 				displayCalculator={displayCalculator}
 			/>
-			{activeTab === 'avax' && avaxNetworkEarnInfo.length > 0 && (
+
+			{Object.keys(wooFiEarnInfo).length > 0 && (
 				<>
 					<InfoField
 						index={0}
 						value_1={'Total'}
 						value_2={`$${amountFormatter(
-							parseInt(avaxNetworkEarnTvl) / 10 ** 18
+							parseInt(wooFiEarnInfo[activeTab].data.total_deposit) / 10 ** 18
 						)}`}
-						value_3={`#${avaxNetworkEarnInfo.length}`}
+						value_3={`#${
+							Object.values(wooFiEarnInfo[activeTab].data.auto_compounding)
+								.length
+						}`}
 						value_4={''}
 					/>
 
-					{sortQuotes(avaxNetworkEarnInfo).map((tokenInfo, index) => (
-						<InfoField
-							key={index}
-							index={index + 1}
-							value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
-							value_2={`$${amountFormatter(
-								parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
-							)}`}
-							value_3={`${tokenInfo.apy.toPrecision(3)}%`}
-							value_4={''}
-						/>
-					))}
-				</>
-			)}
-
-			{activeTab === 'bnb' && bscNetworkEarnInfo.length > 0 && (
-				<>
-					<InfoField
-						index={0}
-						value_1={'Total'}
-						value_2={`$${amountFormatter(
-							parseInt(bscNetworkEarnTvl) / 10 ** 18
-						)}`}
-						value_3={`#${bscNetworkEarnInfo.length}`}
-						value_4={''}
-					/>
-
-					{sortQuotes(bscNetworkEarnInfo).map((tokenInfo, index) => (
-						<InfoField
-							key={index}
-							index={index + 1}
-							value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
-							value_2={`$${amountFormatter(
-								parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
-							)}`}
-							value_3={`${tokenInfo.apy.toPrecision(3)}%`}
-							value_4={''}
-						/>
-					))}
-				</>
-			)}
-
-			{activeTab === 'ftm' && ftmNetworkEarnInfo.length > 0 && (
-				<>
-					<InfoField
-						index={0}
-						value_1={'Total'}
-						value_2={`$${amountFormatter(
-							parseInt(ftmNetworkEarnTvl) / 10 ** 18
-						)}`}
-						value_3={`#${ftmNetworkEarnInfo.length}`}
-						value_4={''}
-					/>
-
-					{sortQuotes(ftmNetworkEarnInfo).map((tokenInfo, index) => (
+					{sortQuotes(
+						Object.values(wooFiEarnInfo[activeTab].data.auto_compounding)
+					).map((tokenInfo, index) => (
 						<InfoField
 							key={index}
 							index={index + 1}

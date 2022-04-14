@@ -1131,15 +1131,13 @@ const FtmIcon = __webpack_require__(/*! ../static/images/FTM_logo.png */ "./src/
 
 
 const App = () => {
-    const [bscNetworkEarnInfo, setBscNetworkEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [bscNetworkEarnTvl, setBscNetworkEarnTvl] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-    const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [avaxNetworkEarnTvl, setAvaxNetworkEarnTvl] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-    const [ftmNetworkEarnInfo, setFtmNetworkEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    const [ftmNetworkEarnTvl, setFtmNetworkEarnTvl] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-    const [stakedWooAmount, setStakedWooAmount] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const [woofi1DTotalVolume, setWoofi1DTotalVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    let chainIds = ['avax', 'bsc', 'fantom'];
+    let chainNames = ['Avalanche', 'BNB Chain', 'Fantom'];
+    let chainLogos = [AvaxIcon, BnbChainIcon, FtmIcon];
     const [wooNetworkInfo, setWooNetworkInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
+    const [wooFiEarnInfo, setWooFiEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
+    const [woofi1DTotalVolume, setWoofi1DTotalVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [stakedWooAmount, setStakedWooAmount] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [woofiTVL, setWoofiTVL] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
@@ -1148,80 +1146,46 @@ const App = () => {
     const [chainsInfo, setChainsInfo] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
     const [activeTab, setActiveTab] = react__WEBPACK_IMPORTED_MODULE_0__.useState('avax');
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        getaWoofiEarnInfo();
+        getWoofiEarnInfo();
         getChainsInfo();
         getFuturesInfo();
         getWooNetworkInfo();
         getWooFiVolumesInfo();
         getStakedWooInfo();
     }, []);
-    function getaWoofiEarnInfo() {
+    function getWoofiEarnInfo() {
         return __awaiter(this, void 0, void 0, function* () {
-            let bscNetworkFetchedInfo;
-            let avaxNetworkFetchedInfo;
-            let ftmNetworkFetchedInfo;
             try {
-                ;
-                [
-                    bscNetworkFetchedInfo,
-                    avaxNetworkFetchedInfo,
-                    ftmNetworkFetchedInfo,
-                ] = yield Promise.all([
-                    (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchBscNetworkInfo)(),
-                    (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchAvaxNetworkInfo)(),
-                    (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchFtmNetworkInfo)(),
-                ]);
-                console.log('bscNetworkFetchedInfo', bscNetworkFetchedInfo);
-                console.log('avaxNetworkFetchedInfo', avaxNetworkFetchedInfo);
-                console.log('ftmNetworkFetchedInfo', ftmNetworkFetchedInfo);
+                for (let chainId of chainIds) {
+                    let chainEarnInfo = {};
+                    chainEarnInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchWooFiChainInfo)(chainId);
+                    console.log('chainEarnInfo', chainEarnInfo);
+                    setWooFiEarnInfo((wooFiEarnInfo) => (Object.assign(Object.assign({}, wooFiEarnInfo), chainEarnInfo)));
+                    setWoofiTVL((woofiTVL) => woofiTVL + chainEarnInfo[chainId].data.total_deposit);
+                }
             }
             catch (err) {
                 console.log(err);
             }
-            let bscTokensInfo = Object.values(bscNetworkFetchedInfo.data.auto_compounding);
-            setBscNetworkEarnInfo(bscTokensInfo);
-            setBscNetworkEarnTvl(bscNetworkFetchedInfo.data.total_deposit);
-            let avaxTokensInfo = Object.values(avaxNetworkFetchedInfo.data.auto_compounding);
-            setAvaxNetworkEarnInfo(avaxTokensInfo);
-            setAvaxNetworkEarnTvl(avaxNetworkFetchedInfo.data.total_deposit);
-            let ftmTokensInfo = Object.values(ftmNetworkFetchedInfo.data.auto_compounding);
-            setFtmNetworkEarnInfo(ftmTokensInfo);
-            setFtmNetworkEarnTvl(ftmNetworkFetchedInfo.data.total_deposit);
-            setWoofiTVL(bscNetworkFetchedInfo.data.total_deposit +
-                avaxNetworkFetchedInfo.data.total_deposit +
-                ftmNetworkFetchedInfo.data.total_deposit);
         });
     }
     function getStakedWooInfo() {
         return __awaiter(this, void 0, void 0, function* () {
-            let stakedWooBscFetchedInfo;
-            let stakedWooAvaxFetchedInfo;
-            let stakedWooFtmFetchedInfo;
             try {
-                ;
-                [
-                    stakedWooBscFetchedInfo,
-                    stakedWooAvaxFetchedInfo,
-                    stakedWooFtmFetchedInfo,
-                ] = yield Promise.all([
-                    (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchWooBscStakedInfo)(),
-                    (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchWooAvaxStakedInfo)(),
-                    (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchWooFtmStakedInfo)(),
-                ]);
+                for (let chainId of chainIds) {
+                    let stakedWooChainInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchWooFiChainStakedInfo)(chainId);
+                    setStakedWooAmount((stakedWooAmount) => stakedWooAmount +
+                        parseInt(stakedWooChainInfo.data.woo.total_staked) / Math.pow(10, 18));
+                }
             }
             catch (err) {
                 console.log(err);
             }
-            setStakedWooAmount((parseInt(stakedWooBscFetchedInfo.data.woo.total_staked) +
-                parseInt(stakedWooAvaxFetchedInfo.data.woo.total_staked) +
-                parseInt(stakedWooFtmFetchedInfo.data.woo.total_staked)) /
-                Math.pow(10, 18));
         });
     }
     function getWooNetworkInfo() {
         return __awaiter(this, void 0, void 0, function* () {
-            let wooNetworkfetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchWooNetworkInfo)();
-            setWooNetworkInfo(wooNetworkfetchedInfo);
+            setWooNetworkInfo(yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchWooNetworkInfo)());
         });
     }
     function getFuturesInfo() {
@@ -1229,7 +1193,6 @@ const App = () => {
             let totalFuturesVolume = 0;
             let totalFuturesOI = 0;
             let wooNetworkfetchedFuturesInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchWooNetworkFutureInfo)();
-            console.log('wooNetworkfetchedFuturesInfo', wooNetworkfetchedFuturesInfo);
             for (let i = 0; i < wooNetworkfetchedFuturesInfo.rows.length; i++) {
                 totalFuturesOI +=
                     wooNetworkfetchedFuturesInfo.rows[i]['open_interest'] *
@@ -1244,13 +1207,11 @@ const App = () => {
     }
     function getWooFiVolumesInfo() {
         return __awaiter(this, void 0, void 0, function* () {
-            let bsc1DVolumefetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchBsc1DVolume)();
-            let avax1DVolumefetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchAvax1DVolume)();
-            let ftm1DVolumefetchedInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchFtm1DVolume)();
-            let totalWooFiVolume = parseInt(bsc1DVolumefetchedInfo.data['24h_volume_usd']) +
-                parseInt(avax1DVolumefetchedInfo.data['24h_volume_usd']) +
-                parseInt(ftm1DVolumefetchedInfo.data['24h_volume_usd']);
-            setWoofi1DTotalVolume(totalWooFiVolume);
+            for (let chainId of chainIds) {
+                let chain1DVolumeInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_12__.fetchWoofiChain1DVolume)(chainId);
+                setWoofi1DTotalVolume((woofi1DTotalVolume) => woofi1DTotalVolume +
+                    parseInt(chain1DVolumeInfo.data['24h_volume_usd']));
+            }
         });
     }
     const handleCalculatorChange = () => {
@@ -1302,9 +1263,6 @@ const App = () => {
         return 0;
     };
     const getChainsInfo = () => {
-        let chainIds = ['avax', 'bnb', 'ftm'];
-        let chainNames = ['Avalanche', 'BNB Chain', 'Fantom'];
-        let chainLogos = [AvaxIcon, BnbChainIcon, FtmIcon];
         for (let i = 0; i < chainIds.length; i++) {
             setChainsInfo((chainsInfo) => [
                 ...chainsInfo,
@@ -1322,15 +1280,10 @@ const App = () => {
         displayCalculator && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InteractionField__WEBPACK_IMPORTED_MODULE_9__.default, null),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TabsField__WEBPACK_IMPORTED_MODULE_10__.default, { chainsInfo: chainsInfo, activeTabCallback: handleActiveTabChange, activeTab: activeTab }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { value_1: `vault`, value_2: 'tvl', value_3: 'apy', displayCalculatorCallback: handleCalculatorChange, sortingOptionCallback: handleSortingChange, displayCalculator: displayCalculator }),
-        activeTab === 'avax' && avaxNetworkEarnInfo.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 0, value_1: 'Total', value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_13__.amountFormatter)(parseInt(avaxNetworkEarnTvl) / Math.pow(10, 18))}`, value_3: `#${avaxNetworkEarnInfo.length}`, value_4: '' }),
-            sortQuotes(avaxNetworkEarnInfo).map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index + 1, value_1: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_13__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, tokenInfo.decimals))}`, value_3: `${tokenInfo.apy.toPrecision(3)}%`, value_4: '' }))))),
-        activeTab === 'bnb' && bscNetworkEarnInfo.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 0, value_1: 'Total', value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_13__.amountFormatter)(parseInt(bscNetworkEarnTvl) / Math.pow(10, 18))}`, value_3: `#${bscNetworkEarnInfo.length}`, value_4: '' }),
-            sortQuotes(bscNetworkEarnInfo).map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index + 1, value_1: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_13__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, tokenInfo.decimals))}`, value_3: `${tokenInfo.apy.toPrecision(3)}%`, value_4: '' }))))),
-        activeTab === 'ftm' && ftmNetworkEarnInfo.length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 0, value_1: 'Total', value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_13__.amountFormatter)(parseInt(ftmNetworkEarnTvl) / Math.pow(10, 18))}`, value_3: `#${ftmNetworkEarnInfo.length}`, value_4: '' }),
-            sortQuotes(ftmNetworkEarnInfo).map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index + 1, value_1: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_13__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, tokenInfo.decimals))}`, value_3: `${tokenInfo.apy.toPrecision(3)}%`, value_4: '' }))))),
+        Object.keys(wooFiEarnInfo).length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 0, value_1: 'Total', value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_13__.amountFormatter)(parseInt(wooFiEarnInfo[activeTab].data.total_deposit) / Math.pow(10, 18))}`, value_3: `#${Object.values(wooFiEarnInfo[activeTab].data.auto_compounding)
+                    .length}`, value_4: '' }),
+            sortQuotes(Object.values(wooFiEarnInfo[activeTab].data.auto_compounding)).map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index + 1, value_1: tokenInfo.symbol.replaceAll('_', '-').replace('-LP', ''), value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_13__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, tokenInfo.decimals))}`, value_3: `${tokenInfo.apy.toPrecision(3)}%`, value_4: '' }))))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_LinksField__WEBPACK_IMPORTED_MODULE_8__.default, { twitterHandle: "WOOnetwork", discordHandle: "woonetwork", telegramHandle: "woonetwork" }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FooterField__WEBPACK_IMPORTED_MODULE_3__.default, null)));
 };
@@ -1399,15 +1352,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "fetchWooNetworkInfo": () => (/* binding */ fetchWooNetworkInfo),
 /* harmony export */   "fetchWooNetworkFutureInfo": () => (/* binding */ fetchWooNetworkFutureInfo),
-/* harmony export */   "fetchBscNetworkInfo": () => (/* binding */ fetchBscNetworkInfo),
-/* harmony export */   "fetchAvaxNetworkInfo": () => (/* binding */ fetchAvaxNetworkInfo),
-/* harmony export */   "fetchFtmNetworkInfo": () => (/* binding */ fetchFtmNetworkInfo),
-/* harmony export */   "fetchWooBscStakedInfo": () => (/* binding */ fetchWooBscStakedInfo),
-/* harmony export */   "fetchWooAvaxStakedInfo": () => (/* binding */ fetchWooAvaxStakedInfo),
-/* harmony export */   "fetchWooFtmStakedInfo": () => (/* binding */ fetchWooFtmStakedInfo),
-/* harmony export */   "fetchAvax1DVolume": () => (/* binding */ fetchAvax1DVolume),
-/* harmony export */   "fetchBsc1DVolume": () => (/* binding */ fetchBsc1DVolume),
-/* harmony export */   "fetchFtm1DVolume": () => (/* binding */ fetchFtm1DVolume)
+/* harmony export */   "fetchWooFiChainInfo": () => (/* binding */ fetchWooFiChainInfo),
+/* harmony export */   "fetchWooFiChainStakedInfo": () => (/* binding */ fetchWooFiChainStakedInfo),
+/* harmony export */   "fetchWoofiChain1DVolume": () => (/* binding */ fetchWoofiChain1DVolume)
 /* harmony export */ });
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -1418,15 +1365,9 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const WOOFI_BSC_NETWORK_API = 'https://fi-api.woo.org/yield?&network=bsc';
-const WOOFI_BSC_STAKING_API = 'https://fi-api.woo.org/staking?network=bsc';
-const WOOFI_BSC_1D_VOLUME_API = 'https://fi-api.woo.org/cumulate_stat?period=1m&network=bsc';
-const WOOFI_AVAX_NETWORK_API = 'https://fi-api.woo.org/yield?&network=avax';
-const WOOFI_AVAX_STAKING_API = 'https://fi-api.woo.org/staking?network=avax';
-const WOOFI_AVAX_1D_VOLUME_API = 'https://fi-api.woo.org/cumulate_stat?period=1m&network=avax';
-const WOOFI_FTM_NETWORK_API = 'https://fi-api.woo.org/yield?&network=fantom';
-const WOOFI_FTM_STAKING_API = 'https://fi-api.woo.org/staking?network=fantom';
-const WOOFI_FTM_1D_VOLUME_API = 'https://fi-api.woo.org/cumulate_stat?period=1m&network=fantom';
+const WOOFI_CHAIN_INFO_API = 'https://fi-api.woo.org/yield?&network=';
+const WOOFI_CHAIN_STAKING_API = 'https://fi-api.woo.org/staking?network=';
+const WOOFI_CHAIN_1D_VOLUME_API = 'https://fi-api.woo.org/cumulate_stat?period=1m&network=';
 const WOONETWORK_TOTAL_VOLUME_API = 'https://sapi.woo.org/wootrade/data';
 const WOONETWORK_FUTURES_API = 'https://api.woo.org/v1/public/futures';
 function fetchWooNetworkInfo() {
@@ -1449,91 +1390,31 @@ function fetchWooNetworkFutureInfo() {
         return data;
     });
 }
-function fetchBscNetworkInfo() {
+function fetchWooFiChainInfo(chain) {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOOFI_BSC_NETWORK_API);
+        const res = yield fetch(WOOFI_CHAIN_INFO_API + chain);
         if (!res.ok) {
-            throw new Error(`Fetch error, bsc network info}`);
+            throw new Error(`Fetch error, ${chain} network info}`);
         }
         const data = yield res.json();
         return data;
     });
 }
-function fetchAvaxNetworkInfo() {
+function fetchWooFiChainStakedInfo(chain) {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOOFI_AVAX_NETWORK_API);
+        const res = yield fetch(WOOFI_CHAIN_STAKING_API + chain);
         if (!res.ok) {
-            throw new Error(`Fetch error, avax network info}`);
+            throw new Error(`Fetch error, ${chain} staking info`);
         }
         const data = yield res.json();
         return data;
     });
 }
-function fetchFtmNetworkInfo() {
+function fetchWoofiChain1DVolume(chain) {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOOFI_FTM_NETWORK_API);
+        const res = yield fetch(WOOFI_CHAIN_1D_VOLUME_API + chain);
         if (!res.ok) {
-            throw new Error(`Fetch error, Ftm network info}`);
-        }
-        const data = yield res.json();
-        return data;
-    });
-}
-function fetchWooBscStakedInfo() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOOFI_BSC_STAKING_API);
-        if (!res.ok) {
-            throw new Error(`Fetch error, Bsc staking info}`);
-        }
-        const data = yield res.json();
-        return data;
-    });
-}
-function fetchWooAvaxStakedInfo() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOOFI_AVAX_STAKING_API);
-        if (!res.ok) {
-            throw new Error(`Fetch error, Avax staking info}`);
-        }
-        const data = yield res.json();
-        return data;
-    });
-}
-function fetchWooFtmStakedInfo() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOOFI_FTM_STAKING_API);
-        if (!res.ok) {
-            throw new Error(`Fetch error, Ftm staking info}`);
-        }
-        const data = yield res.json();
-        return data;
-    });
-}
-function fetchAvax1DVolume() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOOFI_AVAX_1D_VOLUME_API);
-        if (!res.ok) {
-            throw new Error(`Fetch error, Avax staking info}`);
-        }
-        const data = yield res.json();
-        return data;
-    });
-}
-function fetchBsc1DVolume() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOOFI_BSC_1D_VOLUME_API);
-        if (!res.ok) {
-            throw new Error(`Fetch error, Avax staking info}`);
-        }
-        const data = yield res.json();
-        return data;
-    });
-}
-function fetchFtm1DVolume() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOOFI_FTM_1D_VOLUME_API);
-        if (!res.ok) {
-            throw new Error(`Fetch error, Ftm staking info}`);
+            throw new Error(`Fetch error, ${chain} staking info}`);
         }
         const data = yield res.json();
         return data;

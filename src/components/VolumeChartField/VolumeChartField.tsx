@@ -17,10 +17,10 @@ const VolumeChartField: React.FC<VolumeChartFieldProps> = ({
 	woofiVolume,
 	futuresVolume,
 }) => {
-	console.log('value_1', networkVolume)
-	console.log('value_2', wooxVolume)
-	console.log('value_3', woofiVolume)
-	console.log('value_4', futuresVolume)
+	// console.log('value_1', networkVolume)
+	// console.log('value_2', wooxVolume)
+	// console.log('value_3', woofiVolume)
+	// console.log('value_4', futuresVolume)
 
 	const data = [
 		{
@@ -31,7 +31,7 @@ const VolumeChartField: React.FC<VolumeChartFieldProps> = ({
 		},
 	]
 
-	const COLORS = ['#4e8ff7', '#e0a555', '#f0f0f0']
+	// const COLORS = ['#4e8ff7', '#e0a555', '#f0f0f0']
 
 	return (
 		<div className="volume-chart-field">

@@ -14,14 +14,18 @@ import VolumeChartField from '../components/VolumeChartField'
 
 const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
+const FtmIcon = require('../static/images/FTM_logo.png')
 
 import {
 	fetchBscNetworkInfo,
-	fetchWooBscStakedInfo,
-	fetchBsc1DVolume,
 	fetchAvaxNetworkInfo,
+	fetchFtmNetworkInfo,
+	fetchWooBscStakedInfo,
 	fetchWooAvaxStakedInfo,
+	fetchWooFtmStakedInfo,
+	fetchBsc1DVolume,
 	fetchAvax1DVolume,
+	fetchFtm1DVolume,
 	fetchWooNetworkInfo,
 	fetchWooNetworkFutureInfo,
 } from '../utils/api'
@@ -32,6 +36,8 @@ const App = () => {
 	const [bscNetworkEarnTvl, setBscNetworkEarnTvl] = useState<string>('')
 	const [avaxNetworkEarnInfo, setAvaxNetworkEarnInfo] = useState<any[]>([])
 	const [avaxNetworkEarnTvl, setAvaxNetworkEarnTvl] = useState<string>('')
+	const [ftmNetworkEarnInfo, setFtmNetworkEarnInfo] = useState<any[]>([])
+	const [ftmNetworkEarnTvl, setFtmNetworkEarnTvl] = useState<string>('')
 
 	const [stakedWooAmount, setStakedWooAmount] = useState<number>(null)
 	const [woofi1DTotalVolume, setWoofi1DTotalVolume] = useState<number>(null)
@@ -61,14 +67,21 @@ const App = () => {
 	async function getaWoofiEarnInfo() {
 		let bscNetworkFetchedInfo: any
 		let avaxNetworkFetchedInfo: any
+		let ftmNetworkFetchedInfo: any
 
 		try {
-			;[bscNetworkFetchedInfo, avaxNetworkFetchedInfo] = await Promise.all([
+			;[
+				bscNetworkFetchedInfo,
+				avaxNetworkFetchedInfo,
+				ftmNetworkFetchedInfo,
+			] = await Promise.all([
 				fetchBscNetworkInfo(),
 				fetchAvaxNetworkInfo(),
+				fetchFtmNetworkInfo(),
 			])
 			console.log('bscNetworkFetchedInfo', bscNetworkFetchedInfo)
 			console.log('avaxNetworkFetchedInfo', avaxNetworkFetchedInfo)
+			console.log('ftmNetworkFetchedInfo', ftmNetworkFetchedInfo)
 		} catch (err) {
 			console.log(err)
 		}
@@ -85,27 +98,41 @@ const App = () => {
 		setAvaxNetworkEarnInfo(avaxTokensInfo)
 		setAvaxNetworkEarnTvl(avaxNetworkFetchedInfo.data.total_deposit)
 
+		let ftmTokensInfo = Object.values(
+			ftmNetworkFetchedInfo.data.auto_compounding
+		)
+		setFtmNetworkEarnInfo(ftmTokensInfo)
+		setFtmNetworkEarnTvl(ftmNetworkFetchedInfo.data.total_deposit)
+
 		setWoofiTVL(
 			bscNetworkFetchedInfo.data.total_deposit +
-				avaxNetworkFetchedInfo.data.total_deposit
+				avaxNetworkFetchedInfo.data.total_deposit +
+				ftmNetworkFetchedInfo.data.total_deposit
 		)
 	}
 
 	async function getStakedWooInfo() {
 		let stakedWooBscFetchedInfo: any
 		let stakedWooAvaxFetchedInfo: any
+		let stakedWooFtmFetchedInfo: any
 
 		try {
-			;[stakedWooBscFetchedInfo, stakedWooAvaxFetchedInfo] = await Promise.all([
+			;[
+				stakedWooBscFetchedInfo,
+				stakedWooAvaxFetchedInfo,
+				stakedWooFtmFetchedInfo,
+			] = await Promise.all([
 				fetchWooBscStakedInfo(),
 				fetchWooAvaxStakedInfo(),
+				fetchWooFtmStakedInfo(),
 			])
 		} catch (err) {
 			console.log(err)
 		}
 		setStakedWooAmount(
 			(parseInt(stakedWooBscFetchedInfo.data.woo.total_staked) +
-				parseInt(stakedWooAvaxFetchedInfo.data.woo.total_staked)) /
+				parseInt(stakedWooAvaxFetchedInfo.data.woo.total_staked) +
+				parseInt(stakedWooFtmFetchedInfo.data.woo.total_staked)) /
 				10 ** 18
 		)
 	}
@@ -136,9 +163,12 @@ const App = () => {
 	async function getWooFiVolumesInfo() {
 		let bsc1DVolumefetchedInfo: any = await fetchBsc1DVolume()
 		let avax1DVolumefetchedInfo: any = await fetchAvax1DVolume()
+		let ftm1DVolumefetchedInfo: any = await fetchFtm1DVolume()
+
 		let totalWooFiVolume =
 			parseInt(bsc1DVolumefetchedInfo.data['24h_volume_usd']) +
-			parseInt(avax1DVolumefetchedInfo.data['24h_volume_usd'])
+			parseInt(avax1DVolumefetchedInfo.data['24h_volume_usd']) +
+			parseInt(ftm1DVolumefetchedInfo.data['24h_volume_usd'])
 
 		setWoofi1DTotalVolume(totalWooFiVolume)
 	}
@@ -149,15 +179,12 @@ const App = () => {
 
 	const handleSortingChange = (_sortingOption) => {
 		setSortingOption(_sortingOption)
-		// console.log('_sortingOption', _sortingOption)
 	}
 	const handleActiveTabChange = (chainId) => {
 		setActiveTab(chainId)
 	}
 
 	const sortQuotes = (quotes) => {
-		// console.log('quotes', quotes)
-		// console.log('sortingOption', sortingOption)
 		switch (sortingOption) {
 			case 'tvl':
 				return quotes.sort(compareTvl)
@@ -205,9 +232,9 @@ const App = () => {
 	}
 
 	const getChainsInfo = () => {
-		let chainIds = ['avax', 'bnb']
-		let chainNames = ['Avalanche', 'BNB Chain']
-		let chainLogos = [AvaxIcon, BnbChainIcon]
+		let chainIds = ['avax', 'bnb', 'ftm']
+		let chainNames = ['Avalanche', 'BNB Chain', 'Fantom']
+		let chainLogos = [AvaxIcon, BnbChainIcon, FtmIcon]
 
 		for (let i = 0; i < chainIds.length; i++) {
 			setChainsInfo((chainsInfo) => [
@@ -313,6 +340,33 @@ const App = () => {
 				</>
 			)}
 
+			{activeTab === 'ftm' && ftmNetworkEarnInfo.length > 0 && (
+				<>
+					<InfoField
+						index={0}
+						value_1={'Total'}
+						value_2={`$${amountFormatter(
+							parseInt(ftmNetworkEarnTvl) / 10 ** 18
+						)}`}
+						value_3={`#${ftmNetworkEarnInfo.length}`}
+						value_4={''}
+					/>
+
+					{sortQuotes(ftmNetworkEarnInfo).map((tokenInfo, index) => (
+						<InfoField
+							key={index}
+							index={index + 1}
+							value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
+							value_2={`$${amountFormatter(
+								parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
+							)}`}
+							value_3={`${tokenInfo.apy.toPrecision(3)}%`}
+							value_4={''}
+						/>
+					))}
+				</>
+			)}
+
 			<LinksField
 				twitterHandle="WOOnetwork"
 				discordHandle="woonetwork"
@@ -340,11 +394,9 @@ ReactDOM.render(<App />, root)
 // tvlWoofi
 // stakingAprWoofi
 
-// networkVolume volumeWoox volumeWoofi futureVolume
+// volumeWoox 	volumeWoofi		futureVolume
+//				networkVolume
 
-// futuresOi
-// stakedWoofi
-// tvlWoofi
-// stakingAprWoofi
+// tvlWoofi 	stakedWoofi		futuresOi
 
-// stakedWoox
+// stakingAprWoofi stakedWoox

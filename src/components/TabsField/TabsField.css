@@ -1,9 +1,10 @@
 .tabs-field {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 
 	padding: 14px 0 4px;
+	margin: 0 16px;
 }
 .tab {
 	display: flex;
@@ -11,9 +12,9 @@
 	justify-content: center;
 
 	height: 20px;
-	width: 30%;
-	padding: 4px 2px;
-	margin: 0 4px 0 0;
+	min-width: 30%;
+	padding: 4px 4px 2px;
+	/* margin: 0 2px 0 0; */
 	border-radius: 14px;
 
 	font-size: 14px;

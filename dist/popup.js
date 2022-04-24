@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 11px 0 7px;\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0 0 0 3px;\n\twidth: 30%;\n\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n\ttext-overflow: ellipsis;\n\twhite-space: nowrap;\n}\n.info-field-symbol {\n\twidth: 35%;\n\tpadding-left: 8px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/InfoField/InfoField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,mBAAmB;AACpB;;AAEA;CACC,YAAY;CACZ,SAAS;CACT,kBAAkB;CAClB,UAAU;;CAEV,eAAe;CACf,0BAA0B;CAC1B,uBAAuB;CACvB,mBAAmB;AACpB;AACA;CACC,UAAU;CACV,iBAAiB;AAClB","sourcesContent":[".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 11px 0 7px;\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0 0 0 3px;\n\twidth: 30%;\n\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n\ttext-overflow: ellipsis;\n\twhite-space: nowrap;\n}\n.info-field-symbol {\n\twidth: 35%;\n\tpadding-left: 8px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 11px 4px 7px 0;\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0 0 0 3px;\n\twidth: 30%;\n\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n\ttext-overflow: ellipsis;\n\twhite-space: nowrap;\n}\n.info-field-symbol {\n\twidth: 35%;\n\tpadding-left: 8px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/InfoField/InfoField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,uBAAuB;AACxB;;AAEA;CACC,YAAY;CACZ,SAAS;CACT,kBAAkB;CAClB,UAAU;;CAEV,eAAe;CACf,0BAA0B;CAC1B,uBAAuB;CACvB,mBAAmB;AACpB;AACA;CACC,UAAU;CACV,iBAAiB;AAClB","sourcesContent":[".info-field-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 11px 4px 7px 0;\n}\n\n.info-field-value {\n\tcolor: white;\n\tmargin: 0;\n\tpadding: 0 0 0 3px;\n\twidth: 30%;\n\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n\ttext-overflow: ellipsis;\n\twhite-space: nowrap;\n}\n.info-field-symbol {\n\twidth: 35%;\n\tpadding-left: 8px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -151,7 +151,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".staking-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\n\tmargin: 0 19px;\n\tpadding: 10px 0 0 6px;\n\theight: 23px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.staking-field-header-value {\n\twidth: 100%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n\n.tooltip {\n\tposition: relative;\n\tdisplay: inline-block;\n}\n\n.tooltip .tooltiptext {\n\tvisibility: hidden;\n\n\tbottom: 100%;\n\tleft: 50%;\n\twidth: 80px;\n\tmargin-left: -40px;\n\tpadding: 6px 2px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n", "",{"version":3,"sources":["webpack://./src/components/StakingFieldHeader/StakingFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;;CAE9B,cAAc;CACd,qBAAqB;CACrB,YAAY;;CAEZ,cAAc;CACd,yBAAyB;CACzB,gCAAgC;AACjC;;AAEA;CACC,WAAW;CACX,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;;AAEA;CACC,kBAAkB;CAClB,qBAAqB;AACtB;;AAEA;CACC,kBAAkB;;CAElB,YAAY;CACZ,SAAS;CACT,WAAW;CACX,kBAAkB;CAClB,gBAAgB;;CAEhB,kBAAkB;CAClB,2BAA2B;;CAE3B,mBAAmB;CACnB,eAAe;CACf,WAAW;CACX,kBAAkB;CAClB,oBAAoB;;CAEpB,kBAAkB;CAClB,UAAU;AACX;;AAEA;CACC,mBAAmB;AACpB","sourcesContent":[".staking-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\n\tmargin: 0 19px;\n\tpadding: 10px 0 0 6px;\n\theight: 23px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.staking-field-header-value {\n\twidth: 100%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n\n.tooltip {\n\tposition: relative;\n\tdisplay: inline-block;\n}\n\n.tooltip .tooltiptext {\n\tvisibility: hidden;\n\n\tbottom: 100%;\n\tleft: 50%;\n\twidth: 80px;\n\tmargin-left: -40px;\n\tpadding: 6px 2px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".staking-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\n\tmargin: 0 19px;\n\tpadding: 10px 0 0 6px;\n\theight: 23px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.staking-field-header-value {\n\t/* width: 150px; */\n\tpadding-right: 46px;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n\n.tooltip {\n\tposition: relative;\n\tdisplay: inline-block;\n}\n\n.tooltip .tooltiptext {\n\tvisibility: hidden;\n\n\tbottom: 100%;\n\tleft: 50%;\n\twidth: 150px;\n\tmargin-left: -40px;\n\tpadding: 6px 2px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n", "",{"version":3,"sources":["webpack://./src/components/StakingFieldHeader/StakingFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;;CAE9B,cAAc;CACd,qBAAqB;CACrB,YAAY;;CAEZ,cAAc;CACd,yBAAyB;CACzB,gCAAgC;AACjC;;AAEA;CACC,kBAAkB;CAClB,mBAAmB;CACnB,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;;AAEA;CACC,kBAAkB;CAClB,qBAAqB;AACtB;;AAEA;CACC,kBAAkB;;CAElB,YAAY;CACZ,SAAS;CACT,YAAY;CACZ,kBAAkB;CAClB,gBAAgB;;CAEhB,kBAAkB;CAClB,2BAA2B;;CAE3B,mBAAmB;CACnB,eAAe;CACf,WAAW;CACX,kBAAkB;CAClB,oBAAoB;;CAEpB,kBAAkB;CAClB,UAAU;AACX;;AAEA;CACC,mBAAmB;AACpB","sourcesContent":[".staking-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\n\tmargin: 0 19px;\n\tpadding: 10px 0 0 6px;\n\theight: 23px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.staking-field-header-value {\n\t/* width: 150px; */\n\tpadding-right: 46px;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n\n.tooltip {\n\tposition: relative;\n\tdisplay: inline-block;\n}\n\n.tooltip .tooltiptext {\n\tvisibility: hidden;\n\n\tbottom: 100%;\n\tleft: 50%;\n\twidth: 150px;\n\tmargin-left: -40px;\n\tpadding: 6px 2px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -177,7 +177,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".staking-info-field {\n\theight: 60px;\n\tmargin: 0 16px;\n\t/* margin-top: 12px; */\n\tpadding: 6px 0px 4px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n}\n\n#staking-info-field-total {\n\tposition: relative;\n\ttop: -22px;\n\tleft: 38px;\n\n\tfont-size: 15px;\n\tfont-weight: 500;\n\tcolor: white;\n}\n", "",{"version":3,"sources":["webpack://./src/components/StakingInfoField/StakingInfoField.css"],"names":[],"mappings":"AAAA;CACC,YAAY;CACZ,cAAc;CACd,sBAAsB;CACtB,oBAAoB;;CAEpB,yBAAyB;CACzB,kBAAkB;AACnB;;AAEA;CACC,kBAAkB;CAClB,UAAU;CACV,UAAU;;CAEV,eAAe;CACf,gBAAgB;CAChB,YAAY;AACb","sourcesContent":[".staking-info-field {\n\theight: 60px;\n\tmargin: 0 16px;\n\t/* margin-top: 12px; */\n\tpadding: 6px 0px 4px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n}\n\n#staking-info-field-total {\n\tposition: relative;\n\ttop: -22px;\n\tleft: 38px;\n\n\tfont-size: 15px;\n\tfont-weight: 500;\n\tcolor: white;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".staking-info-field {\n\theight: 60px;\n\n\tmargin: 0 16px;\n\n\tpadding: 3px 15px 4px 0;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n}\n\n#staking-info-field-total {\n\tposition: relative;\n\ttop: -20px;\n\tleft: 40px;\n\n\tfont-size: 15px;\n\tfont-weight: 500;\n\tcolor: white;\n}\n", "",{"version":3,"sources":["webpack://./src/components/StakingInfoField/StakingInfoField.css"],"names":[],"mappings":"AAAA;CACC,YAAY;;CAEZ,cAAc;;CAEd,uBAAuB;;CAEvB,yBAAyB;CACzB,kBAAkB;AACnB;;AAEA;CACC,kBAAkB;CAClB,UAAU;CACV,UAAU;;CAEV,eAAe;CACf,gBAAgB;CAChB,YAAY;AACb","sourcesContent":[".staking-info-field {\n\theight: 60px;\n\n\tmargin: 0 16px;\n\n\tpadding: 3px 15px 4px 0;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n}\n\n#staking-info-field-total {\n\tposition: relative;\n\ttop: -20px;\n\tleft: 40px;\n\n\tfont-size: 15px;\n\tfont-weight: 500;\n\tcolor: white;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -255,7 +255,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".woonetwork-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 0 2px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n}\n\n.woonetwork-field-header-value {\n\tmargin: 0 0 -2px 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.woonetwork-field-header-logo {\n\tbox-sizing: border-box;\n\twidth: 40%;\n\tpadding-left: 6px;\n}\n.woonetwork-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n\n.tooltip {\n\tposition: relative;\n\tdisplay: inline-block;\n}\n\n.tooltip .tooltiptext {\n\tvisibility: hidden;\n\n\tbottom: 100%;\n\tleft: 50%;\n\twidth: 80px;\n\tmargin-left: -40px;\n\tpadding: 6px 2px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n", "",{"version":3,"sources":["webpack://./src/components/WooNetworkFieldHeader/WooNetworkFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,qBAAqB;;CAErB,cAAc;CACd,yBAAyB;AAC1B;;AAEA;CACC,kBAAkB;CAClB,UAAU;CACV,UAAU;CACV,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;AACA;CACC,sBAAsB;CACtB,UAAU;CACV,iBAAiB;AAClB;AACA;CACC,YAAY;CACZ,WAAW;AACZ;;AAEA;CACC,kBAAkB;CAClB,qBAAqB;AACtB;;AAEA;CACC,kBAAkB;;CAElB,YAAY;CACZ,SAAS;CACT,WAAW;CACX,kBAAkB;CAClB,gBAAgB;;CAEhB,kBAAkB;CAClB,2BAA2B;;CAE3B,mBAAmB;CACnB,eAAe;CACf,WAAW;CACX,kBAAkB;CAClB,oBAAoB;;CAEpB,kBAAkB;CAClB,UAAU;AACX;;AAEA;CACC,mBAAmB;AACpB","sourcesContent":[".woonetwork-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 0 0 2px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n}\n\n.woonetwork-field-header-value {\n\tmargin: 0 0 -2px 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.woonetwork-field-header-logo {\n\tbox-sizing: border-box;\n\twidth: 40%;\n\tpadding-left: 6px;\n}\n.woonetwork-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n\n.tooltip {\n\tposition: relative;\n\tdisplay: inline-block;\n}\n\n.tooltip .tooltiptext {\n\tvisibility: hidden;\n\n\tbottom: 100%;\n\tleft: 50%;\n\twidth: 80px;\n\tmargin-left: -40px;\n\tpadding: 6px 2px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".woonetwork-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 5px 0 2px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n}\n\n.woonetwork-field-header-value {\n\tmargin: 0 0 -2px 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.woonetwork-field-header-logo {\n\tbox-sizing: border-box;\n\twidth: 40%;\n\tpadding-left: 6px;\n}\n.woonetwork-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n\n.tooltip {\n\tposition: relative;\n\tdisplay: inline-block;\n}\n\n.tooltip .tooltiptext {\n\tvisibility: hidden;\n\n\tbottom: 100%;\n\tleft: 50%;\n\twidth: 80px;\n\tmargin-left: -40px;\n\tpadding: 6px 2px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n", "",{"version":3,"sources":["webpack://./src/components/WooNetworkFieldHeader/WooNetworkFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;;CAEd,cAAc;CACd,uBAAuB;;CAEvB,cAAc;CACd,yBAAyB;AAC1B;;AAEA;CACC,kBAAkB;CAClB,UAAU;CACV,UAAU;CACV,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;AACA;CACC,sBAAsB;CACtB,UAAU;CACV,iBAAiB;AAClB;AACA;CACC,YAAY;CACZ,WAAW;AACZ;;AAEA;CACC,kBAAkB;CAClB,qBAAqB;AACtB;;AAEA;CACC,kBAAkB;;CAElB,YAAY;CACZ,SAAS;CACT,WAAW;CACX,kBAAkB;CAClB,gBAAgB;;CAEhB,kBAAkB;CAClB,2BAA2B;;CAE3B,mBAAmB;CACnB,eAAe;CACf,WAAW;CACX,kBAAkB;CAClB,oBAAoB;;CAEpB,kBAAkB;CAClB,UAAU;AACX;;AAEA;CACC,mBAAmB;AACpB","sourcesContent":[".woonetwork-field-header-values {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n\n\tmargin: 0 16px;\n\tpadding: 10px 5px 0 2px;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n}\n\n.woonetwork-field-header-value {\n\tmargin: 0 0 -2px 0;\n\tpadding: 0;\n\twidth: 30%;\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n.woonetwork-field-header-logo {\n\tbox-sizing: border-box;\n\twidth: 40%;\n\tpadding-left: 6px;\n}\n.woonetwork-field-header-logo img {\n\theight: 18px;\n\twidth: 18px;\n}\n\n.tooltip {\n\tposition: relative;\n\tdisplay: inline-block;\n}\n\n.tooltip .tooltiptext {\n\tvisibility: hidden;\n\n\tbottom: 100%;\n\tleft: 50%;\n\twidth: 80px;\n\tmargin-left: -40px;\n\tpadding: 6px 2px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -952,9 +952,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const StakingFieldHeader = () => {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-values" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value tooltip" },
-            "WOO Staked",
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "24-hr WOO Network Vol. "))));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value tooltip" }, "WOOFi Staked"),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value tooltip" }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value tooltip" }, "APR")));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StakingFieldHeader);
 
@@ -990,36 +990,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _StakingInfoField_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StakingInfoField.css */ "./src/components/StakingInfoField/StakingInfoField.css");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/ResponsiveContainer.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/PieChart.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/polar/Pie.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Cell.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Legend.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/shape/Sector.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/ResponsiveContainer.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/PieChart.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/polar/Pie.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Cell.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Legend.js");
 /* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
 
 
 
 
-const StakingInfoField = ({ chainsInfo, totalStakedWooAmount, woofiStakingInfo, }) => {
-    console.log('chainsInfo', chainsInfo);
-    console.log('woofiStakingInfo', woofiStakingInfo);
+const StakingInfoField = ({ chainsInfo, totalStakedWooAmount, woofiStakingInfo, activeTab, }) => {
+    const [activePieIndex, setActivePieIndex] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+        getActivePieIndex();
+    }, [activeTab]);
     let COLORS = [];
     for (let chain of chainsInfo) {
         COLORS.push(chain.color);
     }
-    let data = [];
+    let stakingData = [];
     for (let key in woofiStakingInfo) {
-        data.push({
-            name: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}% apr`,
+        stakingData.push({
+            name: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}%`,
             value: parseInt(woofiStakingInfo[key].data.woo.total_staked),
+            chainId: key,
         });
     }
-    console.log('data', data);
+    const renderActiveShape = (props) => {
+        const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, } = props;
+        console.log('props', props);
+        return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("g", null,
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__.Sector, { cx: cx, cy: cy, innerRadius: innerRadius, outerRadius: outerRadius, startAngle: startAngle, endAngle: endAngle, fill: fill }),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__.Sector, { cx: cx, cy: cy, startAngle: startAngle, endAngle: endAngle, innerRadius: innerRadius - 5, outerRadius: innerRadius - 3, fill: fill })));
+    };
+    function getActivePieIndex() {
+        if (chainsInfo && activeTab) {
+            setActivePieIndex(chainsInfo.findIndex((chain) => chain.chainId === activeTab));
+        }
+    }
     return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "staking-info-field" },
-        react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__.ResponsiveContainer, { width: "90%", height: "100%" },
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__.PieChart, { width: 300, height: 60 },
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__.Pie, { stroke: "none", data: data, cx: "56", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value" }, data.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Cell, { key: `cell-${index}`, fill: COLORS[index % COLORS.length] })))),
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Legend, { layout: "vertical", verticalAlign: "middle", align: "right", iconType: "circle", iconSize: 14, wrapperStyle: { lineHeight: '19px' } }))),
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, { width: "100%", height: "100%" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__.PieChart, null,
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, { stroke: "none", data: stakingData, cx: "56", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value", activeIndex: activePieIndex > 0 ? activePieIndex : 0, activeShape: renderActiveShape }, stakingData.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Cell, { key: `cell-${index}`, fill: COLORS[index % COLORS.length] })))),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__.Legend, { layout: "vertical", verticalAlign: "middle", align: "right", iconType: "circle", iconSize: 11, wrapperStyle: { lineHeight: '19px' } }))),
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "staking-info-field-total" }, (0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(totalStakedWooAmount))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StakingInfoField);
@@ -1185,16 +1200,16 @@ const WooNetworkFieldHeader = () => {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "woonetwork-field-header-values" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "woonetwork-field-header-value woonetwork-field-header-logo tooltip" },
             "Network",
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "24-hr WOO Network Vol. ")),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "24-hr WOO Network Vol.")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "woonetwork-field-header-value tooltip" },
+            "WOO X",
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "24-hr WOO X Trading Vol.")),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "woonetwork-field-header-value tooltip" },
             "WOOFi",
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "24-hr WOOFi Trading Vol. ")),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "24-hr WOOFi Trading Vol.")),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "woonetwork-field-header-value tooltip" },
             "Futures",
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "24-hr WOO X Futures Vol. ")),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "woonetwork-field-header-value tooltip" },
-            "Staked",
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "WOO staked on WOOFi "))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "24-hr WOO X Futures Vol."))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WooNetworkFieldHeader);
 
@@ -1354,12 +1369,12 @@ const App = () => {
     let chainLogos = [AvaxIcon, BnbChainIcon, FtmIcon];
     let chainColors = ['#E84142', '#F0B90B', '#13b5ec'];
     const [wooNetworkInfo, setWooNetworkInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
+    const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [woofiEarnInfo, setWoofiEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
     const [woofi1DTotalVolume, setWoofi1DTotalVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [woofiStakingInfo, setWoofiStakingInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
     const [totalStakedWooAmount, setTotalStakedWooAmount] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [woofiTVL, setWoofiTVL] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [displayCalculator, setDisplayCalculator] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
     const [sortingOption, setSortingOption] = react__WEBPACK_IMPORTED_MODULE_0__.useState('apy');
@@ -1504,9 +1519,11 @@ const App = () => {
         wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_VolumeBarField__WEBPACK_IMPORTED_MODULE_11__.default, { networkVolume: wooNetworkInfo.data.amount, wooxVolume: wooNetworkInfo.data.amount -
                 wooNetworkFuturesVolume -
                 woofi1DTotalVolume / Math.pow(10, 18), woofiVolume: woofi1DTotalVolume / Math.pow(10, 18), futuresVolume: wooNetworkFuturesVolume })),
-        wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_15__.amountFormatter)(wooNetworkInfo.data.amount)}`, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_15__.amountFormatter)(woofi1DTotalVolume / Math.pow(10, 18))}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_15__.amountFormatter)(wooNetworkFuturesVolume)} `, value_4: `${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_15__.amountFormatter)(totalStakedWooAmount)} ` })),
+        wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_15__.amountFormatter)(wooNetworkInfo.data.amount)}`, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_15__.amountFormatter)(wooNetworkInfo.data.amount -
+                woofi1DTotalVolume / Math.pow(10, 18) -
+                wooNetworkFuturesVolume)} `, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_15__.amountFormatter)(woofi1DTotalVolume / Math.pow(10, 18))}`, value_4: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_15__.amountFormatter)(wooNetworkFuturesVolume)} ` })),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_StakingFieldHeader__WEBPACK_IMPORTED_MODULE_13__.default, null),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_StakingInfoField__WEBPACK_IMPORTED_MODULE_12__.default, { chainsInfo: chainsInfo, totalStakedWooAmount: totalStakedWooAmount, woofiStakingInfo: woofiStakingInfo }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_StakingInfoField__WEBPACK_IMPORTED_MODULE_12__.default, { chainsInfo: chainsInfo, totalStakedWooAmount: totalStakedWooAmount, woofiStakingInfo: woofiStakingInfo, activeTab: activeTab }),
         displayCalculator && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_CalcYieldField__WEBPACK_IMPORTED_MODULE_9__.default, null),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TabsField__WEBPACK_IMPORTED_MODULE_10__.default, { chainsInfo: chainsInfo, activeTabCallback: handleActiveTabChange, activeTab: activeTab }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_YieldFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { value_1: `Vault`, value_2: 'TVL', value_3: 'APY', displayCalculatorCallback: handleCalculatorChange, sortingOptionCallback: handleSortingChange, displayCalculator: displayCalculator }),

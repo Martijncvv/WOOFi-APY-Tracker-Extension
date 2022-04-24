@@ -13,7 +13,8 @@
 }
 
 .staking-field-header-value {
-	width: 100%;
+	/* width: 150px; */
+	padding-right: 46px;
 	font-size: 15px;
 	font-weight: 600;
 	text-transform: capitalize;
@@ -29,7 +30,7 @@
 
 	bottom: 100%;
 	left: 50%;
-	width: 80px;
+	width: 150px;
 	margin-left: -40px;
 	padding: 6px 2px;
 

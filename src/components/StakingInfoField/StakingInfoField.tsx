@@ -1,50 +1,104 @@
 import './StakingInfoField.css'
 import React, { useState, useEffect, PureComponent } from 'react'
-import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from 'recharts'
+import {
+	PieChart,
+	Pie,
+	Legend,
+	Cell,
+	ResponsiveContainer,
+	Sector,
+} from 'recharts'
 import { amountFormatter } from '../../utils/amountFormatter'
-
-// const data = [
-// 	{ name: '5.1% apr', value: 700, label: '700M', apr: 5.13 },
-// 	{ name: '12.4% apr', value: 300, label: '300M', apr: 12.4 },
-// 	{ name: '27.8% apr', value: 100, label: '100M', apr: 27.83 },
-// ]
-// const COLORS = ['#E84142', '#F0B90B', '#13b5ec']
 
 interface StakingInfoFieldProps {
 	chainsInfo: any
 	totalStakedWooAmount: number
 	woofiStakingInfo: any
+	activeTab: string
 }
 
 const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 	chainsInfo,
 	totalStakedWooAmount,
 	woofiStakingInfo,
+	activeTab,
 }) => {
-	console.log('chainsInfo', chainsInfo)
-	console.log('woofiStakingInfo', woofiStakingInfo)
+	const [activePieIndex, setActivePieIndex] = useState<number>(0)
+
+	useEffect(() => {
+		getActivePieIndex()
+	}, [activeTab])
 
 	let COLORS = []
 	for (let chain of chainsInfo) {
 		COLORS.push(chain.color)
 	}
 
-	let data = []
+	let stakingData = []
 	for (let key in woofiStakingInfo) {
-		data.push({
-			name: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}% apr`,
+		stakingData.push({
+			name: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}%`,
 			value: parseInt(woofiStakingInfo[key].data.woo.total_staked),
+			chainId: key,
 		})
 	}
 
-	console.log('data', data)
+	const renderActiveShape = (props) => {
+		const {
+			cx,
+			cy,
+			innerRadius,
+			outerRadius,
+			startAngle,
+			endAngle,
+			fill,
+		} = props
+
+		console.log('props', props)
+		return (
+			<g>
+				<Sector
+					cx={cx}
+					cy={cy}
+					innerRadius={innerRadius}
+					outerRadius={outerRadius}
+					startAngle={startAngle}
+					endAngle={endAngle}
+					fill={fill}
+				/>
+				<Sector
+					cx={cx}
+					cy={cy}
+					startAngle={startAngle}
+					endAngle={endAngle}
+					innerRadius={innerRadius - 5}
+					outerRadius={innerRadius - 3}
+					fill={fill}
+				/>
+
+				{/* <text x={'72'} y={'64%'} textAnchor={'middle'} fill={'white'}>
+					{`${props.payload.chainId.charAt(0).toUpperCase() +
+						props.payload.chainId.slice(1)}`}
+				</text> */}
+			</g>
+		)
+	}
+
+	function getActivePieIndex() {
+		if (chainsInfo && activeTab) {
+			setActivePieIndex(
+				chainsInfo.findIndex((chain) => chain.chainId === activeTab)
+			)
+		}
+	}
+
 	return (
 		<div className="staking-info-field">
-			<ResponsiveContainer width="90%" height="100%">
-				<PieChart width={300} height={60}>
+			<ResponsiveContainer width="100%" height="100%">
+				<PieChart>
 					<Pie
 						stroke="none"
-						data={data}
+						data={stakingData}
 						cx="56"
 						cy="100%"
 						startAngle={180}
@@ -54,8 +108,10 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 						fill="#8884d8"
 						paddingAngle={5}
 						dataKey="value"
+						activeIndex={activePieIndex > 0 ? activePieIndex : 0}
+						activeShape={renderActiveShape}
 					>
-						{data.map((entry, index) => (
+						{stakingData.map((entry, index) => (
 							<Cell
 								key={`cell-${index}`}
 								fill={COLORS[index % COLORS.length]}
@@ -68,7 +124,7 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 						verticalAlign="middle"
 						align="right"
 						iconType="circle"
-						iconSize={14}
+						iconSize={11}
 						wrapperStyle={{ lineHeight: '19px' }}
 					/>
 				</PieChart>

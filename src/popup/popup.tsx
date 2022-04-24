@@ -34,6 +34,7 @@ const App = () => {
 	let chainColors = ['#E84142', '#F0B90B', '#13b5ec']
 
 	const [wooNetworkInfo, setWooNetworkInfo] = useState<any>()
+	const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = useState<number>(null)
 	const [woofiEarnInfo, setWoofiEarnInfo] = useState<any>({})
 	const [woofi1DTotalVolume, setWoofi1DTotalVolume] = useState<number>(null)
 	const [woofiStakingInfo, setWoofiStakingInfo] = useState<any>({})
@@ -43,7 +44,6 @@ const App = () => {
 	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState<
 		number
 	>(null)
-	const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = useState<number>(null)
 	const [woofiTVL, setWoofiTVL] = useState<number>(null)
 
 	const [displayCalculator, setDisplayCalculator] = React.useState<boolean>(
@@ -232,9 +232,13 @@ const App = () => {
 				<InfoField
 					index={2}
 					value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
-					value_2={`$${amountFormatter(woofi1DTotalVolume / 10 ** 18)}`}
-					value_3={`$${amountFormatter(wooNetworkFuturesVolume)} `}
-					value_4={`${amountFormatter(totalStakedWooAmount)} `}
+					value_2={`$${amountFormatter(
+						wooNetworkInfo.data.amount -
+							woofi1DTotalVolume / 10 ** 18 -
+							wooNetworkFuturesVolume
+					)} `}
+					value_3={`$${amountFormatter(woofi1DTotalVolume / 10 ** 18)}`}
+					value_4={`$${amountFormatter(wooNetworkFuturesVolume)} `}
 				/>
 			)}
 			<StakingFieldHeader />
@@ -242,6 +246,7 @@ const App = () => {
 				chainsInfo={chainsInfo}
 				totalStakedWooAmount={totalStakedWooAmount}
 				woofiStakingInfo={woofiStakingInfo}
+				activeTab={activeTab}
 			/>
 
 			{displayCalculator && <CalcYieldField />}

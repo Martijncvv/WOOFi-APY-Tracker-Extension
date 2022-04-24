@@ -1,27 +1,22 @@
 import React, { useState, useEffect, PureComponent } from 'react'
-import './VolumeChartField.css'
+import './VolumeBarField.css'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 
 import { amountFormatter } from '../../utils/amountFormatter'
 
-interface VolumeChartFieldProps {
+interface VolumeBarFieldProps {
 	networkVolume: number
 	wooxVolume: number
 	woofiVolume: number
 	futuresVolume: number
 }
 
-const VolumeChartField: React.FC<VolumeChartFieldProps> = ({
+const VolumeBarField: React.FC<VolumeBarFieldProps> = ({
 	networkVolume,
 	wooxVolume,
 	woofiVolume,
 	futuresVolume,
 }) => {
-	// console.log('value_1', networkVolume)
-	// console.log('value_2', wooxVolume)
-	// console.log('value_3', woofiVolume)
-	// console.log('value_4', futuresVolume)
-
 	const data = [
 		{
 			volume: 'all',
@@ -34,7 +29,7 @@ const VolumeChartField: React.FC<VolumeChartFieldProps> = ({
 	// const COLORS = ['#4e8ff7', '#e0a555', '#f0f0f0']
 
 	return (
-		<div className="volume-chart-field">
+		<div className="volume-bar-field">
 			<ResponsiveContainer width="100%" height="100%">
 				<BarChart
 					data={data}
@@ -71,4 +66,4 @@ const VolumeChartField: React.FC<VolumeChartFieldProps> = ({
 	)
 }
 
-export default VolumeChartField
+export default VolumeBarField

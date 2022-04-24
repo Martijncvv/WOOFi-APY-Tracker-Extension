@@ -1,9 +1,9 @@
-import './InteractionField.css'
+import './CalcYieldField.css'
 import React, { useState, useEffect } from 'react'
 
 import { amountFormatter } from '../../utils/amountFormatter'
 
-const InteractionField: React.FC<{}> = ({}) => {
+const CalcYieldField: React.FC<{}> = ({}) => {
 	const [inputAmount, setInputAmount] = useState<any>(1000)
 	const [inputApy, setInputApy] = useState<any>(6.81)
 	const [inputDays, setInputDays] = useState<any>(30)
@@ -31,18 +31,18 @@ const InteractionField: React.FC<{}> = ({}) => {
 	}
 
 	return (
-		<div id="interaction-field">
-			<div id="interaction-field-header" className="interaction-field-row">
+		<div id="calc-yield-field">
+			<div id="calc-yield-field-header" className="calc-yield-field-row">
 				<div>Calculate Yield</div>
 			</div>
-			<div className="interaction-field-values ">
-				<div className="interaction-field-row">
+			<div className="calc-yield-field-values ">
+				<div className="calc-yield-field-row">
 					<div className="input-field input-field-amount ">Amount</div>
 					<div className="input-field">APY</div>
 					<div className="input-field">Days</div>
 					<div className="input-field">Yield</div>
 				</div>
-				<div className="interaction-field-row">
+				<div className="calc-yield-field-row">
 					<div className="input-field input-field-amount">
 						${' '}
 						<input
@@ -89,4 +89,4 @@ const InteractionField: React.FC<{}> = ({}) => {
 	)
 }
 
-export default InteractionField
+export default CalcYieldField

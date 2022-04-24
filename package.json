@@ -1,5 +1,5 @@
 {
-	"name": "WOOFi APY Tracker Extension",
+	"name": "woofi-apy-tracker-extension",
 	"version": "1.1.1",
 	"description": "Display general WOO Network info, APY's and staking amount of WOOFi, and calculate potential Yield rewards.",
 	"scripts": {

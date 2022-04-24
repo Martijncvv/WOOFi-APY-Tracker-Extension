@@ -8,9 +8,11 @@ import InfoField from '../components/InfoField'
 import YieldFieldHeader from '../components/YieldFieldHeader'
 import WooNetworkFieldHeader from '../components/WooNetworkFieldHeader'
 import LinksField from '../components/LinksField'
-import InteractionField from '../components/InteractionField'
+import CalcYieldField from '../components/CalcYieldField'
 import TabsField from '../components/TabsField'
-import VolumeChartField from '../components/VolumeChartField'
+import VolumeBarField from '../components/VolumeBarField'
+import StakingInfoField from '../components/StakingInfoField'
+import StakingFieldHeader from '../components/StakingFieldHeader'
 
 const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
@@ -29,11 +31,15 @@ const App = () => {
 	let chainIds = ['avax', 'bsc', 'fantom']
 	let chainNames = ['Avalanche', 'BNB Chain', 'Fantom']
 	let chainLogos = [AvaxIcon, BnbChainIcon, FtmIcon]
+	let chainColors = ['#E84142', '#F0B90B', '#13b5ec']
 
 	const [wooNetworkInfo, setWooNetworkInfo] = useState<any>()
-	const [wooFiEarnInfo, setWooFiEarnInfo] = useState<any>({})
+	const [woofiEarnInfo, setWoofiEarnInfo] = useState<any>({})
 	const [woofi1DTotalVolume, setWoofi1DTotalVolume] = useState<number>(null)
-	const [stakedWooAmount, setStakedWooAmount] = useState<number>(null)
+	const [woofiStakingInfo, setWoofiStakingInfo] = useState<any>({})
+
+	const [totalStakedWooAmount, setTotalStakedWooAmount] = useState<number>(null)
+
 	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState<
 		number
 	>(null)
@@ -48,8 +54,8 @@ const App = () => {
 	const [activeTab, setActiveTab] = React.useState<string>('avax')
 
 	useEffect(() => {
-		getWoofiEarnInfo()
 		getChainsInfo()
+		getWoofiEarnInfo()
 		getFuturesInfo()
 		getWooNetworkInfo()
 		getWooFiVolumesInfo()
@@ -62,10 +68,8 @@ const App = () => {
 				let chainEarnInfo = {}
 				chainEarnInfo[chainId] = await fetchWooFiChainInfo(chainId)
 
-				console.log('chainEarnInfo', chainEarnInfo)
-
-				setWooFiEarnInfo((wooFiEarnInfo) => ({
-					...wooFiEarnInfo,
+				setWoofiEarnInfo((woofiEarnInfo) => ({
+					...woofiEarnInfo,
 					...chainEarnInfo,
 				}))
 
@@ -81,13 +85,21 @@ const App = () => {
 	async function getStakedWooInfo() {
 		try {
 			for (let chainId of chainIds) {
-				let stakedWooChainInfo: any = await fetchWooFiChainStakedInfo(chainId)
+				let chainStakeInfo = {}
+				chainStakeInfo[chainId] = await fetchWooFiChainStakedInfo(chainId)
+				console.log('chainStakeInfo ', chainStakeInfo)
 
-				setStakedWooAmount(
-					(stakedWooAmount) =>
-						stakedWooAmount +
-						parseInt(stakedWooChainInfo.data.woo.total_staked) / 10 ** 18
+				setWoofiStakingInfo((woofiStakingInfo) => ({
+					...woofiStakingInfo,
+					...chainStakeInfo,
+				}))
+
+				setTotalStakedWooAmount(
+					(totalStakedWooAmount) =>
+						totalStakedWooAmount +
+						parseInt(chainStakeInfo[chainId].data.woo.total_staked) / 10 ** 18
 				)
+				console.log('woofiStakingInfo ', woofiStakingInfo)
 			}
 		} catch (err) {
 			console.log(err)
@@ -134,6 +146,7 @@ const App = () => {
 	const handleSortingChange = (_sortingOption) => {
 		setSortingOption(_sortingOption)
 	}
+
 	const handleActiveTabChange = (chainId) => {
 		setActiveTab(chainId)
 	}
@@ -189,7 +202,12 @@ const App = () => {
 		for (let i = 0; i < chainIds.length; i++) {
 			setChainsInfo((chainsInfo) => [
 				...chainsInfo,
-				{ chainId: chainIds[i], chainName: chainNames[i], icon: chainLogos[i] },
+				{
+					chainId: chainIds[i],
+					chainName: chainNames[i],
+					icon: chainLogos[i],
+					color: chainColors[i],
+				},
 			])
 		}
 	}
@@ -197,10 +215,9 @@ const App = () => {
 	return (
 		<>
 			<HeaderField />
-
 			<WooNetworkFieldHeader />
 			{wooNetworkInfo && (
-				<VolumeChartField
+				<VolumeBarField
 					networkVolume={wooNetworkInfo.data.amount}
 					wooxVolume={
 						wooNetworkInfo.data.amount -
@@ -217,43 +234,48 @@ const App = () => {
 					value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
 					value_2={`$${amountFormatter(woofi1DTotalVolume / 10 ** 18)}`}
 					value_3={`$${amountFormatter(wooNetworkFuturesVolume)} `}
-					value_4={`${amountFormatter(stakedWooAmount)} `}
+					value_4={`${amountFormatter(totalStakedWooAmount)} `}
 				/>
 			)}
+			<StakingFieldHeader />
+			<StakingInfoField
+				chainsInfo={chainsInfo}
+				totalStakedWooAmount={totalStakedWooAmount}
+				woofiStakingInfo={woofiStakingInfo}
+			/>
 
-			{displayCalculator && <InteractionField />}
+			{displayCalculator && <CalcYieldField />}
 			<TabsField
 				chainsInfo={chainsInfo}
 				activeTabCallback={handleActiveTabChange}
 				activeTab={activeTab}
 			/>
-
 			<YieldFieldHeader
-				value_1={`vault`}
-				value_2={'tvl'}
-				value_3={'apy'}
+				value_1={`Vault`}
+				value_2={'TVL'}
+				value_3={'APY'}
 				displayCalculatorCallback={handleCalculatorChange}
 				sortingOptionCallback={handleSortingChange}
 				displayCalculator={displayCalculator}
 			/>
 
-			{Object.keys(wooFiEarnInfo).length > 0 && (
+			{Object.keys(woofiEarnInfo).length > 0 && (
 				<>
 					<InfoField
 						index={0}
 						value_1={'Total'}
 						value_2={`$${amountFormatter(
-							parseInt(wooFiEarnInfo[activeTab].data.total_deposit) / 10 ** 18
+							parseInt(woofiEarnInfo[activeTab].data.total_deposit) / 10 ** 18
 						)}`}
 						value_3={`#${
-							Object.values(wooFiEarnInfo[activeTab].data.auto_compounding)
+							Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
 								.length
 						}`}
 						value_4={''}
 					/>
 
 					{sortQuotes(
-						Object.values(wooFiEarnInfo[activeTab].data.auto_compounding)
+						Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
 					).map((tokenInfo, index) => (
 						<InfoField
 							key={index}

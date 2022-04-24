@@ -1,4 +1,4 @@
-#interaction-field {
+#calc-yield-field {
 	display: flex;
 	flex-direction: column;
 	margin: 0 16px;
@@ -6,7 +6,7 @@
 
 	color: white;
 }
-#interaction-field-header {
+#calc-yield-field-header {
 	padding: 0 0 4px 4px;
 	margin: 0 5px;
 
@@ -16,14 +16,14 @@
 	background-color: #313641;
 }
 
-.interaction-field-values {
+.calc-yield-field-values {
 	padding: 0 0 4px 0;
 	background-color: #3c404b;
 	/* border-radius: 0 0 5px 5px; */
 	border-radius: 5px;
 }
 
-.interaction-field-row {
+.calc-yield-field-row {
 	padding-left: 4px;
 	display: flex;
 	flex-direction: row;

@@ -146,7 +146,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0__
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkWOOFi_APY_Tracker_Extension"] = self["webpackChunkWOOFi_APY_Tracker_Extension"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkwoofi_apy_tracker_extension"] = self["webpackChunkwoofi_apy_tracker_extension"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

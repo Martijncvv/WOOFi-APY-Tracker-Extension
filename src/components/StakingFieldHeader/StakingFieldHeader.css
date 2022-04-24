@@ -1,32 +1,22 @@
-.woonetwork-field-header-values {
+.staking-field-header-values {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	gap: 10px 20px;
 
-	margin: 0 16px;
-	padding: 10px 0 0 2px;
+	margin: 0 19px;
+	padding: 10px 0 0 6px;
+	height: 23px;
 
 	color: #fefefe;
 	background-color: #313641;
+	border-bottom: 1px solid #73bef4;
 }
 
-.woonetwork-field-header-value {
-	margin: 0 0 -2px 0;
-	padding: 0;
-	width: 30%;
+.staking-field-header-value {
+	width: 100%;
 	font-size: 15px;
 	font-weight: 600;
 	text-transform: capitalize;
-}
-.woonetwork-field-header-logo {
-	box-sizing: border-box;
-	width: 40%;
-	padding-left: 6px;
-}
-.woonetwork-field-header-logo img {
-	height: 18px;
-	width: 18px;
 }
 
 .tooltip {

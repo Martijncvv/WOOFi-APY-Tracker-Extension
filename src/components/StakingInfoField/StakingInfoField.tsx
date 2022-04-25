@@ -35,12 +35,15 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 	}
 
 	let stakingData = []
+	let index = 0
 	for (let key in woofiStakingInfo) {
 		stakingData.push({
 			name: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}%`,
 			value: parseInt(woofiStakingInfo[key].data.woo.total_staked),
 			chainId: key,
+			color: chainsInfo[index].color,
 		})
+		index++
 	}
 
 	const renderActiveShape = (props) => {
@@ -54,7 +57,6 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 			fill,
 		} = props
 
-		console.log('props', props)
 		return (
 			<g>
 				<Sector
@@ -75,11 +77,6 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 					outerRadius={innerRadius - 3}
 					fill={fill}
 				/>
-
-				{/* <text x={'72'} y={'64%'} textAnchor={'middle'} fill={'white'}>
-					{`${props.payload.chainId.charAt(0).toUpperCase() +
-						props.payload.chainId.slice(1)}`}
-				</text> */}
 			</g>
 		)
 	}
@@ -94,12 +91,12 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 
 	return (
 		<div className="staking-info-field">
-			<ResponsiveContainer width="100%" height="100%">
+			<ResponsiveContainer width={270} height="100%">
 				<PieChart>
 					<Pie
 						stroke="none"
 						data={stakingData}
-						cx="56"
+						cx="46"
 						cy="100%"
 						startAngle={180}
 						endAngle={0}
@@ -125,7 +122,11 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 						align="right"
 						iconType="circle"
 						iconSize={11}
-						wrapperStyle={{ lineHeight: '19px' }}
+						wrapperStyle={{
+							lineHeight: '20px',
+							padding: '0',
+							marginRight: '91px',
+						}}
 					/>
 				</PieChart>
 			</ResponsiveContainer>

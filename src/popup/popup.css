@@ -5,6 +5,9 @@ body {
 	margin: 0;
 	background-color: #313641;
 }
+#dashboard {
+	margin: 0 18px;
+}
 
 ::-webkit-scrollbar {
 	width: 3px;

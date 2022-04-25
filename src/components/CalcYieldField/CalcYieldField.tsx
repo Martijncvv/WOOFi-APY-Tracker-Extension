@@ -33,7 +33,7 @@ const CalcYieldField: React.FC<{}> = ({}) => {
 	return (
 		<div id="calc-yield-field">
 			<div id="calc-yield-field-header" className="calc-yield-field-row">
-				<div>Calculate Yield</div>
+				Calculate Yield
 			</div>
 			<div className="calc-yield-field-values ">
 				<div className="calc-yield-field-row">

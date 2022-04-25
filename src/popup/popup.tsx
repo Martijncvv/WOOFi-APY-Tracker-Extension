@@ -5,14 +5,16 @@ import './popup.css'
 import FooterField from '../components/FooterField'
 import HeaderField from '../components/HeaderField'
 import InfoField from '../components/InfoField'
-import YieldFieldHeader from '../components/YieldFieldHeader'
-import WooNetworkFieldHeader from '../components/WooNetworkFieldHeader'
+import EarnFieldHeader from '../components/EarnFieldHeader'
+import NetworkInfoHeaderField from '../components/NetworkInfoHeaderField'
+import NetworkInfoSubHeaderField from '../components/NetworkInfoSubHeaderField'
 import LinksField from '../components/LinksField'
 import CalcYieldField from '../components/CalcYieldField'
 import TabsField from '../components/TabsField'
 import VolumeBarField from '../components/VolumeBarField'
 import StakingInfoField from '../components/StakingInfoField'
-import StakingFieldHeader from '../components/StakingFieldHeader'
+
+import CategoryHeaderField from '../components/CategoryHeaderField'
 
 const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
@@ -62,6 +64,20 @@ const App = () => {
 		getStakedWooInfo()
 	}, [])
 
+	const getChainsInfo = () => {
+		for (let i = 0; i < chainIds.length; i++) {
+			setChainsInfo((chainsInfo) => [
+				...chainsInfo,
+				{
+					chainId: chainIds[i],
+					chainName: chainNames[i],
+					icon: chainLogos[i],
+					color: chainColors[i],
+				},
+			])
+		}
+	}
+
 	async function getWoofiEarnInfo() {
 		try {
 			for (let chainId of chainIds) {
@@ -74,7 +90,9 @@ const App = () => {
 				}))
 
 				setWoofiTVL(
-					(woofiTVL) => woofiTVL + chainEarnInfo[chainId].data.total_deposit
+					(woofiTVL) =>
+						woofiTVL +
+						parseInt(chainEarnInfo[chainId].data.total_deposit) / 10 ** 18
 				)
 			}
 		} catch (err) {
@@ -153,9 +171,9 @@ const App = () => {
 
 	const sortQuotes = (quotes) => {
 		switch (sortingOption) {
-			case 'tvl':
+			case 'TVL':
 				return quotes.sort(compareTvl)
-			case 'quote':
+			case 'Vault':
 				return quotes.sort(compareSymbol)
 			default:
 				return quotes.sort(compareApy)
@@ -198,103 +216,103 @@ const App = () => {
 		return 0
 	}
 
-	const getChainsInfo = () => {
-		for (let i = 0; i < chainIds.length; i++) {
-			setChainsInfo((chainsInfo) => [
-				...chainsInfo,
-				{
-					chainId: chainIds[i],
-					chainName: chainNames[i],
-					icon: chainLogos[i],
-					color: chainColors[i],
-				},
-			])
-		}
-	}
-
 	return (
 		<>
 			<HeaderField />
-			<WooNetworkFieldHeader />
-			{wooNetworkInfo && (
-				<VolumeBarField
-					networkVolume={wooNetworkInfo.data.amount}
-					wooxVolume={
-						wooNetworkInfo.data.amount -
-						wooNetworkFuturesVolume -
-						woofi1DTotalVolume / 10 ** 18
-					}
-					woofiVolume={woofi1DTotalVolume / 10 ** 18}
-					futuresVolume={wooNetworkFuturesVolume}
-				/>
-			)}
-			{wooNetworkInfo && (
-				<InfoField
-					index={2}
-					value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
-					value_2={`$${amountFormatter(
-						wooNetworkInfo.data.amount -
-							woofi1DTotalVolume / 10 ** 18 -
-							wooNetworkFuturesVolume
-					)} `}
-					value_3={`$${amountFormatter(woofi1DTotalVolume / 10 ** 18)}`}
-					value_4={`$${amountFormatter(wooNetworkFuturesVolume)} `}
-				/>
-			)}
-			<StakingFieldHeader />
-			<StakingInfoField
-				chainsInfo={chainsInfo}
-				totalStakedWooAmount={totalStakedWooAmount}
-				woofiStakingInfo={woofiStakingInfo}
-				activeTab={activeTab}
-			/>
-
-			{displayCalculator && <CalcYieldField />}
-			<TabsField
-				chainsInfo={chainsInfo}
-				activeTabCallback={handleActiveTabChange}
-				activeTab={activeTab}
-			/>
-			<YieldFieldHeader
-				value_1={`Vault`}
-				value_2={'TVL'}
-				value_3={'APY'}
-				displayCalculatorCallback={handleCalculatorChange}
-				sortingOptionCallback={handleSortingChange}
-				displayCalculator={displayCalculator}
-			/>
-
-			{Object.keys(woofiEarnInfo).length > 0 && (
-				<>
-					<InfoField
-						index={0}
-						value_1={'Total'}
-						value_2={`$${amountFormatter(
-							parseInt(woofiEarnInfo[activeTab].data.total_deposit) / 10 ** 18
-						)}`}
-						value_3={`#${
-							Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
-								.length
-						}`}
-						value_4={''}
-					/>
-
-					{sortQuotes(
-						Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
-					).map((tokenInfo, index) => (
-						<InfoField
-							key={index}
-							index={index + 1}
-							value_1={tokenInfo.symbol.replaceAll('_', '-').replace('-LP', '')}
-							value_2={`$${amountFormatter(
-								parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
-							)}`}
-							value_3={`${tokenInfo.apy.toPrecision(3)}%`}
-							value_4={''}
+			<div id="dashboard">
+				{/* <SubHeaderField subHeaderTitle={'WOOnetwork'} /> */}
+				<NetworkInfoHeaderField />
+				{wooNetworkInfo && (
+					<>
+						<VolumeBarField
+							wooxVolume={
+								wooNetworkInfo.data.amount -
+								wooNetworkFuturesVolume -
+								woofi1DTotalVolume / 10 ** 18
+							}
+							woofiVolume={woofi1DTotalVolume / 10 ** 18}
+							futuresVolume={wooNetworkFuturesVolume}
 						/>
-					))}
-				</>
-			)}
+
+						<InfoField
+							index={2}
+							value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
+							value_2={`$${amountFormatter(woofi1DTotalVolume / 10 ** 18)}`}
+							value_3={`$${amountFormatter(wooNetworkFuturesVolume)} `}
+						/>
+					</>
+				)}
+
+				<NetworkInfoSubHeaderField />
+				{wooNetworkInfo && woofiTVL && wooNetworkFuturesOi && (
+					<InfoField
+						index={2}
+						value_1={`$${amountFormatter(
+							wooNetworkInfo.data.amount -
+								woofi1DTotalVolume / 10 ** 18 -
+								wooNetworkFuturesVolume
+						)} `}
+						value_2={`$${amountFormatter(woofiTVL)}`}
+						value_3={`$${amountFormatter(wooNetworkFuturesOi)} `}
+					/>
+				)}
+
+				<CategoryHeaderField value_1={'Staked'} value_2={'APR'} value_3={''} />
+
+				<StakingInfoField
+					chainsInfo={chainsInfo}
+					totalStakedWooAmount={totalStakedWooAmount}
+					woofiStakingInfo={woofiStakingInfo}
+					activeTab={activeTab}
+				/>
+
+				<TabsField
+					chainsInfo={chainsInfo}
+					activeTabCallback={handleActiveTabChange}
+					activeTab={activeTab}
+				/>
+				{displayCalculator && <CalcYieldField />}
+				<EarnFieldHeader
+					value_1={`Vault`}
+					value_2={'TVL'}
+					value_3={'APY'}
+					displayCalculatorCallback={handleCalculatorChange}
+					sortingOptionCallback={handleSortingChange}
+					displayCalculator={displayCalculator}
+				/>
+
+				{Object.keys(woofiEarnInfo).length > 0 && (
+					<>
+						<InfoField
+							index={0}
+							value_1={'Total'}
+							value_2={`$${amountFormatter(
+								parseInt(woofiEarnInfo[activeTab].data.total_deposit) / 10 ** 18
+							)}`}
+							value_3={`#${
+								Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
+									.length
+							}`}
+						/>
+
+						{sortQuotes(
+							Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
+						).map((tokenInfo, index) => (
+							<InfoField
+								key={index}
+								index={index + 1}
+								value_1={tokenInfo.symbol
+									.replaceAll('_', '-')
+									.replace('-LP', '')}
+								value_2={`$${amountFormatter(
+									parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
+								)}`}
+								value_3={`${tokenInfo.apy.toPrecision(3)}%`}
+							/>
+						))}
+					</>
+				)}
+			</div>
 
 			<LinksField
 				twitterHandle="WOOnetwork"
@@ -323,9 +341,15 @@ ReactDOM.render(<App />, root)
 // tvlWoofi
 // stakingAprWoofi
 
-// volumeWoox 	volumeWoofi		futureVolume
-//				networkVolume
+// 	tvlWoofi futuresOi
+//
 
-// tvlWoofi 	stakedWoofi		futuresOi
+// VOLUMES
+// volumeNetwork   	volumeWoofi		volumeFutures
+// volumeWoox		tvlWoofi		futuresOi
 
-// stakingAprWoofi stakedWoox
+// STAKING
+// stakedWOO						woofiAPR
+
+// EARN
+// vaults			TVL				APY

@@ -1,0 +1,52 @@
+.subheader-field-header-values {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	/* height: 18px; */
+	padding: 10px 12px 0;
+	/* padding: 10px 0 0 0; */
+
+	/* color: #73bef4; */
+	color: white;
+	background-color: #313641;
+	/* border-bottom: 1px solid #73bef4; */
+}
+
+.subheader-field-header-value {
+	/* font-size: 10px; */
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+
+	bottom: 100%;
+	left: 50%;
+	width: 150px;
+	margin-left: -40px;
+	padding: 6px 2px;
+
+	border-radius: 4px;
+	background-color: #3c404bf2;
+
+	font-weight: normal;
+	font-size: 13px;
+	color: #fff;
+	text-align: center;
+	text-transform: none;
+
+	position: absolute;
+	z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}

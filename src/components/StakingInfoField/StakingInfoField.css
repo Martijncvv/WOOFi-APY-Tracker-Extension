@@ -1,18 +1,19 @@
 .staking-info-field {
 	height: 60px;
-
-	margin: 0 16px;
-
-	padding: 3px 15px 4px 0;
+	/* padding: 10px 0px 6px 12px; */
+	padding: 6px 0px 6px 12px;
 
 	background-color: #3c404b;
 	border-radius: 5px;
 }
 
 #staking-info-field-total {
+	width: 100px;
+	margin-left: 4px;
+
 	position: relative;
 	top: -20px;
-	left: 40px;
+	text-align: center;
 
 	font-size: 15px;
 	font-weight: 500;

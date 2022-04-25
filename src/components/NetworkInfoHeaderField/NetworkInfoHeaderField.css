@@ -1,35 +1,38 @@
-.woonetwork-field-header-values {
+.network-info-header-field-values {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
-	gap: 10px 20px;
 
-	margin: 0 16px;
-	padding: 10px 5px 0 2px;
+	height: 18px;
+	padding: 12px 12px 0;
+	/* padding: 4px 12px 0; */
 
 	color: #fefefe;
+	/* color: #73bef4; */
 	background-color: #313641;
 }
 
-.woonetwork-field-header-value {
-	margin: 0 0 -2px 0;
-	padding: 0;
-	width: 30%;
+.network-info-header-field-value {
+	box-sizing: border-box;
+	width: 33%;
+
 	font-size: 15px;
+	/* font-size: 13px; */
 	font-weight: 600;
 	text-transform: capitalize;
+	/* border: 1px solid blue; */
 }
-.woonetwork-field-header-logo {
-	box-sizing: border-box;
-	width: 40%;
-	padding-left: 6px;
+.network-info-header-field-value-2 {
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 24px;
 }
-.woonetwork-field-header-logo img {
-	height: 18px;
-	width: 18px;
+.network-info-header-field-value-3 {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
-.tooltip {
+/* .tooltip {
 	position: relative;
 	display: inline-block;
 }
@@ -58,4 +61,4 @@
 
 .tooltip:hover .tooltiptext {
 	visibility: visible;
-}
+} */

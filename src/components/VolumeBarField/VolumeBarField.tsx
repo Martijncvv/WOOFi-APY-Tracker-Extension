@@ -2,17 +2,13 @@ import React, { useState, useEffect, PureComponent } from 'react'
 import './VolumeBarField.css'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 
-import { amountFormatter } from '../../utils/amountFormatter'
-
 interface VolumeBarFieldProps {
-	networkVolume: number
 	wooxVolume: number
 	woofiVolume: number
 	futuresVolume: number
 }
 
 const VolumeBarField: React.FC<VolumeBarFieldProps> = ({
-	networkVolume,
 	wooxVolume,
 	woofiVolume,
 	futuresVolume,
@@ -26,8 +22,6 @@ const VolumeBarField: React.FC<VolumeBarFieldProps> = ({
 		},
 	]
 
-	// const COLORS = ['#4e8ff7', '#e0a555', '#f0f0f0']
-
 	return (
 		<div className="volume-bar-field">
 			<ResponsiveContainer width="100%" height="100%">
@@ -36,8 +30,8 @@ const VolumeBarField: React.FC<VolumeBarFieldProps> = ({
 					layout="vertical"
 					margin={{
 						top: 0,
-						right: 20,
-						left: 20,
+						right: 0,
+						left: 0,
 						bottom: 0,
 					}}
 				>
@@ -51,7 +45,7 @@ const VolumeBarField: React.FC<VolumeBarFieldProps> = ({
 					<YAxis
 						type="category"
 						dataKey={'volume'}
-						width={5}
+						width={1}
 						axisLine={false}
 						hide={true}
 						tick={false}

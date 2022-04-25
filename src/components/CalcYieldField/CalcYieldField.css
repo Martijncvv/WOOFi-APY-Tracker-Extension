@@ -1,14 +1,11 @@
 #calc-yield-field {
 	display: flex;
 	flex-direction: column;
-	margin: 0 16px;
-	padding: 8px 0 0px;
 
 	color: white;
 }
 #calc-yield-field-header {
-	padding: 0 0 4px 4px;
-	margin: 0 5px;
+	padding: 6px 12px 0;
 
 	font-size: 15px;
 	border-bottom: 1px solid #73bef4;
@@ -17,7 +14,7 @@
 }
 
 .calc-yield-field-values {
-	padding: 0 0 4px 0;
+	padding: 10px 12px 6px;
 	background-color: #3c404b;
 	/* border-radius: 0 0 5px 5px; */
 	border-radius: 5px;

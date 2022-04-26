@@ -1,6 +1,10 @@
 .staking-info-field {
-	height: 60px;
-	padding: 6px 0px 6px 12px;
+	display: flex;
+	justify-content: space-between;
+
+	height: 84px;
+
+	padding: 6px 12px;
 
 	background-color: #3c404b;
 	border-radius: 5px;
@@ -8,45 +12,52 @@
 }
 
 #staking-info-field-chart {
-	height: 60px;
-	width: 100%;
-
 	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	height: 78px;
+	width: 100px;
+	/* border: 1px solid green; */
 }
 
 #staking-info-field-total {
 	width: 100px;
 
 	position: relative;
-	top: -20px;
+	top: -60px;
 
 	font-size: 15px;
 	text-align: center;
 	font-weight: 500;
 	color: white;
+	/* border: 1px solid orange; */
 }
 
-#staking-info-field-apr {
+#charts-info-field-legenda {
 	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
 
-	height: 66px;
-	width: 200px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	height: 28px;
+	width: 100px;
 	margin: 0;
 	padding: 0;
+	/* border: 1px solid purple; */
 }
 
-.staking-info-field-line {
+.charts-info-field-legenda-line {
 	display: flex;
 	align-items: center;
 
-	width: 105px;
+	height: 12px;
+	width: 42px;
 	margin: 0;
 	padding: 0;
 
-	line-height: 20px;
-	font-size: 13px;
+	line-height: 10px;
+	font-size: 10px;
 }
 
 .dot {

@@ -13,6 +13,7 @@ import CalcYieldField from '../components/CalcYieldField'
 import TabsField from '../components/TabsField'
 import VolumeBarField from '../components/VolumeBarField'
 import StakingInfoField from '../components/StakingInfoField'
+import StakingFieldHeader from '../components/StakingFieldHeader'
 
 import CategoryHeaderField from '../components/CategoryHeaderField'
 
@@ -24,6 +25,7 @@ import {
 	fetchWooFiChainInfo,
 	fetchWooFiChainStakedInfo,
 	fetchWoofiChain1DVolume,
+	fetchWoofiChain1MVolumeSource,
 	fetchWooNetworkInfo,
 	fetchWooNetworkFutureInfo,
 } from '../utils/api'
@@ -39,6 +41,7 @@ const App = () => {
 	const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = useState<number>(null)
 	const [woofiEarnInfo, setWoofiEarnInfo] = useState<any>({})
 	const [woofi1DTotalVolume, setWoofi1DTotalVolume] = useState<number>(null)
+	const [woofi1MVolumeSources, setWoofi1MVolumeSources] = useState<any>({})
 	const [woofiStakingInfo, setWoofiStakingInfo] = useState<any>({})
 
 	const [totalStakedWooAmount, setTotalStakedWooAmount] = useState<number>(null)
@@ -62,6 +65,7 @@ const App = () => {
 		getWooNetworkInfo()
 		getWooFiVolumesInfo()
 		getStakedWooInfo()
+		getWooFiVolumeSourceInfo()
 	}, [])
 
 	const getChainsInfo = () => {
@@ -105,7 +109,6 @@ const App = () => {
 			for (let chainId of chainIds) {
 				let chainStakeInfo = {}
 				chainStakeInfo[chainId] = await fetchWooFiChainStakedInfo(chainId)
-				console.log('chainStakeInfo ', chainStakeInfo)
 
 				setWoofiStakingInfo((woofiStakingInfo) => ({
 					...woofiStakingInfo,
@@ -117,7 +120,6 @@ const App = () => {
 						totalStakedWooAmount +
 						parseInt(chainStakeInfo[chainId].data.woo.total_staked) / 10 ** 18
 				)
-				console.log('woofiStakingInfo ', woofiStakingInfo)
 			}
 		} catch (err) {
 			console.log(err)
@@ -125,36 +127,68 @@ const App = () => {
 	}
 
 	async function getWooNetworkInfo() {
-		setWooNetworkInfo(await fetchWooNetworkInfo())
+		try {
+			setWooNetworkInfo(await fetchWooNetworkInfo())
+		} catch (err) {
+			console.log(err)
+		}
 	}
 
 	async function getFuturesInfo() {
-		let totalFuturesVolume = 0
-		let totalFuturesOI = 0
-		let wooNetworkfetchedFuturesInfo: any = await fetchWooNetworkFutureInfo()
+		try {
+			let totalFuturesVolume = 0
+			let totalFuturesOI = 0
+			let wooNetworkfetchedFuturesInfo: any = await fetchWooNetworkFutureInfo()
 
-		for (let i = 0; i < wooNetworkfetchedFuturesInfo.rows.length; i++) {
-			totalFuturesOI +=
-				wooNetworkfetchedFuturesInfo.rows[i]['open_interest'] *
-				wooNetworkfetchedFuturesInfo.rows[i]['mark_price']
-			totalFuturesVolume +=
-				wooNetworkfetchedFuturesInfo.rows[i]['24h_volumn'] *
-				wooNetworkfetchedFuturesInfo.rows[i]['mark_price']
+			for (let i = 0; i < wooNetworkfetchedFuturesInfo.rows.length; i++) {
+				totalFuturesOI +=
+					wooNetworkfetchedFuturesInfo.rows[i]['open_interest'] *
+					wooNetworkfetchedFuturesInfo.rows[i]['mark_price']
+				totalFuturesVolume +=
+					wooNetworkfetchedFuturesInfo.rows[i]['24h_volumn'] *
+					wooNetworkfetchedFuturesInfo.rows[i]['mark_price']
+			}
+			setWooNetworkFuturesVolume(totalFuturesVolume)
+			setWooNetworkFuturesOi(totalFuturesOI)
+		} catch (err) {
+			console.log(err)
 		}
-		setWooNetworkFuturesVolume(totalFuturesVolume)
-		setWooNetworkFuturesOi(totalFuturesOI)
 	}
 
 	async function getWooFiVolumesInfo() {
-		for (let chainId of chainIds) {
-			let chain1DVolumeInfo: any = await fetchWoofiChain1DVolume(chainId)
+		try {
+			for (let chainId of chainIds) {
+				let chain1DVolumeInfo: any = await fetchWoofiChain1DVolume(chainId)
 
-			setWoofi1DTotalVolume(
-				(woofi1DTotalVolume) =>
-					woofi1DTotalVolume +
-					parseInt(chain1DVolumeInfo.data['24h_volume_usd'])
-			)
+				setWoofi1DTotalVolume(
+					(woofi1DTotalVolume) =>
+						woofi1DTotalVolume +
+						parseInt(chain1DVolumeInfo.data['24h_volume_usd'])
+				)
+			}
+		} catch (err) {
+			console.log(err)
 		}
+	}
+
+	async function getWooFiVolumeSourceInfo() {
+		try {
+			for (let chainId of chainIds) {
+				let chainVolumeSourceInfo = {}
+				chainVolumeSourceInfo[chainId] = await fetchWoofiChain1MVolumeSource(
+					chainId
+				)
+
+				setWoofi1MVolumeSources((woofi1MVolumeSources) => ({
+					...woofi1MVolumeSources,
+					...chainVolumeSourceInfo,
+				}))
+			}
+		} catch (err) {
+			console.log(err)
+		}
+
+		console.log()
 	}
 
 	const handleCalculatorChange = () => {
@@ -236,7 +270,11 @@ const App = () => {
 
 						<InfoField
 							index={2}
-							value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
+							value_1={`$${amountFormatter(
+								wooNetworkInfo.data.amount -
+									woofi1DTotalVolume / 10 ** 18 -
+									wooNetworkFuturesVolume
+							)} `}
 							value_2={`$${amountFormatter(woofi1DTotalVolume / 10 ** 18)}`}
 							value_3={`$${amountFormatter(wooNetworkFuturesVolume)} `}
 						/>
@@ -247,24 +285,25 @@ const App = () => {
 				{wooNetworkInfo && woofiTVL && wooNetworkFuturesOi && (
 					<InfoField
 						index={2}
-						value_1={`$${amountFormatter(
-							wooNetworkInfo.data.amount -
-								woofi1DTotalVolume / 10 ** 18 -
-								wooNetworkFuturesVolume
-						)} `}
+						value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
 						value_2={`$${amountFormatter(woofiTVL)}`}
 						value_3={`$${amountFormatter(wooNetworkFuturesOi)} `}
 					/>
 				)}
 
-				<CategoryHeaderField value_1={'Staked'} value_2={'APR'} value_3={''} />
-
-				<StakingInfoField
-					chainsInfo={chainsInfo}
-					totalStakedWooAmount={totalStakedWooAmount}
-					woofiStakingInfo={woofiStakingInfo}
-					activeTab={activeTab}
-				/>
+				{/* <CategoryHeaderField value_1={'Staked'} value_2={'APR'} value_3={''} /> */}
+				<StakingFieldHeader />
+				{chainsInfo.length == chainIds.length &&
+					Object.keys(woofiStakingInfo).length == chainIds.length &&
+					Object.keys(woofi1MVolumeSources).length == chainIds.length && (
+						<StakingInfoField
+							chainsInfo={chainsInfo}
+							totalStakedWooAmount={totalStakedWooAmount}
+							woofiStakingInfo={woofiStakingInfo}
+							woofi1MVolumeSources={woofi1MVolumeSources}
+							activeTab={activeTab}
+						/>
+					)}
 
 				<TabsField
 					chainsInfo={chainsInfo}

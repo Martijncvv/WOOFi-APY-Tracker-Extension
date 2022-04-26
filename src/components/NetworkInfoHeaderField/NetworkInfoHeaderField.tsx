@@ -5,8 +5,7 @@ const NetworkInfoHeaderField = () => {
 	return (
 		<div className="network-info-header-field-values">
 			<div className="network-info-header-field-value tooltip">
-				Network
-				<span className="tooltiptext">24-hr WOO Network Vol.</span>
+				WOO X<span className="tooltiptext">24-hr WOO X Vol.</span>
 			</div>
 			<div className="network-info-header-field-value network-info-header-field-value-2 tooltip">
 				WOOFi

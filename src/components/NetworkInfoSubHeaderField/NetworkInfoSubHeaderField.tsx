@@ -4,17 +4,17 @@ import './NetworkInfoSubHeaderField.css'
 const NetworkInfoSubHeaderField = () => {
 	return (
 		<div className="network-info-subheader-field-values">
-			<div className="network-info-subheader-field-value">
-				WOO X{/* <span className="tooltiptext">24-hr WOO Network Vol.</span> */}
+			<div className="network-info-subheader-field-value tooltip">
+				WOO X<span className="tooltiptext">24-hr WOO X Vol.</span>
 			</div>
-			<div className="network-info-subheader-field-value network-info-header-field-value-2">
+			<div className="network-info-subheader-field-value network-info-header-field-value-2 tooltip">
 				TVL
-				{/* <span className="tooltiptext">24-hr WOO X Trading Vol.</span> */}
+				<span className="tooltiptext">WOOFi Total Value Locked</span>
 			</div>
 
-			<div className="network-info-subheader-field-value network-info-header-field-value-3">
+			<div className="network-info-subheader-field-value network-info-header-field-value-3 tooltip">
 				Open Int.
-				{/* <span className="tooltiptext">24-hr WOO X Futures Vol.</span> */}
+				<span className="tooltiptext">Open Interest WOO X Futures</span>
 			</div>
 		</div>
 	)

@@ -32,19 +32,15 @@
 	align-items: center;
 }
 
-/* .tooltip {
-	position: relative;
-	display: inline-block;
-}
-
-.tooltip .tooltiptext {
+.tooltiptext {
 	visibility: hidden;
+	position: relative;
 
-	bottom: 100%;
-	left: 50%;
-	width: 80px;
-	margin-left: -40px;
-	padding: 6px 2px;
+	top: 7%;
+	left: 23%;
+	width: 180px;
+
+	padding: 6px 4px;
 
 	border-radius: 4px;
 	background-color: #3c404bf2;
@@ -61,4 +57,4 @@
 
 .tooltip:hover .tooltiptext {
 	visibility: visible;
-} */
+}

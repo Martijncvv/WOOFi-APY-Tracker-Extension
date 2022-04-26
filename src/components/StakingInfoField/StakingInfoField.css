@@ -9,7 +9,6 @@
 
 #staking-info-field-total {
 	width: 100px;
-	margin-left: 4px;
 
 	position: relative;
 	top: -20px;
@@ -18,4 +17,5 @@
 	font-size: 15px;
 	font-weight: 500;
 	color: white;
+	/* border: 1px solid green; */
 }

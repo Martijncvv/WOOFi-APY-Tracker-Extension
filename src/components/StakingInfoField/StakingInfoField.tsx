@@ -45,6 +45,7 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 		})
 		index++
 	}
+	console.log('stakingData', stakingData)
 
 	const renderActiveShape = (props) => {
 		const {
@@ -91,32 +92,34 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 
 	return (
 		<div className="staking-info-field">
-			<ResponsiveContainer width={270} height="100%">
-				<PieChart>
-					<Pie
-						stroke="none"
-						data={stakingData}
-						cx="46"
-						cy="100%"
-						startAngle={180}
-						endAngle={0}
-						innerRadius={40}
-						outerRadius={50}
-						fill="#8884d8"
-						paddingAngle={5}
-						dataKey="value"
-						activeIndex={activePieIndex > 0 ? activePieIndex : 0}
-						activeShape={renderActiveShape}
-					>
-						{stakingData.map((entry, index) => (
-							<Cell
-								key={`cell-${index}`}
-								fill={COLORS[index % COLORS.length]}
-							/>
-						))}
-					</Pie>
+			{/* <ResponsiveContainer width={280} height="100%"> */}
+			<div id="staking-info-field-chart">
+				<ResponsiveContainer width={113} height="100%">
+					<PieChart>
+						<Pie
+							stroke="none"
+							data={stakingData}
+							cx="46"
+							cy="100%"
+							startAngle={180}
+							endAngle={0}
+							innerRadius={40}
+							outerRadius={50}
+							fill="#8884d8"
+							paddingAngle={5}
+							dataKey="value"
+							activeIndex={activePieIndex > 0 ? activePieIndex : 0}
+							activeShape={renderActiveShape}
+						>
+							{stakingData.map((entry, index) => (
+								<Cell
+									key={`cell-${index}`}
+									fill={COLORS[index % COLORS.length]}
+								/>
+							))}
+						</Pie>
 
-					<Legend
+						{/* <Legend
 						layout="vertical"
 						verticalAlign="middle"
 						align="right"
@@ -127,9 +130,26 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 							padding: '0',
 							marginRight: '91px',
 						}}
-					/>
-				</PieChart>
-			</ResponsiveContainer>
+					/> */}
+					</PieChart>
+				</ResponsiveContainer>
+				<div id="staking-info-field-apr">
+					{stakingData.map((chain, index) => (
+						<span
+							key={index}
+							className="staking-info-field-line"
+							style={{ color: chain.color }}
+						>
+							<span
+								className="dot"
+								style={{ backgroundColor: chain.color }}
+							></span>
+							{chain.name}
+						</span>
+					))}
+				</div>
+			</div>
+
 			<div id="staking-info-field-total">
 				{amountFormatter(totalStakedWooAmount)}
 			</div>

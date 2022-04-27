@@ -21,18 +21,6 @@
 	/* border: 1px solid green; */
 }
 
-#staking-info-field-total {
-	width: 100px;
-
-	position: relative;
-	top: -60px;
-
-	font-size: 15px;
-	text-align: center;
-	font-weight: 500;
-	color: white;
-	/* border: 1px solid orange; */
-}
 /* ////////////////////////////////////////  */
 /* ////////////////////////////////////////  */
 
@@ -52,31 +40,63 @@
 
 .charts-info-field-legenda-line {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
+	align-items: center;
 
 	height: 12px;
-	width: 50px;
+	width: 46px;
 
-	margin: 0 0 0 0;
+	margin: 2px 2px 0 0;
 	padding: 0;
 
 	/* border: 1px solid orange; */
 }
 
 .dot {
-	height: 10px;
-	width: 10px;
-	margin: 0 5px 0 0;
+	height: 8px;
+	width: 8px;
+	margin: 0 4px 0 0;
 	padding: 0;
 
 	border-radius: 50%;
 }
 .charts-info-field-legenda-text {
-	width: 40px;
+	width: 32px;
+	margin: 0;
 
 	line-height: 10px;
 	font-size: 10px;
 	overflow: hidden;
 	/* white-space: nowrap; */
 	text-overflow: ellipsis;
+}
+
+/* ////////////////////////////////////////  */
+/* ////////////////////////////////////////  */
+
+#staking-info-field-total-staked {
+	width: 100px;
+
+	position: absolute;
+	top: 262px;
+
+	font-size: 15px;
+	text-align: center;
+	font-weight: 500;
+	color: white;
+	/* border: 1px solid pink; */
+}
+
+#staking-info-field-total-sources {
+	width: 100px;
+
+	position: absolute;
+	top: 262px;
+	left: 200px;
+
+	font-size: 15px;
+	text-align: center;
+	font-weight: 500;
+	color: white;
+	/* border: 1px solid orange; */
 }

@@ -255,7 +255,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".staking-info-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n#staking-info-field-total {\n\twidth: 100px;\n\n\tposition: relative;\n\ttop: -60px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#charts-info-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.charts-info-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 12px;\n\twidth: 50px;\n\n\tmargin: 0 0 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 10px;\n\twidth: 10px;\n\tmargin: 0 5px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.charts-info-field-legenda-text {\n\twidth: 40px;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n", "",{"version":3,"sources":["webpack://./src/components/StakingInfoField/StakingInfoField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;;CAEZ,iBAAiB;;CAEjB,yBAAyB;CACzB,kBAAkB;CAClB,4BAA4B;AAC7B;;AAEA;CACC,aAAa;CACb,sBAAsB;CACtB,8BAA8B;;CAE9B,YAAY;CACZ,YAAY;CACZ,6BAA6B;AAC9B;;AAEA;CACC,YAAY;;CAEZ,kBAAkB;CAClB,UAAU;;CAEV,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,8BAA8B;AAC/B;AACA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,aAAa;CACb,eAAe;;CAEf,8BAA8B;CAC9B,uBAAuB;;CAEvB,YAAY;CACZ,YAAY;CACZ,SAAS;CACT,UAAU;CACV,8BAA8B;AAC/B;;AAEA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;CACZ,WAAW;;CAEX,eAAe;CACf,UAAU;;CAEV,8BAA8B;AAC/B;;AAEA;CACC,YAAY;CACZ,WAAW;CACX,iBAAiB;CACjB,UAAU;;CAEV,kBAAkB;AACnB;AACA;CACC,WAAW;;CAEX,iBAAiB;CACjB,eAAe;CACf,gBAAgB;CAChB,yBAAyB;CACzB,uBAAuB;AACxB","sourcesContent":[".staking-info-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n#staking-info-field-total {\n\twidth: 100px;\n\n\tposition: relative;\n\ttop: -60px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#charts-info-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.charts-info-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 12px;\n\twidth: 50px;\n\n\tmargin: 0 0 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 10px;\n\twidth: 10px;\n\tmargin: 0 5px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.charts-info-field-legenda-text {\n\twidth: 40px;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".staking-info-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#charts-info-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.charts-info-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.charts-info-field-legenda-text {\n\twidth: 32px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#staking-info-field-total-staked {\n\twidth: 100px;\n\n\tposition: absolute;\n\ttop: 262px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-total-sources {\n\twidth: 100px;\n\n\tposition: absolute;\n\ttop: 262px;\n\tleft: 200px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n", "",{"version":3,"sources":["webpack://./src/components/StakingInfoField/StakingInfoField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;;CAEZ,iBAAiB;;CAEjB,yBAAyB;CACzB,kBAAkB;CAClB,4BAA4B;AAC7B;;AAEA;CACC,aAAa;CACb,sBAAsB;CACtB,8BAA8B;;CAE9B,YAAY;CACZ,YAAY;CACZ,6BAA6B;AAC9B;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,aAAa;CACb,eAAe;;CAEf,8BAA8B;CAC9B,uBAAuB;;CAEvB,YAAY;CACZ,YAAY;CACZ,SAAS;CACT,UAAU;CACV,8BAA8B;AAC/B;;AAEA;CACC,aAAa;CACb,2BAA2B;CAC3B,mBAAmB;;CAEnB,YAAY;CACZ,WAAW;;CAEX,mBAAmB;CACnB,UAAU;;CAEV,8BAA8B;AAC/B;;AAEA;CACC,WAAW;CACX,UAAU;CACV,iBAAiB;CACjB,UAAU;;CAEV,kBAAkB;AACnB;AACA;CACC,WAAW;CACX,SAAS;;CAET,iBAAiB;CACjB,eAAe;CACf,gBAAgB;CAChB,yBAAyB;CACzB,uBAAuB;AACxB;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,YAAY;;CAEZ,kBAAkB;CAClB,UAAU;;CAEV,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,4BAA4B;AAC7B;;AAEA;CACC,YAAY;;CAEZ,kBAAkB;CAClB,UAAU;CACV,WAAW;;CAEX,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,8BAA8B;AAC/B","sourcesContent":[".staking-info-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#charts-info-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.charts-info-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.charts-info-field-legenda-text {\n\twidth: 32px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#staking-info-field-total-staked {\n\twidth: 100px;\n\n\tposition: absolute;\n\ttop: 262px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-total-sources {\n\twidth: 100px;\n\n\tposition: absolute;\n\ttop: 262px;\n\tleft: 200px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1176,9 +1176,13 @@ __webpack_require__.r(__webpack_exports__);
 
 const StakingFieldHeader = () => {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-values" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value" }, "Staked"),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value staking-field-header-value-2 " }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value staking-field-header-value-3" }, "Sources")));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value tooltip" },
+            "Staked",
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "Staked WOO + Top APR")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value staking-field-header-value-2 tooltip" }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value staking-field-header-value-3 tooltip" },
+            "Sources",
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "Past 30 days Volume Sources"))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StakingFieldHeader);
 
@@ -1214,11 +1218,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _StakingInfoField_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StakingInfoField.css */ "./src/components/StakingInfoField/StakingInfoField.css");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/shape/Sector.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/ResponsiveContainer.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/PieChart.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/polar/Pie.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Cell.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/shape/Sector.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/ResponsiveContainer.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/PieChart.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/polar/Pie.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Cell.js");
+/* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -1231,12 +1236,14 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
+
 const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStakedWooAmount, woofi1MVolumeSources, }) => {
     const [activePieIndex, setActivePieIndex] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
     const [stakingData, setStakingData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
+    const [topStakingChains, setTopStakingChains] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [stakingColors, setStakingColors] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [topVolumeSources, setTopVolumeSources] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
-    const [totalVolume, setTotalVolume] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
+    const [totalVolume1M, setTotalVolume1M] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
     let resourceColors = [
         '#4e8ff7',
         '#25CED1',
@@ -1248,9 +1255,12 @@ const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStaked
     ];
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
         getActivePieIndex();
+        getVolumeSourcesChartData();
+    }, [activeTab]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
         getStakingChartData();
         getVolumeSourcesChartData();
-    }, [activeTab, woofiStakingInfo]);
+    }, [woofiStakingInfo]);
     function getStakingColors() {
         return __awaiter(this, void 0, void 0, function* () {
             let stakingColors = [];
@@ -1268,34 +1278,38 @@ const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStaked
             let stakingData = [];
             for (let key in woofiStakingInfo) {
                 stakingData.push({
-                    name: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}%`,
-                    value: parseInt(woofiStakingInfo[key].data.woo.total_staked),
+                    apr: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}%`,
+                    value: parseInt(woofiStakingInfo[key].data.woo.total_staked) / Math.pow(10, 18),
                     chainId: key,
                     color: chainsInfo[index].color,
                 });
                 index++;
             }
             setStakingData(stakingData);
+            // console.log('stakingData', stakingData)
+            let stakingDataCopy = stakingData.slice();
+            // console.log('TopStakingChains', stakingDataCopy.sort(compareApr))
+            setTopStakingChains(stakingDataCopy.sort(compareApr));
         });
     }
     function getVolumeSourcesChartData() {
         return __awaiter(this, void 0, void 0, function* () {
             let volumeSourcesData = [];
-            let totalVolume = 0;
+            let totalVolume1M = 0;
             for (let source of woofi1MVolumeSources[activeTab].data) {
                 volumeSourcesData.push({
-                    name: `${source.name}`,
-                    value: parseInt(source.volume_usd),
+                    sourceName: `${source.name}`,
+                    value: parseInt(source.volume_usd) / Math.pow(10, 18),
                 });
-                totalVolume += parseInt(source.volume_usd);
+                totalVolume1M += parseInt(source.volume_usd) / Math.pow(10, 18);
             }
-            setTotalVolume(totalVolume);
+            setTotalVolume1M(totalVolume1M);
             console.log('volumeSourcesData', volumeSourcesData);
             let otherVolumeResources = volumeSourcesData[volumeSourcesData.length - 1].value;
             console.log('otherVolumeResources', otherVolumeResources);
             let orderedVolumeSources = volumeSourcesData
                 .sort(compareVolume)
-                .filter((source) => source.name !== 'Other');
+                .filter((source) => source.sourceName !== 'Other');
             console.log('orderedVolumeSources', orderedVolumeSources);
             let topVolumeSources = [];
             for (let i = 0; i < orderedVolumeSources.length; i++) {
@@ -1306,7 +1320,10 @@ const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStaked
                     otherVolumeResources += orderedVolumeSources[i].value;
                 }
             }
-            topVolumeSources.push({ name: `Other`, value: totalVolume });
+            topVolumeSources.push({
+                sourceName: `Other`,
+                value: otherVolumeResources,
+            });
             setTopVolumeSources(topVolumeSources);
             console.log('topVolumeSources', topVolumeSources);
             console.log('otherVolumeResources', otherVolumeResources);
@@ -1321,13 +1338,22 @@ const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStaked
         }
         return 0;
     };
+    const compareApr = (a, b) => {
+        if (parseInt(a.apr.slice(0, -1)) > parseInt(b.apr.slice(0, -1))) {
+            return -1;
+        }
+        if (parseInt(a.apr.slice(0, -1)) < parseInt(b.apr.slice(0, -1))) {
+            return 1;
+        }
+        return 0;
+    };
     ////////////////////////////////////////
     ////////////////////////////////////////
     const renderActiveShape = (props) => {
         const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, } = props;
         return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("g", null,
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_2__.Sector, { cx: cx, cy: cy, innerRadius: innerRadius, outerRadius: outerRadius, startAngle: startAngle, endAngle: endAngle, fill: fill }),
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_2__.Sector, { cx: cx, cy: cy, startAngle: startAngle, endAngle: endAngle, innerRadius: innerRadius - 5, outerRadius: innerRadius - 3, fill: fill })));
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__.Sector, { cx: cx, cy: cy, innerRadius: innerRadius, outerRadius: outerRadius, startAngle: startAngle, endAngle: endAngle, fill: fill }),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__.Sector, { cx: cx, cy: cy, startAngle: startAngle, endAngle: endAngle, innerRadius: innerRadius - 5, outerRadius: innerRadius - 3, fill: fill })));
     };
     function getActivePieIndex() {
         if (chainsInfo && activeTab) {
@@ -1336,38 +1362,23 @@ const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStaked
     }
     return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "staking-info-field" },
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "staking-info-field-chart" },
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__.ResponsiveContainer, { width: 280, height: 58 },
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__.PieChart, null,
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__.Pie, { stroke: "none", data: stakingData, cx: "46", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value", activeIndex: activePieIndex > 0 ? activePieIndex : 0, activeShape: renderActiveShape }, stakingData.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Cell, { key: `cell-${index}`, fill: stakingColors[index % stakingColors.length] })))))),
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "charts-info-field-legenda" }, stakingData.map((chain, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: index, className: "charts-info-field-legenda-line", style: { color: chain.color } },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, { width: 280, height: 58 },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__.PieChart, null,
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, { stroke: "none", data: stakingData, cx: "46", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value", activeIndex: activePieIndex > 0 ? activePieIndex : 0, activeShape: renderActiveShape }, stakingData.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Cell, { key: `cell-${index}`, fill: stakingColors[index % stakingColors.length] })))))),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "charts-info-field-legenda" }, topStakingChains.map((chain, index) => index < 4 && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: index, className: "charts-info-field-legenda-line", style: { color: chain.color } },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "dot", style: { backgroundColor: chain.color } }),
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "charts-info-field-legenda-text" }, chain.name)))))),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "charts-info-field-legenda-text" }, chain.apr)))))),
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "staking-info-field-chart" },
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__.ResponsiveContainer, { width: 280, height: 58 },
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__.PieChart, null,
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__.Pie, { stroke: "none", data: topVolumeSources, cx: "46", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value" }, topVolumeSources.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Cell, { key: `cell-${index}`, fill: resourceColors[index % resourceColors.length] })))))),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, { width: 280, height: 58 },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__.PieChart, null,
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, { stroke: "none", data: topVolumeSources, cx: "46", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value" }, topVolumeSources.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Cell, { key: `cell-${index}`, fill: resourceColors[index % resourceColors.length] })))))),
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "charts-info-field-legenda" }, topVolumeSources.map((chain, index) => index < 4 && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: index, className: "charts-info-field-legenda-line", style: { color: resourceColors[index] } },
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "dot", style: { backgroundColor: resourceColors[index] } }),
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "charts-info-field-legenda-text" }, chain.name))))))));
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "dot", style: { backgroundColor: resourceColors[index] } }),
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "charts-info-field-legenda-text" }, chain.sourceName)))))),
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "staking-info-field-total-staked" }, (0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(totalStakedWooAmount)),
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "staking-info-field-total-sources" }, (0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(totalVolume1M))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StakingInfoField);
-{
-    /* <div id="staking-info-field-apr">
-{stakingData.map((chain, index) => (
-    <div
-        key={index}
-        className="staking-info-field-line"
-        style={{ color: chain.color }}
-    >
-        <span
-            className="dot"
-            style={{ backgroundColor: chain.color }}
-        ></span>
-        {chain.name}
-    </div>
-))}
-</div> */
-}
 
 
 /***/ }),

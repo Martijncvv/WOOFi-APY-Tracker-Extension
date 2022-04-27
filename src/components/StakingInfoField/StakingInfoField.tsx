@@ -9,6 +9,8 @@ import {
 	Sector,
 } from 'recharts'
 
+import { amountFormatter } from '../../utils/amountFormatter'
+
 interface StakingInfoFieldProps {
 	chainsInfo: any
 	totalStakedWooAmount: number
@@ -26,10 +28,11 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 }) => {
 	const [activePieIndex, setActivePieIndex] = useState<number>(0)
 	const [stakingData, setStakingData] = useState<any>([])
+	const [topStakingChains, setTopStakingChains] = useState<any>([])
 	const [stakingColors, setStakingColors] = useState<any>([])
 
 	const [topVolumeSources, setTopVolumeSources] = useState<any>([])
-	const [totalVolume, setTotalVolume] = useState<number>(0)
+	const [totalVolume1M, setTotalVolume1M] = useState<number>(0)
 
 	let resourceColors = [
 		'#4e8ff7',
@@ -43,9 +46,13 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 
 	useEffect(() => {
 		getActivePieIndex()
+		getVolumeSourcesChartData()
+	}, [activeTab])
+
+	useEffect(() => {
 		getStakingChartData()
 		getVolumeSourcesChartData()
-	}, [activeTab, woofiStakingInfo])
+	}, [woofiStakingInfo])
 
 	async function getStakingColors() {
 		let stakingColors = []
@@ -62,28 +69,33 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 		let stakingData = []
 		for (let key in woofiStakingInfo) {
 			stakingData.push({
-				name: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}%`,
-				value: parseInt(woofiStakingInfo[key].data.woo.total_staked),
+				apr: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}%`,
+				value: parseInt(woofiStakingInfo[key].data.woo.total_staked) / 10 ** 18,
 				chainId: key,
 				color: chainsInfo[index].color,
 			})
 			index++
 		}
 		setStakingData(stakingData)
+		// console.log('stakingData', stakingData)
+
+		let stakingDataCopy = stakingData.slice()
+		// console.log('TopStakingChains', stakingDataCopy.sort(compareApr))
+		setTopStakingChains(stakingDataCopy.sort(compareApr))
 	}
 
 	async function getVolumeSourcesChartData() {
 		let volumeSourcesData = []
-		let totalVolume = 0
+		let totalVolume1M = 0
 		for (let source of woofi1MVolumeSources[activeTab].data) {
 			volumeSourcesData.push({
-				name: `${source.name}`,
-				value: parseInt(source.volume_usd),
+				sourceName: `${source.name}`,
+				value: parseInt(source.volume_usd) / 10 ** 18,
 			})
 
-			totalVolume += parseInt(source.volume_usd)
+			totalVolume1M += parseInt(source.volume_usd) / 10 ** 18
 		}
-		setTotalVolume(totalVolume)
+		setTotalVolume1M(totalVolume1M)
 
 		console.log('volumeSourcesData', volumeSourcesData)
 		let otherVolumeResources =
@@ -92,7 +104,7 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 
 		let orderedVolumeSources = volumeSourcesData
 			.sort(compareVolume)
-			.filter((source) => source.name !== 'Other')
+			.filter((source) => source.sourceName !== 'Other')
 		console.log('orderedVolumeSources', orderedVolumeSources)
 
 		let topVolumeSources = []
@@ -103,7 +115,10 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 				otherVolumeResources += orderedVolumeSources[i].value
 			}
 		}
-		topVolumeSources.push({ name: `Other`, value: totalVolume })
+		topVolumeSources.push({
+			sourceName: `Other`,
+			value: otherVolumeResources,
+		})
 
 		setTopVolumeSources(topVolumeSources)
 
@@ -116,6 +131,15 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 			return -1
 		}
 		if (a.value < b.value) {
+			return 1
+		}
+		return 0
+	}
+	const compareApr = (a, b) => {
+		if (parseInt(a.apr.slice(0, -1)) > parseInt(b.apr.slice(0, -1))) {
+			return -1
+		}
+		if (parseInt(a.apr.slice(0, -1)) < parseInt(b.apr.slice(0, -1))) {
 			return 1
 		}
 		return 0
@@ -195,21 +219,24 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 					</PieChart>
 				</ResponsiveContainer>
 				<div id="charts-info-field-legenda">
-					{stakingData.map((chain, index) => (
-						<div
-							key={index}
-							className="charts-info-field-legenda-line"
-							style={{ color: chain.color }}
-						>
-							<span
-								className="dot"
-								style={{ backgroundColor: chain.color }}
-							></span>
-							<span className="charts-info-field-legenda-text">
-								{chain.name}
-							</span>
-						</div>
-					))}
+					{topStakingChains.map(
+						(chain, index) =>
+							index < 4 && (
+								<div
+									key={index}
+									className="charts-info-field-legenda-line"
+									style={{ color: chain.color }}
+								>
+									<span
+										className="dot"
+										style={{ backgroundColor: chain.color }}
+									></span>
+									<span className="charts-info-field-legenda-text">
+										{chain.apr}
+									</span>
+								</div>
+							)
+					)}
 				</div>
 			</div>
 
@@ -248,12 +275,12 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 									className="charts-info-field-legenda-line"
 									style={{ color: resourceColors[index] }}
 								>
-									<span
+									<div
 										className="dot"
 										style={{ backgroundColor: resourceColors[index] }}
-									></span>
+									></div>
 									<span className="charts-info-field-legenda-text">
-										{chain.name}
+										{chain.sourceName}
 									</span>
 								</div>
 							)
@@ -261,31 +288,14 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 				</div>
 			</div>
 
-			{/* <ResponsiveContainer width={280} height="100%"> */}
-
-			{/* <div id="staking-info-field-total">
+			<div id="staking-info-field-total-staked">
 				{amountFormatter(totalStakedWooAmount)}
-			</div> */}
+			</div>
+			<div id="staking-info-field-total-sources">
+				{amountFormatter(totalVolume1M)}
+			</div>
 		</div>
 	)
 }
 
 export default StakingInfoField
-
-{
-	/* <div id="staking-info-field-apr">
-{stakingData.map((chain, index) => (
-	<div
-		key={index}
-		className="staking-info-field-line"
-		style={{ color: chain.color }}
-	>
-		<span
-			className="dot"
-			style={{ backgroundColor: chain.color }}
-		></span>
-		{chain.name}
-	</div>
-))}
-</div> */
-}

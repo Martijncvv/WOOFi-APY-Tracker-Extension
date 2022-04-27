@@ -4,11 +4,15 @@ import './StakingFieldHeader.css'
 const StakingFieldHeader = () => {
 	return (
 		<div className="staking-field-header-values">
-			<div className="staking-field-header-value">Staked</div>
+			<div className="staking-field-header-value tooltip">
+				Staked
+				<span className="tooltiptext">Staked WOO + Top APR</span>
+			</div>
 
-			<div className="staking-field-header-value staking-field-header-value-2 "></div>
-			<div className="staking-field-header-value staking-field-header-value-3">
+			<div className="staking-field-header-value staking-field-header-value-2 tooltip"></div>
+			<div className="staking-field-header-value staking-field-header-value-3 tooltip">
 				Sources
+				<span className="tooltiptext">Past 30 days Volume Sources</span>
 			</div>
 		</div>
 	)

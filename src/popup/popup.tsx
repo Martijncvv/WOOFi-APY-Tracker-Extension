@@ -293,9 +293,9 @@ const App = () => {
 
 				{/* <CategoryHeaderField value_1={'Staked'} value_2={'APR'} value_3={''} /> */}
 				<StakingFieldHeader />
-				{chainsInfo.length == chainIds.length &&
-					Object.keys(woofiStakingInfo).length == chainIds.length &&
-					Object.keys(woofi1MVolumeSources).length == chainIds.length && (
+				{chainsInfo.length > 0 &&
+					Object.keys(woofiStakingInfo).length > 0 &&
+					Object.keys(woofi1MVolumeSources).length > 0 && (
 						<StakingInfoField
 							chainsInfo={chainsInfo}
 							totalStakedWooAmount={totalStakedWooAmount}

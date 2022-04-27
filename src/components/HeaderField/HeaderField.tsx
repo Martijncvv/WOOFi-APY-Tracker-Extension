@@ -10,7 +10,7 @@ const HeaderField: React.FC<{}> = ({}) => {
 			</div>
 
 			<div id="header-text">
-				<h1>WOOFi Stats</h1>
+				<h1>WOO Stats</h1>
 			</div>
 		</div>
 	)

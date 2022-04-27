@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#calc-yield-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\n\tcolor: white;\n}\n#calc-yield-field-header {\n\tpadding: 6px 12px 0;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n\tbackground-color: #313641;\n}\n\n.calc-yield-field-values {\n\tpadding: 6px 12px 6px;\n\tbackground-color: #3c404b;\n\t/* border-radius: 0 0 5px 5px; */\n\tborder-radius: 5px;\n}\n\n.calc-yield-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-amount:focus {\n\toutline: none;\n}\n\n#input-apy {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-apy:focus {\n\toutline: none;\n}\n\n#input-days {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-days:focus {\n\toutline: none;\n}\n\n#apy-profit-field {\n\tpadding: 3px 2px 0;\n}\n", "",{"version":3,"sources":["webpack://./src/components/CalcYieldField/CalcYieldField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,sBAAsB;;CAEtB,YAAY;AACb;AACA;CACC,mBAAmB;;CAEnB,eAAe;CACf,gCAAgC;CAChC,iBAAiB;CACjB,yBAAyB;AAC1B;;AAEA;CACC,qBAAqB;CACrB,yBAAyB;CACzB,gCAAgC;CAChC,kBAAkB;AACnB;;AAEA;CACC,iBAAiB;CACjB,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;AACf;AACA;CACC,UAAU;;CAEV,cAAc;CACd,eAAe;AAChB;;AAEA;CACC,UAAU;AACX;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;;CAEzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,kBAAkB;AACnB","sourcesContent":["#calc-yield-field {\n\tdisplay: flex;\n\tflex-direction: column;\n\n\tcolor: white;\n}\n#calc-yield-field-header {\n\tpadding: 6px 12px 0;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n\tbackground-color: #313641;\n}\n\n.calc-yield-field-values {\n\tpadding: 6px 12px 6px;\n\tbackground-color: #3c404b;\n\t/* border-radius: 0 0 5px 5px; */\n\tborder-radius: 5px;\n}\n\n.calc-yield-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-amount:focus {\n\toutline: none;\n}\n\n#input-apy {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-apy:focus {\n\toutline: none;\n}\n\n#input-days {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-days:focus {\n\toutline: none;\n}\n\n#apy-profit-field {\n\tpadding: 3px 2px 0;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#calc-yield-field {\n\tpadding: 12px 0 6px;\n\n\tdisplay: flex;\n\tflex-direction: column;\n\n\tcolor: white;\n}\n#calc-yield-field-header {\n\tpadding: 6px 12px 0;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n\tbackground-color: #313641;\n}\n\n.calc-yield-field-values {\n\tpadding: 6px 12px 6px;\n\tbackground-color: #3c404b;\n\t/* border-radius: 0 0 5px 5px; */\n\tborder-radius: 5px;\n}\n\n.calc-yield-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-amount:focus {\n\toutline: none;\n}\n\n#input-apy {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-apy:focus {\n\toutline: none;\n}\n\n#input-days {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-days:focus {\n\toutline: none;\n}\n\n#apy-profit-field {\n\tpadding: 3px 2px 0;\n}\n", "",{"version":3,"sources":["webpack://./src/components/CalcYieldField/CalcYieldField.css"],"names":[],"mappings":"AAAA;CACC,mBAAmB;;CAEnB,aAAa;CACb,sBAAsB;;CAEtB,YAAY;AACb;AACA;CACC,mBAAmB;;CAEnB,eAAe;CACf,gCAAgC;CAChC,iBAAiB;CACjB,yBAAyB;AAC1B;;AAEA;CACC,qBAAqB;CACrB,yBAAyB;CACzB,gCAAgC;CAChC,kBAAkB;AACnB;;AAEA;CACC,iBAAiB;CACjB,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;AACf;AACA;CACC,UAAU;;CAEV,cAAc;CACd,eAAe;AAChB;;AAEA;CACC,UAAU;AACX;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;;CAEzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,kBAAkB;AACnB","sourcesContent":["#calc-yield-field {\n\tpadding: 12px 0 6px;\n\n\tdisplay: flex;\n\tflex-direction: column;\n\n\tcolor: white;\n}\n#calc-yield-field-header {\n\tpadding: 6px 12px 0;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n\tbackground-color: #313641;\n}\n\n.calc-yield-field-values {\n\tpadding: 6px 12px 6px;\n\tbackground-color: #3c404b;\n\t/* border-radius: 0 0 5px 5px; */\n\tborder-radius: 5px;\n}\n\n.calc-yield-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-amount:focus {\n\toutline: none;\n}\n\n#input-apy {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-apy:focus {\n\toutline: none;\n}\n\n#input-days {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-days:focus {\n\toutline: none;\n}\n\n#apy-profit-field {\n\tpadding: 3px 2px 0;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n\tmargin: 0;\n\tfont-size: 26px;\n\tcolor: rgb(248, 248, 248);\n}\n\nimg {\n\tbackground: white;\n\theight: 40px;\n\tborder-radius: 20px;\n}\n\n#header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: flex-start;\n\n\theight: 66px;\n\n\tbackground-image: linear-gradient(\n\t\t40deg,\n\t\t#4e8ff7,\n\t\t#4e8ff7 30%,\n\t\t#e0a555 70%,\n\t\t#e0a555\n\t);\n}\n\n#header-text {\n\tpadding-left: 10px;\n}\n\n#img-box {\n\tmargin: 0 16px;\n\tpadding: 6px;\n\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\tborder-radius: 5px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/HeaderField/HeaderField.css"],"names":[],"mappings":"AAAA;CACC,SAAS;CACT,eAAe;CACf,yBAAyB;AAC1B;;AAEA;CACC,iBAAiB;CACjB,YAAY;CACZ,mBAAmB;AACpB;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,2BAA2B;;CAE3B,YAAY;;CAEZ;;;;;;EAMC;AACF;;AAEA;CACC,kBAAkB;AACnB;;AAEA;CACC,cAAc;CACd,YAAY;;CAEZ,aAAa;CACb,uBAAuB;CACvB,mBAAmB;;CAEnB,kBAAkB;AACnB","sourcesContent":["h1 {\n\tmargin: 0;\n\tfont-size: 26px;\n\tcolor: rgb(248, 248, 248);\n}\n\nimg {\n\tbackground: white;\n\theight: 40px;\n\tborder-radius: 20px;\n}\n\n#header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: flex-start;\n\n\theight: 66px;\n\n\tbackground-image: linear-gradient(\n\t\t40deg,\n\t\t#4e8ff7,\n\t\t#4e8ff7 30%,\n\t\t#e0a555 70%,\n\t\t#e0a555\n\t);\n}\n\n#header-text {\n\tpadding-left: 10px;\n}\n\n#img-box {\n\tmargin: 0 16px;\n\tpadding: 6px;\n\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\tborder-radius: 5px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "h1 {\n\tmargin: 0;\n\tfont-size: 26px;\n\tcolor: rgb(248, 248, 248);\n}\n\nimg {\n\tbackground: white;\n\theight: 40px;\n\tborder-radius: 20px;\n}\n\n#header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: flex-start;\n\n\theight: 66px;\n\n\tbackground-image: linear-gradient(\n\t\t40deg,\n\t\t#4e8ff7,\n\t\t#4e8ff7 30%,\n\t\t#e0a555 70%,\n\t\t#e0a555\n\t);\n}\n\n#header-text {\n\tpadding-left: 16px;\n}\n\n#img-box {\n\tmargin: 0 16px;\n\tpadding: 6px;\n\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\tborder-radius: 5px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/HeaderField/HeaderField.css"],"names":[],"mappings":"AAAA;CACC,SAAS;CACT,eAAe;CACf,yBAAyB;AAC1B;;AAEA;CACC,iBAAiB;CACjB,YAAY;CACZ,mBAAmB;AACpB;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,2BAA2B;;CAE3B,YAAY;;CAEZ;;;;;;EAMC;AACF;;AAEA;CACC,kBAAkB;AACnB;;AAEA;CACC,cAAc;CACd,YAAY;;CAEZ,aAAa;CACb,uBAAuB;CACvB,mBAAmB;;CAEnB,kBAAkB;AACnB","sourcesContent":["h1 {\n\tmargin: 0;\n\tfont-size: 26px;\n\tcolor: rgb(248, 248, 248);\n}\n\nimg {\n\tbackground: white;\n\theight: 40px;\n\tborder-radius: 20px;\n}\n\n#header {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: flex-start;\n\n\theight: 66px;\n\n\tbackground-image: linear-gradient(\n\t\t40deg,\n\t\t#4e8ff7,\n\t\t#4e8ff7 30%,\n\t\t#e0a555 70%,\n\t\t#e0a555\n\t);\n}\n\n#header-text {\n\tpadding-left: 16px;\n}\n\n#img-box {\n\tmargin: 0 16px;\n\tpadding: 6px;\n\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\n\tborder-radius: 5px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -177,7 +177,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".network-info-header-field-values {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 18px;\n\tpadding: 12px 12px 0;\n\t/* padding: 4px 12px 0; */\n\n\tcolor: #fefefe;\n\t/* color: #73bef4; */\n\tbackground-color: #313641;\n}\n\n.network-info-header-field-value {\n\tbox-sizing: border-box;\n\twidth: 33%;\n\n\tfont-size: 15px;\n\t/* font-size: 13px; */\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n\t/* border: 1px solid blue; */\n}\n.network-info-header-field-value-2 {\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 0 0 0 24px;\n}\n.network-info-header-field-value-3 {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\talign-items: center;\n}\n\n.tooltiptext {\n\tvisibility: hidden;\n\tposition: relative;\n\n\ttop: 7%;\n\tleft: 23%;\n\twidth: 180px;\n\n\tpadding: 6px 4px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n", "",{"version":3,"sources":["webpack://./src/components/NetworkInfoHeaderField/NetworkInfoHeaderField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;CACZ,oBAAoB;CACpB,yBAAyB;;CAEzB,cAAc;CACd,oBAAoB;CACpB,yBAAyB;AAC1B;;AAEA;CACC,sBAAsB;CACtB,UAAU;;CAEV,eAAe;CACf,qBAAqB;CACrB,gBAAgB;CAChB,0BAA0B;CAC1B,4BAA4B;AAC7B;AACA;CACC,aAAa;CACb,mBAAmB;CACnB,mBAAmB;AACpB;AACA;CACC,aAAa;CACb,yBAAyB;CACzB,mBAAmB;AACpB;;AAEA;CACC,kBAAkB;CAClB,kBAAkB;;CAElB,OAAO;CACP,SAAS;CACT,YAAY;;CAEZ,gBAAgB;;CAEhB,kBAAkB;CAClB,2BAA2B;;CAE3B,mBAAmB;CACnB,eAAe;CACf,WAAW;CACX,kBAAkB;CAClB,oBAAoB;;CAEpB,kBAAkB;CAClB,UAAU;AACX;;AAEA;CACC,mBAAmB;AACpB","sourcesContent":[".network-info-header-field-values {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 18px;\n\tpadding: 12px 12px 0;\n\t/* padding: 4px 12px 0; */\n\n\tcolor: #fefefe;\n\t/* color: #73bef4; */\n\tbackground-color: #313641;\n}\n\n.network-info-header-field-value {\n\tbox-sizing: border-box;\n\twidth: 33%;\n\n\tfont-size: 15px;\n\t/* font-size: 13px; */\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n\t/* border: 1px solid blue; */\n}\n.network-info-header-field-value-2 {\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 0 0 0 24px;\n}\n.network-info-header-field-value-3 {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\talign-items: center;\n}\n\n.tooltiptext {\n\tvisibility: hidden;\n\tposition: relative;\n\n\ttop: 7%;\n\tleft: 23%;\n\twidth: 180px;\n\n\tpadding: 6px 4px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".network-info-header-field-values {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 18px;\n\tpadding: 12px 12px 0;\n\t/* padding: 4px 12px 0; */\n\n\tcolor: #fefefe;\n\t/* color: #73bef4; */\n\tbackground-color: #313641;\n}\n\n.network-info-header-field-value {\n\tbox-sizing: border-box;\n\twidth: 33%;\n\n\tfont-size: 15px;\n\t/* font-size: 13px; */\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n\t/* border: 1px solid blue; */\n}\n.network-info-header-field-value-2 {\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 0 0 0 24px;\n}\n.network-info-header-field-value-3 {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\talign-items: center;\n}\n", "",{"version":3,"sources":["webpack://./src/components/NetworkInfoHeaderField/NetworkInfoHeaderField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;CACZ,oBAAoB;CACpB,yBAAyB;;CAEzB,cAAc;CACd,oBAAoB;CACpB,yBAAyB;AAC1B;;AAEA;CACC,sBAAsB;CACtB,UAAU;;CAEV,eAAe;CACf,qBAAqB;CACrB,gBAAgB;CAChB,0BAA0B;CAC1B,4BAA4B;AAC7B;AACA;CACC,aAAa;CACb,mBAAmB;CACnB,mBAAmB;AACpB;AACA;CACC,aAAa;CACb,yBAAyB;CACzB,mBAAmB;AACpB","sourcesContent":[".network-info-header-field-values {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 18px;\n\tpadding: 12px 12px 0;\n\t/* padding: 4px 12px 0; */\n\n\tcolor: #fefefe;\n\t/* color: #73bef4; */\n\tbackground-color: #313641;\n}\n\n.network-info-header-field-value {\n\tbox-sizing: border-box;\n\twidth: 33%;\n\n\tfont-size: 15px;\n\t/* font-size: 13px; */\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n\t/* border: 1px solid blue; */\n}\n.network-info-header-field-value-2 {\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 0 0 0 24px;\n}\n.network-info-header-field-value-3 {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\talign-items: center;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -210,10 +210,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".network-info-subheader-field-values {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/StakingFieldHeader/StakingFieldHeader.css":
-/*!********************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/StakingFieldHeader/StakingFieldHeader.css ***!
-  \********************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/PieChartField/PieChartField.css":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/PieChartField/PieChartField.css ***!
+  \**********************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -229,17 +229,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".staking-field-header-values {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 18px;\n\tpadding: 12px 12px 0;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.staking-field-header-value {\n\tbox-sizing: border-box;\n\twidth: 33%;\n\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n\n.staking-field-header-value-2 {\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 0 0 0 24px;\n}\n.staking-field-header-value-3 {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\talign-items: center;\n}\n", "",{"version":3,"sources":["webpack://./src/components/StakingFieldHeader/StakingFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;CACZ,oBAAoB;;CAEpB,cAAc;CACd,yBAAyB;CACzB,gCAAgC;AACjC;;AAEA;CACC,sBAAsB;CACtB,UAAU;;CAEV,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,mBAAmB;AACpB;AACA;CACC,aAAa;CACb,yBAAyB;CACzB,mBAAmB;AACpB","sourcesContent":[".staking-field-header-values {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 18px;\n\tpadding: 12px 12px 0;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.staking-field-header-value {\n\tbox-sizing: border-box;\n\twidth: 33%;\n\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n\n.staking-field-header-value-2 {\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 0 0 0 24px;\n}\n.staking-field-header-value-3 {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\talign-items: center;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".piechart-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.piechart-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.piechart-field-legenda-text {\n\twidth: 35px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-total-staked {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-total-sources {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n.piechart-tooltip-box {\n\tdisplay: flex;\n\tjustify-content: center;\n\n\twidth: 150px;\n\t/* border: 1px solid orange; */\n}\n\n.piechart-tooltip {\n\tpadding: 4px 6px;\n\n\ttext-transform: capitalize;\n\tcolor: #fefefe;\n\tfont-size: 12px;\n\n\tborder-radius: 5px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/PieChartField/PieChartField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;;CAEZ,iBAAiB;;CAEjB,yBAAyB;CACzB,kBAAkB;CAClB,4BAA4B;AAC7B;;AAEA;CACC,aAAa;CACb,sBAAsB;CACtB,8BAA8B;;CAE9B,YAAY;CACZ,YAAY;CACZ,6BAA6B;AAC9B;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,aAAa;CACb,eAAe;;CAEf,8BAA8B;CAC9B,uBAAuB;;CAEvB,YAAY;CACZ,YAAY;CACZ,SAAS;CACT,UAAU;CACV,8BAA8B;AAC/B;;AAEA;CACC,aAAa;CACb,2BAA2B;CAC3B,mBAAmB;;CAEnB,YAAY;CACZ,WAAW;;CAEX,mBAAmB;CACnB,UAAU;;CAEV,8BAA8B;AAC/B;;AAEA;CACC,WAAW;CACX,UAAU;CACV,iBAAiB;CACjB,UAAU;;CAEV,kBAAkB;AACnB;AACA;CACC,WAAW;CACX,SAAS;;CAET,iBAAiB;CACjB,eAAe;CACf,gBAAgB;CAChB,yBAAyB;CACzB,uBAAuB;AACxB;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,YAAY;;CAEZ,kBAAkB;CAClB,YAAY;CACZ,SAAS;;CAET,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,4BAA4B;AAC7B;;AAEA;CACC,YAAY;;CAEZ,kBAAkB;CAClB,YAAY;CACZ,SAAS;;CAET,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,8BAA8B;AAC/B;AACA;CACC,aAAa;CACb,uBAAuB;;CAEvB,YAAY;CACZ,8BAA8B;AAC/B;;AAEA;CACC,gBAAgB;;CAEhB,0BAA0B;CAC1B,cAAc;CACd,eAAe;;CAEf,kBAAkB;AACnB","sourcesContent":[".piechart-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.piechart-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.piechart-field-legenda-text {\n\twidth: 35px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-total-staked {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-total-sources {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n.piechart-tooltip-box {\n\tdisplay: flex;\n\tjustify-content: center;\n\n\twidth: 150px;\n\t/* border: 1px solid orange; */\n}\n\n.piechart-tooltip {\n\tpadding: 4px 6px;\n\n\ttext-transform: capitalize;\n\tcolor: #fefefe;\n\tfont-size: 12px;\n\n\tborder-radius: 5px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/StakingInfoField/StakingInfoField.css":
-/*!****************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/StakingInfoField/StakingInfoField.css ***!
-  \****************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/PieChartFieldHeader/PieChartFieldHeader.css":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/PieChartFieldHeader/PieChartFieldHeader.css ***!
+  \**********************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -255,7 +255,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".staking-info-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#charts-info-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.charts-info-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.charts-info-field-legenda-text {\n\twidth: 32px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#staking-info-field-total-staked {\n\twidth: 100px;\n\n\tposition: absolute;\n\ttop: 262px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-total-sources {\n\twidth: 100px;\n\n\tposition: absolute;\n\ttop: 262px;\n\tleft: 200px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n", "",{"version":3,"sources":["webpack://./src/components/StakingInfoField/StakingInfoField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;;CAEZ,iBAAiB;;CAEjB,yBAAyB;CACzB,kBAAkB;CAClB,4BAA4B;AAC7B;;AAEA;CACC,aAAa;CACb,sBAAsB;CACtB,8BAA8B;;CAE9B,YAAY;CACZ,YAAY;CACZ,6BAA6B;AAC9B;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,aAAa;CACb,eAAe;;CAEf,8BAA8B;CAC9B,uBAAuB;;CAEvB,YAAY;CACZ,YAAY;CACZ,SAAS;CACT,UAAU;CACV,8BAA8B;AAC/B;;AAEA;CACC,aAAa;CACb,2BAA2B;CAC3B,mBAAmB;;CAEnB,YAAY;CACZ,WAAW;;CAEX,mBAAmB;CACnB,UAAU;;CAEV,8BAA8B;AAC/B;;AAEA;CACC,WAAW;CACX,UAAU;CACV,iBAAiB;CACjB,UAAU;;CAEV,kBAAkB;AACnB;AACA;CACC,WAAW;CACX,SAAS;;CAET,iBAAiB;CACjB,eAAe;CACf,gBAAgB;CAChB,yBAAyB;CACzB,uBAAuB;AACxB;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,YAAY;;CAEZ,kBAAkB;CAClB,UAAU;;CAEV,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,4BAA4B;AAC7B;;AAEA;CACC,YAAY;;CAEZ,kBAAkB;CAClB,UAAU;CACV,WAAW;;CAEX,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,8BAA8B;AAC/B","sourcesContent":[".staking-info-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#charts-info-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.charts-info-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.charts-info-field-legenda-text {\n\twidth: 32px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#staking-info-field-total-staked {\n\twidth: 100px;\n\n\tposition: absolute;\n\ttop: 262px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#staking-info-field-total-sources {\n\twidth: 100px;\n\n\tposition: absolute;\n\ttop: 262px;\n\tleft: 200px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".piechart-field-header-values {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 18px;\n\tpadding: 12px 12px 0;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.piechart-field-header-value {\n\tbox-sizing: border-box;\n\twidth: 33%;\n\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n\n.piechart-field-header-value-2 {\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 0 0 0 24px;\n}\n.piechart-field-header-value-3 {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\talign-items: center;\n}\n", "",{"version":3,"sources":["webpack://./src/components/PieChartFieldHeader/PieChartFieldHeader.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;CACZ,oBAAoB;;CAEpB,cAAc;CACd,yBAAyB;CACzB,gCAAgC;AACjC;;AAEA;CACC,sBAAsB;CACtB,UAAU;;CAEV,eAAe;CACf,gBAAgB;CAChB,0BAA0B;AAC3B;;AAEA;CACC,aAAa;CACb,mBAAmB;CACnB,mBAAmB;AACpB;AACA;CACC,aAAa;CACb,yBAAyB;CACzB,mBAAmB;AACpB","sourcesContent":[".piechart-field-header-values {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 18px;\n\tpadding: 12px 12px 0;\n\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n\tborder-bottom: 1px solid #73bef4;\n}\n\n.piechart-field-header-value {\n\tbox-sizing: border-box;\n\twidth: 33%;\n\n\tfont-size: 15px;\n\tfont-weight: 600;\n\ttext-transform: capitalize;\n}\n\n.piechart-field-header-value-2 {\n\tdisplay: flex;\n\talign-items: center;\n\tpadding: 0 0 0 24px;\n}\n.piechart-field-header-value-3 {\n\tdisplay: flex;\n\tjustify-content: flex-end;\n\talign-items: center;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -333,7 +333,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n\twidth: 330px;\n\theight: auto;\n\tpadding: 0;\n\tmargin: 0;\n\tbackground-color: #313641;\n}\n#dashboard {\n\tmargin: 0 18px;\n}\n\n::-webkit-scrollbar {\n\twidth: 3px;\n}\n::-webkit-scrollbar-track {\n\tbox-shadow: inset 0 0 5px rgba(255, 255, 255, 0);\n}\n::-webkit-scrollbar-thumb {\n\tbackground: #e0a555;\n\tborder-radius: 2px;\n}\n", "",{"version":3,"sources":["webpack://./src/popup/popup.css"],"names":[],"mappings":"AAAA;CACC,YAAY;CACZ,YAAY;CACZ,UAAU;CACV,SAAS;CACT,yBAAyB;AAC1B;AACA;CACC,cAAc;AACf;;AAEA;CACC,UAAU;AACX;AACA;CACC,gDAAgD;AACjD;AACA;CACC,mBAAmB;CACnB,kBAAkB;AACnB","sourcesContent":["body {\n\twidth: 330px;\n\theight: auto;\n\tpadding: 0;\n\tmargin: 0;\n\tbackground-color: #313641;\n}\n#dashboard {\n\tmargin: 0 18px;\n}\n\n::-webkit-scrollbar {\n\twidth: 3px;\n}\n::-webkit-scrollbar-track {\n\tbox-shadow: inset 0 0 5px rgba(255, 255, 255, 0);\n}\n::-webkit-scrollbar-thumb {\n\tbackground: #e0a555;\n\tborder-radius: 2px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n\twidth: 330px;\n\theight: auto;\n\tpadding: 0;\n\tmargin: 0;\n\tbackground-color: #313641;\n}\n#dashboard {\n\tmargin: 0 18px;\n}\n\n::-webkit-scrollbar {\n\twidth: 3px;\n}\n::-webkit-scrollbar-track {\n\tbox-shadow: inset 0 0 5px rgba(255, 255, 255, 0);\n}\n::-webkit-scrollbar-thumb {\n\tbackground: #e0a555;\n\tborder-radius: 2px;\n}\n\n.tooltiptext {\n\tvisibility: hidden;\n\tposition: relative;\n\n\t/* top: 7%; */\n\ttop: 46px;\n\tleft: 23%;\n\twidth: 180px;\n\n\tpadding: 6px 4px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n", "",{"version":3,"sources":["webpack://./src/popup/popup.css"],"names":[],"mappings":"AAAA;CACC,YAAY;CACZ,YAAY;CACZ,UAAU;CACV,SAAS;CACT,yBAAyB;AAC1B;AACA;CACC,cAAc;AACf;;AAEA;CACC,UAAU;AACX;AACA;CACC,gDAAgD;AACjD;AACA;CACC,mBAAmB;CACnB,kBAAkB;AACnB;;AAEA;CACC,kBAAkB;CAClB,kBAAkB;;CAElB,aAAa;CACb,SAAS;CACT,SAAS;CACT,YAAY;;CAEZ,gBAAgB;;CAEhB,kBAAkB;CAClB,2BAA2B;;CAE3B,mBAAmB;CACnB,eAAe;CACf,WAAW;CACX,kBAAkB;CAClB,oBAAoB;;CAEpB,kBAAkB;CAClB,UAAU;AACX;;AAEA;CACC,mBAAmB;AACpB","sourcesContent":["body {\n\twidth: 330px;\n\theight: auto;\n\tpadding: 0;\n\tmargin: 0;\n\tbackground-color: #313641;\n}\n#dashboard {\n\tmargin: 0 18px;\n}\n\n::-webkit-scrollbar {\n\twidth: 3px;\n}\n::-webkit-scrollbar-track {\n\tbox-shadow: inset 0 0 5px rgba(255, 255, 255, 0);\n}\n::-webkit-scrollbar-thumb {\n\tbackground: #e0a555;\n\tborder-radius: 2px;\n}\n\n.tooltiptext {\n\tvisibility: hidden;\n\tposition: relative;\n\n\t/* top: 7%; */\n\ttop: 46px;\n\tleft: 23%;\n\twidth: 180px;\n\n\tpadding: 6px 4px;\n\n\tborder-radius: 4px;\n\tbackground-color: #3c404bf2;\n\n\tfont-weight: normal;\n\tfont-size: 13px;\n\tcolor: #fff;\n\ttext-align: center;\n\ttext-transform: none;\n\n\tposition: absolute;\n\tz-index: 1;\n}\n\n.tooltip:hover .tooltiptext {\n\tvisibility: visible;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -572,10 +572,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./src/components/StakingFieldHeader/StakingFieldHeader.css":
-/*!******************************************************************!*\
-  !*** ./src/components/StakingFieldHeader/StakingFieldHeader.css ***!
-  \******************************************************************/
+/***/ "./src/components/PieChartField/PieChartField.css":
+/*!********************************************************!*\
+  !*** ./src/components/PieChartField/PieChartField.css ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -584,7 +584,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_StakingFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./StakingFieldHeader.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/StakingFieldHeader/StakingFieldHeader.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_PieChartField_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./PieChartField.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/PieChartField/PieChartField.css");
 
             
 
@@ -593,18 +593,18 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_StakingFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_PieChartField_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_StakingFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_PieChartField_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
-/***/ "./src/components/StakingInfoField/StakingInfoField.css":
-/*!**************************************************************!*\
-  !*** ./src/components/StakingInfoField/StakingInfoField.css ***!
-  \**************************************************************/
+/***/ "./src/components/PieChartFieldHeader/PieChartFieldHeader.css":
+/*!********************************************************************!*\
+  !*** ./src/components/PieChartFieldHeader/PieChartFieldHeader.css ***!
+  \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -613,7 +613,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_StakingInfoField_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./StakingInfoField.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/StakingInfoField/StakingInfoField.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_PieChartFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./PieChartFieldHeader.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/PieChartFieldHeader/PieChartFieldHeader.css");
 
             
 
@@ -622,11 +622,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_StakingInfoField_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_PieChartFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_StakingInfoField_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_PieChartFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -946,7 +946,7 @@ const HeaderField = ({}) => {
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "img-box" },
             react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", { src: WOOFiIcon })),
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "header-text" },
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, "WOOFi Stats"))));
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, "WOO Stats"))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderField);
 
@@ -1160,69 +1160,24 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/StakingFieldHeader/StakingFieldHeader.tsx":
-/*!******************************************************************!*\
-  !*** ./src/components/StakingFieldHeader/StakingFieldHeader.tsx ***!
-  \******************************************************************/
+/***/ "./src/components/PieChartField/PieChartField.tsx":
+/*!********************************************************!*\
+  !*** ./src/components/PieChartField/PieChartField.tsx ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _StakingFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StakingFieldHeader.css */ "./src/components/StakingFieldHeader/StakingFieldHeader.css");
-
-
-const StakingFieldHeader = () => {
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-values" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value tooltip" },
-            "Staked",
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "Staked WOO + Top APR")),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value staking-field-header-value-2 tooltip" }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "staking-field-header-value staking-field-header-value-3 tooltip" },
-            "Sources",
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "Past 30 days Volume Sources"))));
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StakingFieldHeader);
-
-
-/***/ }),
-
-/***/ "./src/components/StakingFieldHeader/index.tsx":
-/*!*****************************************************!*\
-  !*** ./src/components/StakingFieldHeader/index.tsx ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _StakingFieldHeader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StakingFieldHeader */ "./src/components/StakingFieldHeader/StakingFieldHeader.tsx");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_StakingFieldHeader__WEBPACK_IMPORTED_MODULE_0__.default);
-
-
-/***/ }),
-
-/***/ "./src/components/StakingInfoField/StakingInfoField.tsx":
-/*!**************************************************************!*\
-  !*** ./src/components/StakingInfoField/StakingInfoField.tsx ***!
-  \**************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _StakingInfoField_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StakingInfoField.css */ "./src/components/StakingInfoField/StakingInfoField.css");
+/* harmony import */ var _PieChartField_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PieChartField.css */ "./src/components/PieChartField/PieChartField.css");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/shape/Sector.js");
 /* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/ResponsiveContainer.js");
 /* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/PieChart.js");
 /* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/polar/Pie.js");
 /* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Cell.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Tooltip.js");
 /* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -1237,22 +1192,14 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
-const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStakedWooAmount, woofi1MVolumeSources, }) => {
+const PieChartField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStakedWooAmount, woofi1MVolumeSources, }) => {
     const [activePieIndex, setActivePieIndex] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
     const [stakingData, setStakingData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [topStakingChains, setTopStakingChains] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [stakingColors, setStakingColors] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [topVolumeSources, setTopVolumeSources] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [totalVolume1M, setTotalVolume1M] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
-    let resourceColors = [
-        '#4e8ff7',
-        '#25CED1',
-        '#FFFFFF',
-        '#EFEA5A',
-        '#EA526F',
-        '#E0A555',
-        '#FF7700',
-    ];
+    let resourceColors = ['#4e8ff7', '#f0f0f0', '#e0a555', '#3ba99c'];
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
         getActivePieIndex();
         getVolumeSourcesChartData();
@@ -1286,9 +1233,7 @@ const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStaked
                 index++;
             }
             setStakingData(stakingData);
-            // console.log('stakingData', stakingData)
             let stakingDataCopy = stakingData.slice();
-            // console.log('TopStakingChains', stakingDataCopy.sort(compareApr))
             setTopStakingChains(stakingDataCopy.sort(compareApr));
         });
     }
@@ -1304,13 +1249,10 @@ const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStaked
                 totalVolume1M += parseInt(source.volume_usd) / Math.pow(10, 18);
             }
             setTotalVolume1M(totalVolume1M);
-            console.log('volumeSourcesData', volumeSourcesData);
             let otherVolumeResources = volumeSourcesData[volumeSourcesData.length - 1].value;
-            console.log('otherVolumeResources', otherVolumeResources);
             let orderedVolumeSources = volumeSourcesData
                 .sort(compareVolume)
                 .filter((source) => source.sourceName !== 'Other');
-            console.log('orderedVolumeSources', orderedVolumeSources);
             let topVolumeSources = [];
             for (let i = 0; i < orderedVolumeSources.length; i++) {
                 if (i < 3) {
@@ -1360,42 +1302,118 @@ const StakingInfoField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStaked
             setActivePieIndex(chainsInfo.findIndex((chain) => chain.chainId === activeTab));
         }
     }
-    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "staking-info-field" },
-        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "staking-info-field-chart" },
+    const sourcesChartTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length) {
+            let source = payload[0].payload.sourceName;
+            let volume = payload[0].payload.value;
+            let color = payload[0].payload.fill;
+            return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "piechart-tooltip-box" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "piechart-tooltip", style: { borderColor: color, color: color } },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, `${source}  ${((volume / totalVolume1M) * 100).toPrecision(3)}%`))));
+        }
+        return null;
+    };
+    const stakingChartTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length) {
+            console.log('payload', payload);
+            let chain = payload[0].payload.chainId;
+            let apr = payload[0].payload.apr;
+            let color = payload[0].payload.fill;
+            return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "piechart-tooltip-box" },
+                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "piechart-tooltip", style: { borderColor: color, color: color } },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, `${chain} ${apr}`))));
+        }
+        return null;
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "piechart-field" },
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "piechart-field-chart" },
             react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, { width: 280, height: 58 },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__.PieChart, null,
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, { stroke: "none", data: stakingData, cx: "46", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value", activeIndex: activePieIndex > 0 ? activePieIndex : 0, activeShape: renderActiveShape }, stakingData.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Cell, { key: `cell-${index}`, fill: stakingColors[index % stakingColors.length] })))))),
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "charts-info-field-legenda" }, topStakingChains.map((chain, index) => index < 4 && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: index, className: "charts-info-field-legenda-line", style: { color: chain.color } },
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "dot", style: { backgroundColor: chain.color } }),
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "charts-info-field-legenda-text" }, chain.apr)))))),
-        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "staking-info-field-chart" },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, { stroke: "none", data: stakingData, cx: "46", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value", activeIndex: activePieIndex > 0 ? activePieIndex : 0, activeShape: renderActiveShape }, stakingData.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Cell, { key: `cell-${index}`, fill: stakingColors[index % stakingColors.length] })))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__.Tooltip, { content: stakingChartTooltip, allowEscapeViewBox: { x: true, y: true }, position: { x: 60, y: -6 } }))),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "piechart-field-legenda" },
+                topStakingChains.map((chain, index) => index < 4 && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: index, className: "piechart-field-legenda-line", style: { color: chain.color } },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "dot", style: { backgroundColor: chain.color } }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "piechart-field-legenda-text" }, chain.apr)))),
+                topStakingChains.length > 2 && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "piechart-field-total-staked" }, (0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(totalStakedWooAmount))))),
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "piechart-field-chart" },
             react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, { width: 280, height: 58 },
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__.PieChart, null,
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, { stroke: "none", data: topVolumeSources, cx: "46", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value" }, topVolumeSources.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Cell, { key: `cell-${index}`, fill: resourceColors[index % resourceColors.length] })))))),
-            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "charts-info-field-legenda" }, topVolumeSources.map((chain, index) => index < 4 && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: index, className: "charts-info-field-legenda-line", style: { color: resourceColors[index] } },
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "dot", style: { backgroundColor: resourceColors[index] } }),
-                react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "charts-info-field-legenda-text" }, chain.sourceName)))))),
-        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "staking-info-field-total-staked" }, (0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(totalStakedWooAmount)),
-        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "staking-info-field-total-sources" }, (0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(totalVolume1M))));
+                    "syncId=\"anyId\"",
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, { stroke: "none", data: topVolumeSources, cx: "46", cy: "100%", startAngle: 180, endAngle: 0, innerRadius: 40, outerRadius: 50, fill: "#8884d8", paddingAngle: 5, dataKey: "value" }, topVolumeSources.map((entry, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Cell, { key: `cell-${index}`, fill: resourceColors[index % resourceColors.length] })))),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__.Tooltip, { content: sourcesChartTooltip, allowEscapeViewBox: { x: true, y: true }, 
+                        // position={{ x: -110, y: -34 }}
+                        position: { x: -110, y: -6 } }))),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "piechart-field-legenda" },
+                topVolumeSources.map((chain, index) => index < 4 && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: index, className: "piechart-field-legenda-line", style: { color: resourceColors[index] } },
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "dot", style: { backgroundColor: resourceColors[index] } }),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("span", { className: "piechart-field-legenda-text" }, chain.sourceName)))),
+                topVolumeSources.length > 2 && (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "piechart-field-total-sources" }, (0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(totalVolume1M)))))));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StakingInfoField);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PieChartField);
 
 
 /***/ }),
 
-/***/ "./src/components/StakingInfoField/index.tsx":
-/*!***************************************************!*\
-  !*** ./src/components/StakingInfoField/index.tsx ***!
-  \***************************************************/
+/***/ "./src/components/PieChartField/index.tsx":
+/*!************************************************!*\
+  !*** ./src/components/PieChartField/index.tsx ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _StakingInfoField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StakingInfoField */ "./src/components/StakingInfoField/StakingInfoField.tsx");
+/* harmony import */ var _PieChartField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PieChartField */ "./src/components/PieChartField/PieChartField.tsx");
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_StakingInfoField__WEBPACK_IMPORTED_MODULE_0__.default);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_PieChartField__WEBPACK_IMPORTED_MODULE_0__.default);
+
+
+/***/ }),
+
+/***/ "./src/components/PieChartFieldHeader/PieChartFieldHeader.tsx":
+/*!********************************************************************!*\
+  !*** ./src/components/PieChartFieldHeader/PieChartFieldHeader.tsx ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _PieChartFieldHeader_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PieChartFieldHeader.css */ "./src/components/PieChartFieldHeader/PieChartFieldHeader.css");
+
+
+const PieChartFieldHeader = () => {
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "piechart-field-header-values" },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "piechart-field-header-value tooltip" },
+            "Staked",
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "Staked WOO + APR")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "piechart-field-header-value piechart-field-header-value-2 tooltip" }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "piechart-field-header-value piechart-field-header-value-3 tooltip" },
+            "Sources",
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "tooltiptext" }, "Past 30 days Volume Sources"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PieChartFieldHeader);
+
+
+/***/ }),
+
+/***/ "./src/components/PieChartFieldHeader/index.tsx":
+/*!******************************************************!*\
+  !*** ./src/components/PieChartFieldHeader/index.tsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _PieChartFieldHeader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PieChartFieldHeader */ "./src/components/PieChartFieldHeader/PieChartFieldHeader.tsx");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_PieChartFieldHeader__WEBPACK_IMPORTED_MODULE_0__.default);
 
 
 /***/ }),
@@ -1542,8 +1560,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_CalcYieldField__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/CalcYieldField */ "./src/components/CalcYieldField/index.tsx");
 /* harmony import */ var _components_TabsField__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/TabsField */ "./src/components/TabsField/index.tsx");
 /* harmony import */ var _components_VolumeBarField__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/VolumeBarField */ "./src/components/VolumeBarField/index.tsx");
-/* harmony import */ var _components_StakingInfoField__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/StakingInfoField */ "./src/components/StakingInfoField/index.tsx");
-/* harmony import */ var _components_StakingFieldHeader__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/StakingFieldHeader */ "./src/components/StakingFieldHeader/index.tsx");
+/* harmony import */ var _components_PieChartField__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/PieChartField */ "./src/components/PieChartField/index.tsx");
+/* harmony import */ var _components_PieChartFieldHeader__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/PieChartFieldHeader */ "./src/components/PieChartFieldHeader/index.tsx");
 /* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../utils/api */ "./src/utils/api.ts");
 /* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -1769,10 +1787,10 @@ const App = () => {
                         wooNetworkFuturesVolume)} `, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(woofi1DTotalVolume / Math.pow(10, 18))}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(wooNetworkFuturesVolume)} ` }))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_NetworkInfoSubHeaderField__WEBPACK_IMPORTED_MODULE_8__.default, null),
             wooNetworkInfo && woofiTVL && wooNetworkFuturesOi && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(wooNetworkInfo.data.amount)}`, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(woofiTVL)}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(wooNetworkFuturesOi)} ` })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_StakingFieldHeader__WEBPACK_IMPORTED_MODULE_14__.default, null),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PieChartFieldHeader__WEBPACK_IMPORTED_MODULE_14__.default, null),
             chainsInfo.length > 0 &&
                 Object.keys(woofiStakingInfo).length > 0 &&
-                Object.keys(woofi1MVolumeSources).length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_StakingInfoField__WEBPACK_IMPORTED_MODULE_13__.default, { chainsInfo: chainsInfo, totalStakedWooAmount: totalStakedWooAmount, woofiStakingInfo: woofiStakingInfo, woofi1MVolumeSources: woofi1MVolumeSources, activeTab: activeTab })),
+                Object.keys(woofi1MVolumeSources).length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PieChartField__WEBPACK_IMPORTED_MODULE_13__.default, { chainsInfo: chainsInfo, totalStakedWooAmount: totalStakedWooAmount, woofiStakingInfo: woofiStakingInfo, woofi1MVolumeSources: woofi1MVolumeSources, activeTab: activeTab })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TabsField__WEBPACK_IMPORTED_MODULE_11__.default, { chainsInfo: chainsInfo, activeTabCallback: handleActiveTabChange, activeTab: activeTab }),
             displayCalculator && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_CalcYieldField__WEBPACK_IMPORTED_MODULE_10__.default, null),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_EarnFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { value_1: `Vault`, value_2: 'TVL', value_3: 'APY', displayCalculatorCallback: handleCalculatorChange, sortingOptionCallback: handleSortingChange, displayCalculator: displayCalculator }),
@@ -2202,7 +2220,7 @@ module.exports = __webpack_require__.p + "fde82952efe37937ab5e.png";
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkwoofi_apy_tracker_extension"] = self["webpackChunkwoofi_apy_tracker_extension"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkwoonetwork_stats_extension"] = self["webpackChunkwoonetwork_stats_extension"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();

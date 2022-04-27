@@ -1,4 +1,4 @@
-.staking-field-header-values {
+.piechart-field-header-values {
 	display: flex;
 	justify-content: space-between;
 
@@ -10,7 +10,7 @@
 	border-bottom: 1px solid #73bef4;
 }
 
-.staking-field-header-value {
+.piechart-field-header-value {
 	box-sizing: border-box;
 	width: 33%;
 
@@ -19,12 +19,12 @@
 	text-transform: capitalize;
 }
 
-.staking-field-header-value-2 {
+.piechart-field-header-value-2 {
 	display: flex;
 	align-items: center;
 	padding: 0 0 0 24px;
 }
-.staking-field-header-value-3 {
+.piechart-field-header-value-3 {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;

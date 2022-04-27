@@ -12,10 +12,8 @@ import LinksField from '../components/LinksField'
 import CalcYieldField from '../components/CalcYieldField'
 import TabsField from '../components/TabsField'
 import VolumeBarField from '../components/VolumeBarField'
-import StakingInfoField from '../components/StakingInfoField'
-import StakingFieldHeader from '../components/StakingFieldHeader'
-
-import CategoryHeaderField from '../components/CategoryHeaderField'
+import PieChartField from '../components/PieChartField'
+import PieChartFieldHeader from '../components/PieChartFieldHeader'
 
 const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
@@ -254,7 +252,6 @@ const App = () => {
 		<>
 			<HeaderField />
 			<div id="dashboard">
-				{/* <SubHeaderField subHeaderTitle={'WOOnetwork'} /> */}
 				<NetworkInfoHeaderField />
 				{wooNetworkInfo && (
 					<>
@@ -291,12 +288,11 @@ const App = () => {
 					/>
 				)}
 
-				{/* <CategoryHeaderField value_1={'Staked'} value_2={'APR'} value_3={''} /> */}
-				<StakingFieldHeader />
+				<PieChartFieldHeader />
 				{chainsInfo.length > 0 &&
 					Object.keys(woofiStakingInfo).length > 0 &&
 					Object.keys(woofi1MVolumeSources).length > 0 && (
-						<StakingInfoField
+						<PieChartField
 							chainsInfo={chainsInfo}
 							totalStakedWooAmount={totalStakedWooAmount}
 							woofiStakingInfo={woofiStakingInfo}

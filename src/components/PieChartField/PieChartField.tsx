@@ -1,9 +1,9 @@
-import './StakingInfoField.css'
+import './PieChartField.css'
 import React, { useState, useEffect, PureComponent } from 'react'
 import {
 	PieChart,
 	Pie,
-	Legend,
+	Tooltip,
 	Cell,
 	ResponsiveContainer,
 	Sector,
@@ -11,7 +11,7 @@ import {
 
 import { amountFormatter } from '../../utils/amountFormatter'
 
-interface StakingInfoFieldProps {
+interface PieChartFieldProps {
 	chainsInfo: any
 	totalStakedWooAmount: number
 	woofiStakingInfo: any
@@ -19,7 +19,7 @@ interface StakingInfoFieldProps {
 	activeTab: string
 }
 
-const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
+const PieChartField: React.FC<PieChartFieldProps> = ({
 	activeTab,
 	chainsInfo,
 	woofiStakingInfo,
@@ -34,15 +34,7 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 	const [topVolumeSources, setTopVolumeSources] = useState<any>([])
 	const [totalVolume1M, setTotalVolume1M] = useState<number>(0)
 
-	let resourceColors = [
-		'#4e8ff7',
-		'#25CED1',
-		'#FFFFFF',
-		'#EFEA5A',
-		'#EA526F',
-		'#E0A555',
-		'#FF7700',
-	]
+	let resourceColors = ['#4e8ff7', '#f0f0f0', '#e0a555', '#3ba99c']
 
 	useEffect(() => {
 		getActivePieIndex()
@@ -77,10 +69,8 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 			index++
 		}
 		setStakingData(stakingData)
-		// console.log('stakingData', stakingData)
 
 		let stakingDataCopy = stakingData.slice()
-		// console.log('TopStakingChains', stakingDataCopy.sort(compareApr))
 		setTopStakingChains(stakingDataCopy.sort(compareApr))
 	}
 
@@ -97,15 +87,12 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 		}
 		setTotalVolume1M(totalVolume1M)
 
-		console.log('volumeSourcesData', volumeSourcesData)
 		let otherVolumeResources =
 			volumeSourcesData[volumeSourcesData.length - 1].value
-		console.log('otherVolumeResources', otherVolumeResources)
 
 		let orderedVolumeSources = volumeSourcesData
 			.sort(compareVolume)
 			.filter((source) => source.sourceName !== 'Other')
-		console.log('orderedVolumeSources', orderedVolumeSources)
 
 		let topVolumeSources = []
 		for (let i = 0; i < orderedVolumeSources.length; i++) {
@@ -189,9 +176,51 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 		}
 	}
 
+	const sourcesChartTooltip = ({ active, payload, label }) => {
+		if (active && payload && payload.length) {
+			let source = payload[0].payload.sourceName
+			let volume = payload[0].payload.value
+			let color = payload[0].payload.fill
+			return (
+				<div className="piechart-tooltip-box">
+					<div
+						className="piechart-tooltip"
+						style={{ borderColor: color, color: color }}
+					>
+						<div>
+							{`${source}  ${((volume / totalVolume1M) * 100).toPrecision(3)}%`}
+						</div>
+					</div>
+				</div>
+			)
+		}
+
+		return null
+	}
+	const stakingChartTooltip = ({ active, payload, label }) => {
+		if (active && payload && payload.length) {
+			console.log('payload', payload)
+			let chain = payload[0].payload.chainId
+			let apr = payload[0].payload.apr
+			let color = payload[0].payload.fill
+			return (
+				<div className="piechart-tooltip-box">
+					<div
+						className="piechart-tooltip"
+						style={{ borderColor: color, color: color }}
+					>
+						<div>{`${chain} ${apr}`}</div>
+					</div>
+				</div>
+			)
+		}
+
+		return null
+	}
+
 	return (
-		<div className="staking-info-field">
-			<div id="staking-info-field-chart">
+		<div className="piechart-field">
+			<div id="piechart-field-chart">
 				<ResponsiveContainer width={280} height={58}>
 					<PieChart>
 						<Pie
@@ -216,33 +245,45 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 								/>
 							))}
 						</Pie>
+						<Tooltip
+							content={stakingChartTooltip}
+							allowEscapeViewBox={{ x: true, y: true }}
+							position={{ x: 60, y: -6 }}
+						/>
 					</PieChart>
 				</ResponsiveContainer>
-				<div id="charts-info-field-legenda">
+
+				<div id="piechart-field-legenda">
 					{topStakingChains.map(
 						(chain, index) =>
 							index < 4 && (
 								<div
 									key={index}
-									className="charts-info-field-legenda-line"
+									className="piechart-field-legenda-line"
 									style={{ color: chain.color }}
 								>
 									<span
 										className="dot"
 										style={{ backgroundColor: chain.color }}
 									></span>
-									<span className="charts-info-field-legenda-text">
+									<span className="piechart-field-legenda-text">
 										{chain.apr}
 									</span>
 								</div>
 							)
 					)}
+					{topStakingChains.length > 2 && (
+						<div id="piechart-field-total-staked">
+							{amountFormatter(totalStakedWooAmount)}
+						</div>
+					)}
 				</div>
 			</div>
 
-			<div id="staking-info-field-chart">
+			<div id="piechart-field-chart">
 				<ResponsiveContainer width={280} height={58}>
 					<PieChart>
+						syncId="anyId"
 						<Pie
 							stroke="none"
 							data={topVolumeSources}
@@ -263,39 +304,43 @@ const StakingInfoField: React.FC<StakingInfoFieldProps> = ({
 								/>
 							))}
 						</Pie>
+						<Tooltip
+							content={sourcesChartTooltip}
+							allowEscapeViewBox={{ x: true, y: true }}
+							// position={{ x: -110, y: -34 }}
+							position={{ x: -110, y: -6 }}
+						/>
 					</PieChart>
 				</ResponsiveContainer>
 
-				<div id="charts-info-field-legenda">
+				<div id="piechart-field-legenda">
 					{topVolumeSources.map(
 						(chain, index) =>
 							index < 4 && (
 								<div
 									key={index}
-									className="charts-info-field-legenda-line"
+									className="piechart-field-legenda-line"
 									style={{ color: resourceColors[index] }}
 								>
 									<div
 										className="dot"
 										style={{ backgroundColor: resourceColors[index] }}
 									></div>
-									<span className="charts-info-field-legenda-text">
+									<span className="piechart-field-legenda-text">
 										{chain.sourceName}
 									</span>
 								</div>
 							)
 					)}
+					{topVolumeSources.length > 2 && (
+						<div id="piechart-field-total-sources">
+							{amountFormatter(totalVolume1M)}
+						</div>
+					)}
 				</div>
-			</div>
-
-			<div id="staking-info-field-total-staked">
-				{amountFormatter(totalStakedWooAmount)}
-			</div>
-			<div id="staking-info-field-total-sources">
-				{amountFormatter(totalVolume1M)}
 			</div>
 		</div>
 	)
 }
 
-export default StakingInfoField
+export default PieChartField

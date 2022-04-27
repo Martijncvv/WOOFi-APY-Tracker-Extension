@@ -1,4 +1,6 @@
 #calc-yield-field {
+	padding: 12px 0 6px;
+
 	display: flex;
 	flex-direction: column;
 

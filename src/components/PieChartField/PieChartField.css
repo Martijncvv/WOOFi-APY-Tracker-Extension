@@ -1,4 +1,4 @@
-.staking-info-field {
+.piechart-field {
 	display: flex;
 	justify-content: space-between;
 
@@ -11,7 +11,7 @@
 	/* border: 1px solid pink; */
 }
 
-#staking-info-field-chart {
+#piechart-field-chart {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -24,7 +24,7 @@
 /* ////////////////////////////////////////  */
 /* ////////////////////////////////////////  */
 
-#charts-info-field-legenda {
+#piechart-field-legenda {
 	display: flex;
 	flex-wrap: wrap;
 
@@ -38,7 +38,7 @@
 	/* border: 1px solid purple; */
 }
 
-.charts-info-field-legenda-line {
+.piechart-field-legenda-line {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -60,8 +60,8 @@
 
 	border-radius: 50%;
 }
-.charts-info-field-legenda-text {
-	width: 32px;
+.piechart-field-legenda-text {
+	width: 35px;
 	margin: 0;
 
 	line-height: 10px;
@@ -74,11 +74,12 @@
 /* ////////////////////////////////////////  */
 /* ////////////////////////////////////////  */
 
-#staking-info-field-total-staked {
+#piechart-field-total-staked {
 	width: 100px;
 
-	position: absolute;
-	top: 262px;
+	position: relative;
+	bottom: 48px;
+	left: 1px;
 
 	font-size: 15px;
 	text-align: center;
@@ -87,16 +88,33 @@
 	/* border: 1px solid pink; */
 }
 
-#staking-info-field-total-sources {
+#piechart-field-total-sources {
 	width: 100px;
 
-	position: absolute;
-	top: 262px;
-	left: 200px;
+	position: relative;
+	bottom: 48px;
+	left: 1px;
 
 	font-size: 15px;
 	text-align: center;
 	font-weight: 500;
 	color: white;
 	/* border: 1px solid orange; */
+}
+.piechart-tooltip-box {
+	display: flex;
+	justify-content: center;
+
+	width: 150px;
+	/* border: 1px solid orange; */
+}
+
+.piechart-tooltip {
+	padding: 4px 6px;
+
+	text-transform: capitalize;
+	color: #fefefe;
+	font-size: 12px;
+
+	border-radius: 5px;
 }

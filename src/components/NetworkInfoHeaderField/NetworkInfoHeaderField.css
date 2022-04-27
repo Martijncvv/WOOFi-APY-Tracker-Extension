@@ -31,30 +31,3 @@
 	justify-content: flex-end;
 	align-items: center;
 }
-
-.tooltiptext {
-	visibility: hidden;
-	position: relative;
-
-	top: 7%;
-	left: 23%;
-	width: 180px;
-
-	padding: 6px 4px;
-
-	border-radius: 4px;
-	background-color: #3c404bf2;
-
-	font-weight: normal;
-	font-size: 13px;
-	color: #fff;
-	text-align: center;
-	text-transform: none;
-
-	position: absolute;
-	z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-	visibility: visible;
-}

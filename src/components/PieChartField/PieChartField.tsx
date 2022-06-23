@@ -108,9 +108,6 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 		})
 
 		setTopVolumeSources(topVolumeSources)
-
-		console.log('topVolumeSources', topVolumeSources)
-		console.log('otherVolumeResources', otherVolumeResources)
 	}
 
 	const compareVolume = (a, b) => {
@@ -199,7 +196,6 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 	}
 	const stakingChartTooltip = ({ active, payload, label }) => {
 		if (active && payload && payload.length) {
-			console.log('payload', payload)
 			let chain = payload[0].payload.chainId
 			let apr = payload[0].payload.apr
 			let color = payload[0].payload.fill

@@ -28,6 +28,32 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#calc-yield-field {\n\tpadding: 12px 0
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/DexTradesField/DexTradesField.css":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/DexTradesField/DexTradesField.css ***!
+  \************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "#dex-trades-field {\n\tpadding: 6px 12px;\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n}\n", "",{"version":3,"sources":["webpack://./src/components/DexTradesField/DexTradesField.css"],"names":[],"mappings":"AAAA;CACC,iBAAiB;CACjB,cAAc;CACd,yBAAyB;AAC1B","sourcesContent":["#dex-trades-field {\n\tpadding: 6px 12px;\n\tcolor: #fefefe;\n\tbackground-color: #313641;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/components/EarnFieldHeader/EarnFieldHeader.css":
 /*!**************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/components/EarnFieldHeader/EarnFieldHeader.css ***!
@@ -229,7 +255,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".piechart-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.piechart-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.piechart-field-legenda-text {\n\twidth: 35px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-total-staked {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-total-sources {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n.piechart-tooltip-box {\n\tdisplay: flex;\n\tjustify-content: center;\n\n\twidth: 150px;\n\t/* border: 1px solid orange; */\n}\n\n.piechart-tooltip {\n\tpadding: 4px 6px;\n\n\ttext-transform: capitalize;\n\tcolor: #fefefe;\n\tfont-size: 12px;\n\n\tborder-radius: 5px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/PieChartField/PieChartField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;;CAEZ,iBAAiB;;CAEjB,yBAAyB;CACzB,kBAAkB;CAClB,4BAA4B;AAC7B;;AAEA;CACC,aAAa;CACb,sBAAsB;CACtB,8BAA8B;;CAE9B,YAAY;CACZ,YAAY;CACZ,6BAA6B;AAC9B;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,aAAa;CACb,eAAe;;CAEf,8BAA8B;CAC9B,uBAAuB;;CAEvB,YAAY;CACZ,YAAY;CACZ,SAAS;CACT,UAAU;CACV,8BAA8B;AAC/B;;AAEA;CACC,aAAa;CACb,2BAA2B;CAC3B,mBAAmB;;CAEnB,YAAY;CACZ,WAAW;;CAEX,mBAAmB;CACnB,UAAU;;CAEV,8BAA8B;AAC/B;;AAEA;CACC,WAAW;CACX,UAAU;CACV,iBAAiB;CACjB,UAAU;;CAEV,kBAAkB;AACnB;AACA;CACC,WAAW;CACX,SAAS;;CAET,iBAAiB;CACjB,eAAe;CACf,gBAAgB;CAChB,yBAAyB;CACzB,uBAAuB;AACxB;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,YAAY;;CAEZ,kBAAkB;CAClB,YAAY;CACZ,SAAS;;CAET,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,4BAA4B;AAC7B;;AAEA;CACC,YAAY;;CAEZ,kBAAkB;CAClB,YAAY;CACZ,SAAS;;CAET,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,8BAA8B;AAC/B;AACA;CACC,aAAa;CACb,uBAAuB;;CAEvB,YAAY;CACZ,8BAA8B;AAC/B;;AAEA;CACC,gBAAgB;;CAEhB,0BAA0B;CAC1B,cAAc;CACd,eAAe;;CAEf,kBAAkB;AACnB","sourcesContent":[".piechart-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.piechart-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.piechart-field-legenda-text {\n\twidth: 35px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-total-staked {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-total-sources {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n.piechart-tooltip-box {\n\tdisplay: flex;\n\tjustify-content: center;\n\n\twidth: 150px;\n\t/* border: 1px solid orange; */\n}\n\n.piechart-tooltip {\n\tpadding: 4px 6px;\n\n\ttext-transform: capitalize;\n\tcolor: #fefefe;\n\tfont-size: 12px;\n\n\tborder-radius: 5px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".piechart-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0 0 0 1px;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.piechart-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.piechart-field-legenda-text {\n\twidth: 35px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-total-staked {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-total-sources {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n.piechart-tooltip-box {\n\tdisplay: flex;\n\tjustify-content: center;\n\n\twidth: 150px;\n\t/* border: 1px solid orange; */\n}\n\n.piechart-tooltip {\n\tpadding: 4px 6px;\n\n\ttext-transform: capitalize;\n\tcolor: #fefefe;\n\tfont-size: 12px;\n\n\tborder-radius: 5px;\n}\n", "",{"version":3,"sources":["webpack://./src/components/PieChartField/PieChartField.css"],"names":[],"mappings":"AAAA;CACC,aAAa;CACb,8BAA8B;;CAE9B,YAAY;;CAEZ,iBAAiB;;CAEjB,yBAAyB;CACzB,kBAAkB;CAClB,4BAA4B;AAC7B;;AAEA;CACC,aAAa;CACb,sBAAsB;CACtB,8BAA8B;;CAE9B,YAAY;CACZ,YAAY;CACZ,6BAA6B;AAC9B;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,aAAa;CACb,eAAe;;CAEf,8BAA8B;CAC9B,uBAAuB;;CAEvB,YAAY;CACZ,YAAY;CACZ,iBAAiB;CACjB,UAAU;CACV,8BAA8B;AAC/B;;AAEA;CACC,aAAa;CACb,2BAA2B;CAC3B,mBAAmB;;CAEnB,YAAY;CACZ,WAAW;;CAEX,mBAAmB;CACnB,UAAU;;CAEV,8BAA8B;AAC/B;;AAEA;CACC,WAAW;CACX,UAAU;CACV,iBAAiB;CACjB,UAAU;;CAEV,kBAAkB;AACnB;AACA;CACC,WAAW;CACX,SAAS;;CAET,iBAAiB;CACjB,eAAe;CACf,gBAAgB;CAChB,yBAAyB;CACzB,uBAAuB;AACxB;;AAEA,8CAA8C;AAC9C,8CAA8C;;AAE9C;CACC,YAAY;;CAEZ,kBAAkB;CAClB,YAAY;CACZ,SAAS;;CAET,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,4BAA4B;AAC7B;;AAEA;CACC,YAAY;;CAEZ,kBAAkB;CAClB,YAAY;CACZ,SAAS;;CAET,eAAe;CACf,kBAAkB;CAClB,gBAAgB;CAChB,YAAY;CACZ,8BAA8B;AAC/B;AACA;CACC,aAAa;CACb,uBAAuB;;CAEvB,YAAY;CACZ,8BAA8B;AAC/B;;AAEA;CACC,gBAAgB;;CAEhB,0BAA0B;CAC1B,cAAc;CACd,eAAe;;CAEf,kBAAkB;AACnB","sourcesContent":[".piechart-field {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\theight: 84px;\n\n\tpadding: 6px 12px;\n\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-chart {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: space-between;\n\n\theight: 80px;\n\twidth: 100px;\n\t/* border: 1px solid green; */\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-legenda {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\n\tjustify-content: space-between;\n\talign-items: flex-start;\n\n\theight: 30px;\n\twidth: 100px;\n\tmargin: 0 0 0 1px;\n\tpadding: 0;\n\t/* border: 1px solid purple; */\n}\n\n.piechart-field-legenda-line {\n\tdisplay: flex;\n\tjustify-content: flex-start;\n\talign-items: center;\n\n\theight: 12px;\n\twidth: 46px;\n\n\tmargin: 2px 2px 0 0;\n\tpadding: 0;\n\n\t/* border: 1px solid orange; */\n}\n\n.dot {\n\theight: 8px;\n\twidth: 8px;\n\tmargin: 0 4px 0 0;\n\tpadding: 0;\n\n\tborder-radius: 50%;\n}\n.piechart-field-legenda-text {\n\twidth: 35px;\n\tmargin: 0;\n\n\tline-height: 10px;\n\tfont-size: 10px;\n\toverflow: hidden;\n\t/* white-space: nowrap; */\n\ttext-overflow: ellipsis;\n}\n\n/* ////////////////////////////////////////  */\n/* ////////////////////////////////////////  */\n\n#piechart-field-total-staked {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid pink; */\n}\n\n#piechart-field-total-sources {\n\twidth: 100px;\n\n\tposition: relative;\n\tbottom: 48px;\n\tleft: 1px;\n\n\tfont-size: 15px;\n\ttext-align: center;\n\tfont-weight: 500;\n\tcolor: white;\n\t/* border: 1px solid orange; */\n}\n.piechart-tooltip-box {\n\tdisplay: flex;\n\tjustify-content: center;\n\n\twidth: 150px;\n\t/* border: 1px solid orange; */\n}\n\n.piechart-tooltip {\n\tpadding: 4px 6px;\n\n\ttext-transform: capitalize;\n\tcolor: #fefefe;\n\tfont-size: 12px;\n\n\tborder-radius: 5px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -366,6 +392,35 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_CalcYieldField_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./src/components/DexTradesField/DexTradesField.css":
+/*!**********************************************************!*\
+  !*** ./src/components/DexTradesField/DexTradesField.css ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_DexTradesField_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./DexTradesField.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/DexTradesField/DexTradesField.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_DexTradesField_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_DexTradesField_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -802,6 +857,155 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CalcYieldField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CalcYieldField */ "./src/components/CalcYieldField/CalcYieldField.tsx");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_CalcYieldField__WEBPACK_IMPORTED_MODULE_0__.default);
+
+
+/***/ }),
+
+/***/ "./src/components/DexTradesField/DexTradesField.tsx":
+/*!**********************************************************!*\
+  !*** ./src/components/DexTradesField/DexTradesField.tsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _DexTradesField_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DexTradesField.css */ "./src/components/DexTradesField/DexTradesField.css");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/api */ "./src/utils/api.ts");
+/* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
+// Uniswap V2 WOO-WETH
+// https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&address=0x6ada49aeccf6e556bb7a35ef0119cc8ca795294a&page=1&offset=100&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8
+// SELL: to 0x6ada49aeccf6e556bb7a35ef0119cc8ca795294a
+// BUY: from 0x6ada49aeccf6e556bb7a35ef0119cc8ca795294a
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+// Uniswap V3 WOO-WETH
+// https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&address=0x122e55503a0b2e5cd528effa44d0b2fea300f24b&page=1&offset=100&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8
+// SELL: to 0x122e55503a0b2e5cd528effa44d0b2fea300f24b
+// BUY: from 0x122e55503a0b2e5cd528effa44d0b2fea300f24b
+// Uniswap V2 WOO-USDC
+// https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&address=0xbbc95e1eb6ee476e9cbb8112435e14b372563038&page=1&offset=100&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8
+// SELL: to 0xbbc95e1eb6ee476e9cbb8112435e14b372563038
+// BUY: from 0xbbc95e1eb6ee476e9cbb8112435e14b372563038
+// Sushi WOO-USDC
+// https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&address=0xf5ca27927ffb16bd8c870dcb49750146cce8217c&page=1&offset=100&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8
+// SELL: to 0xf5ca27927ffb16bd8c870dcb49750146cce8217c
+// BUY: from 0xf5ca27927ffb16bd8c870dcb49750146cce8217c
+
+
+
+
+const DexTradesField = ({}) => {
+    const [dexTrades, setDexTrades] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)();
+    const dexContracts = {
+        UniV2_WOO_WETH: '0x6ada49aeccf6e556bb7a35ef0119cc8ca795294a',
+        UniV2_WOO_USDC: '0xbbc95e1eb6ee476e9cbb8112435e14b372563038',
+        UniV3_WOO_WETH: '0x122e55503a0b2e5cd528effa44d0b2fea300f24b',
+        Sushi_WOO_USDC: '0xf5ca27927ffb16bd8c870dcb49750146cce8217c',
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+        getDexTradesInfo();
+    }, []);
+    function getDexTradesInfo() {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(Date.now());
+            try {
+                const dexTrades = [];
+                for (const platform in dexContracts) {
+                    const platformTrades = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_2__.fetchDexTradesInfo)(dexContracts[platform]);
+                    console.log(platformTrades);
+                    for (const trade in platformTrades.result) {
+                        dexTrades.push(platformTrades.result[trade]);
+                    }
+                }
+                dexTrades.sort(compareTimestamp);
+                console.log(dexTrades);
+                const cleanedTradesInfo = [];
+                dexTrades.forEach((trade) => {
+                    cleanedTradesInfo.push({
+                        value: (0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_3__.amountFormatter)(parseInt(trade.value) / Math.pow(10, parseInt(trade.tokenDecimal))),
+                        age: getAgeFormat(trade.timeStamp),
+                        tradeType: Object.values(dexContracts).includes(trade.from)
+                            ? 'Sell'
+                            : 'Buy',
+                    });
+                });
+                setDexTrades(cleanedTradesInfo);
+                console.log(cleanedTradesInfo);
+            }
+            catch (err) {
+                console.log(err);
+            }
+        });
+    }
+    const getAgeFormat = (unixTimestamp) => {
+        const hoursPassed = Math.floor((Date.now() / 1000 - parseInt(unixTimestamp)) / 3600);
+        const minutesPassed = Math.floor((Date.now() / 1000 - parseInt(unixTimestamp) - hoursPassed * 3600) / 60);
+        switch (true) {
+            case unixTimestamp === null ||
+                unixTimestamp == NaN ||
+                unixTimestamp === undefined:
+                return 'error';
+            case hoursPassed > 1:
+                return `${hoursPassed} hrs ${minutesPassed} mins`;
+            case hoursPassed == 1:
+                return `${hoursPassed} hr ${minutesPassed} mins`;
+            case minutesPassed > 1:
+                return `${minutesPassed} mins`;
+            case minutesPassed == 1:
+                return `${minutesPassed} min`;
+            case minutesPassed == 0:
+                return `<1 min`;
+        }
+    };
+    const compareTimestamp = (a, b) => {
+        if (parseInt(a.timeStamp) > parseInt(b.timeStamp)) {
+            return -1;
+        }
+        if (parseInt(a.timeStamp) < parseInt(b.timeStamp)) {
+            return 1;
+        }
+        return 0;
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-values" },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-value " }, "WOO"),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-value info-field-value-2" }, "Trade"),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-value info-field-value-3" }, "Time Ago")), dexTrades === null || dexTrades === void 0 ? void 0 :
+        dexTrades.map((tradeInfo, index) => (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { key: index, className: "info-field-values", style: parseInt(index) % 2
+                ? { backgroundColor: '#313641' }
+                : { backgroundColor: '#3C404B', borderRadius: '5px' } },
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-value " }, tradeInfo.value),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-value info-field-value-2" }, tradeInfo.tradeType),
+            react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-value info-field-value-3" }, tradeInfo.age))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DexTradesField);
+
+
+/***/ }),
+
+/***/ "./src/components/DexTradesField/index.tsx":
+/*!*************************************************!*\
+  !*** ./src/components/DexTradesField/index.tsx ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _DexTradesField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DexTradesField */ "./src/components/DexTradesField/DexTradesField.tsx");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_DexTradesField__WEBPACK_IMPORTED_MODULE_0__.default);
 
 
 /***/ }),
@@ -1267,8 +1471,6 @@ const PieChartField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStakedWoo
                 value: otherVolumeResources,
             });
             setTopVolumeSources(topVolumeSources);
-            console.log('topVolumeSources', topVolumeSources);
-            console.log('otherVolumeResources', otherVolumeResources);
         });
     }
     const compareVolume = (a, b) => {
@@ -1315,7 +1517,6 @@ const PieChartField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStakedWoo
     };
     const stakingChartTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
-            console.log('payload', payload);
             let chain = payload[0].payload.chainId;
             let apr = payload[0].payload.apr;
             let color = payload[0].payload.fill;
@@ -1562,8 +1763,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_VolumeBarField__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/VolumeBarField */ "./src/components/VolumeBarField/index.tsx");
 /* harmony import */ var _components_PieChartField__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/PieChartField */ "./src/components/PieChartField/index.tsx");
 /* harmony import */ var _components_PieChartFieldHeader__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/PieChartFieldHeader */ "./src/components/PieChartFieldHeader/index.tsx");
-/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../utils/api */ "./src/utils/api.ts");
-/* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
+/* harmony import */ var _components_DexTradesField__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/DexTradesField */ "./src/components/DexTradesField/index.tsx");
+/* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../utils/api */ "./src/utils/api.ts");
+/* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -1573,6 +1775,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
 
 
 
@@ -1638,7 +1841,7 @@ const App = () => {
             try {
                 for (let chainId of chainIds) {
                     let chainEarnInfo = {};
-                    chainEarnInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_15__.fetchWooFiChainInfo)(chainId);
+                    chainEarnInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_16__.fetchWooFiChainInfo)(chainId);
                     setWoofiEarnInfo((woofiEarnInfo) => (Object.assign(Object.assign({}, woofiEarnInfo), chainEarnInfo)));
                     setWoofiTVL((woofiTVL) => woofiTVL +
                         parseInt(chainEarnInfo[chainId].data.total_deposit) / Math.pow(10, 18));
@@ -1654,7 +1857,7 @@ const App = () => {
             try {
                 for (let chainId of chainIds) {
                     let chainStakeInfo = {};
-                    chainStakeInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_15__.fetchWooFiChainStakedInfo)(chainId);
+                    chainStakeInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_16__.fetchWooFiChainStakedInfo)(chainId);
                     setWoofiStakingInfo((woofiStakingInfo) => (Object.assign(Object.assign({}, woofiStakingInfo), chainStakeInfo)));
                     setTotalStakedWooAmount((totalStakedWooAmount) => totalStakedWooAmount +
                         parseInt(chainStakeInfo[chainId].data.woo.total_staked) / Math.pow(10, 18));
@@ -1668,7 +1871,7 @@ const App = () => {
     function getWooNetworkInfo() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                setWooNetworkInfo(yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_15__.fetchWooNetworkInfo)());
+                setWooNetworkInfo(yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_16__.fetchWooNetworkInfo)());
             }
             catch (err) {
                 console.log(err);
@@ -1680,7 +1883,7 @@ const App = () => {
             try {
                 let totalFuturesVolume = 0;
                 let totalFuturesOI = 0;
-                let wooNetworkfetchedFuturesInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_15__.fetchWooNetworkFutureInfo)();
+                let wooNetworkfetchedFuturesInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_16__.fetchWooNetworkFutureInfo)();
                 for (let i = 0; i < wooNetworkfetchedFuturesInfo.rows.length; i++) {
                     totalFuturesOI +=
                         wooNetworkfetchedFuturesInfo.rows[i]['open_interest'] *
@@ -1701,7 +1904,7 @@ const App = () => {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 for (let chainId of chainIds) {
-                    let chain1DVolumeInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_15__.fetchWoofiChain1DVolume)(chainId);
+                    let chain1DVolumeInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_16__.fetchWoofiChain1DVolume)(chainId);
                     setWoofi1DTotalVolume((woofi1DTotalVolume) => woofi1DTotalVolume +
                         parseInt(chain1DVolumeInfo.data['24h_volume_usd']));
                 }
@@ -1716,7 +1919,7 @@ const App = () => {
             try {
                 for (let chainId of chainIds) {
                     let chainVolumeSourceInfo = {};
-                    chainVolumeSourceInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_15__.fetchWoofiChain1MVolumeSource)(chainId);
+                    chainVolumeSourceInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_16__.fetchWoofiChain1MVolumeSource)(chainId);
                     setWoofi1MVolumeSources((woofi1MVolumeSources) => (Object.assign(Object.assign({}, woofi1MVolumeSources), chainVolumeSourceInfo)));
                 }
             }
@@ -1782,11 +1985,12 @@ const App = () => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_VolumeBarField__WEBPACK_IMPORTED_MODULE_12__.default, { wooxVolume: wooNetworkInfo.data.amount -
                         wooNetworkFuturesVolume -
                         woofi1DTotalVolume / Math.pow(10, 18), woofiVolume: woofi1DTotalVolume / Math.pow(10, 18), futuresVolume: wooNetworkFuturesVolume }),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(wooNetworkInfo.data.amount -
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_17__.amountFormatter)(wooNetworkInfo.data.amount -
                         woofi1DTotalVolume / Math.pow(10, 18) -
-                        wooNetworkFuturesVolume)} `, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(woofi1DTotalVolume / Math.pow(10, 18))}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(wooNetworkFuturesVolume)} ` }))),
+                        wooNetworkFuturesVolume)} `, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_17__.amountFormatter)(woofi1DTotalVolume / Math.pow(10, 18))}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_17__.amountFormatter)(wooNetworkFuturesVolume)} ` }))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_NetworkInfoSubHeaderField__WEBPACK_IMPORTED_MODULE_8__.default, null),
-            wooNetworkInfo && woofiTVL && wooNetworkFuturesOi && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(wooNetworkInfo.data.amount)}`, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(woofiTVL)}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(wooNetworkFuturesOi)} ` })),
+            wooNetworkInfo && woofiTVL && wooNetworkFuturesOi && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_17__.amountFormatter)(wooNetworkInfo.data.amount)}`, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_17__.amountFormatter)(woofiTVL)}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_17__.amountFormatter)(wooNetworkFuturesOi)} ` })),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DexTradesField__WEBPACK_IMPORTED_MODULE_15__.default, null),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PieChartFieldHeader__WEBPACK_IMPORTED_MODULE_14__.default, null),
             chainsInfo.length > 0 &&
                 Object.keys(woofiStakingInfo).length > 0 &&
@@ -1795,36 +1999,22 @@ const App = () => {
             displayCalculator && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_CalcYieldField__WEBPACK_IMPORTED_MODULE_10__.default, null),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_EarnFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { value_1: `Vault`, value_2: 'TVL', value_3: 'APY', displayCalculatorCallback: handleCalculatorChange, sortingOptionCallback: handleSortingChange, displayCalculator: displayCalculator }),
             Object.keys(woofiEarnInfo).length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 0, value_1: 'Total', value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(parseInt(woofiEarnInfo[activeTab].data.total_deposit) / Math.pow(10, 18))}`, value_3: `#${Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 0, value_1: 'Total', value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_17__.amountFormatter)(parseInt(woofiEarnInfo[activeTab].data.total_deposit) / Math.pow(10, 18))}`, value_3: `#${Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
                         .length}` }),
                 sortQuotes(Object.values(woofiEarnInfo[activeTab].data.auto_compounding)).map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index + 1, value_1: tokenInfo.symbol
                         .replaceAll('_', '-')
-                        .replace('-LP', ''), value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_16__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, tokenInfo.decimals))}`, value_3: `${tokenInfo.apy.toPrecision(3)}%` })))))),
+                        .replace('-LP', ''), value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_17__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, tokenInfo.decimals))}`, value_3: `${tokenInfo.apy.toPrecision(3)}%` })))))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_LinksField__WEBPACK_IMPORTED_MODULE_9__.default, { twitterHandle: "WOOnetwork", discordHandle: "woonetwork", telegramHandle: "woonetwork" }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_FooterField__WEBPACK_IMPORTED_MODULE_3__.default, null)));
 };
 const root = document.createElement('div');
 document.body.appendChild(root);
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), root);
-// volumeWoofi		tvlWoofi		stakingAprWoofi	stakedWoofi
-// networkVolume	futureVolume	futuresOi		stakedWoox
-// networkVolume
-// volumeWoofi
-// futureVolume
-// stakedWoofi
-// futuresOi
-// stakedWoox
-// tvlWoofi
-// stakingAprWoofi
-// 	tvlWoofi futuresOi
-//
-// VOLUMES
-// volumeNetwork   	volumeWoofi		volumeFutures
-// volumeWoox		tvlWoofi		futuresOi
-// STAKING
-// stakedWOO						woofiAPR
-// EARN
-// vaults			TVL				APY
+// Ethereum		0xfA2d1f15557170F6c4A4C5249e77f534184cdb79
+// BNB Chain 	0xfd899C7c5ED84537e2Acfc998ce26C3797654AE8
+// Avalanche	0xB54382c680B0AD037C9F441A8727CA6006fe2dD0
+//				https://api.avax.network/ext/bc/C/rpc
+// NEAR E		woodao.near
 
 
 /***/ }),
@@ -1871,6 +2061,7 @@ function amountFormatter(amount) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "fetchDexTradesInfo": () => (/* binding */ fetchDexTradesInfo),
 /* harmony export */   "fetchWooNetworkInfo": () => (/* binding */ fetchWooNetworkInfo),
 /* harmony export */   "fetchWooNetworkFutureInfo": () => (/* binding */ fetchWooNetworkFutureInfo),
 /* harmony export */   "fetchWooFiChainInfo": () => (/* binding */ fetchWooFiChainInfo),
@@ -1893,6 +2084,19 @@ const WOOFI_CHAIN_1D_VOLUME_API = 'https://fi-api.woo.org/cumulate_stat?period=1
 const WOOFI_CHAIN_1M_VOLUME_SOURCE_API = 'https://fi-api.woo.org/source_stat?period=1m&network=';
 const WOONETWORK_TOTAL_VOLUME_API = 'https://sapi.woo.org/wootrade/data';
 const WOONETWORK_FUTURES_API = 'https://api.woo.org/v1/public/futures';
+const ETHERSCAN_WOO_DEX_TRADES_API = 'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&address=';
+function fetchDexTradesInfo(dexContract) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const res = yield fetch(ETHERSCAN_WOO_DEX_TRADES_API +
+            dexContract +
+            '&page=1&offset=10&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8');
+        if (!res.ok) {
+            throw new Error(`Fetch error, total network volume info}`);
+        }
+        const data = yield res.json();
+        return data;
+    });
+}
 function fetchWooNetworkInfo() {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield fetch(WOONETWORK_TOTAL_VOLUME_API);
@@ -1953,8 +2157,6 @@ function fetchWoofiChain1MVolumeSource(chain) {
         return data;
     });
 }
-// https://sapi.woo.org/wootrade/data
-// https://oss.woo.network/static/symbol_logo/DASH.png
 
 
 /***/ }),

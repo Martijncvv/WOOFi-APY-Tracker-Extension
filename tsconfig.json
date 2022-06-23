@@ -5,5 +5,7 @@
 		"target": "es6",
 		"moduleResolution": "node",
 		"esModuleInterop": true
-	}
+	},
+	"CHROME_ID": "nkbihfbeogaeaoehlefnkodbefgpgknn",
+	"FIREFOX_ID": "webextension@metamask.io"
 }

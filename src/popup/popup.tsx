@@ -14,6 +14,7 @@ import TabsField from '../components/TabsField'
 import VolumeBarField from '../components/VolumeBarField'
 import PieChartField from '../components/PieChartField'
 import PieChartFieldHeader from '../components/PieChartFieldHeader'
+import DexTradesField from '../components/DexTradesField'
 
 const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
@@ -287,6 +288,7 @@ const App = () => {
 						value_3={`$${amountFormatter(wooNetworkFuturesOi)} `}
 					/>
 				)}
+				<DexTradesField />
 
 				<PieChartFieldHeader />
 				{chainsInfo.length > 0 &&
@@ -363,28 +365,8 @@ const root = document.createElement('div')
 document.body.appendChild(root)
 ReactDOM.render(<App />, root)
 
-// volumeWoofi		tvlWoofi		stakingAprWoofi	stakedWoofi
-// networkVolume	futureVolume	futuresOi		stakedWoox
-
-// networkVolume
-// volumeWoofi
-// futureVolume
-// stakedWoofi
-
-// futuresOi
-// stakedWoox
-// tvlWoofi
-// stakingAprWoofi
-
-// 	tvlWoofi futuresOi
-//
-
-// VOLUMES
-// volumeNetwork   	volumeWoofi		volumeFutures
-// volumeWoox		tvlWoofi		futuresOi
-
-// STAKING
-// stakedWOO						woofiAPR
-
-// EARN
-// vaults			TVL				APY
+// Ethereum		0xfA2d1f15557170F6c4A4C5249e77f534184cdb79
+// BNB Chain 	0xfd899C7c5ED84537e2Acfc998ce26C3797654AE8
+// Avalanche	0xB54382c680B0AD037C9F441A8727CA6006fe2dD0
+//				https://api.avax.network/ext/bc/C/rpc
+// NEAR E		woodao.near

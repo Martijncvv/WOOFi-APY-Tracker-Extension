@@ -8,6 +8,23 @@ const WOOFI_CHAIN_1M_VOLUME_SOURCE_API =
 const WOONETWORK_TOTAL_VOLUME_API = 'https://sapi.woo.org/wootrade/data'
 const WOONETWORK_FUTURES_API = 'https://api.woo.org/v1/public/futures'
 
+const ETHERSCAN_WOO_DEX_TRADES_API =
+	'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&address='
+
+export async function fetchDexTradesInfo(dexContract): Promise<{}> {
+	const res = await fetch(
+		ETHERSCAN_WOO_DEX_TRADES_API +
+			dexContract +
+			'&page=1&offset=10&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8'
+	)
+	if (!res.ok) {
+		throw new Error(`Fetch error, total network volume info}`)
+	}
+
+	const data = await res.json()
+	return data
+}
+
 export async function fetchWooNetworkInfo(): Promise<{}> {
 	const res = await fetch(WOONETWORK_TOTAL_VOLUME_API)
 	if (!res.ok) {
@@ -65,7 +82,3 @@ export async function fetchWoofiChain1MVolumeSource(chain): Promise<{}> {
 	const data = await res.json()
 	return data
 }
-
-// https://sapi.woo.org/wootrade/data
-
-// https://oss.woo.network/static/symbol_logo/DASH.png

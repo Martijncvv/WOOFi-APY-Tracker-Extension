@@ -3,3 +3,52 @@
 	color: #fefefe;
 	background-color: #313641;
 }
+
+.dex-trades-values {
+	display: flex;
+	justify-content: space-between;
+
+	padding: 10px 12px 6px;
+}
+.dex-trades-value {
+	box-sizing: border-box;
+	width: 33%;
+
+	color: white;
+	font-size: 15px;
+	text-transform: capitalize;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.dex-trades-value-1 {
+	cursor: pointer;
+}
+.dex-trades-value-1:hover {
+	color: #4e8ff7;
+}
+
+.dex-trades-value-2 {
+	padding: 0 0 0 24px;
+}
+.dex-trades-value-3 {
+	display: flex;
+	justify-content: flex-end;
+	text-transform: lowercase;
+}
+
+.dex-trades-ratio-bar-field {
+	margin: 0;
+	margin-top: -7px;
+	padding: 0;
+	height: 7px;
+	width: 100%;
+}
+
+.dex-trades-error-message {
+	text-transform: lowercase;
+	/* text-transform: capitalize; */
+}
+.dex-trades-error-message::first-letter {
+	text-transform: uppercase; /* change first letter to uppercase */
+}

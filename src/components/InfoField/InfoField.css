@@ -24,4 +24,5 @@
 .info-field-value-3 {
 	display: flex;
 	justify-content: flex-end;
+	text-transform: lowercase;
 }

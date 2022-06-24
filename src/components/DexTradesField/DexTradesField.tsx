@@ -18,13 +18,18 @@
 // SELL: to 0xf5ca27927ffb16bd8c870dcb49750146cce8217c
 // BUY: from 0xf5ca27927ffb16bd8c870dcb49750146cce8217c
 
+// https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=100&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8
+
 import './DexTradesField.css'
 import React, { useState, useEffect } from 'react'
-import { fetchDexTradesInfo } from '../../utils/api'
+import { fetchWooTxsInfo } from '../../utils/api'
 import { amountFormatter } from '../../utils/amountFormatter'
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 
 const DexTradesField: React.FC<{}> = ({}) => {
 	const [dexTrades, setDexTrades] = useState<any>()
+	const [barData, setBarData] = useState<any>()
+	const [errorMessage, setErrorMessage] = useState<any>()
 
 	const dexContracts = {
 		UniV2_WOO_WETH: '0x6ada49aeccf6e556bb7a35ef0119cc8ca795294a',
@@ -38,36 +43,61 @@ const DexTradesField: React.FC<{}> = ({}) => {
 	}, [])
 
 	async function getDexTradesInfo() {
-		console.log(Date.now())
 		try {
-			const dexTrades: any = []
-			for (const platform in dexContracts) {
-				const platformTrades: any = await fetchDexTradesInfo(
-					dexContracts[platform]
-				)
-				console.log(platformTrades)
-				for (const trade in platformTrades.result) {
-					dexTrades.push(platformTrades.result[trade])
-				}
+			const wooTransactions: any = await fetchWooTxsInfo()
+			console.log(wooTransactions)
+			if (wooTransactions.message == 'NOTOK') {
+				setErrorMessage('NOTOK')
+			} else {
+				setErrorMessage('-')
 			}
-			dexTrades.sort(compareTimestamp)
-			console.log(dexTrades)
 
+			const wooDexTrades: any = wooTransactions.result.filter(function(tx) {
+				return (
+					Object.values(dexContracts).includes(tx.from) ||
+					Object.values(dexContracts).includes(tx.to)
+				)
+			})
+
+			console.log(wooDexTrades)
 			const cleanedTradesInfo: any = []
-			dexTrades.forEach((trade) => {
+			wooDexTrades.forEach((trade) => {
 				cleanedTradesInfo.push({
-					value: amountFormatter(
-						parseInt(trade.value) / 10 ** parseInt(trade.tokenDecimal)
-					),
+					value: parseInt(trade.value) / 10 ** parseInt(trade.tokenDecimal),
 					age: getAgeFormat(trade.timeStamp),
 					tradeType: Object.values(dexContracts).includes(trade.from)
-						? 'Sell'
-						: 'Buy',
+						? 'buy'
+						: 'sell',
+					txHash: trade.hash,
+					account: Object.values(dexContracts).includes(trade.to)
+						? trade.from.slice(2, 6)
+						: trade.to.slice(2, 6),
+					colour: Object.values(dexContracts).includes(trade.to)
+						? `#${trade.from.slice(2, 8)}`
+						: `#${trade.to.slice(2, 8)}`,
 				})
 			})
 
 			setDexTrades(cleanedTradesInfo)
 			console.log(cleanedTradesInfo)
+
+			let totalBought = 0
+			let totalSold = 0
+			cleanedTradesInfo.forEach((trade) => {
+				if (trade.tradeType == 'buy') {
+					totalBought += trade.value
+				} else {
+					totalSold += trade.value
+				}
+			})
+
+			setBarData([
+				{
+					volume: 'all',
+					wooSold: totalSold,
+					wooBought: totalBought,
+				},
+			])
 		} catch (err) {
 			console.log(err)
 		}
@@ -101,6 +131,10 @@ const DexTradesField: React.FC<{}> = ({}) => {
 		}
 	}
 
+	function handleOpenTab(link) {
+		chrome.tabs.create({ url: link, selected: false })
+	}
+
 	const compareTimestamp = (a, b) => {
 		if (parseInt(a.timeStamp) > parseInt(b.timeStamp)) {
 			return -1
@@ -113,30 +147,85 @@ const DexTradesField: React.FC<{}> = ({}) => {
 
 	return (
 		<div>
-			<div className="info-field-values">
-				<div className="info-field-value ">WOO</div>
+			{errorMessage === 'NOTOK' && (
+				<div className="dex-trades-values">
+					<div className="dex-trades-value dex-trades-error-message">
+						Refresh rate hit, wait 5 secs
+					</div>
 
-				<div className="info-field-value info-field-value-2">Trade</div>
+					<div className="dex-trades-value dex-trades-value-2"></div>
 
-				<div className="info-field-value info-field-value-3">Time Ago</div>
+					<div className="dex-trades-value dex-trades-value-3"></div>
+				</div>
+			)}
+
+			<div className="dex-trades-ratio-bar-field">
+				{/* Taker Buy/Sell ratio */}
+				<ResponsiveContainer width="100%" height="100%">
+					<BarChart
+						data={barData}
+						layout="vertical"
+						margin={{
+							top: 0,
+							right: 0,
+							left: 0,
+							bottom: 0,
+						}}
+					>
+						<XAxis
+							type="number"
+							domain={['dataMin', 'dataMax']}
+							axisLine={false}
+							hide={true}
+							tick={false}
+						/>
+						<YAxis
+							type="category"
+							dataKey={'volume'}
+							width={1}
+							axisLine={false}
+							hide={true}
+							tick={false}
+						/>
+
+						<Bar dataKey="wooBought" stackId="a" fill="#009600" barSize={1} />
+						<Bar dataKey="wooSold" stackId="a" fill="#de4437" />
+					</BarChart>
+				</ResponsiveContainer>
 			</div>
+
 			{dexTrades?.map((tradeInfo, index) => (
 				<div
 					key={index}
-					className="info-field-values"
+					className="dex-trades-values"
 					style={
 						parseInt(index) % 2
 							? { backgroundColor: '#313641' }
 							: { backgroundColor: '#3C404B', borderRadius: '5px' }
 					}
 				>
-					<div className="info-field-value ">{tradeInfo.value}</div>
-
-					<div className="info-field-value info-field-value-2">
-						{tradeInfo.tradeType}
+					<div
+						className="dex-trades-value dex-trades-value-1"
+						onClick={() =>
+							handleOpenTab(`https://etherscan.io/tx/${tradeInfo.txHash}`)
+						}
+					>
+						{/* <span style={{ color: tradeInfo.colour }}>- </span> */}
+						{tradeInfo.account}
 					</div>
 
-					<div className="info-field-value info-field-value-3">
+					<div
+						className="dex-trades-value dex-trades-value-2"
+						style={
+							tradeInfo.tradeType == 'buy'
+								? { color: '#009600' }
+								: { color: '#de4437' }
+						}
+					>
+						{amountFormatter(tradeInfo.value)}
+					</div>
+
+					<div className="dex-trades-value dex-trades-value-3">
 						{tradeInfo.age}
 					</div>
 				</div>

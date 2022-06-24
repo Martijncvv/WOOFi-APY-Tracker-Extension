@@ -1,6 +1,9 @@
 # WOOFi APY Tracker Extension
 
-Display general WOO Network info and sort WOOFi Earn Pairs by APY, TVL or Name. Calculate potential Yield rewards and check the staked amount of WOO on WOOFi.
+- Display WOO Network info and sort WOOFi Earn Pairs by APY, TVL or Name.
+- Check WOOFi volume sources and staked WOO.
+- Calculate potential Yield rewards.
+- Check WOO trades on Ethereum DEXs.
 
 [WOOFi APY Tracker Extension](https://chrome.google.com/webstore/detail/woofi-apy-tracker-extensi/ebhimcjdodfppheghgcbdfiegcchaplh?hl=en&authuser=0)
 
@@ -12,6 +15,10 @@ Display general WOO Network info and sort WOOFi Earn Pairs by APY, TVL or Name. 
 
 <p align="center">
   <img src="woofi-extension-preview_2.png" alt="WOOFi APY Tracker" width="800" >
+</p>
+
+<p align="center">
+  <img src="woofi-extension-preview_3.png" alt="WOOFi APY Tracker" width="800" >
 </p>
 
 ### To Do

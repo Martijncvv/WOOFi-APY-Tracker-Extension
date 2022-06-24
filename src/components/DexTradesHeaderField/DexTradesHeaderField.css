@@ -1,0 +1,35 @@
+.dextrades-header-field-values {
+	display: flex;
+	justify-content: space-between;
+
+	height: 18px;
+	padding: 12px 12px 1px;
+
+	color: white;
+}
+
+.dextrades-header-field-value {
+	box-sizing: border-box;
+	width: 33%;
+
+	font-size: 15px;
+
+	font-weight: 600;
+	text-transform: capitalize;
+}
+.dextrades-header-field-value-2 {
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 24px;
+}
+.dextrades-header-field-value-3 {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#dextrades-header-image {
+	margin-left: 1px;
+	height: 14px;
+	background-color: transparent;
+}

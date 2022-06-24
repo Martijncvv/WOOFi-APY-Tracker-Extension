@@ -25,6 +25,19 @@ export async function fetchDexTradesInfo(dexContract): Promise<{}> {
 	return data
 }
 
+export async function fetchWooTxsInfo(): Promise<{}> {
+	const res = await fetch(
+		'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc'
+		// 'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8'
+	)
+	if (!res.ok) {
+		throw new Error(`Fetch error, WOO DeX Trade info}`)
+	}
+
+	const data = await res.json()
+	return data
+}
+
 export async function fetchWooNetworkInfo(): Promise<{}> {
 	const res = await fetch(WOONETWORK_TOTAL_VOLUME_API)
 	if (!res.ok) {

@@ -1,13 +1,9 @@
 import './TabsField.css'
 import React, { useState, useEffect } from 'react'
+import IChainInfo from '../../models/ChainsInfo'
 
-interface ChainDataProps {
-	chainId: string
-	chainName: string
-	icon: string
-}
 interface ChainsDataProps {
-	chainsInfo: ChainDataProps[]
+	chainsInfo: IChainInfo[]
 	activeTabCallback: any
 	activeTab: string
 }

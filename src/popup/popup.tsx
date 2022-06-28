@@ -22,7 +22,7 @@ const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
 const FtmIcon = require('../static/images/FTM_logo.png')
 
 import {
-	fetchWooFiChainInfo,
+	fetchWoofiEarnChainInfo,
 	fetchWooFiChainStakedInfo,
 	fetchWoofiChain1DVolume,
 	fetchWoofiChain1MVolumeSource,
@@ -30,12 +30,13 @@ import {
 	fetchWooNetworkFutureInfo,
 } from '../utils/api'
 import { amountFormatter } from '../utils/amountFormatter'
+import IChainInfo from '../models/ChainsInfo'
 
 const App = () => {
-	let chainIds = ['avax', 'bsc', 'fantom']
-	let chainNames = ['Avalanche', 'BNB Chain', 'Fantom']
-	let chainLogos = [AvaxIcon, BnbChainIcon, FtmIcon]
-	let chainColors = ['#E84142', '#F0B90B', '#13b5ec']
+	let chainIds: string[] = ['avax', 'bsc', 'fantom']
+	let chainNames: string[] = ['Avalanche', 'BNB Chain', 'Fantom']
+	let chainLogos: string[] = [AvaxIcon, BnbChainIcon, FtmIcon]
+	let chainColors: string[] = ['#E84142', '#F0B90B', '#13b5ec']
 
 	const [wooNetworkInfo, setWooNetworkInfo] = useState<any>()
 	const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = useState<number>(null)
@@ -55,7 +56,7 @@ const App = () => {
 		false
 	)
 	const [sortingOption, setSortingOption] = React.useState<string>('apy')
-	const [chainsInfo, setChainsInfo] = React.useState<any>([])
+	const [chainsInfo, setChainsInfo] = React.useState<IChainInfo[]>([])
 	const [activeTab, setActiveTab] = React.useState<string>('avax')
 	const [
 		displayDexTradesCallback,
@@ -90,7 +91,7 @@ const App = () => {
 		try {
 			for (let chainId of chainIds) {
 				let chainEarnInfo = {}
-				chainEarnInfo[chainId] = await fetchWooFiChainInfo(chainId)
+				chainEarnInfo[chainId] = await fetchWoofiEarnChainInfo(chainId)
 
 				setWoofiEarnInfo((woofiEarnInfo) => ({
 					...woofiEarnInfo,
@@ -382,9 +383,3 @@ const App = () => {
 const root = document.createElement('div')
 document.body.appendChild(root)
 ReactDOM.render(<App />, root)
-
-// Ethereum		0xfA2d1f15557170F6c4A4C5249e77f534184cdb79
-// BNB Chain 	0xfd899C7c5ED84537e2Acfc998ce26C3797654AE8
-// Avalanche	0xB54382c680B0AD037C9F441A8727CA6006fe2dD0
-//				https://api.avax.network/ext/bc/C/rpc
-// NEAR E		woodao.near

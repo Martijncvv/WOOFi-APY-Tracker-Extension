@@ -1,12 +1,24 @@
 import './InfoField.css'
 import React from 'react'
 
-const InfoField = ({ value_1, value_2, value_3, index }) => {
+interface InfoFieldProps {
+	value_1: string
+	value_2: string
+	value_3: string
+	index: number
+}
+
+const InfoField: React.FC<InfoFieldProps> = ({
+	value_1,
+	value_2,
+	value_3,
+	index,
+}) => {
 	return (
 		<div
 			className="info-field-values"
 			style={
-				parseInt(index) % 2
+				index % 2
 					? { backgroundColor: '#313641' }
 					: { backgroundColor: '#3C404B', borderRadius: '5px' }
 			}

@@ -1,5 +1,5 @@
 import './PieChartField.css'
-import React, { useState, useEffect, PureComponent } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
 	PieChart,
 	Pie,
@@ -10,12 +10,14 @@ import {
 } from 'recharts'
 
 import { amountFormatter } from '../../utils/amountFormatter'
+import { IWoofiStakedWoo } from '../../models/IWoofiChainStakedWoo'
+import { IWoofi1mVolumeSources } from '../../models/IWoofiChain1mVolumeSource'
 
 interface PieChartFieldProps {
 	chainsInfo: any
 	totalStakedWooAmount: number
-	woofiStakingInfo: any
-	woofi1MVolumeSources: any
+	woofiStakingInfo: IWoofiStakedWoo
+	woofi1mVolumeSources: IWoofi1mVolumeSources
 	activeTab: string
 }
 
@@ -24,17 +26,24 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 	chainsInfo,
 	woofiStakingInfo,
 	totalStakedWooAmount,
-	woofi1MVolumeSources,
+	woofi1mVolumeSources,
 }) => {
 	const [activePieIndex, setActivePieIndex] = useState<number>(0)
 	const [stakingData, setStakingData] = useState<any>([])
 	const [topStakingChains, setTopStakingChains] = useState<any>([])
-	const [stakingColors, setStakingColors] = useState<any>([])
+	const [stakingColors, setStakingColors] = useState<string[]>([])
 
 	const [topVolumeSources, setTopVolumeSources] = useState<any>([])
 	const [totalVolume1M, setTotalVolume1M] = useState<number>(0)
 
-	let resourceColors = ['#4e8ff7', '#f0f0f0', '#e0a555', '#3ba99c']
+	let resourceColors: string[] = ['#4e8ff7', '#f0f0f0', '#e0a555', '#3ba99c']
+
+	interface IStakingData {
+		apr: string
+		value: number
+		chainId: string
+		color: string
+	}
 
 	useEffect(() => {
 		getActivePieIndex()
@@ -47,7 +56,7 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 	}, [woofiStakingInfo])
 
 	async function getStakingColors() {
-		let stakingColors = []
+		let stakingColors: string[] = []
 		for (let chain of chainsInfo) {
 			stakingColors.push(chain.color)
 		}
@@ -57,8 +66,8 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 
 	async function getStakingChartData() {
 		await getStakingColors()
-		let index = 0
-		let stakingData = []
+		let index: number = 0
+		let stakingData: IStakingData[] = []
 		for (let key in woofiStakingInfo) {
 			stakingData.push({
 				apr: `${woofiStakingInfo[key].data.woo.apr.toPrecision(3)}%`,
@@ -77,7 +86,7 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 	async function getVolumeSourcesChartData() {
 		let volumeSourcesData = []
 		let totalVolume1M = 0
-		for (let source of woofi1MVolumeSources[activeTab].data) {
+		for (let source of woofi1mVolumeSources[activeTab].data) {
 			volumeSourcesData.push({
 				sourceName: `${source.name}`,
 				value: parseInt(source.volume_usd) / 10 ** 18,

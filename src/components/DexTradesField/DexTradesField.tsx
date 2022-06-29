@@ -22,14 +22,15 @@
 
 import './DexTradesField.css'
 import React, { useState, useEffect } from 'react'
-import { fetchWooTxsInfo } from '../../utils/api'
+import { fetchEthWooTxs } from '../../utils/api'
 import { amountFormatter } from '../../utils/amountFormatter'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
+import IWooEthTxs from '../../models/IWooEthTxs'
 
 const DexTradesField: React.FC<{}> = ({}) => {
 	const [dexTrades, setDexTrades] = useState<any>()
 	const [barData, setBarData] = useState<any>()
-	const [errorMessage, setErrorMessage] = useState<any>()
+	const [errorMessage, setErrorMessage] = useState<string>()
 
 	const dexContracts = {
 		UniV2_WOO_WETH: '0x6ada49aeccf6e556bb7a35ef0119cc8ca795294a',
@@ -44,7 +45,7 @@ const DexTradesField: React.FC<{}> = ({}) => {
 
 	async function getDexTradesInfo() {
 		try {
-			const wooTransactions: any = await fetchWooTxsInfo()
+			const wooTransactions: IWooEthTxs = await fetchEthWooTxs()
 			console.log(wooTransactions)
 			if (wooTransactions.message == 'NOTOK') {
 				setErrorMessage('NOTOK')
@@ -59,7 +60,6 @@ const DexTradesField: React.FC<{}> = ({}) => {
 				)
 			})
 
-			console.log(wooDexTrades)
 			const cleanedTradesInfo: any = []
 			wooDexTrades.forEach((trade) => {
 				cleanedTradesInfo.push({
@@ -79,7 +79,6 @@ const DexTradesField: React.FC<{}> = ({}) => {
 			})
 
 			setDexTrades(cleanedTradesInfo)
-			console.log(cleanedTradesInfo)
 
 			let totalBought = 0
 			let totalSold = 0

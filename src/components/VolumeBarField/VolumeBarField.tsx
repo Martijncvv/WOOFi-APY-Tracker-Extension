@@ -1,4 +1,4 @@
-import React, { useState, useEffect, PureComponent } from 'react'
+import React from 'react'
 import './VolumeBarField.css'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 

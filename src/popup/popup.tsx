@@ -23,14 +23,22 @@ const FtmIcon = require('../static/images/FTM_logo.png')
 
 import {
 	fetchWoofiEarnChainInfo,
-	fetchWooFiChainStakedInfo,
-	fetchWoofiChain1DVolume,
-	fetchWoofiChain1MVolumeSource,
-	fetchWooNetworkInfo,
-	fetchWooNetworkFutureInfo,
+	fetchWoofiChainStakedInfo,
+	fetchWoofiChain1dVolume,
+	fetchWoofiChain1mVolumeSource,
+	fetchWooNetworkTradeInfo,
+	fetchWooFutureInfo,
 } from '../utils/api'
 import { amountFormatter } from '../utils/amountFormatter'
-import IChainInfo from '../models/ChainsInfo'
+
+import IChainInfo from '../models/IChainsInfo'
+import IWoofiEarnChainInfo from '../models/IWoofiEarnChainInfo'
+import IWooFuturesInfo from '../models/IWooFuturesInfo'
+import IWooNetworkTradeInfo from '../models/IWooNetworkTradeInfo'
+import IWoofiChain1dVolume from '../models/IWoofiChain1dVolume'
+import { IWoofiStakedWoo } from '../models/IWoofiChainStakedWoo'
+import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
+import { sortQuotes } from '../utils/orderObjects'
 
 const App = () => {
 	let chainIds: string[] = ['avax', 'bsc', 'fantom']
@@ -38,19 +46,23 @@ const App = () => {
 	let chainLogos: string[] = [AvaxIcon, BnbChainIcon, FtmIcon]
 	let chainColors: string[] = ['#E84142', '#F0B90B', '#13b5ec']
 
-	const [wooNetworkInfo, setWooNetworkInfo] = useState<any>()
-	const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = useState<number>(null)
-	const [woofiEarnInfo, setWoofiEarnInfo] = useState<any>({})
-	const [woofi1DTotalVolume, setWoofi1DTotalVolume] = useState<number>(null)
-	const [woofi1MVolumeSources, setWoofi1MVolumeSources] = useState<any>({})
-	const [woofiStakingInfo, setWoofiStakingInfo] = useState<any>({})
+	const [wooNetworkTradeInfo, setWooNetworkTradeInfo] = useState<
+		IWooNetworkTradeInfo
+	>()
+	const [wooFuturesOi, setWooFuturesOi] = useState<number>(0)
+	const [woofiEarnInfo, setWoofiEarnInfo] = useState<IWoofiEarnChainInfo>(
+		{} as IWoofiEarnChainInfo
+	)
+	const [woofi1dTotalVolume, setWoofi1dTotalVolume] = useState<number>(0)
+	const [woofi1mVolumeSources, setWoofi1mVolumeSources] = useState<
+		IWoofi1mVolumeSources
+	>({})
+	const [woofiStakedWoo, setWoofiStakedWoo] = useState<IWoofiStakedWoo>({})
 
-	const [totalStakedWooAmount, setTotalStakedWooAmount] = useState<number>(null)
+	const [woofiTotalStakedWoo, setWoofiTotalStakedWoo] = useState<number>(0)
 
-	const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = useState<
-		number
-	>(null)
-	const [woofiTVL, setWoofiTVL] = useState<number>(null)
+	const [wooFuturesVolume, setWooFuturesVolume] = useState<number>(0)
+	const [woofiTVL, setWoofiTVL] = useState<number>(0)
 
 	const [displayCalculator, setDisplayCalculator] = React.useState<boolean>(
 		false
@@ -67,10 +79,10 @@ const App = () => {
 		getChainsInfo()
 		getWoofiEarnInfo()
 		getFuturesInfo()
-		getWooNetworkInfo()
+		getWooNetworkTradeInfo()
 		getWooFiVolumesInfo()
 		getStakedWooInfo()
-		getWooFiVolumeSourceInfo()
+		getWooFiVolume1mSourceInfo()
 	}, [])
 
 	const getChainsInfo = () => {
@@ -112,18 +124,19 @@ const App = () => {
 	async function getStakedWooInfo() {
 		try {
 			for (let chainId of chainIds) {
-				let chainStakeInfo = {}
-				chainStakeInfo[chainId] = await fetchWooFiChainStakedInfo(chainId)
+				let woofiStakedWooInfo: IWoofiStakedWoo = {}
+				woofiStakedWooInfo[chainId] = await fetchWoofiChainStakedInfo(chainId)
 
-				setWoofiStakingInfo((woofiStakingInfo) => ({
+				setWoofiStakedWoo((woofiStakingInfo) => ({
 					...woofiStakingInfo,
-					...chainStakeInfo,
+					...woofiStakedWooInfo,
 				}))
 
-				setTotalStakedWooAmount(
+				setWoofiTotalStakedWoo(
 					(totalStakedWooAmount) =>
 						totalStakedWooAmount +
-						parseInt(chainStakeInfo[chainId].data.woo.total_staked) / 10 ** 18
+						parseInt(woofiStakedWooInfo[chainId].data.woo.total_staked) /
+							10 ** 18
 				)
 			}
 		} catch (err) {
@@ -131,9 +144,9 @@ const App = () => {
 		}
 	}
 
-	async function getWooNetworkInfo() {
+	async function getWooNetworkTradeInfo() {
 		try {
-			setWooNetworkInfo(await fetchWooNetworkInfo())
+			setWooNetworkTradeInfo(await fetchWooNetworkTradeInfo())
 		} catch (err) {
 			console.log(err)
 		}
@@ -141,20 +154,20 @@ const App = () => {
 
 	async function getFuturesInfo() {
 		try {
-			let totalFuturesVolume = 0
-			let totalFuturesOI = 0
-			let wooNetworkfetchedFuturesInfo: any = await fetchWooNetworkFutureInfo()
+			let totalFuturesVolume: number = 0
+			let totalFuturesOi: number = 0
+			let woofetchedFuturesInfo: IWooFuturesInfo = await fetchWooFutureInfo()
 
-			for (let i = 0; i < wooNetworkfetchedFuturesInfo.rows.length; i++) {
-				totalFuturesOI +=
-					wooNetworkfetchedFuturesInfo.rows[i]['open_interest'] *
-					wooNetworkfetchedFuturesInfo.rows[i]['mark_price']
+			for (let i = 0; i < woofetchedFuturesInfo.rows.length; i++) {
+				totalFuturesOi +=
+					woofetchedFuturesInfo.rows[i]['open_interest'] *
+					woofetchedFuturesInfo.rows[i]['mark_price']
 				totalFuturesVolume +=
-					wooNetworkfetchedFuturesInfo.rows[i]['24h_volumn'] *
-					wooNetworkfetchedFuturesInfo.rows[i]['mark_price']
+					woofetchedFuturesInfo.rows[i]['24h_volumn'] *
+					woofetchedFuturesInfo.rows[i]['mark_price']
 			}
-			setWooNetworkFuturesVolume(totalFuturesVolume)
-			setWooNetworkFuturesOi(totalFuturesOI)
+			setWooFuturesVolume(totalFuturesVolume)
+			setWooFuturesOi(totalFuturesOi)
 		} catch (err) {
 			console.log(err)
 		}
@@ -163,12 +176,14 @@ const App = () => {
 	async function getWooFiVolumesInfo() {
 		try {
 			for (let chainId of chainIds) {
-				let chain1DVolumeInfo: any = await fetchWoofiChain1DVolume(chainId)
+				let woofichain1dVolumeInfo: IWoofiChain1dVolume = await fetchWoofiChain1dVolume(
+					chainId
+				)
 
-				setWoofi1DTotalVolume(
-					(woofi1DTotalVolume) =>
-						woofi1DTotalVolume +
-						parseInt(chain1DVolumeInfo.data['24h_volume_usd'])
+				setWoofi1dTotalVolume(
+					(woofi1dTotalVolume) =>
+						woofi1dTotalVolume +
+						parseInt(woofichain1dVolumeInfo.data['24h_volume_usd'])
 				)
 			}
 		} catch (err) {
@@ -176,16 +191,16 @@ const App = () => {
 		}
 	}
 
-	async function getWooFiVolumeSourceInfo() {
+	async function getWooFiVolume1mSourceInfo() {
 		try {
 			for (let chainId of chainIds) {
-				let chainVolumeSourceInfo = {}
-				chainVolumeSourceInfo[chainId] = await fetchWoofiChain1MVolumeSource(
+				let chainVolumeSourceInfo: IWoofi1mVolumeSources = {}
+				chainVolumeSourceInfo[chainId] = await fetchWoofiChain1mVolumeSource(
 					chainId
 				)
 
-				setWoofi1MVolumeSources((woofi1MVolumeSources) => ({
-					...woofi1MVolumeSources,
+				setWoofi1mVolumeSources((woofi1mVolumeSources) => ({
+					...woofi1mVolumeSources,
 					...chainVolumeSourceInfo,
 				}))
 			}
@@ -200,59 +215,12 @@ const App = () => {
 		setDisplayCalculator(!displayCalculator)
 	}
 
-	const handleSortingChange = (_sortingOption) => {
+	const handleSortingChange = (_sortingOption: string) => {
 		setSortingOption(_sortingOption)
 	}
 
-	const handleActiveTabChange = (chainId) => {
+	const handleActiveTabChange = (chainId: string) => {
 		setActiveTab(chainId)
-	}
-
-	const sortQuotes = (quotes) => {
-		switch (sortingOption) {
-			case 'TVL':
-				return quotes.sort(compareTvl)
-			case 'Vault':
-				return quotes.sort(compareSymbol)
-			default:
-				return quotes.sort(compareApy)
-		}
-	}
-
-	const compareApy = (a, b) => {
-		if (a.apy > b.apy) {
-			return -1
-		}
-		if (a.apy < b.apy) {
-			return 1
-		}
-		return 0
-	}
-
-	const compareTvl = (a, b) => {
-		if (
-			parseInt(a.tvl) / 10 ** a.decimals >
-			parseInt(b.tvl) / 10 ** b.decimals
-		) {
-			return -1
-		}
-		if (
-			parseInt(a.tvl) / 10 ** a.decimals <
-			parseInt(b.tvl) / 10 ** b.decimals
-		) {
-			return 1
-		}
-		return 0
-	}
-
-	const compareSymbol = (a, b) => {
-		if (a.symbol[0] < b.symbol[0]) {
-			return -1
-		}
-		if (a.symbol[0] > b.symbol[0]) {
-			return 1
-		}
-		return 0
 	}
 
 	return (
@@ -267,51 +235,51 @@ const App = () => {
 				)}
 				{!displayDexTradesCallback && (
 					<>
-						{wooNetworkInfo && (
+						{wooNetworkTradeInfo && (
 							<>
 								<NetworkInfoHeaderField />
 								<VolumeBarField
 									wooxVolume={
-										wooNetworkInfo.data.amount -
-										wooNetworkFuturesVolume -
-										woofi1DTotalVolume / 10 ** 18
+										wooNetworkTradeInfo.data.amount -
+										wooFuturesVolume -
+										woofi1dTotalVolume / 10 ** 18
 									}
-									woofiVolume={woofi1DTotalVolume / 10 ** 18}
-									futuresVolume={wooNetworkFuturesVolume}
+									woofiVolume={woofi1dTotalVolume / 10 ** 18}
+									futuresVolume={wooFuturesVolume}
 								/>
 
 								<InfoField
 									index={2}
 									value_1={`$${amountFormatter(
-										wooNetworkInfo.data.amount -
-											woofi1DTotalVolume / 10 ** 18 -
-											wooNetworkFuturesVolume
+										wooNetworkTradeInfo.data.amount -
+											woofi1dTotalVolume / 10 ** 18 -
+											wooFuturesVolume
 									)} `}
-									value_2={`$${amountFormatter(woofi1DTotalVolume / 10 ** 18)}`}
-									value_3={`$${amountFormatter(wooNetworkFuturesVolume)} `}
+									value_2={`$${amountFormatter(woofi1dTotalVolume / 10 ** 18)}`}
+									value_3={`$${amountFormatter(wooFuturesVolume)} `}
 								/>
 							</>
 						)}
 
 						<NetworkInfoSubHeaderField />
-						{wooNetworkInfo && woofiTVL && wooNetworkFuturesOi && (
+						{wooNetworkTradeInfo && woofiTVL && wooFuturesOi && (
 							<InfoField
 								index={2}
-								value_1={`$${amountFormatter(wooNetworkInfo.data.amount)}`}
+								value_1={`$${amountFormatter(wooNetworkTradeInfo.data.amount)}`}
 								value_2={`$${amountFormatter(woofiTVL)}`}
-								value_3={`$${amountFormatter(wooNetworkFuturesOi)} `}
+								value_3={`$${amountFormatter(wooFuturesOi)} `}
 							/>
 						)}
 
 						<PieChartFieldHeader />
 						{chainsInfo.length > 0 &&
-							Object.keys(woofiStakingInfo).length > 0 &&
-							Object.keys(woofi1MVolumeSources).length > 0 && (
+							Object.keys(woofiStakedWoo).length > 0 &&
+							Object.keys(woofi1mVolumeSources).length > 0 && (
 								<PieChartField
 									chainsInfo={chainsInfo}
-									totalStakedWooAmount={totalStakedWooAmount}
-									woofiStakingInfo={woofiStakingInfo}
-									woofi1MVolumeSources={woofi1MVolumeSources}
+									totalStakedWooAmount={woofiTotalStakedWoo}
+									woofiStakingInfo={woofiStakedWoo}
+									woofi1mVolumeSources={woofi1mVolumeSources}
 									activeTab={activeTab}
 								/>
 							)}
@@ -348,6 +316,7 @@ const App = () => {
 								/>
 
 								{sortQuotes(
+									sortingOption,
 									Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
 								).map((tokenInfo, index) => (
 									<InfoField

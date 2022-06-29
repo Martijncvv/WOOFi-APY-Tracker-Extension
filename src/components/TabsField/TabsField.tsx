@@ -1,6 +1,6 @@
 import './TabsField.css'
-import React, { useState, useEffect } from 'react'
-import IChainInfo from '../../models/ChainsInfo'
+import React from 'react'
+import IChainInfo from '../../models/IChainsInfo'
 
 interface ChainsDataProps {
 	chainsInfo: IChainInfo[]
@@ -13,7 +13,7 @@ const TabsField: React.FC<ChainsDataProps> = ({
 	activeTabCallback,
 	activeTab,
 }) => {
-	async function handleTabClick(chainId) {
+	async function handleTabClick(chainId: string) {
 		activeTabCallback(chainId)
 	}
 

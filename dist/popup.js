@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#calc-yield-field {\n\tpadding: 12px 0 6px;\n\n\tdisplay: flex;\n\tflex-direction: column;\n\n\tcolor: white;\n}\n#calc-yield-field-header {\n\tpadding: 6px 12px 0;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n\tbackground-color: #313641;\n}\n\n.calc-yield-field-values {\n\tpadding: 6px 12px 6px;\n\tbackground-color: #3c404b;\n\t/* border-radius: 0 0 5px 5px; */\n\tborder-radius: 5px;\n}\n\n.calc-yield-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-amount:focus {\n\toutline: none;\n}\n\n#input-apy {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-apy:focus {\n\toutline: none;\n}\n\n#input-days {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-days:focus {\n\toutline: none;\n}\n\n#apy-profit-field {\n\tpadding: 3px 2px 0;\n}\n", "",{"version":3,"sources":["webpack://./src/components/CalcYieldField/CalcYieldField.css"],"names":[],"mappings":"AAAA;CACC,mBAAmB;;CAEnB,aAAa;CACb,sBAAsB;;CAEtB,YAAY;AACb;AACA;CACC,mBAAmB;;CAEnB,eAAe;CACf,gCAAgC;CAChC,iBAAiB;CACjB,yBAAyB;AAC1B;;AAEA;CACC,qBAAqB;CACrB,yBAAyB;CACzB,gCAAgC;CAChC,kBAAkB;AACnB;;AAEA;CACC,iBAAiB;CACjB,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;AACf;AACA;CACC,UAAU;;CAEV,cAAc;CACd,eAAe;AAChB;;AAEA;CACC,UAAU;AACX;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;;CAEzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,kBAAkB;AACnB","sourcesContent":["#calc-yield-field {\n\tpadding: 12px 0 6px;\n\n\tdisplay: flex;\n\tflex-direction: column;\n\n\tcolor: white;\n}\n#calc-yield-field-header {\n\tpadding: 6px 12px 0;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n\tbackground-color: #313641;\n}\n\n.calc-yield-field-values {\n\tpadding: 6px 12px 6px;\n\tbackground-color: #3c404b;\n\t/* border-radius: 0 0 5px 5px; */\n\tborder-radius: 5px;\n}\n\n.calc-yield-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-amount:focus {\n\toutline: none;\n}\n\n#input-apy {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-apy:focus {\n\toutline: none;\n}\n\n#input-days {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-days:focus {\n\toutline: none;\n}\n\n#apy-profit-field {\n\tpadding: 3px 2px 0;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#calc-yield-field {\n\tpadding: 12px 0 6px;\n\n\tdisplay: flex;\n\tflex-direction: column;\n\n\tcolor: white;\n}\n#calc-yield-field-header {\n\tpadding: 6px 12px 0;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n\tbackground-color: #313641;\n}\n\n.calc-yield-field-values {\n\tpadding: 6px 12px 6px;\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n}\n\n.calc-yield-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-amount:focus {\n\toutline: none;\n}\n\n#input-apy {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-apy:focus {\n\toutline: none;\n}\n\n#input-days {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-days:focus {\n\toutline: none;\n}\n\n#apy-profit-field {\n\tpadding: 3px 2px 0;\n}\n", "",{"version":3,"sources":["webpack://./src/components/CalcYieldField/CalcYieldField.css"],"names":[],"mappings":"AAAA;CACC,mBAAmB;;CAEnB,aAAa;CACb,sBAAsB;;CAEtB,YAAY;AACb;AACA;CACC,mBAAmB;;CAEnB,eAAe;CACf,gCAAgC;CAChC,iBAAiB;CACjB,yBAAyB;AAC1B;;AAEA;CACC,qBAAqB;CACrB,yBAAyB;CACzB,kBAAkB;AACnB;;AAEA;CACC,iBAAiB;CACjB,aAAa;CACb,mBAAmB;CACnB,8BAA8B;CAC9B,cAAc;AACf;AACA;CACC,UAAU;;CAEV,cAAc;CACd,eAAe;AAChB;;AAEA;CACC,UAAU;AACX;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;;CAEzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,WAAW;CACX,wBAAwB;;CAExB,YAAY;CACZ,yBAAyB;CACzB,YAAY;CACZ,kBAAkB;AACnB;AACA;CACC,aAAa;AACd;;AAEA;CACC,kBAAkB;AACnB","sourcesContent":["#calc-yield-field {\n\tpadding: 12px 0 6px;\n\n\tdisplay: flex;\n\tflex-direction: column;\n\n\tcolor: white;\n}\n#calc-yield-field-header {\n\tpadding: 6px 12px 0;\n\n\tfont-size: 15px;\n\tborder-bottom: 1px solid #73bef4;\n\tfont-weight: bold;\n\tbackground-color: #313641;\n}\n\n.calc-yield-field-values {\n\tpadding: 6px 12px 6px;\n\tbackground-color: #3c404b;\n\tborder-radius: 5px;\n}\n\n.calc-yield-field-row {\n\tpadding-left: 4px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-between;\n\tgap: 10px 20px;\n}\n.input-field {\n\twidth: 30%;\n\n\tpadding: 2px 0;\n\tfont-size: 15px;\n}\n\n.input-field-amount {\n\twidth: 40%;\n}\n\n#input-amount {\n\twidth: 40px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-amount:focus {\n\toutline: none;\n}\n\n#input-apy {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-apy:focus {\n\toutline: none;\n}\n\n#input-days {\n\twidth: 35px;\n\tpadding: 1px 2px 1px 3px;\n\n\tcolor: white;\n\tbackground-color: #494d55;\n\tborder: none;\n\tborder-radius: 4px;\n}\n#input-days:focus {\n\toutline: none;\n}\n\n#apy-profit-field {\n\tpadding: 3px 2px 0;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -860,18 +860,13 @@ const CalcYieldField = ({}) => {
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
         calculateProfit();
     }, []);
-    function handleSearchInputKeyUpEvent(event) {
+    function handleSearchInputKeyUpEvent() {
         return __awaiter(this, void 0, void 0, function* () {
-            if (inputAmount && inputApy && inputDays) {
-                calculateProfit();
-            }
-            // }
+            calculateProfit();
         });
     }
     function calculateProfit() {
-        setYieldResult((0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(parseFloat(inputAmount) *
-            (parseFloat(inputApy) / 100 / 365) *
-            parseFloat(inputDays)));
+        setYieldResult((0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_2__.amountFormatter)(inputAmount * (inputApy / 365 / 100) * inputDays));
     }
     return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "calc-yield-field" },
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "calc-yield-field-header", className: "calc-yield-field-row" }, "Calculate Yield"),
@@ -885,11 +880,11 @@ const CalcYieldField = ({}) => {
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field input-field-amount" },
                     "$",
                     ' ',
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-amount", placeholder: "$", autoComplete: "off", value: inputAmount, onKeyUp: (event) => handleSearchInputKeyUpEvent(event), onChange: (event) => setInputAmount(event.target.value), onClick: () => setInputAmount('') })),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-amount", placeholder: "$", autoComplete: "off", value: inputAmount, onKeyUp: () => handleSearchInputKeyUpEvent(), onChange: (event) => setInputAmount(parseFloat(event.target.value) | 0), onClick: () => setInputAmount(0) })),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" },
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-apy", placeholder: "%", autoComplete: "off", value: inputApy, onKeyUp: (event) => handleSearchInputKeyUpEvent(event), onChange: (event) => setInputApy(event.target.value), onClick: () => setInputApy('') })),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-apy", placeholder: "%", autoComplete: "off", value: inputApy, onKeyUp: () => handleSearchInputKeyUpEvent(), onChange: (event) => setInputApy(parseFloat(event.target.value) | 0), onClick: () => setInputApy(0) })),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "input-field" },
-                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-days", placeholder: "#", autoComplete: "off", value: inputDays, onKeyUp: (event) => handleSearchInputKeyUpEvent(event), onChange: (event) => setInputDays(event.target.value), onClick: () => setInputDays('') })),
+                    react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", { id: "input-days", placeholder: "#", autoComplete: "off", value: inputDays, onKeyUp: () => handleSearchInputKeyUpEvent(), onChange: (event) => setInputDays(parseFloat(event.target.value) | 0), onClick: () => setInputDays(0) })),
                 react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { id: "apy-profit-field", className: "input-field" },
                     "$",
                     yieldResult)))));
@@ -982,7 +977,7 @@ const DexTradesField = ({}) => {
     function getDexTradesInfo() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const wooTransactions = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_2__.fetchWooTxsInfo)();
+                const wooTransactions = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_2__.fetchEthWooTxs)();
                 console.log(wooTransactions);
                 if (wooTransactions.message == 'NOTOK') {
                     setErrorMessage('NOTOK');
@@ -994,7 +989,6 @@ const DexTradesField = ({}) => {
                     return (Object.values(dexContracts).includes(tx.from) ||
                         Object.values(dexContracts).includes(tx.to));
                 });
-                console.log(wooDexTrades);
                 const cleanedTradesInfo = [];
                 wooDexTrades.forEach((trade) => {
                     cleanedTradesInfo.push({
@@ -1013,7 +1007,6 @@ const DexTradesField = ({}) => {
                     });
                 });
                 setDexTrades(cleanedTradesInfo);
-                console.log(cleanedTradesInfo);
                 let totalBought = 0;
                 let totalSold = 0;
                 cleanedTradesInfo.forEach((trade) => {
@@ -1345,8 +1338,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 
-const InfoField = ({ value_1, value_2, value_3, index }) => {
-    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-values", style: parseInt(index) % 2
+const InfoField = ({ value_1, value_2, value_3, index, }) => {
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-values", style: index % 2
             ? { backgroundColor: '#313641' }
             : { backgroundColor: '#3C404B', borderRadius: '5px' } },
         react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "info-field-value " }, value_1),
@@ -1569,7 +1562,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
-const PieChartField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStakedWooAmount, woofi1MVolumeSources, }) => {
+const PieChartField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStakedWooAmount, woofi1mVolumeSources, }) => {
     const [activePieIndex, setActivePieIndex] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
     const [stakingData, setStakingData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [topStakingChains, setTopStakingChains] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
@@ -1618,7 +1611,7 @@ const PieChartField = ({ activeTab, chainsInfo, woofiStakingInfo, totalStakedWoo
         return __awaiter(this, void 0, void 0, function* () {
             let volumeSourcesData = [];
             let totalVolume1M = 0;
-            for (let source of woofi1MVolumeSources[activeTab].data) {
+            for (let source of woofi1mVolumeSources[activeTab].data) {
                 volumeSourcesData.push({
                     sourceName: `${source.name}`,
                     value: parseInt(source.volume_usd) / Math.pow(10, 18),
@@ -1940,6 +1933,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_DexTradesHeaderField__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/DexTradesHeaderField */ "./src/components/DexTradesHeaderField/index.tsx");
 /* harmony import */ var _utils_api__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../utils/api */ "./src/utils/api.ts");
 /* harmony import */ var _utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../utils/amountFormatter */ "./src/utils/amountFormatter.ts");
+/* harmony import */ var _utils_orderObjects__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../utils/orderObjects */ "./src/utils/orderObjects.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -1971,20 +1965,21 @@ const BnbChainIcon = __webpack_require__(/*! ../static/images/BNB-Chain_logo.png
 const FtmIcon = __webpack_require__(/*! ../static/images/FTM_logo.png */ "./src/static/images/FTM_logo.png");
 
 
+
 const App = () => {
     let chainIds = ['avax', 'bsc', 'fantom'];
     let chainNames = ['Avalanche', 'BNB Chain', 'Fantom'];
     let chainLogos = [AvaxIcon, BnbChainIcon, FtmIcon];
     let chainColors = ['#E84142', '#F0B90B', '#13b5ec'];
-    const [wooNetworkInfo, setWooNetworkInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
-    const [wooNetworkFuturesOi, setWooNetworkFuturesOi] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [wooNetworkTradeInfo, setWooNetworkTradeInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
+    const [wooFuturesOi, setWooFuturesOi] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
     const [woofiEarnInfo, setWoofiEarnInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
-    const [woofi1DTotalVolume, setWoofi1DTotalVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const [woofi1MVolumeSources, setWoofi1MVolumeSources] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
-    const [woofiStakingInfo, setWoofiStakingInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
-    const [totalStakedWooAmount, setTotalStakedWooAmount] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const [wooNetworkFuturesVolume, setWooNetworkFuturesVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const [woofiTVL, setWoofiTVL] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    const [woofi1dTotalVolume, setWoofi1dTotalVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+    const [woofi1mVolumeSources, setWoofi1mVolumeSources] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
+    const [woofiStakedWoo, setWoofiStakedWoo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
+    const [woofiTotalStakedWoo, setWoofiTotalStakedWoo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+    const [wooFuturesVolume, setWooFuturesVolume] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+    const [woofiTVL, setWoofiTVL] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
     const [displayCalculator, setDisplayCalculator] = react__WEBPACK_IMPORTED_MODULE_0__.useState(false);
     const [sortingOption, setSortingOption] = react__WEBPACK_IMPORTED_MODULE_0__.useState('apy');
     const [chainsInfo, setChainsInfo] = react__WEBPACK_IMPORTED_MODULE_0__.useState([]);
@@ -1994,10 +1989,10 @@ const App = () => {
         getChainsInfo();
         getWoofiEarnInfo();
         getFuturesInfo();
-        getWooNetworkInfo();
+        getWooNetworkTradeInfo();
         getWooFiVolumesInfo();
         getStakedWooInfo();
-        getWooFiVolumeSourceInfo();
+        getWooFiVolume1mSourceInfo();
     }, []);
     const getChainsInfo = () => {
         for (let i = 0; i < chainIds.length; i++) {
@@ -2032,11 +2027,12 @@ const App = () => {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 for (let chainId of chainIds) {
-                    let chainStakeInfo = {};
-                    chainStakeInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWooFiChainStakedInfo)(chainId);
-                    setWoofiStakingInfo((woofiStakingInfo) => (Object.assign(Object.assign({}, woofiStakingInfo), chainStakeInfo)));
-                    setTotalStakedWooAmount((totalStakedWooAmount) => totalStakedWooAmount +
-                        parseInt(chainStakeInfo[chainId].data.woo.total_staked) / Math.pow(10, 18));
+                    let woofiStakedWooInfo = {};
+                    woofiStakedWooInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWoofiChainStakedInfo)(chainId);
+                    setWoofiStakedWoo((woofiStakingInfo) => (Object.assign(Object.assign({}, woofiStakingInfo), woofiStakedWooInfo)));
+                    setWoofiTotalStakedWoo((totalStakedWooAmount) => totalStakedWooAmount +
+                        parseInt(woofiStakedWooInfo[chainId].data.woo.total_staked) /
+                            Math.pow(10, 18));
                 }
             }
             catch (err) {
@@ -2044,10 +2040,10 @@ const App = () => {
             }
         });
     }
-    function getWooNetworkInfo() {
+    function getWooNetworkTradeInfo() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                setWooNetworkInfo(yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWooNetworkInfo)());
+                setWooNetworkTradeInfo(yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWooNetworkTradeInfo)());
             }
             catch (err) {
                 console.log(err);
@@ -2058,18 +2054,18 @@ const App = () => {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let totalFuturesVolume = 0;
-                let totalFuturesOI = 0;
-                let wooNetworkfetchedFuturesInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWooNetworkFutureInfo)();
-                for (let i = 0; i < wooNetworkfetchedFuturesInfo.rows.length; i++) {
-                    totalFuturesOI +=
-                        wooNetworkfetchedFuturesInfo.rows[i]['open_interest'] *
-                            wooNetworkfetchedFuturesInfo.rows[i]['mark_price'];
+                let totalFuturesOi = 0;
+                let woofetchedFuturesInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWooFutureInfo)();
+                for (let i = 0; i < woofetchedFuturesInfo.rows.length; i++) {
+                    totalFuturesOi +=
+                        woofetchedFuturesInfo.rows[i]['open_interest'] *
+                            woofetchedFuturesInfo.rows[i]['mark_price'];
                     totalFuturesVolume +=
-                        wooNetworkfetchedFuturesInfo.rows[i]['24h_volumn'] *
-                            wooNetworkfetchedFuturesInfo.rows[i]['mark_price'];
+                        woofetchedFuturesInfo.rows[i]['24h_volumn'] *
+                            woofetchedFuturesInfo.rows[i]['mark_price'];
                 }
-                setWooNetworkFuturesVolume(totalFuturesVolume);
-                setWooNetworkFuturesOi(totalFuturesOI);
+                setWooFuturesVolume(totalFuturesVolume);
+                setWooFuturesOi(totalFuturesOi);
             }
             catch (err) {
                 console.log(err);
@@ -2080,9 +2076,9 @@ const App = () => {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 for (let chainId of chainIds) {
-                    let chain1DVolumeInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWoofiChain1DVolume)(chainId);
-                    setWoofi1DTotalVolume((woofi1DTotalVolume) => woofi1DTotalVolume +
-                        parseInt(chain1DVolumeInfo.data['24h_volume_usd']));
+                    let woofichain1dVolumeInfo = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWoofiChain1dVolume)(chainId);
+                    setWoofi1dTotalVolume((woofi1dTotalVolume) => woofi1dTotalVolume +
+                        parseInt(woofichain1dVolumeInfo.data['24h_volume_usd']));
                 }
             }
             catch (err) {
@@ -2090,13 +2086,13 @@ const App = () => {
             }
         });
     }
-    function getWooFiVolumeSourceInfo() {
+    function getWooFiVolume1mSourceInfo() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 for (let chainId of chainIds) {
                     let chainVolumeSourceInfo = {};
-                    chainVolumeSourceInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWoofiChain1MVolumeSource)(chainId);
-                    setWoofi1MVolumeSources((woofi1MVolumeSources) => (Object.assign(Object.assign({}, woofi1MVolumeSources), chainVolumeSourceInfo)));
+                    chainVolumeSourceInfo[chainId] = yield (0,_utils_api__WEBPACK_IMPORTED_MODULE_17__.fetchWoofiChain1mVolumeSource)(chainId);
+                    setWoofi1mVolumeSources((woofi1mVolumeSources) => (Object.assign(Object.assign({}, woofi1mVolumeSources), chainVolumeSourceInfo)));
                 }
             }
             catch (err) {
@@ -2114,45 +2110,6 @@ const App = () => {
     const handleActiveTabChange = (chainId) => {
         setActiveTab(chainId);
     };
-    const sortQuotes = (quotes) => {
-        switch (sortingOption) {
-            case 'TVL':
-                return quotes.sort(compareTvl);
-            case 'Vault':
-                return quotes.sort(compareSymbol);
-            default:
-                return quotes.sort(compareApy);
-        }
-    };
-    const compareApy = (a, b) => {
-        if (a.apy > b.apy) {
-            return -1;
-        }
-        if (a.apy < b.apy) {
-            return 1;
-        }
-        return 0;
-    };
-    const compareTvl = (a, b) => {
-        if (parseInt(a.tvl) / Math.pow(10, a.decimals) >
-            parseInt(b.tvl) / Math.pow(10, b.decimals)) {
-            return -1;
-        }
-        if (parseInt(a.tvl) / Math.pow(10, a.decimals) <
-            parseInt(b.tvl) / Math.pow(10, b.decimals)) {
-            return 1;
-        }
-        return 0;
-    };
-    const compareSymbol = (a, b) => {
-        if (a.symbol[0] < b.symbol[0]) {
-            return -1;
-        }
-        if (a.symbol[0] > b.symbol[0]) {
-            return 1;
-        }
-        return 0;
-    };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_HeaderField__WEBPACK_IMPORTED_MODULE_4__.default, null),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "dashboard" },
@@ -2160,27 +2117,27 @@ const App = () => {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DexTradesHeaderField__WEBPACK_IMPORTED_MODULE_16__.default, null),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_DexTradesField__WEBPACK_IMPORTED_MODULE_15__.default, null))),
             !displayDexTradesCallback && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
-                wooNetworkInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                wooNetworkTradeInfo && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_NetworkInfoHeaderField__WEBPACK_IMPORTED_MODULE_7__.default, null),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_VolumeBarField__WEBPACK_IMPORTED_MODULE_12__.default, { wooxVolume: wooNetworkInfo.data.amount -
-                            wooNetworkFuturesVolume -
-                            woofi1DTotalVolume / Math.pow(10, 18), woofiVolume: woofi1DTotalVolume / Math.pow(10, 18), futuresVolume: wooNetworkFuturesVolume }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(wooNetworkInfo.data.amount -
-                            woofi1DTotalVolume / Math.pow(10, 18) -
-                            wooNetworkFuturesVolume)} `, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(woofi1DTotalVolume / Math.pow(10, 18))}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(wooNetworkFuturesVolume)} ` }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_VolumeBarField__WEBPACK_IMPORTED_MODULE_12__.default, { wooxVolume: wooNetworkTradeInfo.data.amount -
+                            wooFuturesVolume -
+                            woofi1dTotalVolume / Math.pow(10, 18), woofiVolume: woofi1dTotalVolume / Math.pow(10, 18), futuresVolume: wooFuturesVolume }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(wooNetworkTradeInfo.data.amount -
+                            woofi1dTotalVolume / Math.pow(10, 18) -
+                            wooFuturesVolume)} `, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(woofi1dTotalVolume / Math.pow(10, 18))}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(wooFuturesVolume)} ` }))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_NetworkInfoSubHeaderField__WEBPACK_IMPORTED_MODULE_8__.default, null),
-                wooNetworkInfo && woofiTVL && wooNetworkFuturesOi && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(wooNetworkInfo.data.amount)}`, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(woofiTVL)}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(wooNetworkFuturesOi)} ` })),
+                wooNetworkTradeInfo && woofiTVL && wooFuturesOi && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 2, value_1: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(wooNetworkTradeInfo.data.amount)}`, value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(woofiTVL)}`, value_3: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(wooFuturesOi)} ` })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PieChartFieldHeader__WEBPACK_IMPORTED_MODULE_14__.default, null),
                 chainsInfo.length > 0 &&
-                    Object.keys(woofiStakingInfo).length > 0 &&
-                    Object.keys(woofi1MVolumeSources).length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PieChartField__WEBPACK_IMPORTED_MODULE_13__.default, { chainsInfo: chainsInfo, totalStakedWooAmount: totalStakedWooAmount, woofiStakingInfo: woofiStakingInfo, woofi1MVolumeSources: woofi1MVolumeSources, activeTab: activeTab })),
+                    Object.keys(woofiStakedWoo).length > 0 &&
+                    Object.keys(woofi1mVolumeSources).length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PieChartField__WEBPACK_IMPORTED_MODULE_13__.default, { chainsInfo: chainsInfo, totalStakedWooAmount: woofiTotalStakedWoo, woofiStakingInfo: woofiStakedWoo, woofi1mVolumeSources: woofi1mVolumeSources, activeTab: activeTab })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_TabsField__WEBPACK_IMPORTED_MODULE_11__.default, { chainsInfo: chainsInfo, activeTabCallback: handleActiveTabChange, activeTab: activeTab }),
                 displayCalculator && react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_CalcYieldField__WEBPACK_IMPORTED_MODULE_10__.default, null),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_EarnFieldHeader__WEBPACK_IMPORTED_MODULE_6__.default, { value_1: `Vault`, value_2: 'TVL', value_3: 'APY', displayCalculatorCallback: handleCalculatorChange, sortingOptionCallback: handleSortingChange, displayCalculator: displayCalculator }),
                 Object.keys(woofiEarnInfo).length > 0 && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { index: 0, value_1: 'Total', value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(parseInt(woofiEarnInfo[activeTab].data.total_deposit) /
                             Math.pow(10, 18))}`, value_3: `#${Object.values(woofiEarnInfo[activeTab].data.auto_compounding).length}` }),
-                    sortQuotes(Object.values(woofiEarnInfo[activeTab].data.auto_compounding)).map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index + 1, value_1: tokenInfo.symbol
+                    (0,_utils_orderObjects__WEBPACK_IMPORTED_MODULE_19__.sortQuotes)(sortingOption, Object.values(woofiEarnInfo[activeTab].data.auto_compounding)).map((tokenInfo, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_InfoField__WEBPACK_IMPORTED_MODULE_5__.default, { key: index, index: index + 1, value_1: tokenInfo.symbol
                             .replaceAll('_', '-')
                             .replace('-LP', ''), value_2: `$${(0,_utils_amountFormatter__WEBPACK_IMPORTED_MODULE_18__.amountFormatter)(parseInt(tokenInfo.tvl) / Math.pow(10, tokenInfo.decimals))}`, value_3: `${tokenInfo.apy.toPrecision(3)}%` })))))))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_LinksField__WEBPACK_IMPORTED_MODULE_9__.default, { twitterHandle: "WOOnetwork", discordHandle: "woonetwork", telegramHandle: "woonetwork", displayDexTradesCallback: displayDexTradesCallback, setDisplayDexTradesCallback: setDisplayDexTradesCallback }),
@@ -2217,8 +2174,8 @@ function amountFormatter(amount) {
             return `${(amount / 1000000).toPrecision(3)} M`;
         case amount > 10000:
             return `${(amount / 1000).toPrecision(3)} K`;
-        case amount < 0.001:
-            return `${amount.toPrecision(3)}`;
+        case amount < 0.1:
+            return `${amount.toFixed(3)}`;
         default:
             return `${amount.toPrecision(4)}`;
     }
@@ -2235,14 +2192,13 @@ function amountFormatter(amount) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "fetchDexTradesInfo": () => (/* binding */ fetchDexTradesInfo),
-/* harmony export */   "fetchWooTxsInfo": () => (/* binding */ fetchWooTxsInfo),
-/* harmony export */   "fetchWooNetworkInfo": () => (/* binding */ fetchWooNetworkInfo),
-/* harmony export */   "fetchWooNetworkFutureInfo": () => (/* binding */ fetchWooNetworkFutureInfo),
+/* harmony export */   "fetchEthWooTxs": () => (/* binding */ fetchEthWooTxs),
+/* harmony export */   "fetchWooNetworkTradeInfo": () => (/* binding */ fetchWooNetworkTradeInfo),
+/* harmony export */   "fetchWooFutureInfo": () => (/* binding */ fetchWooFutureInfo),
 /* harmony export */   "fetchWoofiEarnChainInfo": () => (/* binding */ fetchWoofiEarnChainInfo),
-/* harmony export */   "fetchWooFiChainStakedInfo": () => (/* binding */ fetchWooFiChainStakedInfo),
-/* harmony export */   "fetchWoofiChain1DVolume": () => (/* binding */ fetchWoofiChain1DVolume),
-/* harmony export */   "fetchWoofiChain1MVolumeSource": () => (/* binding */ fetchWoofiChain1MVolumeSource)
+/* harmony export */   "fetchWoofiChainStakedInfo": () => (/* binding */ fetchWoofiChainStakedInfo),
+/* harmony export */   "fetchWoofiChain1dVolume": () => (/* binding */ fetchWoofiChain1dVolume),
+/* harmony export */   "fetchWoofiChain1mVolumeSource": () => (/* binding */ fetchWoofiChain1mVolumeSource)
 /* harmony export */ });
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -2257,34 +2213,38 @@ const WOOFI_CHAIN_INFO_API = 'https://fi-api.woo.org/yield?&network=';
 const WOOFI_CHAIN_STAKING_API = 'https://fi-api.woo.org/staking?network=';
 const WOOFI_CHAIN_1D_VOLUME_API = 'https://fi-api.woo.org/cumulate_stat?period=1m&network=';
 const WOOFI_CHAIN_1M_VOLUME_SOURCE_API = 'https://fi-api.woo.org/source_stat?period=1m&network=';
-const WOONETWORK_TOTAL_VOLUME_API = 'https://sapi.woo.org/wootrade/data';
-const WOONETWORK_FUTURES_API = 'https://api.woo.org/v1/public/futures';
-const ETHERSCAN_WOO_DEX_TRADES_API = 'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&address=';
-function fetchDexTradesInfo(dexContract) {
+const WOONETWORK_TRADE_INFO_API = 'https://sapi.woo.org/wootrade/data';
+const WOO_FUTURES_API = 'https://api.woo.org/v1/public/futures';
+const ETHERSCAN_WOO_ETH_TXS_API = 'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc';
+// const ETHERSCAN_WOO_DEX_TRADES_API: string =
+// 	'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&address='
+// export async function fetchDexTradesInfo(dexContract: string): Promise<{}> {
+// 	const res = await fetch(
+// 		ETHERSCAN_WOO_DEX_TRADES_API +
+// 			dexContract +
+// 			'&page=1&offset=10&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8'
+// 	)
+// 	if (!res.ok) {
+// 		throw new Error(`Fetch error, total network volume info}`)
+// 	}
+// 	const data = await res.json()
+// 	return data
+// }
+function fetchEthWooTxs() {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(ETHERSCAN_WOO_DEX_TRADES_API +
-            dexContract +
-            '&page=1&offset=10&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8');
-        if (!res.ok) {
-            throw new Error(`Fetch error, total network volume info}`);
-        }
-        const data = yield res.json();
-        return data;
-    });
-}
-function fetchWooTxsInfo() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch('https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc');
+        const res = yield fetch(ETHERSCAN_WOO_ETH_TXS_API);
         if (!res.ok) {
             throw new Error(`Fetch error, WOO DeX Trade info}`);
         }
         const data = yield res.json();
+        console.log('ETHERSCAN_WOO_ETH_TXS_API');
+        console.log(data);
         return data;
     });
 }
-function fetchWooNetworkInfo() {
+function fetchWooNetworkTradeInfo() {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOONETWORK_TOTAL_VOLUME_API);
+        const res = yield fetch(WOONETWORK_TRADE_INFO_API);
         if (!res.ok) {
             throw new Error(`Fetch error, total network volume info}`);
         }
@@ -2292,9 +2252,9 @@ function fetchWooNetworkInfo() {
         return data;
     });
 }
-function fetchWooNetworkFutureInfo() {
+function fetchWooFutureInfo() {
     return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(WOONETWORK_FUTURES_API);
+        const res = yield fetch(WOO_FUTURES_API);
         if (!res.ok) {
             throw new Error(`Fetch error, futures info}`);
         }
@@ -2309,12 +2269,10 @@ function fetchWoofiEarnChainInfo(chain) {
             throw new Error(`Fetch error, ${chain} woofichain info}`);
         }
         const data = yield res.json();
-        console.log('WOOFICHAIN FETCH');
-        console.log(data);
         return data;
     });
 }
-function fetchWooFiChainStakedInfo(chain) {
+function fetchWoofiChainStakedInfo(chain) {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield fetch(WOOFI_CHAIN_STAKING_API + chain);
         if (!res.ok) {
@@ -2324,7 +2282,7 @@ function fetchWooFiChainStakedInfo(chain) {
         return data;
     });
 }
-function fetchWoofiChain1DVolume(chain) {
+function fetchWoofiChain1dVolume(chain) {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield fetch(WOOFI_CHAIN_1D_VOLUME_API + chain);
         if (!res.ok) {
@@ -2334,7 +2292,7 @@ function fetchWoofiChain1DVolume(chain) {
         return data;
     });
 }
-function fetchWoofiChain1MVolumeSource(chain) {
+function fetchWoofiChain1mVolumeSource(chain) {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield fetch(WOOFI_CHAIN_1M_VOLUME_SOURCE_API + chain);
         if (!res.ok) {
@@ -2344,6 +2302,60 @@ function fetchWoofiChain1MVolumeSource(chain) {
         return data;
     });
 }
+
+
+/***/ }),
+
+/***/ "./src/utils/orderObjects.ts":
+/*!***********************************!*\
+  !*** ./src/utils/orderObjects.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "sortQuotes": () => (/* binding */ sortQuotes),
+/* harmony export */   "compareApy": () => (/* binding */ compareApy),
+/* harmony export */   "compareTvl": () => (/* binding */ compareTvl),
+/* harmony export */   "compareSymbol": () => (/* binding */ compareSymbol)
+/* harmony export */ });
+const sortQuotes = (sortingOption, quotes) => {
+    switch (sortingOption) {
+        case 'TVL':
+            return quotes.sort(compareTvl);
+        case 'Vault':
+            return quotes.sort(compareSymbol);
+        default:
+            return quotes.sort(compareApy);
+    }
+};
+const compareApy = (a, b) => {
+    if (a.apy > b.apy) {
+        return -1;
+    }
+    if (a.apy < b.apy) {
+        return 1;
+    }
+    return 0;
+};
+const compareTvl = (a, b) => {
+    if (parseInt(a.tvl) / Math.pow(10, a.decimals) > parseInt(b.tvl) / Math.pow(10, b.decimals)) {
+        return -1;
+    }
+    if (parseInt(a.tvl) / Math.pow(10, a.decimals) < parseInt(b.tvl) / Math.pow(10, b.decimals)) {
+        return 1;
+    }
+    return 0;
+};
+const compareSymbol = (a, b) => {
+    if (a.symbol[0] < b.symbol[0]) {
+        return -1;
+    }
+    if (a.symbol[0] > b.symbol[0]) {
+        return 1;
+    }
+    return 0;
+};
 
 
 /***/ }),

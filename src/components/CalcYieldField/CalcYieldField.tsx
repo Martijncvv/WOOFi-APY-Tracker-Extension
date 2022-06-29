@@ -4,29 +4,22 @@ import React, { useState, useEffect } from 'react'
 import { amountFormatter } from '../../utils/amountFormatter'
 
 const CalcYieldField: React.FC<{}> = ({}) => {
-	const [inputAmount, setInputAmount] = useState<any>(1000)
-	const [inputApy, setInputApy] = useState<any>(6.81)
-	const [inputDays, setInputDays] = useState<any>(30)
-	const [yieldResult, setYieldResult] = useState<any>()
+	const [inputAmount, setInputAmount] = useState<number>(1000)
+	const [inputApy, setInputApy] = useState<number>(6.81)
+	const [inputDays, setInputDays] = useState<number>(30)
+	const [yieldResult, setYieldResult] = useState<string>()
 
 	useEffect(() => {
 		calculateProfit()
 	}, [])
 
-	async function handleSearchInputKeyUpEvent(event) {
-		if (inputAmount && inputApy && inputDays) {
-			calculateProfit()
-		}
-		// }
+	async function handleSearchInputKeyUpEvent() {
+		calculateProfit()
 	}
 
 	function calculateProfit() {
 		setYieldResult(
-			amountFormatter(
-				parseFloat(inputAmount) *
-					(parseFloat(inputApy) / 100 / 365) *
-					parseFloat(inputDays)
-			)
+			amountFormatter(inputAmount * (inputApy / 365 / 100) * inputDays)
 		)
 	}
 
@@ -50,9 +43,11 @@ const CalcYieldField: React.FC<{}> = ({}) => {
 							placeholder="$"
 							autoComplete="off"
 							value={inputAmount}
-							onKeyUp={(event) => handleSearchInputKeyUpEvent(event)}
-							onChange={(event) => setInputAmount(event.target.value)}
-							onClick={() => setInputAmount('')}
+							onKeyUp={() => handleSearchInputKeyUpEvent()}
+							onChange={(event) =>
+								setInputAmount(parseFloat(event.target.value) | 0)
+							}
+							onClick={() => setInputAmount(0)}
 						/>
 					</div>
 
@@ -62,9 +57,11 @@ const CalcYieldField: React.FC<{}> = ({}) => {
 							placeholder="%"
 							autoComplete="off"
 							value={inputApy}
-							onKeyUp={(event) => handleSearchInputKeyUpEvent(event)}
-							onChange={(event) => setInputApy(event.target.value)}
-							onClick={() => setInputApy('')}
+							onKeyUp={() => handleSearchInputKeyUpEvent()}
+							onChange={(event) =>
+								setInputApy(parseFloat(event.target.value) | 0)
+							}
+							onClick={() => setInputApy(0)}
 						/>
 					</div>
 
@@ -74,9 +71,11 @@ const CalcYieldField: React.FC<{}> = ({}) => {
 							placeholder="#"
 							autoComplete="off"
 							value={inputDays}
-							onKeyUp={(event) => handleSearchInputKeyUpEvent(event)}
-							onChange={(event) => setInputDays(event.target.value)}
-							onClick={() => setInputDays('')}
+							onKeyUp={() => handleSearchInputKeyUpEvent()}
+							onChange={(event) =>
+								setInputDays(parseFloat(event.target.value) | 0)
+							}
+							onClick={() => setInputDays(0)}
 						/>
 					</div>
 

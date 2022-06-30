@@ -19,22 +19,6 @@ const WOO_FUTURES_API: string = 'https://api.woo.org/v1/public/futures'
 
 const ETHERSCAN_WOO_ETH_TXS_API: string =
 	'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc'
-// const ETHERSCAN_WOO_DEX_TRADES_API: string =
-// 	'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&address='
-
-// export async function fetchDexTradesInfo(dexContract: string): Promise<{}> {
-// 	const res = await fetch(
-// 		ETHERSCAN_WOO_DEX_TRADES_API +
-// 			dexContract +
-// 			'&page=1&offset=10&startblock=0&endblock=99999999&sort=desc&apikey=9Z1G1NN35M1URWAANE5CBZ2WJRJMABDCC8'
-// 	)
-// 	if (!res.ok) {
-// 		throw new Error(`Fetch error, total network volume info}`)
-// 	}
-
-// 	const data = await res.json()
-// 	return data
-// }
 
 export async function fetchEthWooTxs(): Promise<IWooEthTxs> {
 	const res = await fetch(ETHERSCAN_WOO_ETH_TXS_API)

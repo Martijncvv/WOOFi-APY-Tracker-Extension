@@ -20,6 +20,7 @@ import DexTradesHeaderField from '../components/DexTradesHeaderField'
 const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
 const FtmIcon = require('../static/images/FTM_logo.png')
+const PolyIcon = require('../static/images/POLY_logo.png')
 
 import {
 	fetchWoofiEarnChainInfo,
@@ -41,10 +42,10 @@ import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
 import { sortQuotes } from '../utils/orderObjects'
 
 const App = () => {
-	let chainIds: string[] = ['avax', 'bsc', 'fantom']
-	let chainNames: string[] = ['Avalanche', 'BNB Chain', 'Fantom']
-	let chainLogos: string[] = [AvaxIcon, BnbChainIcon, FtmIcon]
-	let chainColors: string[] = ['#E84142', '#F0B90B', '#13b5ec']
+	let chainIds: string[] = ['avax', 'bsc', 'fantom', 'polygon']
+	let chainNames: string[] = ['Avax', 'Bsc', 'Ftm', 'Poly']
+	let chainLogos: string[] = [AvaxIcon, BnbChainIcon, FtmIcon, PolyIcon]
+	let chainColors: string[] = ['#E84142', '#F0B90B', '#13b5ec', '#8247e5']
 
 	const [wooNetworkTradeInfo, setWooNetworkTradeInfo] = useState<
 		IWooNetworkTradeInfo
@@ -70,6 +71,7 @@ const App = () => {
 	const [sortingOption, setSortingOption] = React.useState<string>('apy')
 	const [chainsInfo, setChainsInfo] = React.useState<IChainInfo[]>([])
 	const [activeTab, setActiveTab] = React.useState<string>('avax')
+
 	const [
 		displayDexTradesCallback,
 		setDisplayDexTradesCallback,
@@ -77,12 +79,12 @@ const App = () => {
 
 	useEffect(() => {
 		getChainsInfo()
-		getWoofiEarnInfo()
-		getFuturesInfo()
 		getWooNetworkTradeInfo()
-		getWooFiVolumesInfo()
+		getFuturesInfo()
 		getStakedWooInfo()
+		getWooFiVolumesInfo()
 		getWooFiVolume1mSourceInfo()
+		getWoofiEarnInfo()
 	}, [])
 
 	const getChainsInfo = () => {
@@ -207,8 +209,6 @@ const App = () => {
 		} catch (err) {
 			console.log(err)
 		}
-
-		console.log()
 	}
 
 	const handleCalculatorChange = () => {
@@ -227,15 +227,14 @@ const App = () => {
 		<>
 			<HeaderField />
 			<div id="dashboard">
-				{displayDexTradesCallback && (
+				{displayDexTradesCallback ? (
 					<>
 						<DexTradesHeaderField />
 						<DexTradesField />
 					</>
-				)}
-				{!displayDexTradesCallback && (
+				) : (
 					<>
-						{wooNetworkTradeInfo && (
+						{wooNetworkTradeInfo && woofiTVL && wooFuturesOi && (
 							<>
 								<NetworkInfoHeaderField />
 								<VolumeBarField
@@ -258,37 +257,46 @@ const App = () => {
 									value_2={`$${amountFormatter(woofi1dTotalVolume / 10 ** 18)}`}
 									value_3={`$${amountFormatter(wooFuturesVolume)} `}
 								/>
+
+								<NetworkInfoSubHeaderField />
+
+								<InfoField
+									index={2}
+									value_1={`$${amountFormatter(
+										wooNetworkTradeInfo.data.amount
+									)}`}
+									value_2={`$${amountFormatter(woofiTVL)}`}
+									value_3={`$${amountFormatter(wooFuturesOi)} `}
+								/>
 							</>
 						)}
 
-						<NetworkInfoSubHeaderField />
-						{wooNetworkTradeInfo && woofiTVL && wooFuturesOi && (
-							<InfoField
-								index={2}
-								value_1={`$${amountFormatter(wooNetworkTradeInfo.data.amount)}`}
-								value_2={`$${amountFormatter(woofiTVL)}`}
-								value_3={`$${amountFormatter(wooFuturesOi)} `}
-							/>
-						)}
-
-						<PieChartFieldHeader />
-						{chainsInfo.length > 0 &&
-							Object.keys(woofiStakedWoo).length > 0 &&
+						{Object.keys(woofiStakedWoo).length > 0 &&
 							Object.keys(woofi1mVolumeSources).length > 0 && (
-								<PieChartField
-									chainsInfo={chainsInfo}
-									totalStakedWooAmount={woofiTotalStakedWoo}
-									woofiStakingInfo={woofiStakedWoo}
-									woofi1mVolumeSources={woofi1mVolumeSources}
-									activeTab={activeTab}
-								/>
+								<>
+									<PieChartFieldHeader />
+									<PieChartField
+										chainsInfo={chainsInfo}
+										totalStakedWooAmount={woofiTotalStakedWoo}
+										woofiStakingInfo={woofiStakedWoo}
+										woofi1mVolumeSources={woofi1mVolumeSources}
+										activeTab={activeTab}
+									/>
+									<TabsField
+										chainsInfo={chainsInfo}
+										activeTabCallback={handleActiveTabChange}
+										activeTab={activeTab}
+										tabsActive={
+											Object.keys(woofiStakedWoo).length == chainsInfo.length &&
+											Object.keys(woofi1mVolumeSources).length ==
+												chainsInfo.length
+												? true
+												: false
+										}
+									/>
+								</>
 							)}
 
-						<TabsField
-							chainsInfo={chainsInfo}
-							activeTabCallback={handleActiveTabChange}
-							activeTab={activeTab}
-						/>
 						{displayCalculator && <CalcYieldField />}
 						<EarnFieldHeader
 							value_1={`Vault`}
@@ -305,7 +313,7 @@ const App = () => {
 									index={0}
 									value_1={'Total'}
 									value_2={`$${amountFormatter(
-										parseInt(woofiEarnInfo[activeTab].data.total_deposit) /
+										parseInt(woofiEarnInfo[activeTab].data?.total_deposit) /
 											10 ** 18
 									)}`}
 									value_3={`#${

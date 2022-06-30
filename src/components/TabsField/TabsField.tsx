@@ -6,15 +6,23 @@ interface ChainsDataProps {
 	chainsInfo: IChainInfo[]
 	activeTabCallback: any
 	activeTab: string
+	tabsActive: boolean
 }
 
 const TabsField: React.FC<ChainsDataProps> = ({
 	chainsInfo,
 	activeTabCallback,
 	activeTab,
+	tabsActive,
 }) => {
 	async function handleTabClick(chainId: string) {
-		activeTabCallback(chainId)
+		tabsActive && activeTabCallback(chainId)
+	}
+
+	function tabStyle(chainId) {
+		if (chainId !== activeTab && !tabsActive) {
+			return { cursor: 'wait', filter: 'grayscale(100%)' }
+		}
 	}
 
 	return (
@@ -30,8 +38,14 @@ const TabsField: React.FC<ChainsDataProps> = ({
 							: { backgroundColor: '#313641' }
 					}
 				>
-					<img className="tab-image" src={tab.icon} />
-					<span className="tab-name">{tab.chainName}</span>
+					<img
+						className="tab-image"
+						src={tab.icon}
+						style={tabStyle(tab.chainId)}
+					/>
+					<span className="tab-name" style={tabStyle(tab.chainId)}>
+						{tab.chainName}{' '}
+					</span>
 				</div>
 			))}
 		</div>

@@ -10,15 +10,15 @@
 ## WOOFi-APY-Tracker-Extension
 
 <p align="center">
-  <img src="woofi-extension-preview_1.png" alt="WOOFi APY Tracker" width="800" >
+  <img src="woofi-extension-preview_1_1280x800.png" alt="WOOFi APY Tracker" width="800" >
 </p>
 
 <p align="center">
-  <img src="woofi-extension-preview_2.png" alt="WOOFi APY Tracker" width="800" >
+  <img src="woofi-extension-preview_2_1280x800.png" alt="WOOFi APY Tracker" width="800" >
 </p>
 
 <p align="center">
-  <img src="woofi-extension-preview_3.png" alt="WOOFi APY Tracker" width="800" >
+  <img src="woofi-extension-preview_3_1280x800.png" alt="WOOFi APY Tracker" width="800" >
 </p>
 
 ### To Do

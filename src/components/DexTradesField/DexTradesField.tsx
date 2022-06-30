@@ -27,9 +27,24 @@ import { amountFormatter } from '../../utils/amountFormatter'
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 import IWooEthTxs from '../../models/IWooEthTxs'
 
+interface WooEthTxCleaned {
+	account: string
+	age: string
+	colour: string
+	tradeType: string
+	txHash: string
+	value: number
+}
+
+interface buySellRatioBar {
+	volume: string
+	wooSold: number
+	wooBought: number
+}
+
 const DexTradesField: React.FC<{}> = ({}) => {
-	const [dexTrades, setDexTrades] = useState<any>()
-	const [barData, setBarData] = useState<any>()
+	const [dexTrades, setDexTrades] = useState<WooEthTxCleaned[]>()
+	const [barData, setBarData] = useState<[buySellRatioBar]>()
 	const [errorMessage, setErrorMessage] = useState<string>()
 
 	const dexContracts = {
@@ -46,21 +61,21 @@ const DexTradesField: React.FC<{}> = ({}) => {
 	async function getDexTradesInfo() {
 		try {
 			const wooTransactions: IWooEthTxs = await fetchEthWooTxs()
-			console.log(wooTransactions)
+
 			if (wooTransactions.message == 'NOTOK') {
 				setErrorMessage('NOTOK')
 			} else {
-				setErrorMessage('-')
+				setErrorMessage('')
 			}
 
-			const wooDexTrades: any = wooTransactions.result.filter(function(tx) {
+			const wooDexTrades = wooTransactions.result.filter(function(tx) {
 				return (
 					Object.values(dexContracts).includes(tx.from) ||
 					Object.values(dexContracts).includes(tx.to)
 				)
 			})
 
-			const cleanedTradesInfo: any = []
+			const cleanedTradesInfo: WooEthTxCleaned[] = []
 			wooDexTrades.forEach((trade) => {
 				cleanedTradesInfo.push({
 					value: parseInt(trade.value) / 10 ** parseInt(trade.tokenDecimal),
@@ -77,7 +92,8 @@ const DexTradesField: React.FC<{}> = ({}) => {
 						: `#${trade.to.slice(2, 8)}`,
 				})
 			})
-
+			console.log('cleanedTradesInfo')
+			console.log(cleanedTradesInfo)
 			setDexTrades(cleanedTradesInfo)
 
 			let totalBought = 0
@@ -134,16 +150,6 @@ const DexTradesField: React.FC<{}> = ({}) => {
 		chrome.tabs.create({ url: link, selected: false })
 	}
 
-	const compareTimestamp = (a, b) => {
-		if (parseInt(a.timeStamp) > parseInt(b.timeStamp)) {
-			return -1
-		}
-		if (parseInt(a.timeStamp) < parseInt(b.timeStamp)) {
-			return 1
-		}
-		return 0
-	}
-
 	return (
 		<div>
 			{errorMessage === 'NOTOK' && (
@@ -198,7 +204,7 @@ const DexTradesField: React.FC<{}> = ({}) => {
 					key={index}
 					className="dex-trades-values"
 					style={
-						parseInt(index) % 2
+						index % 2
 							? { backgroundColor: '#313641' }
 							: { backgroundColor: '#3C404B', borderRadius: '5px' }
 					}

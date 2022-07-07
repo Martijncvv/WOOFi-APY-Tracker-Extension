@@ -39,7 +39,7 @@ import IWooNetworkTradeInfo from '../models/IWooNetworkTradeInfo'
 import IWoofiChain1dVolume from '../models/IWoofiChain1dVolume'
 import { IWoofiStakedWoo } from '../models/IWoofiChainStakedWoo'
 import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
-import { sortQuotes } from '../utils/orderObjects'
+import EarnField from '../components/EarnField'
 
 const App = () => {
 	let chainIds: string[] = ['avax', 'bsc', 'fantom', 'polygon']
@@ -50,20 +50,20 @@ const App = () => {
 	const [wooNetworkTradeInfo, setWooNetworkTradeInfo] = useState<
 		IWooNetworkTradeInfo
 	>()
-	const [wooFuturesOi, setWooFuturesOi] = useState<number>(0)
+	const [wooFuturesOi, setWooFuturesOi] = useState<number>(null)
 	const [woofiEarnInfo, setWoofiEarnInfo] = useState<IWoofiEarnChainInfo>(
 		{} as IWoofiEarnChainInfo
 	)
-	const [woofi1dTotalVolume, setWoofi1dTotalVolume] = useState<number>(0)
+	const [woofi1dTotalVolume, setWoofi1dTotalVolume] = useState<number>(null)
 	const [woofi1mVolumeSources, setWoofi1mVolumeSources] = useState<
 		IWoofi1mVolumeSources
 	>({})
 	const [woofiStakedWoo, setWoofiStakedWoo] = useState<IWoofiStakedWoo>({})
 
-	const [woofiTotalStakedWoo, setWoofiTotalStakedWoo] = useState<number>(0)
+	const [woofiTotalStakedWoo, setWoofiTotalStakedWoo] = useState<number>(null)
 
-	const [wooFuturesVolume, setWooFuturesVolume] = useState<number>(0)
-	const [woofiTVL, setWoofiTVL] = useState<number>(0)
+	const [wooFuturesVolume, setWooFuturesVolume] = useState<number>(null)
+	const [woofiTVL, setWoofiTVL] = useState<number>(null)
 
 	const [displayCalculator, setDisplayCalculator] = React.useState<boolean>(
 		false
@@ -128,7 +128,8 @@ const App = () => {
 			for (let chainId of chainIds) {
 				let woofiStakedWooInfo: IWoofiStakedWoo = {}
 				woofiStakedWooInfo[chainId] = await fetchWoofiChainStakedInfo(chainId)
-
+				console.log('FetchStakedWoo')
+				console.log(chainId)
 				setWoofiStakedWoo((woofiStakingInfo) => ({
 					...woofiStakingInfo,
 					...woofiStakedWooInfo,
@@ -227,12 +228,7 @@ const App = () => {
 		<>
 			<HeaderField />
 			<div id="dashboard">
-				{displayDexTradesCallback ? (
-					<>
-						<DexTradesHeaderField />
-						<DexTradesField />
-					</>
-				) : (
+				{!displayDexTradesCallback ? (
 					<>
 						{wooNetworkTradeInfo && woofiTVL && wooFuturesOi && (
 							<>
@@ -282,65 +278,46 @@ const App = () => {
 										woofi1mVolumeSources={woofi1mVolumeSources}
 										activeTab={activeTab}
 									/>
-									<TabsField
-										chainsInfo={chainsInfo}
-										activeTabCallback={handleActiveTabChange}
+								</>
+							)}
+						<TabsField
+							chainsInfo={chainsInfo}
+							activeTabCallback={handleActiveTabChange}
+							activeTab={activeTab}
+							tabsActive={
+								Object.keys(woofiStakedWoo).length == chainsInfo.length &&
+								Object.keys(woofi1mVolumeSources).length == chainsInfo.length
+									? true
+									: false
+							}
+						/>
+
+						{displayCalculator && <CalcYieldField />}
+
+						{Object.keys(woofiEarnInfo).length > 0 &&
+							Object.keys(woofiEarnInfo[activeTab].data.auto_compounding)
+								.length > 0 && (
+								<>
+									<EarnFieldHeader
+										value_1={`Vault`}
+										value_2={'TVL'}
+										value_3={'APY'}
+										displayCalculatorCallback={handleCalculatorChange}
+										sortingOptionCallback={handleSortingChange}
+										displayCalculator={displayCalculator}
+									/>
+									<EarnField
 										activeTab={activeTab}
-										tabsActive={
-											Object.keys(woofiStakedWoo).length == chainsInfo.length &&
-											Object.keys(woofi1mVolumeSources).length ==
-												chainsInfo.length
-												? true
-												: false
-										}
+										sortingOption={sortingOption}
+										woofiEarnInfo={woofiEarnInfo}
 									/>
 								</>
 							)}
-
-						{displayCalculator && <CalcYieldField />}
-						<EarnFieldHeader
-							value_1={`Vault`}
-							value_2={'TVL'}
-							value_3={'APY'}
-							displayCalculatorCallback={handleCalculatorChange}
-							sortingOptionCallback={handleSortingChange}
-							displayCalculator={displayCalculator}
-						/>
-
-						{Object.keys(woofiEarnInfo).length > 0 && (
-							<>
-								<InfoField
-									index={0}
-									value_1={'Total'}
-									value_2={`$${amountFormatter(
-										parseInt(woofiEarnInfo[activeTab].data?.total_deposit) /
-											10 ** 18
-									)}`}
-									value_3={`#${
-										Object.values(
-											woofiEarnInfo[activeTab].data.auto_compounding
-										).length
-									}`}
-								/>
-
-								{sortQuotes(
-									sortingOption,
-									Object.values(woofiEarnInfo[activeTab].data.auto_compounding)
-								).map((tokenInfo, index) => (
-									<InfoField
-										key={index}
-										index={index + 1}
-										value_1={tokenInfo.symbol
-											.replaceAll('_', '-')
-											.replace('-LP', '')}
-										value_2={`$${amountFormatter(
-											parseInt(tokenInfo.tvl) / 10 ** tokenInfo.decimals
-										)}`}
-										value_3={`${tokenInfo.apy.toPrecision(3)}%`}
-									/>
-								))}
-							</>
-						)}
+					</>
+				) : (
+					<>
+						<DexTradesHeaderField />
+						<DexTradesField />
 					</>
 				)}
 			</div>

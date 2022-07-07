@@ -19,9 +19,22 @@ const WOO_FUTURES_API: string = 'https://api.woo.org/v1/public/futures'
 
 const ETHERSCAN_WOO_ETH_TXS_API: string =
 	'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc'
+const BSCSCAN_WOO_BSC_TXS_API: string =
+	'https://api.bscscan.com/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc'
 
 export async function fetchEthWooTxs(): Promise<IWooEthTxs> {
 	const res = await fetch(ETHERSCAN_WOO_ETH_TXS_API)
+	if (!res.ok) {
+		throw new Error(`Fetch error, WOO DeX Trade info}`)
+	}
+
+	const data = await res.json()
+	console.log('ETHERSCAN_WOO_ETH_TXS_API')
+	console.log(data)
+	return data
+}
+export async function fetchBscWooTxs(): Promise<IWooEthTxs> {
+	const res = await fetch(BSCSCAN_WOO_BSC_TXS_API)
 	if (!res.ok) {
 		throw new Error(`Fetch error, WOO DeX Trade info}`)
 	}

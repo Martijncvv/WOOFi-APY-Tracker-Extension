@@ -129,10 +129,10 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 		return 0
 	}
 	const compareApr = (a, b) => {
-		if (parseInt(a.apr.slice(0, -1)) > parseInt(b.apr.slice(0, -1))) {
+		if (parseFloat(a.apr.slice(0, -1)) > parseFloat(b.apr.slice(0, -1))) {
 			return -1
 		}
-		if (parseInt(a.apr.slice(0, -1)) < parseInt(b.apr.slice(0, -1))) {
+		if (parseFloat(a.apr.slice(0, -1)) < parseFloat(b.apr.slice(0, -1))) {
 			return 1
 		}
 		return 0
@@ -205,16 +205,18 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 	}
 	const stakingChartTooltip = ({ active, payload, label }) => {
 		if (active && payload && payload.length) {
+			console.log(payload)
 			let chain = payload[0].payload.chainId
 			let apr = payload[0].payload.apr
 			let color = payload[0].payload.fill
+			let wooStaked = amountFormatter(payload[0].payload.value)
 			return (
 				<div className="piechart-tooltip-box">
 					<div
 						className="piechart-tooltip"
 						style={{ borderColor: color, color: color }}
 					>
-						<div>{`${chain} ${apr}`}</div>
+						<div>{`${chain} ${wooStaked}`}</div>
 					</div>
 				</div>
 			)

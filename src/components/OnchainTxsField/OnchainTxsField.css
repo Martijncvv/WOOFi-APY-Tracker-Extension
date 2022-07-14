@@ -1,0 +1,22 @@
+.onchain-txs-field {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+
+	height: 130px;
+	padding: 6px 12px 0;
+
+	background-color: #3c404b;
+	border-radius: 5px;
+	color: black;
+	/* background-color: rgba(255, 0, 0, 0.314); */
+}
+
+.onchain-txs-field-subtitle {
+	display: flex;
+	justify-content: flex-end;
+
+	font-weight: 400;
+	color: #fefefe;
+	margin: 0 0 3px;
+}

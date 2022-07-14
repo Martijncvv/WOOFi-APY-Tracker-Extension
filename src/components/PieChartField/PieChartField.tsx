@@ -12,9 +12,10 @@ import {
 import { amountFormatter } from '../../utils/amountFormatter'
 import { IWoofiStakedWoo } from '../../models/IWoofiChainStakedWoo'
 import { IWoofi1mVolumeSources } from '../../models/IWoofiChain1mVolumeSource'
+import IChainInfo from '../../models/IChainsInfo'
 
 interface PieChartFieldProps {
-	chainsInfo: any
+	chainsInfo: IChainInfo[]
 	totalStakedWooAmount: number
 	woofiStakingInfo: IWoofiStakedWoo
 	woofi1mVolumeSources: IWoofi1mVolumeSources
@@ -205,7 +206,6 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 	}
 	const stakingChartTooltip = ({ active, payload, label }) => {
 		if (active && payload && payload.length) {
-			console.log(payload)
 			let chain = payload[0].payload.chainId
 			let apr = payload[0].payload.apr
 			let color = payload[0].payload.fill

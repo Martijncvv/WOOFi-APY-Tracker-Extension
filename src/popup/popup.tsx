@@ -16,11 +16,13 @@ import PieChartField from '../components/PieChartField'
 import PieChartFieldHeader from '../components/PieChartFieldHeader'
 import DexTradesField from '../components/DexTradesField'
 import DexTradesHeaderField from '../components/DexTradesHeaderField'
+import OnchainTxsField from '../components/OnchainTxsField'
 
 const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
 const FtmIcon = require('../static/images/FTM_logo.png')
 const PolyIcon = require('../static/images/POLY_logo.png')
+const EthIcon = require('../static/images/ETH_logo.png')
 
 import {
 	fetchWoofiEarnChainInfo,
@@ -40,12 +42,25 @@ import IWoofiChain1dVolume from '../models/IWoofiChain1dVolume'
 import { IWoofiStakedWoo } from '../models/IWoofiChainStakedWoo'
 import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
 import EarnField from '../components/EarnField'
+import OnchainTxsFieldHeader from '../components/OnchainTxsFieldHeader'
 
 const App = () => {
 	let chainIds: string[] = ['avax', 'bsc', 'fantom', 'polygon']
 	let chainNames: string[] = ['Avax', 'Bsc', 'Ftm', 'Poly']
 	let chainLogos: string[] = [AvaxIcon, BnbChainIcon, FtmIcon, PolyIcon]
 	let chainColors: string[] = ['#E84142', '#F0B90B', '#13b5ec', '#8247e5']
+	let chainDomains: string[] = [
+		'snowtrace.io',
+		'bscscan.com',
+		'ftmscan.com',
+		'polygonscan.com',
+	]
+	let chainContractAddress: string[] = [
+		'0xabc9547b534519ff73921b1fba6e672b5f58d083',
+		'0x4691937a7508860f876c9c0a2a617e7d9e945d4b',
+		'0x6626c47c00f1d87902fc13eecfac3ed06d5e8d8a',
+		'0x1b815d120b3ef02039ee11dc2d33de7aa4a8c603',
+	]
 
 	const [wooNetworkTradeInfo, setWooNetworkTradeInfo] = useState<
 		IWooNetworkTradeInfo
@@ -96,6 +111,8 @@ const App = () => {
 					chainName: chainNames[i],
 					icon: chainLogos[i],
 					color: chainColors[i],
+					domain: chainDomains[i],
+					contractAddress: chainContractAddress[i],
 				},
 			])
 		}
@@ -128,8 +145,6 @@ const App = () => {
 			for (let chainId of chainIds) {
 				let woofiStakedWooInfo: IWoofiStakedWoo = {}
 				woofiStakedWooInfo[chainId] = await fetchWoofiChainStakedInfo(chainId)
-				console.log('FetchStakedWoo')
-				console.log(chainId)
 				setWoofiStakedWoo((woofiStakingInfo) => ({
 					...woofiStakingInfo,
 					...woofiStakedWooInfo,
@@ -278,18 +293,18 @@ const App = () => {
 										woofi1mVolumeSources={woofi1mVolumeSources}
 										activeTab={activeTab}
 									/>
+									<OnchainTxsFieldHeader />
+									<OnchainTxsField
+										activeTab={activeTab}
+										chainsInfo={chainsInfo}
+									/>
 								</>
 							)}
 						<TabsField
 							chainsInfo={chainsInfo}
 							activeTabCallback={handleActiveTabChange}
 							activeTab={activeTab}
-							tabsActive={
-								Object.keys(woofiStakedWoo).length == chainsInfo.length &&
-								Object.keys(woofi1mVolumeSources).length == chainsInfo.length
-									? true
-									: false
-							}
+							tabsReady={Object.keys(woofi1mVolumeSources).length}
 						/>
 
 						{displayCalculator && <CalcYieldField />}

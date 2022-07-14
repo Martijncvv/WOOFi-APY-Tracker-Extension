@@ -1,7 +1,8 @@
-# WOOFi APY Tracker Extension
+# WOOnetwork Stats Extension
 
 - Display WOO Network info and sort WOOFi Earn Pairs by APY, TVL or Name.
 - Check WOOFi volume sources and staked WOO.
+- Follow onchain txs on 4 networks.
 - Calculate potential Yield rewards.
 - Check WOO trades on Ethereum DEXs.
 

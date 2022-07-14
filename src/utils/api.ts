@@ -5,6 +5,7 @@ import IWoofiEarnChainInfo from '../models/IWoofiEarnChainInfo'
 import IWooFuturesInfo from '../models/IWooFuturesInfo'
 import IWooNetworkTotalVolume from '../models/IWooNetworkTradeInfo'
 import IWooEthTxs from '../models/IWooEthTxs'
+import ITokenTxs from '../models/ITokenTxs'
 
 const WOOFI_CHAIN_INFO_API: string = 'https://fi-api.woo.org/yield?&network='
 const WOOFI_CHAIN_STAKING_API: string =
@@ -111,5 +112,25 @@ export async function fetchWoofiChain1mVolumeSource(
 	}
 
 	const data = await res.json()
+	return data
+}
+
+export async function fetchTokenTxs(
+	domainName: string,
+	contractAddress: string
+): Promise<ITokenTxs> {
+	const res = await fetch(
+		'https://api.' +
+			domainName +
+			'/api?module=account&action=tokentx&contractaddress=' +
+			contractAddress +
+			'&page=1&offset=300&startblock=0&endblock=99999999&sort=desc'
+	)
+	if (!res.ok) {
+		throw new Error(`Fetch error, ${domainName} token txs info}`)
+	}
+
+	const data = await res.json()
+
 	return data
 }

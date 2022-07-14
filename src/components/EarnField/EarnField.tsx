@@ -15,7 +15,6 @@ const EarnField: React.FunctionComponent<IEarnFieldProps> = ({
 	sortingOption,
 	woofiEarnInfo,
 }) => {
-	console.log(woofiEarnInfo)
 	return (
 		<>
 			<InfoField

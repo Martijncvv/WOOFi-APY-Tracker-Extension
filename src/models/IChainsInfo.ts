@@ -3,4 +3,6 @@ export default interface IChainInfo {
 	chainName: string
 	icon: string
 	color: string
+	domain: string
+	contractAddress: string
 }

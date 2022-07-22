@@ -1,11 +1,11 @@
-.tabs-field {
+.chain-tabs-field {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 
 	padding: 12px 2px 0px;
 }
-.tab {
+.chain-tab {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -23,14 +23,14 @@
 	text-transform: capitalize;
 	cursor: pointer;
 }
-.tab:hover {
+.chain-tab:hover {
 	-webkit-filter: brightness(90%);
 	-webkit-transition: all 0.3s ease;
 }
-.tab-image {
+.chain-tab-image {
 	height: 18px;
 	width: 18px;
 }
-.tab-name {
+.chain-tab-name {
 	padding-left: 4px;
 }

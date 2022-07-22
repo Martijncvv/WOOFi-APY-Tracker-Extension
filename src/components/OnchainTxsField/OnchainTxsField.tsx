@@ -51,7 +51,7 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 		}
 
 		let tokenTxData: ITokenTxs
-		setChartTitleMessage('Loading..')
+		// setChartTitleMessage('')
 		tokenTxData = await fetchTokenTxs(domain, contractAddress)
 
 		if (tokenTxData.message == 'NOTOK') {
@@ -110,7 +110,7 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 
 	return (
 		<div className="onchain-txs-field">
-			{/* <div className="onchain-txs-field-subtitle">{chartTitleMessage}</div> */}
+			<div className="onchain-txs-field-subtitle">{chartTitleMessage}</div>
 			{chartData.length > 0 && (
 				<>
 					<ResponsiveContainer width="100%" height="100%">

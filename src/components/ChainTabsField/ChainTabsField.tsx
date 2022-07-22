@@ -1,5 +1,5 @@
-import './TabsField.css'
-import React from 'react'
+import './ChainTabsField.css'
+import React, { useEffect } from 'react'
 import IChainInfo from '../../models/IChainsInfo'
 
 interface ChainsDataProps {
@@ -9,12 +9,16 @@ interface ChainsDataProps {
 	tabsReady: number
 }
 
-const TabsField: React.FC<ChainsDataProps> = ({
+const ChainTabsField: React.FC<ChainsDataProps> = ({
 	chainsInfo,
 	activeTabCallback,
 	activeTab,
 	tabsReady,
 }) => {
+	useEffect(() => {
+		console.log(activeTab)
+	}, [activeTab])
+
 	async function handleTabClick(chainId: string) {
 		tabsReady && activeTabCallback(chainId)
 	}
@@ -26,10 +30,10 @@ const TabsField: React.FC<ChainsDataProps> = ({
 	}
 
 	return (
-		<div className="tabs-field">
+		<div className="chain-tabs-field">
 			{chainsInfo.map((tab, index) => (
 				<div
-					className="tab"
+					className="chain-tab"
 					key={index}
 					onClick={() => handleTabClick(tab.chainId)}
 					style={
@@ -39,11 +43,11 @@ const TabsField: React.FC<ChainsDataProps> = ({
 					}
 				>
 					<img
-						className="tab-image"
+						className="chain-tab-image"
 						src={tab.icon}
 						style={tabStyle(tab.chainId, index)}
 					/>
-					<span className="tab-name" style={tabStyle(tab.chainId, index)}>
+					<span className="chain-tab-name" style={tabStyle(tab.chainId, index)}>
 						{tab.chainName}{' '}
 					</span>
 				</div>
@@ -52,4 +56,4 @@ const TabsField: React.FC<ChainsDataProps> = ({
 	)
 }
 
-export default TabsField
+export default ChainTabsField

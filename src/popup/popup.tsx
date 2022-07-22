@@ -10,7 +10,7 @@ import NetworkInfoHeaderField from '../components/NetworkInfoHeaderField'
 import NetworkInfoSubHeaderField from '../components/NetworkInfoSubHeaderField'
 import LinksField from '../components/LinksField'
 import CalcYieldField from '../components/CalcYieldField'
-import TabsField from '../components/TabsField'
+import ChainTabsField from '../components/ChainTabsField'
 import VolumeBarField from '../components/VolumeBarField'
 import PieChartField from '../components/PieChartField'
 import PieChartFieldHeader from '../components/PieChartFieldHeader'
@@ -43,6 +43,7 @@ import { IWoofiStakedWoo } from '../models/IWoofiChainStakedWoo'
 import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
 import EarnField from '../components/EarnField'
 import OnchainTxsFieldHeader from '../components/OnchainTxsFieldHeader'
+import DashboardTabsField from '../components/DashboardTabsField'
 
 const App = () => {
 	let chainIds: string[] = ['avax', 'bsc', 'fantom', 'polygon']
@@ -86,6 +87,9 @@ const App = () => {
 	const [sortingOption, setSortingOption] = React.useState<string>('apy')
 	const [chainsInfo, setChainsInfo] = React.useState<IChainInfo[]>([])
 	const [activeTab, setActiveTab] = React.useState<string>('avax')
+	const [activeDashboardTab, setActiveDashboardTab] = React.useState<string>(
+		'chainInfoDashboard'
+	)
 
 	const [
 		displayDexTradesCallback,
@@ -238,6 +242,9 @@ const App = () => {
 	const handleActiveTabChange = (chainId: string) => {
 		setActiveTab(chainId)
 	}
+	const handleActiveDashboardTabChange = (activeTab: string) => {
+		setActiveDashboardTab(activeTab)
+	}
 
 	return (
 		<>
@@ -281,53 +288,62 @@ const App = () => {
 								/>
 							</>
 						)}
-
-						{Object.keys(woofiStakedWoo).length > 0 &&
-							Object.keys(woofi1mVolumeSources).length > 0 && (
-								<>
-									<PieChartFieldHeader />
-									<PieChartField
-										chainsInfo={chainsInfo}
-										totalStakedWooAmount={woofiTotalStakedWoo}
-										woofiStakingInfo={woofiStakedWoo}
-										woofi1mVolumeSources={woofi1mVolumeSources}
-										activeTab={activeTab}
-									/>
-									<OnchainTxsFieldHeader />
-									<OnchainTxsField
-										activeTab={activeTab}
-										chainsInfo={chainsInfo}
-									/>
-								</>
-							)}
-						<TabsField
-							chainsInfo={chainsInfo}
-							activeTabCallback={handleActiveTabChange}
-							activeTab={activeTab}
-							tabsReady={Object.keys(woofi1mVolumeSources).length}
+						<DashboardTabsField
+							activeDashboardTabCallback={handleActiveDashboardTabChange}
+							activeDashboardTab={activeDashboardTab}
 						/>
+						{activeDashboardTab == 'chainInfoDashboard' ? (
+							<>
+								{Object.keys(woofiStakedWoo).length > 0 &&
+									Object.keys(woofi1mVolumeSources).length > 0 && (
+										<>
+											<PieChartFieldHeader />
+											<PieChartField
+												chainsInfo={chainsInfo}
+												totalStakedWooAmount={woofiTotalStakedWoo}
+												woofiStakingInfo={woofiStakedWoo}
+												woofi1mVolumeSources={woofi1mVolumeSources}
+												activeTab={activeTab}
+											/>
+											<OnchainTxsFieldHeader />
+											<OnchainTxsField
+												activeTab={activeTab}
+												chainsInfo={chainsInfo}
+											/>
+										</>
+									)}
+								<ChainTabsField
+									chainsInfo={chainsInfo}
+									activeTabCallback={handleActiveTabChange}
+									activeTab={activeTab}
+									tabsReady={Object.keys(woofi1mVolumeSources).length}
+								/>
 
-						{displayCalculator && <CalcYieldField />}
+								{displayCalculator && <CalcYieldField />}
 
-						{Object.keys(woofiEarnInfo).length > 0 &&
-							Object.keys(woofiEarnInfo[activeTab].data.auto_compounding)
-								.length > 0 && (
-								<>
-									<EarnFieldHeader
-										value_1={`Vault`}
-										value_2={'TVL'}
-										value_3={'APY'}
-										displayCalculatorCallback={handleCalculatorChange}
-										sortingOptionCallback={handleSortingChange}
-										displayCalculator={displayCalculator}
-									/>
-									<EarnField
-										activeTab={activeTab}
-										sortingOption={sortingOption}
-										woofiEarnInfo={woofiEarnInfo}
-									/>
-								</>
-							)}
+								{Object.keys(woofiEarnInfo).length > 0 &&
+									Object.keys(woofiEarnInfo[activeTab].data.auto_compounding)
+										.length > 0 && (
+										<>
+											<EarnFieldHeader
+												value_1={`Vault`}
+												value_2={'TVL'}
+												value_3={'APY'}
+												displayCalculatorCallback={handleCalculatorChange}
+												sortingOptionCallback={handleSortingChange}
+												displayCalculator={displayCalculator}
+											/>
+											<EarnField
+												activeTab={activeTab}
+												sortingOption={sortingOption}
+												woofiEarnInfo={woofiEarnInfo}
+											/>
+										</>
+									)}
+							</>
+						) : (
+							<div>Test</div>
+						)}
 					</>
 				) : (
 					<>

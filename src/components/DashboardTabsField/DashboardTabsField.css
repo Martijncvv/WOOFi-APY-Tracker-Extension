@@ -1,0 +1,39 @@
+.dashboard-tabs-field {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	/* background-color: red; */
+
+	margin: 0 24%;
+	padding: 12px 2px 0px;
+}
+.dashboard-tab {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 20px;
+
+	padding: 4px 8px;
+
+	border-radius: 14px;
+
+	font-size: 14px;
+	font-weight: 500;
+	color: #fefefe;
+	background-color: #5d6169;
+
+	text-transform: capitalize;
+	cursor: pointer;
+}
+.dashboard-tab:hover {
+	-webkit-filter: brightness(90%);
+	-webkit-transition: all 0.3s ease;
+}
+.dashboard-tab-image {
+	height: 18px;
+	width: 18px;
+}
+.dashboard-tab-name {
+	padding-left: 4px;
+}

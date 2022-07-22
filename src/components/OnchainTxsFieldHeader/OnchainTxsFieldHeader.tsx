@@ -6,7 +6,7 @@ const OnchainTxsFieldHeader = () => {
 		<div className="onchain-chart-field-header-values">
 			<div className="onchain-chart-field-header-value tooltip">
 				Onchain
-				<span className="tooltiptext">Past 300 on-chain txs</span>
+				<span className="tooltiptext">Past 300 on-chain WOO txs</span>
 			</div>
 
 			<div className="onchain-chart-field-header-value onchain-chart-field-header-value-2 tooltip"></div>

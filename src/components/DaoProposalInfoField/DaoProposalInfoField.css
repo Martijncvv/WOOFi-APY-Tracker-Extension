@@ -1,0 +1,26 @@
+.dao-proposal-info-field {
+	/* display: flex;
+	justify-content: space-between; */
+
+	padding: 6px 12px;
+	color: white;
+	font-size: 15px;
+}
+
+.dao-proposal-title {
+	font-size: 15px;
+	font-weight: 600;
+}
+.dao-proposal-title:hover {
+	cursor: pointer;
+}
+
+.dao-proposal-time-data {
+	display: flex;
+	/* justify-content: space-between; */
+}
+
+.dao-proposal-vote-info {
+	display: flex;
+	/* justify-content: space-between; */
+}

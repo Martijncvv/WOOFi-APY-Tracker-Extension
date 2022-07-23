@@ -22,6 +22,7 @@ const ETHERSCAN_WOO_ETH_TXS_API: string =
 	'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc'
 const BSCSCAN_WOO_BSC_TXS_API: string =
 	'https://api.bscscan.com/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc'
+const SNAPSHOT_GRAPHQL_ENDPOINT: string = 'https://hub.snapshot.org/graphql'
 
 export async function fetchEthWooTxs(): Promise<IWooEthTxs> {
 	const res = await fetch(ETHERSCAN_WOO_ETH_TXS_API)
@@ -30,8 +31,6 @@ export async function fetchEthWooTxs(): Promise<IWooEthTxs> {
 	}
 
 	const data = await res.json()
-	console.log('ETHERSCAN_WOO_ETH_TXS_API')
-	console.log(data)
 	return data
 }
 export async function fetchBscWooTxs(): Promise<IWooEthTxs> {
@@ -41,8 +40,6 @@ export async function fetchBscWooTxs(): Promise<IWooEthTxs> {
 	}
 
 	const data = await res.json()
-	console.log('ETHERSCAN_WOO_ETH_TXS_API')
-	console.log(data)
 	return data
 }
 
@@ -55,16 +52,15 @@ export async function fetchWooNetworkTradeInfo(): Promise<
 	}
 
 	const data = await res.json()
-
 	return data
 }
+
 export async function fetchWooFutureInfo(): Promise<IWooFuturesInfo> {
 	const res = await fetch(WOO_FUTURES_API)
 	if (!res.ok) {
 		throw new Error(`Fetch error, futures info}`)
 	}
 	const data = await res.json()
-
 	return data
 }
 
@@ -88,7 +84,6 @@ export async function fetchWoofiChainStakedInfo(
 	}
 
 	const data = await res.json()
-
 	return data
 }
 
@@ -131,6 +126,44 @@ export async function fetchTokenTxs(
 	}
 
 	const data = await res.json()
+	return data
+}
 
+export async function fetchDaoProposals(): Promise<any> {
+	const res = await fetch(SNAPSHOT_GRAPHQL_ENDPOINT, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			query: `
+		query Proposals {
+			proposals (
+			  where: {
+				space_in: ["martycfly.eth"],
+		
+			  },
+			  orderBy: "created",
+			  orderDirection: desc
+			) {
+				
+			  title
+			  choices
+			  start
+			  end
+			  state
+			  scores
+			  votes
+		
+			scores_total
+			link
+			}
+		  
+		  }`,
+		}),
+	})
+	if (!res.ok) {
+		throw new Error(`Fetch error, WOO Dao Proposals info}`)
+	}
+
+	const data = await res.json()
 	return data
 }

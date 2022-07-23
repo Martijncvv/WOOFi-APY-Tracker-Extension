@@ -17,6 +17,7 @@ import PieChartFieldHeader from '../components/PieChartFieldHeader'
 import DexTradesField from '../components/DexTradesField'
 import DexTradesHeaderField from '../components/DexTradesHeaderField'
 import OnchainTxsField from '../components/OnchainTxsField'
+import DaoInfoField from '../components/DaoInfoField'
 
 const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
@@ -44,6 +45,7 @@ import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
 import EarnField from '../components/EarnField'
 import OnchainTxsFieldHeader from '../components/OnchainTxsFieldHeader'
 import DashboardTabsField from '../components/DashboardTabsField'
+import DaoProposalInfoHeader from '../components/DaoProposalInfoHeader'
 
 const App = () => {
 	let chainIds: string[] = ['avax', 'bsc', 'fantom', 'polygon']
@@ -81,20 +83,18 @@ const App = () => {
 	const [wooFuturesVolume, setWooFuturesVolume] = useState<number>(null)
 	const [woofiTVL, setWoofiTVL] = useState<number>(null)
 
-	const [displayCalculator, setDisplayCalculator] = React.useState<boolean>(
-		false
-	)
-	const [sortingOption, setSortingOption] = React.useState<string>('apy')
-	const [chainsInfo, setChainsInfo] = React.useState<IChainInfo[]>([])
-	const [activeTab, setActiveTab] = React.useState<string>('avax')
-	const [activeDashboardTab, setActiveDashboardTab] = React.useState<string>(
-		'chainInfoDashboard'
+	const [displayCalculator, setDisplayCalculator] = useState<boolean>(false)
+	const [sortingOption, setSortingOption] = useState<string>('apy')
+	const [chainsInfo, setChainsInfo] = useState<IChainInfo[]>([])
+	const [activeTab, setActiveTab] = useState<string>('avax')
+	const [activeDashboardTab, setActiveDashboardTab] = useState<string>(
+		'daoDashboard'
+		// 'chainInfoDashboard'
 	)
 
-	const [
-		displayDexTradesCallback,
-		setDisplayDexTradesCallback,
-	] = React.useState<boolean>(false)
+	const [displayDexTradesCallback, setDisplayDexTradesCallback] = useState<
+		boolean
+	>(false)
 
 	useEffect(() => {
 		getChainsInfo()
@@ -342,7 +342,10 @@ const App = () => {
 									)}
 							</>
 						) : (
-							<div>Test</div>
+							<>
+								<DaoProposalInfoHeader />
+								<DaoInfoField />
+							</>
 						)}
 					</>
 				) : (
@@ -368,3 +371,23 @@ const App = () => {
 const root = document.createElement('div')
 document.body.appendChild(root)
 ReactDOM.render(<App />, root)
+
+// query Proposals {
+// 	proposals (
+// 	  where: {
+// 		space_in: ["martycfly.eth"],
+
+// 	  },
+// 	  orderBy: "created",
+// 	  orderDirection: desc
+// 	) {
+
+// 	  title
+// 	  choices
+// 	  start
+// 	  end
+// 	  state
+// 	  scores
+// 	  votes
+// 	}
+//   }

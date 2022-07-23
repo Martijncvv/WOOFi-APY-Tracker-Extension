@@ -1,0 +1,31 @@
+.dao-proposal-field-header-values {
+	display: flex;
+	justify-content: space-between;
+
+	height: 18px;
+	padding: 0px 12px 0;
+
+	color: #fefefe;
+	background-color: #313641;
+	border-bottom: 1px solid #73bef4;
+}
+
+.dao-proposal-field-header-value-1 {
+	box-sizing: border-box;
+	width: 50%;
+
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.dao-proposal-field-header-value-2 {
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 24px;
+}
+.dao-proposal-field-header-value-3 {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}

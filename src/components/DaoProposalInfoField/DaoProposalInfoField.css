@@ -8,19 +8,48 @@
 }
 
 .dao-proposal-title {
+	padding: 2px 0;
+
 	font-size: 15px;
 	font-weight: 600;
 }
 .dao-proposal-title:hover {
 	cursor: pointer;
+	color: #73bef4;
 }
 
 .dao-proposal-time-data {
+	padding: 2px 0;
 	display: flex;
-	/* justify-content: space-between; */
+	justify-content: space-between;
+
+	font-size: 14px;
+	text-transform: capitalize;
+	/* background-color: red; */
+}
+
+.dao-proposal-date-data {
+	width: 50%;
+	display: flex;
+	gap: 4px;
+	/* background-color: red; */
 }
 
 .dao-proposal-vote-info {
+	padding: 2px 0;
+
 	display: flex;
-	/* justify-content: space-between; */
+	gap: 6px;
+
+	font-size: 14px;
+	text-transform: capitalize;
 }
+
+.dao-proposal-bar-field {
+	margin: 0;
+	padding: 0;
+	height: 20px;
+	width: 100%;
+}
+
+/* 7C3AED purple closed */

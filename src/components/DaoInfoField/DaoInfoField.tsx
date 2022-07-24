@@ -28,6 +28,7 @@ const DaoInfoField: React.FunctionComponent<IDaoInfoFieldProps> = (props) => {
 		<div>
 			{proposalsData?.map((proposal, index) => (
 				<DaoProposalInfoField
+					key={index}
 					index={index}
 					title={proposal.title}
 					link={proposal.link}

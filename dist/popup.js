@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".dao-proposal-info-field {\n\t/* display: flex;\n\tjustify-content: space-between; */\n\n\tpadding: 6px 12px;\n\tcolor: white;\n\tfont-size: 15px;\n}\n\n.dao-proposal-title {\n\tfont-size: 15px;\n\tfont-weight: 600;\n}\n.dao-proposal-title:hover {\n\tcursor: pointer;\n}\n\n.dao-proposal-time-data {\n\tdisplay: flex;\n\t/* justify-content: space-between; */\n}\n\n.dao-proposal-vote-info {\n\tdisplay: flex;\n\t/* justify-content: space-between; */\n}\n", "",{"version":3,"sources":["webpack://./src/components/DaoProposalInfoField/DaoProposalInfoField.css"],"names":[],"mappings":"AAAA;CACC;kCACiC;;CAEjC,iBAAiB;CACjB,YAAY;CACZ,eAAe;AAChB;;AAEA;CACC,eAAe;CACf,gBAAgB;AACjB;AACA;CACC,eAAe;AAChB;;AAEA;CACC,aAAa;CACb,oCAAoC;AACrC;;AAEA;CACC,aAAa;CACb,oCAAoC;AACrC","sourcesContent":[".dao-proposal-info-field {\n\t/* display: flex;\n\tjustify-content: space-between; */\n\n\tpadding: 6px 12px;\n\tcolor: white;\n\tfont-size: 15px;\n}\n\n.dao-proposal-title {\n\tfont-size: 15px;\n\tfont-weight: 600;\n}\n.dao-proposal-title:hover {\n\tcursor: pointer;\n}\n\n.dao-proposal-time-data {\n\tdisplay: flex;\n\t/* justify-content: space-between; */\n}\n\n.dao-proposal-vote-info {\n\tdisplay: flex;\n\t/* justify-content: space-between; */\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".dao-proposal-info-field {\n\t/* display: flex;\n\tjustify-content: space-between; */\n\n\tpadding: 6px 12px;\n\tcolor: white;\n\tfont-size: 15px;\n}\n\n.dao-proposal-title {\n\tpadding: 2px 0;\n\n\tfont-size: 15px;\n\tfont-weight: 600;\n}\n.dao-proposal-title:hover {\n\tcursor: pointer;\n\tcolor: #73bef4;\n}\n\n.dao-proposal-time-data {\n\tpadding: 2px 0;\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n\t/* background-color: red; */\n}\n\n.dao-proposal-date-data {\n\twidth: 50%;\n\tdisplay: flex;\n\tgap: 4px;\n\t/* background-color: red; */\n}\n\n.dao-proposal-vote-info {\n\tpadding: 2px 0;\n\n\tdisplay: flex;\n\tgap: 6px;\n\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n}\n\n.dao-proposal-bar-field {\n\tmargin: 0;\n\tpadding: 0;\n\theight: 20px;\n\twidth: 100%;\n}\n\n/* 7C3AED purple closed */\n", "",{"version":3,"sources":["webpack://./src/components/DaoProposalInfoField/DaoProposalInfoField.css"],"names":[],"mappings":"AAAA;CACC;kCACiC;;CAEjC,iBAAiB;CACjB,YAAY;CACZ,eAAe;AAChB;;AAEA;CACC,cAAc;;CAEd,eAAe;CACf,gBAAgB;AACjB;AACA;CACC,eAAe;CACf,cAAc;AACf;;AAEA;CACC,cAAc;CACd,aAAa;CACb,8BAA8B;;CAE9B,eAAe;CACf,0BAA0B;CAC1B,2BAA2B;AAC5B;;AAEA;CACC,UAAU;CACV,aAAa;CACb,QAAQ;CACR,2BAA2B;AAC5B;;AAEA;CACC,cAAc;;CAEd,aAAa;CACb,QAAQ;;CAER,eAAe;CACf,0BAA0B;AAC3B;;AAEA;CACC,SAAS;CACT,UAAU;CACV,YAAY;CACZ,WAAW;AACZ;;AAEA,yBAAyB","sourcesContent":[".dao-proposal-info-field {\n\t/* display: flex;\n\tjustify-content: space-between; */\n\n\tpadding: 6px 12px;\n\tcolor: white;\n\tfont-size: 15px;\n}\n\n.dao-proposal-title {\n\tpadding: 2px 0;\n\n\tfont-size: 15px;\n\tfont-weight: 600;\n}\n.dao-proposal-title:hover {\n\tcursor: pointer;\n\tcolor: #73bef4;\n}\n\n.dao-proposal-time-data {\n\tpadding: 2px 0;\n\tdisplay: flex;\n\tjustify-content: space-between;\n\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n\t/* background-color: red; */\n}\n\n.dao-proposal-date-data {\n\twidth: 50%;\n\tdisplay: flex;\n\tgap: 4px;\n\t/* background-color: red; */\n}\n\n.dao-proposal-vote-info {\n\tpadding: 2px 0;\n\n\tdisplay: flex;\n\tgap: 6px;\n\n\tfont-size: 14px;\n\ttext-transform: capitalize;\n}\n\n.dao-proposal-bar-field {\n\tmargin: 0;\n\tpadding: 0;\n\theight: 20px;\n\twidth: 100%;\n}\n\n/* 7C3AED purple closed */\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1297,7 +1297,7 @@ const DaoInfoField = (props) => {
             }
         });
     }
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, proposalsData === null || proposalsData === void 0 ? void 0 : proposalsData.map((proposal, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DaoProposalInfoField__WEBPACK_IMPORTED_MODULE_2__.default, { index: index, title: proposal.title, link: proposal.link, choices: proposal.choices, scores: proposal.scores, scoresTotal: proposal.scores_total, state: proposal.state, start: proposal.start, end: proposal.end })))));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, proposalsData === null || proposalsData === void 0 ? void 0 : proposalsData.map((proposal, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DaoProposalInfoField__WEBPACK_IMPORTED_MODULE_2__.default, { key: index, index: index, title: proposal.title, link: proposal.link, choices: proposal.choices, scores: proposal.scores, scoresTotal: proposal.scores_total, state: proposal.state, start: proposal.start, end: proposal.end })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DaoInfoField);
 // query Proposals {
@@ -1355,9 +1355,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _DaoProposalInfoField_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DaoProposalInfoField.css */ "./src/components/DaoProposalInfoField/DaoProposalInfoField.css");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/ResponsiveContainer.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/BarChart.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/XAxis.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/YAxis.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Tooltip.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/Bar.js");
+
+
 
 
 const DaoProposalInfoField = ({ index, title, link, choices, scores, scoresTotal, state, start, end, }) => {
+    const [barData, setBarData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
     const dateFormat = (unixTimestamp) => {
         let dateObject = new Date(unixTimestamp * 1000);
         let hours = dateObject.getHours();
@@ -1370,27 +1379,68 @@ const DaoProposalInfoField = ({ index, title, link, choices, scores, scoresTotal
         // return `${hours}:${minutes.substr(-2)} ${day} ${month}`
         return `${month} ${day}`;
     };
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        // let scores = [3, 5, 7]
+        setBarData([
+            {
+                total: scoresTotal,
+                option_0: scores[0],
+                expl_0: choices[0],
+                option_1: scores[1],
+                expl_1: choices[1],
+                option_2: scores[2] || null,
+                expl_2: choices[2] || null,
+                option_3: scores[3] || null,
+                expl_3: choices[3] || null,
+            },
+        ]);
+    }, [scores]);
     const handleTitleClick = (link) => {
         chrome.tabs.create({
             url: link,
             selected: false,
         });
     };
+    const CustomTooltip = ({ active, payload, label }) => {
+        console.log(payload);
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "custom-tooltip" }, payload === null || payload === void 0 ? void 0 : payload.map((item, index) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: index },
+            item.payload[`expl_${index}`],
+            " ",
+            item.value)))));
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "dao-proposal-info-field", style: index % 2
             ? { backgroundColor: '#313641' }
             : { backgroundColor: '#3C404B', borderRadius: '5px' } },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "dao-proposal-title", onClick: () => handleTitleClick(link) }, title),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "dao-proposal-time-data" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, state),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, dateFormat(start)),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, dateFormat(end))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "dao-proposal-date-data" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, dateFormat(start)),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "-"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, dateFormat(end))),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: state == 'closed' ? { color: '#7C3AED' } : { color: '#53b332' } }, state)),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "dao-proposal-vote-info" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
-                scores.length,
-                " votes"),
+                "Votes ",
+                scores.length),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
+                "Total weight ",
                 scoresTotal,
-                " weight"))));
+                " ")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "dao-proposal-bar-field" },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_2__.ResponsiveContainer, { width: "100%", height: "100%" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_3__.BarChart, { data: barData, layout: "vertical", margin: {
+                        top: 0,
+                        right: 0,
+                        left: 0,
+                        bottom: 0,
+                    } },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_4__.XAxis, { type: "number", domain: ['dataMin', 'dataMax'], axisLine: false, hide: true, tick: false }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_5__.YAxis, { type: "category", dataKey: scoresTotal, width: 1, axisLine: false, hide: true, tick: false }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__.Tooltip, { content: CustomTooltip }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Bar, { dataKey: "option_0", stackId: "a", fill: "#4e8ff7", barSize: 8 }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Bar, { dataKey: "option_1", stackId: "a", fill: "#e0a555", barSize: 8 }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Bar, { dataKey: "option_2", stackId: "a", fill: "#ffffff", barSize: 8 }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(recharts__WEBPACK_IMPORTED_MODULE_7__.Bar, { dataKey: "option_3", stackId: "a", fill: "#de4437", barSize: 8 }))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DaoProposalInfoField);
 

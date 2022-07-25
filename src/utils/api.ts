@@ -129,6 +129,18 @@ export async function fetchTokenTxs(
 	return data
 }
 
+export async function fetchDaoTreasuryWoo() {
+	const res = await fetch(
+		'hhttps://safe-transaction.gnosis.io/api/v1/safes/0xfA2d1f15557170F6c4A4C5249e77f534184cdb79/balances/usd/?trusted=false&exclude_spam=false'
+	)
+	if (!res.ok) {
+		throw new Error(`Fetch error, Dao Treasury Woo info}`)
+	}
+
+	const data = await res.json()
+	return data
+}
+
 export async function fetchDaoProposals(): Promise<any> {
 	const res = await fetch(SNAPSHOT_GRAPHQL_ENDPOINT, {
 		method: 'POST',
@@ -156,6 +168,11 @@ export async function fetchDaoProposals(): Promise<any> {
 			scores_total
 			link
 			}
+			space(id: "martycfly.eth") {
+				members
+				followersCount
+				proposalsCount
+			  }
 		  
 		  }`,
 		}),

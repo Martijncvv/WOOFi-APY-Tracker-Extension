@@ -3,7 +3,7 @@
 	justify-content: space-between; */
 
 	padding: 6px 12px;
-	color: white;
+	color: #ffffff;
 	font-size: 15px;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .dao-proposal-time-data {
-	padding: 2px 0;
+	padding: 4px 0 4px;
 	display: flex;
 	justify-content: space-between;
 
@@ -39,7 +39,7 @@
 	padding: 2px 0;
 
 	display: flex;
-	gap: 6px;
+	gap: 8px;
 
 	font-size: 14px;
 	text-transform: capitalize;
@@ -50,6 +50,32 @@
 	padding: 0;
 	height: 20px;
 	width: 100%;
+}
+.dao-proposal-custom-tooltip {
+	padding: 6px 8px;
+	/* background-color: #ffffff; */
+	background-color: #3c404b;
+
+	font-size: 14px;
+	color: #ffffff;
+
+	border: 1px solid #73bef4;
+	border-radius: 8px;
+	text-transform: capitalize;
+}
+
+.dao-proposal-custom-tooltip-vote-option {
+	display: flex;
+	justify-content: space-between;
+	padding: 2px 0;
+	gap: 10px;
+}
+.dao-proposal-custom-tooltip-vote-option-header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0 2px;
+	gap: 10px;
+	font-weight: 600;
 }
 
 /* 7C3AED purple closed */

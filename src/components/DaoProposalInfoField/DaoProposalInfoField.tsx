@@ -35,7 +35,6 @@ interface VoteDataBar {
 	expl_2?: string
 	option_3?: number
 	expl_3?: string
-	// option_4: number
 }
 
 const DaoProposalInfoField: React.FunctionComponent<IDaoProposalInfoFieldProps> = ({
@@ -49,7 +48,20 @@ const DaoProposalInfoField: React.FunctionComponent<IDaoProposalInfoFieldProps> 
 	start,
 	end,
 }) => {
-	const [barData, setBarData] = useState<[VoteDataBar]>()
+	const [barData, setBarData] = useState<[VoteDataBar]>([
+		{
+			total: 0,
+			option_0: 0,
+			expl_0: '',
+			option_1: 0,
+			expl_1: '',
+			option_2: 0,
+			expl_2: '',
+			option_3: 0,
+			expl_3: '',
+		},
+	])
+	const barRadius = 4
 
 	const dateFormat = (unixTimestamp) => {
 		let dateObject = new Date(unixTimestamp * 1000)
@@ -65,7 +77,8 @@ const DaoProposalInfoField: React.FunctionComponent<IDaoProposalInfoFieldProps> 
 	}
 
 	useEffect(() => {
-		// let scores = [3, 5, 7]
+		// let scores = [11353, 1313, 23]
+		// let choices = ['In favor', 'Against', 'Abstaining']
 		setBarData([
 			{
 				total: scoresTotal,
@@ -92,10 +105,18 @@ const DaoProposalInfoField: React.FunctionComponent<IDaoProposalInfoFieldProps> 
 		console.log(payload)
 
 		return (
-			<div className="custom-tooltip">
+			<div className="dao-proposal-custom-tooltip">
+				<div
+					key={index}
+					className="dao-proposal-custom-tooltip-vote-option-header"
+				>
+					<div>Poll</div>
+					<div>Weight</div>
+				</div>
 				{payload?.map((item, index) => (
-					<div key={index}>
-						{item.payload[`expl_${index}`]} {item.value}
+					<div key={index} className="dao-proposal-custom-tooltip-vote-option">
+						<div>{item.payload[`expl_${index}`]} </div>
+						<div>{item.value}</div>
 					</div>
 				))}
 			</div>
@@ -107,7 +128,9 @@ const DaoProposalInfoField: React.FunctionComponent<IDaoProposalInfoFieldProps> 
 			className="dao-proposal-info-field"
 			style={
 				index % 2
-					? { backgroundColor: '#313641' }
+					? {
+							backgroundColor: '#313641',
+					  }
 					: { backgroundColor: '#3C404B', borderRadius: '5px' }
 			}
 		>
@@ -125,19 +148,14 @@ const DaoProposalInfoField: React.FunctionComponent<IDaoProposalInfoFieldProps> 
 				</div>
 				<div
 					style={
-						state == 'closed' ? { color: '#7C3AED' } : { color: '#53b332' }
+						state == 'closed' ? { color: '#cc444b' } : { color: '#44AF69 ' }
 					}
 				>
 					{state}
 				</div>
 			</div>
-			<div className="dao-proposal-vote-info">
-				<div>Votes {scores.length}</div>
-				<div>Total weight {scoresTotal} </div>
-			</div>
 
 			<div className="dao-proposal-bar-field">
-				{/* Taker Buy/Sell ratio */}
 				<ResponsiveContainer width="100%" height="100%">
 					<BarChart
 						data={barData}
@@ -166,21 +184,52 @@ const DaoProposalInfoField: React.FunctionComponent<IDaoProposalInfoFieldProps> 
 							tick={false}
 						/>
 
-						<Tooltip content={CustomTooltip} />
+						<Tooltip content={CustomTooltip} wrapperStyle={{ zIndex: 999 }} />
 
-						<Bar dataKey="option_0" stackId="a" fill="#4e8ff7" barSize={8}>
-							{/* <LabelList dataKey="expl_0" position="center" /> */}
-						</Bar>
-						<Bar dataKey="option_1" stackId="a" fill="#e0a555" barSize={8}>
-							{/* <LabelList dataKey="expl_1" position="center" /> */}
-						</Bar>
-						<Bar dataKey="option_2" stackId="a" fill="#ffffff" barSize={8}>
-							{/* <LabelList dataKey="expl_2" position="center" /> */}
-						</Bar>
+						<Bar
+							dataKey="option_0"
+							stackId="a"
+							fill="#4e8ff7"
+							barSize={8}
+							radius={
+								!barData[0].option_1 && !barData[0].option_2
+									? barRadius
+									: [barRadius, 0, 0, barRadius]
+							}
+						></Bar>
+						<Bar
+							dataKey="option_1"
+							stackId="a"
+							fill="#e0a555"
+							barSize={8}
+							radius={
+								!barData[0].option_0 && !barData[0].option_2
+									? barRadius
+									: !barData[0].option_0
+									? [barRadius, 0, 0, barRadius]
+									: !barData[0].option_2
+									? [0, barRadius, barRadius, 0]
+									: [0, 0, 0, 0]
+							}
+						></Bar>
+						<Bar
+							dataKey="option_2"
+							stackId="a"
+							fill="#3ba99c"
+							barSize={8}
+							radius={
+								!barData[0].option_0 && !barData[0].option_1
+									? barRadius
+									: [0, barRadius, barRadius, 0]
+							}
+						></Bar>
 
-						<Bar dataKey="option_3" stackId="a" fill="#de4437" barSize={8}>
-							{/* <LabelList dataKey="expl_3" position="center" /> */}
-						</Bar>
+						{/* <Bar
+							dataKey="option_3"
+							stackId="a"
+							fill="#ffffff"
+							barSize={8}
+						></Bar> */}
 					</BarChart>
 				</ResponsiveContainer>
 			</div>

@@ -290,7 +290,6 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 			<div id="piechart-field-chart">
 				<ResponsiveContainer width={280} height={58}>
 					<PieChart>
-						syncId="anyId"
 						<Pie
 							stroke="none"
 							data={topVolumeSources}

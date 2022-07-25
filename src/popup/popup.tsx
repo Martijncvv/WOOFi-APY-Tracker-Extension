@@ -45,7 +45,6 @@ import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
 import EarnField from '../components/EarnField'
 import OnchainTxsFieldHeader from '../components/OnchainTxsFieldHeader'
 import DashboardTabsField from '../components/DashboardTabsField'
-import DaoProposalInfoHeader from '../components/DaoProposalInfoHeader'
 
 const App = () => {
 	let chainIds: string[] = ['avax', 'bsc', 'fantom', 'polygon']
@@ -343,7 +342,6 @@ const App = () => {
 							</>
 						) : (
 							<>
-								<DaoProposalInfoHeader />
 								<DaoInfoField />
 							</>
 						)}

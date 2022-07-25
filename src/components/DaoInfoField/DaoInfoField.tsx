@@ -2,23 +2,30 @@ import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { fetchDaoProposals } from '../../utils/api'
 import DaoProposalInfoField from '../DaoProposalInfoField'
+import DaoGeneralInfoHeader from '../DaoGeneralInfoHeader'
+import DaoProposalInfoHeader from '../DaoProposalInfoHeader'
+import InfoField from '../InfoField'
 
 interface IDaoInfoFieldProps {}
 
 const DaoInfoField: React.FunctionComponent<IDaoInfoFieldProps> = (props) => {
 	const [proposalsData, setProposalsData] = useState<any>([])
+	const [daoGeneralData, setDaoGeneralData] = useState<any>({})
 
 	useEffect(() => {
 		getDaoProposalInfo()
-		console.log('DAOTEST_FIELD')
 	}, [])
 
 	async function getDaoProposalInfo() {
 		try {
-			const proposalsDataFetch = await fetchDaoProposals()
-			console.log(proposalsDataFetch)
+			const daoDataFetch = await fetchDaoProposals()
+			console.log(daoDataFetch)
 
-			setProposalsData(proposalsDataFetch.data.proposals)
+			setProposalsData(daoDataFetch.data.proposals)
+			setDaoGeneralData({
+				followersCount: daoDataFetch.data.space.followersCount,
+				proposalsCount: daoDataFetch.data.space.proposalsCount,
+			})
 		} catch (err) {
 			console.log(err)
 		}
@@ -26,6 +33,14 @@ const DaoInfoField: React.FunctionComponent<IDaoInfoFieldProps> = (props) => {
 
 	return (
 		<div>
+			{/* <DaoGeneralInfoHeader />
+			<InfoField
+				index={2}
+				value_1={''}
+				value_2={daoGeneralData.followersCount}
+				value_3={daoGeneralData.proposalsCount + 15}
+			/> */}
+			<DaoProposalInfoHeader />
 			{proposalsData?.map((proposal, index) => (
 				<DaoProposalInfoField
 					key={index}

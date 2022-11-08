@@ -23,6 +23,8 @@ const ETHERSCAN_WOO_ETH_TXS_API: string =
 const BSCSCAN_WOO_BSC_TXS_API: string =
 	'https://api.bscscan.com/api?module=account&action=tokentx&contractaddress=0x4691937a7508860f876c9c0a2a617e7d9e945d4b&page=1&offset=50&startblock=0&endblock=99999999&sort=desc'
 const SNAPSHOT_GRAPHQL_ENDPOINT: string = 'https://hub.snapshot.org/graphql'
+const GALAXYPROJECT_GRAPHQL_ENDPOINT: string =
+	'https://graphigo.prd.galaxy.eco/query'
 
 export async function fetchEthWooTxs(): Promise<IWooEthTxs> {
 	const res = await fetch(ETHERSCAN_WOO_ETH_TXS_API)
@@ -131,7 +133,7 @@ export async function fetchTokenTxs(
 
 export async function fetchDaoTreasuryWoo() {
 	const res = await fetch(
-		'hhttps://safe-transaction.gnosis.io/api/v1/safes/0xfA2d1f15557170F6c4A4C5249e77f534184cdb79/balances/usd/?trusted=false&exclude_spam=false'
+		'https://safe-transaction.gnosis.io/api/v1/safes/0xfA2d1f15557170F6c4A4C5249e77f534184cdb79/balances/usd/?trusted=false&exclude_spam=false'
 	)
 	if (!res.ok) {
 		throw new Error(`Fetch error, Dao Treasury Woo info}`)
@@ -144,7 +146,11 @@ export async function fetchDaoTreasuryWoo() {
 export async function fetchDaoProposals(): Promise<any> {
 	const res = await fetch(SNAPSHOT_GRAPHQL_ENDPOINT, {
 		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
+
+		headers: {
+			'Content-Type': 'application/json',
+		},
+
 		body: JSON.stringify({
 			query: `
 		query Proposals {
@@ -178,9 +184,64 @@ export async function fetchDaoProposals(): Promise<any> {
 		}),
 	})
 	if (!res.ok) {
-		throw new Error(`Fetch error, WOO Dao Proposals info}`)
+		throw new Error(`Fetch error, SnapShot WOO Dao Proposals info}`)
 	}
 
 	const data = await res.json()
 	return data
 }
+
+export async function fetchDaoCampaigns(): Promise<any> {
+	const res = await fetch('https://graphigo.prd.galaxy.eco/query', {
+		body:
+			'{"query":"query Space {n  space(alias: \\"woonetwork\\") {\\n    campaigns(input: {}) {\\n      list {\\n        id\\n        name\\n        type\\n        description\\n        thumbnail\\n        numNFTMinted\\n        startTime\\n        endTime\\n      }\\n    }\\n  }\\n}\\n"}',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+
+			Dnt: '1',
+		},
+		method: 'POST',
+	})
+	if (!res.ok) {
+		throw new Error(`Fetch error, GalaxyProject WOO Dao Campaigns info}`)
+	}
+
+	const data = await res.json()
+	return data
+}
+
+// export async function fetchDaoCampaigns(): Promise<any> {
+// 	const res = await fetch(GALAXYPROJECT_GRAPHQL_ENDPOINT, {
+// 		method: 'POST',
+// 		headers: {
+// 			'Content-Type': 'application/json',
+// 			'Access-Control-Allow-Origin': '*',
+// 		},
+// 		body: JSON.stringify({
+// 			query: `
+// 			query Space  {
+// 				space(alias: "woonetwork") {
+// 					campaigns(input:{}) {
+// 						list {
+// 							id
+// 							name
+// 							type
+// 						  	description
+// 						  	thumbnail
+// 						  	numNFTMinted
+// 						  	startTime
+// 						  	endTime
+// 						}
+// 					}
+// 				}
+// 			  }`,
+// 		}),
+// 	})
+// 	if (!res.ok) {
+// 		throw new Error(`Fetch error, GalaxyProject WOO Dao Campaigns info}`)
+// 	}
+
+// 	const data = await res.json()
+// 	return data
+// }

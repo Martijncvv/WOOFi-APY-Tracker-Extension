@@ -23,6 +23,7 @@ const AvaxIcon = require('../static/images/AVAX_logo.png')
 const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
 const FtmIcon = require('../static/images/FTM_logo.png')
 const PolyIcon = require('../static/images/POLY_logo.png')
+const ArbIcon = require('../static/images/ARB_logo.png')
 const EthIcon = require('../static/images/ETH_logo.png')
 
 import {
@@ -47,34 +48,46 @@ import OnchainTxsFieldHeader from '../components/OnchainTxsFieldHeader'
 import DashboardTabsField from '../components/DashboardTabsField'
 
 const App = () => {
-	let chainIds: string[] = ['avax', 'bsc', 'fantom', 'polygon']
-	let chainNames: string[] = ['Avax', 'Bsc', 'Ftm', 'Poly']
-	let chainLogos: string[] = [AvaxIcon, BnbChainIcon, FtmIcon, PolyIcon]
-	let chainColors: string[] = ['#E84142', '#F0B90B', '#13b5ec', '#8247e5']
+	let chainIds: string[] = ['avax', 'bsc', 'fantom', 'polygon', 'arbitrum']
+	let chainNames: string[] = ['Ava', 'Bsc', 'Ftm', 'Pol', 'Arb']
+	let chainLogos: string[] = [
+		AvaxIcon,
+		BnbChainIcon,
+		FtmIcon,
+		PolyIcon,
+		ArbIcon,
+	]
+	let chainColors: string[] = [
+		'#E84142',
+		'#F0B90B',
+		'#13b5ec',
+		'#8247e5',
+		'#97BEDD',
+	]
 	let chainDomains: string[] = [
 		'snowtrace.io',
 		'bscscan.com',
 		'ftmscan.com',
 		'polygonscan.com',
+		'arbiscan.io',
 	]
 	let chainContractAddress: string[] = [
 		'0xabc9547b534519ff73921b1fba6e672b5f58d083',
 		'0x4691937a7508860f876c9c0a2a617e7d9e945d4b',
 		'0x6626c47c00f1d87902fc13eecfac3ed06d5e8d8a',
 		'0x1b815d120b3ef02039ee11dc2d33de7aa4a8c603',
+		'0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b',
 	]
 
-	const [wooNetworkTradeInfo, setWooNetworkTradeInfo] = useState<
-		IWooNetworkTradeInfo
-	>()
+	const [wooNetworkTradeInfo, setWooNetworkTradeInfo] =
+		useState<IWooNetworkTradeInfo>()
 	const [wooFuturesOi, setWooFuturesOi] = useState<number>(null)
 	const [woofiEarnInfo, setWoofiEarnInfo] = useState<IWoofiEarnChainInfo>(
 		{} as IWoofiEarnChainInfo
 	)
 	const [woofi1dTotalVolume, setWoofi1dTotalVolume] = useState<number>(null)
-	const [woofi1mVolumeSources, setWoofi1mVolumeSources] = useState<
-		IWoofi1mVolumeSources
-	>({})
+	const [woofi1mVolumeSources, setWoofi1mVolumeSources] =
+		useState<IWoofi1mVolumeSources>({})
 	const [woofiStakedWoo, setWoofiStakedWoo] = useState<IWoofiStakedWoo>({})
 
 	const [woofiTotalStakedWoo, setWoofiTotalStakedWoo] = useState<number>(null)
@@ -87,13 +100,12 @@ const App = () => {
 	const [chainsInfo, setChainsInfo] = useState<IChainInfo[]>([])
 	const [activeTab, setActiveTab] = useState<string>('avax')
 	const [activeDashboardTab, setActiveDashboardTab] = useState<string>(
-		'daoDashboard'
-		// 'chainInfoDashboard'
+		// 'daoDashboard'
+		'chainInfoDashboard'
 	)
 
-	const [displayDexTradesCallback, setDisplayDexTradesCallback] = useState<
-		boolean
-	>(false)
+	const [displayDexTradesCallback, setDisplayDexTradesCallback] =
+		useState<boolean>(false)
 
 	useEffect(() => {
 		getChainsInfo()
@@ -197,9 +209,8 @@ const App = () => {
 	async function getWooFiVolumesInfo() {
 		try {
 			for (let chainId of chainIds) {
-				let woofichain1dVolumeInfo: IWoofiChain1dVolume = await fetchWoofiChain1dVolume(
-					chainId
-				)
+				let woofichain1dVolumeInfo: IWoofiChain1dVolume =
+					await fetchWoofiChain1dVolume(chainId)
 
 				setWoofi1dTotalVolume(
 					(woofi1dTotalVolume) =>
@@ -287,10 +298,10 @@ const App = () => {
 								/>
 							</>
 						)}
-						<DashboardTabsField
+						{/* <DashboardTabsField
 							activeDashboardTabCallback={handleActiveDashboardTabChange}
 							activeDashboardTab={activeDashboardTab}
-						/>
+						/> */}
 						{activeDashboardTab == 'chainInfoDashboard' ? (
 							<>
 								{Object.keys(woofiStakedWoo).length > 0 &&

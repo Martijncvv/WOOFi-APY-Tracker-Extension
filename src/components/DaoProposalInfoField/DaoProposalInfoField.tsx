@@ -71,14 +71,10 @@ const DaoProposalInfoField: React.FunctionComponent<IDaoProposalInfoFieldProps> 
 		let month = dateObject
 			.toLocaleString('en-US', { month: 'long' })
 			.substring(0, 3)
-		// let seconds = '0' + dateObject.getSeconds()
-		// return `${hours}:${minutes.substr(-2)} ${day} ${month}`
 		return `${month} ${day}`
 	}
 
 	useEffect(() => {
-		// let scores = [11353, 1313, 23]
-		// let choices = ['In favor', 'Against', 'Abstaining']
 		setBarData([
 			{
 				total: scoresTotal,
@@ -102,8 +98,6 @@ const DaoProposalInfoField: React.FunctionComponent<IDaoProposalInfoFieldProps> 
 	}
 
 	const CustomTooltip = ({ active, payload, label }) => {
-		console.log(payload)
-
 		return (
 			<div className="dao-proposal-custom-tooltip">
 				<div

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { fetchDaoProposals } from '../../utils/api'
+import { fetchDaoCampaigns, fetchDaoProposals } from '../../utils/api'
 import DaoProposalInfoField from '../DaoProposalInfoField'
 import DaoGeneralInfoHeader from '../DaoGeneralInfoHeader'
 import DaoProposalInfoHeader from '../DaoProposalInfoHeader'
@@ -10,22 +10,33 @@ interface IDaoInfoFieldProps {}
 
 const DaoInfoField: React.FunctionComponent<IDaoInfoFieldProps> = (props) => {
 	const [proposalsData, setProposalsData] = useState<any>([])
+	const [campaignsData, setCampaignsData] = useState<any>([])
 	const [daoGeneralData, setDaoGeneralData] = useState<any>({})
 
 	useEffect(() => {
 		getDaoProposalInfo()
+		getDaoCampaignInfo()
 	}, [])
 
 	async function getDaoProposalInfo() {
 		try {
-			const daoDataFetch = await fetchDaoProposals()
-			console.log(daoDataFetch)
+			const daoProposalDataFetch = await fetchDaoProposals()
 
-			setProposalsData(daoDataFetch.data.proposals)
+			setProposalsData(daoProposalDataFetch.data.proposals)
 			setDaoGeneralData({
-				followersCount: daoDataFetch.data.space.followersCount,
-				proposalsCount: daoDataFetch.data.space.proposalsCount,
+				followersCount: daoProposalDataFetch.data.space.followersCount,
+				proposalsCount: daoProposalDataFetch.data.space.proposalsCount,
 			})
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
+	async function getDaoCampaignInfo() {
+		console.log('TEST')
+		try {
+			const daoCampaignDataFetch = await fetchDaoCampaigns()
+			console.log(daoCampaignDataFetch)
 		} catch (err) {
 			console.log(err)
 		}

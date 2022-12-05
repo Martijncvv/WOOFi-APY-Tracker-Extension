@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
+import { getActiveTabStorage, setActiveTabStorage } from '../utils/storage'
+
 import './popup.css'
 import FooterField from '../components/FooterField'
 import HeaderField from '../components/HeaderField'
@@ -45,39 +47,59 @@ import { IWoofiStakedWoo } from '../models/IWoofiChainStakedWoo'
 import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
 import EarnField from '../components/EarnField'
 import OnchainTxsFieldHeader from '../components/OnchainTxsFieldHeader'
-import DashboardTabsField from '../components/DashboardTabsField'
+// import DashboardTabsField from '../components/DashboardTabsField'
 
 const App = () => {
-	let chainIds: string[] = ['avax', 'bsc', 'fantom', 'polygon', 'arbitrum']
-	let chainNames: string[] = ['Ava', 'Bsc', 'Ftm', 'Pol', 'Arb']
-	let chainLogos: string[] = [
-		AvaxIcon,
-		BnbChainIcon,
-		FtmIcon,
-		PolyIcon,
-		ArbIcon,
-	]
-	let chainColors: string[] = [
-		'#E84142',
-		'#F0B90B',
-		'#13b5ec',
-		'#8247e5',
-		'#97BEDD',
-	]
-	let chainDomains: string[] = [
-		'snowtrace.io',
-		'bscscan.com',
-		'ftmscan.com',
-		'polygonscan.com',
-		'arbiscan.io',
-	]
-	let chainContractAddress: string[] = [
-		'0xabc9547b534519ff73921b1fba6e672b5f58d083',
-		'0x4691937a7508860f876c9c0a2a617e7d9e945d4b',
-		'0x6626c47c00f1d87902fc13eecfac3ed06d5e8d8a',
-		'0x1b815d120b3ef02039ee11dc2d33de7aa4a8c603',
-		'0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b',
-	]
+	const [chainIds, setChainIds] = useState<string[]>([
+		'arbitrum',
+		'avax',
+		'bsc',
+		'fantom',
+		'polygon',
+	])
+
+	const [chainsInfo, setChainsInfo] = useState<IChainInfo[]>([
+		{
+			chainId: 'arbitrum',
+			chainName: 'Arb',
+			icon: ArbIcon,
+			color: '#97BEDD',
+			domain: 'arbiscan.io',
+			contractAddress: '0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b',
+		},
+		{
+			chainId: 'avax',
+			chainName: 'Ava',
+			icon: AvaxIcon,
+			color: '#E84142',
+			domain: 'snowtrace.io',
+			contractAddress: '0xabc9547b534519ff73921b1fba6e672b5f58d083',
+		},
+		{
+			chainId: 'bsc',
+			chainName: 'Bsc',
+			icon: BnbChainIcon,
+			color: '#F0B90B',
+			domain: 'bscscan.com',
+			contractAddress: '0x4691937a7508860f876c9c0a2a617e7d9e945d4b',
+		},
+		{
+			chainId: 'fantom',
+			chainName: 'Ftm',
+			icon: FtmIcon,
+			color: '#13b5ec',
+			domain: 'ftmscan.com',
+			contractAddress: '0x6626c47c00f1d87902fc13eecfac3ed06d5e8d8a',
+		},
+		{
+			chainId: 'polygon',
+			chainName: 'Pol',
+			icon: PolyIcon,
+			color: '#8247e5',
+			domain: 'polygonscan.com',
+			contractAddress: '0x1b815d120b3ef02039ee11dc2d33de7aa4a8c603',
+		},
+	])
 
 	const [wooNetworkTradeInfo, setWooNetworkTradeInfo] =
 		useState<IWooNetworkTradeInfo>()
@@ -97,8 +119,8 @@ const App = () => {
 
 	const [displayCalculator, setDisplayCalculator] = useState<boolean>(false)
 	const [sortingOption, setSortingOption] = useState<string>('apy')
-	const [chainsInfo, setChainsInfo] = useState<IChainInfo[]>([])
-	const [activeTab, setActiveTab] = useState<string>('avax')
+
+	const [activeTab, setActiveTab] = useState<string>('arbitrum')
 	const [activeDashboardTab, setActiveDashboardTab] = useState<string>(
 		// 'daoDashboard'
 		'chainInfoDashboard'
@@ -108,28 +130,22 @@ const App = () => {
 		useState<boolean>(false)
 
 	useEffect(() => {
-		getChainsInfo()
 		getWooNetworkTradeInfo()
 		getFuturesInfo()
 		getStakedWooInfo()
 		getWooFiVolumesInfo()
 		getWooFiVolume1mSourceInfo()
 		getWoofiEarnInfo()
+		// getActivetabState()
 	}, [])
 
-	const getChainsInfo = () => {
-		for (let i = 0; i < chainIds.length; i++) {
-			setChainsInfo((chainsInfo) => [
-				...chainsInfo,
-				{
-					chainId: chainIds[i],
-					chainName: chainNames[i],
-					icon: chainLogos[i],
-					color: chainColors[i],
-					domain: chainDomains[i],
-					contractAddress: chainContractAddress[i],
-				},
-			])
+	async function getActivetabState() {
+		let activeTabStorage = await getActiveTabStorage()
+		console.log('activeTabStorage')
+		console.log(activeTabStorage)
+
+		if (activeTabStorage) {
+			setActiveTab(activeTabStorage)
 		}
 	}
 
@@ -250,6 +266,7 @@ const App = () => {
 	}
 
 	const handleActiveTabChange = (chainId: string) => {
+		setActiveTabStorage(chainId)
 		setActiveTab(chainId)
 	}
 	const handleActiveDashboardTabChange = (activeTab: string) => {
@@ -284,6 +301,7 @@ const App = () => {
 									)} `}
 									value_2={`$${amountFormatter(woofi1dTotalVolume / 10 ** 18)}`}
 									value_3={`$${amountFormatter(wooFuturesVolume)} `}
+									value_3_colour=""
 								/>
 
 								<NetworkInfoSubHeaderField />
@@ -295,6 +313,7 @@ const App = () => {
 									)}`}
 									value_2={`$${amountFormatter(woofiTVL)}`}
 									value_3={`$${amountFormatter(wooFuturesOi)} `}
+									value_3_colour=""
 								/>
 							</>
 						)}

@@ -72,6 +72,8 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 			})
 		})
 
+		console.log('priceData')
+		console.log(priceData)
 		setChartData(priceData)
 	}
 

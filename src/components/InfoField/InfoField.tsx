@@ -5,6 +5,7 @@ interface InfoFieldProps {
 	value_1: string
 	value_2: string
 	value_3: string
+	value_3_colour: string
 	index: number
 }
 
@@ -12,6 +13,7 @@ const InfoField: React.FC<InfoFieldProps> = ({
 	value_1,
 	value_2,
 	value_3,
+	value_3_colour,
 	index,
 }) => {
 	return (
@@ -27,7 +29,12 @@ const InfoField: React.FC<InfoFieldProps> = ({
 
 			<div className="info-field-value info-field-value-2">{value_2}</div>
 
-			<div className="info-field-value info-field-value-3">{value_3}</div>
+			<div
+				className="info-field-value info-field-value-3"
+				style={{ color: value_3_colour }}
+			>
+				{value_3}
+			</div>
 		</div>
 	)
 }

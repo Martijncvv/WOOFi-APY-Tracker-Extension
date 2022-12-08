@@ -45,9 +45,7 @@ export async function fetchBscWooTxs(): Promise<IWooEthTxs> {
 	return data
 }
 
-export async function fetchWooNetworkTradeInfo(): Promise<
-	IWooNetworkTotalVolume
-> {
+export async function fetchWooNetworkTradeInfo(): Promise<IWooNetworkTotalVolume> {
 	const res = await fetch(WOONETWORK_TRADE_INFO_API)
 	if (!res.ok) {
 		throw new Error(`Fetch error, total network volume info}`)
@@ -131,6 +129,31 @@ export async function fetchTokenTxs(
 	return data
 }
 
+export async function fetchPorlAssets(): Promise<any> {
+	const res = await fetch(
+		'https://api.woo.org/asset/porl/assets?excludeWooToken=true'
+	)
+
+	if (!res.ok) {
+		throw new Error(`Fetch error, $fetchPorlAssets info}`)
+	}
+
+	const data = await res.json()
+	return data
+}
+export async function fetchPorlLiabilities(): Promise<any> {
+	const res = await fetch(
+		'https://api.woo.org/asset/porl/liabilities?excludeWooToken=true'
+	)
+
+	if (!res.ok) {
+		throw new Error(`Fetch error, $fetchPorlLiabilities info}`)
+	}
+
+	const data = await res.json()
+	return data
+}
+
 export async function fetchDaoTreasuryWoo() {
 	const res = await fetch(
 		'https://safe-transaction.gnosis.io/api/v1/safes/0xfA2d1f15557170F6c4A4C5249e77f534184cdb79/balances/usd/?trusted=false&exclude_spam=false'
@@ -193,8 +216,7 @@ export async function fetchDaoProposals(): Promise<any> {
 
 export async function fetchDaoCampaigns(): Promise<any> {
 	const res = await fetch('https://graphigo.prd.galaxy.eco/query', {
-		body:
-			'{"query":"query Space {n  space(alias: \\"woonetwork\\") {\\n    campaigns(input: {}) {\\n      list {\\n        id\\n        name\\n        type\\n        description\\n        thumbnail\\n        numNFTMinted\\n        startTime\\n        endTime\\n      }\\n    }\\n  }\\n}\\n"}',
+		body: '{"query":"query Space {n  space(alias: \\"woonetwork\\") {\\n    campaigns(input: {}) {\\n      list {\\n        id\\n        name\\n        type\\n        description\\n        thumbnail\\n        numNFTMinted\\n        startTime\\n        endTime\\n      }\\n    }\\n  }\\n}\\n"}',
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',

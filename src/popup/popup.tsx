@@ -35,6 +35,8 @@ import {
 	fetchWoofiChain1mVolumeSource,
 	fetchWooNetworkTradeInfo,
 	fetchWooFutureInfo,
+	fetchPorlAssets,
+	fetchPorlLiabilities,
 } from '../utils/api'
 import { amountFormatter } from '../utils/amountFormatter'
 
@@ -48,6 +50,8 @@ import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
 import EarnField from '../components/EarnField'
 import OnchainTxsFieldHeader from '../components/OnchainTxsFieldHeader'
 // import DashboardTabsField from '../components/DashboardTabsField'
+import PorlDashboard from '../components/PorlDashboard'
+import PorlInfoHeaderField from '../components/PorlInfoHeaderField'
 
 const App = () => {
 	const [chainIds, setChainIds] = useState<string[]>([
@@ -129,6 +133,11 @@ const App = () => {
 	const [displayDexTradesCallback, setDisplayDexTradesCallback] =
 		useState<boolean>(false)
 
+	const [totalAssets, setTotalAssets] = useState<any>({})
+	const [custodialStorage, setCustodialStorage] = useState<any>({})
+	const [totalLiquiditySource, setTotalLiquiditySource] = useState<any>({})
+	const [totalLiabilities, setTotalLiabilities] = useState<any>({})
+
 	useEffect(() => {
 		getWooNetworkTradeInfo()
 		getFuturesInfo()
@@ -136,6 +145,7 @@ const App = () => {
 		getWooFiVolumesInfo()
 		getWooFiVolume1mSourceInfo()
 		getWoofiEarnInfo()
+		getPorlInfo()
 		// getActivetabState()
 	}, [])
 
@@ -257,6 +267,47 @@ const App = () => {
 		}
 	}
 
+	async function getPorlInfo() {
+		try {
+			let fetchedPorlAssets: any = {}
+			fetchedPorlAssets = await fetchPorlAssets()
+			setTotalAssets(fetchedPorlAssets.data.total_usdt_notional)
+
+			let totalLiquiditySource = 0
+			let custodialStorage = 0
+			fetchedPorlAssets.data.venues.forEach((venue) => {
+				if (venue.type == 'Custodian') {
+					custodialStorage += venue.usdt_notional
+				}
+				if (venue.type == 'Exchange') {
+					totalLiquiditySource += venue.usdt_notional
+				}
+			})
+			setCustodialStorage(custodialStorage)
+			setTotalLiquiditySource(totalLiquiditySource)
+
+			let fetchedPorlLiabilities: any = {}
+			fetchedPorlLiabilities = await fetchPorlLiabilities()
+
+			let totalLiabilities = 0
+			fetchedPorlLiabilities.data.forEach((token) => {
+				totalLiabilities += token.usdt_notional
+			})
+			setTotalLiabilities(totalLiabilities)
+
+			console.log('totalAssets ', totalAssets)
+			console.log('totalLiabilities ', totalLiabilities)
+
+			console.log('custodialStorage ', custodialStorage)
+			console.log('totalLiquiditySource ', totalLiquiditySource)
+
+			console.log('fetchedPorlLiabilities ', fetchedPorlLiabilities)
+			console.log('fetchedPorlAssets ', fetchedPorlAssets)
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
 	const handleCalculatorChange = () => {
 		setDisplayCalculator(!displayCalculator)
 	}
@@ -313,6 +364,18 @@ const App = () => {
 									)}`}
 									value_2={`$${amountFormatter(woofiTVL)}`}
 									value_3={`$${amountFormatter(wooFuturesOi)} `}
+									value_3_colour=""
+								/>
+								<PorlInfoHeaderField />
+								<InfoField
+									index={2}
+									value_1={`$${amountFormatter(totalAssets)}`}
+									value_2={`${Math.round(
+										(totalAssets / totalLiabilities) * 100
+									)}%`}
+									value_3={`${Math.round(
+										(custodialStorage / totalLiabilities) * 100
+									)}%`}
 									value_3_colour=""
 								/>
 							</>

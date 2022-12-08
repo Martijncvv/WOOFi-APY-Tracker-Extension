@@ -1,31 +1,28 @@
-.piechart-field-header-values {
+.porl-info-header-field-values {
 	display: flex;
 	justify-content: space-between;
 
 	height: 18px;
-	margin: 6px 0 0 0;
-	padding: 0px 12px 0;
+	padding: 6px 12px 1px;
 
-	color: #fefefe;
-	background-color: #313641;
-	border-bottom: 1px solid #73bef4;
+	color: white;
 }
 
-.piechart-field-header-value {
+.porl-info-header-field-value {
 	box-sizing: border-box;
 	width: 33%;
 
 	font-size: 15px;
+
 	font-weight: 600;
 	text-transform: capitalize;
 }
-
-.piechart-field-header-value-2 {
+.porl-info-header-field-value-2 {
 	display: flex;
 	align-items: center;
 	padding: 0 0 0 24px;
 }
-.piechart-field-header-value-3 {
+.porl-info-header-field-value-3 {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;

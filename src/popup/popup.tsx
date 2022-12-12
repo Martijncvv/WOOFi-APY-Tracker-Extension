@@ -26,6 +26,7 @@ const BnbChainIcon = require('../static/images/BNB-Chain_logo.png')
 const FtmIcon = require('../static/images/FTM_logo.png')
 const PolyIcon = require('../static/images/POLY_logo.png')
 const ArbIcon = require('../static/images/ARB_logo.png')
+const OptIcon = require('../static/images/OPT_logo.png')
 const EthIcon = require('../static/images/ETH_logo.png')
 
 import {
@@ -59,6 +60,7 @@ const App = () => {
 		'avax',
 		'bsc',
 		'fantom',
+		'optimism',
 		'polygon',
 	])
 
@@ -68,7 +70,7 @@ const App = () => {
 			chainName: 'Arb',
 			icon: ArbIcon,
 			color: '#97BEDD',
-			domain: 'arbiscan.io',
+			domain: 'api.arbiscan.io',
 			contractAddress: '0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b',
 		},
 		{
@@ -76,7 +78,7 @@ const App = () => {
 			chainName: 'Ava',
 			icon: AvaxIcon,
 			color: '#E84142',
-			domain: 'snowtrace.io',
+			domain: 'api.snowtrace.io',
 			contractAddress: '0xabc9547b534519ff73921b1fba6e672b5f58d083',
 		},
 		{
@@ -84,7 +86,7 @@ const App = () => {
 			chainName: 'Bsc',
 			icon: BnbChainIcon,
 			color: '#F0B90B',
-			domain: 'bscscan.com',
+			domain: 'api.bscscan.com',
 			contractAddress: '0x4691937a7508860f876c9c0a2a617e7d9e945d4b',
 		},
 		{
@@ -92,15 +94,23 @@ const App = () => {
 			chainName: 'Ftm',
 			icon: FtmIcon,
 			color: '#13b5ec',
-			domain: 'ftmscan.com',
+			domain: 'api.ftmscan.com',
 			contractAddress: '0x6626c47c00f1d87902fc13eecfac3ed06d5e8d8a',
+		},
+		{
+			chainId: 'optimism',
+			chainName: 'Op',
+			icon: OptIcon,
+			color: '#FE0420',
+			domain: 'api-optimistic.etherscan.io',
+			contractAddress: '0x871f2F2ff935FD1eD867842FF2a7bfD051A5E527',
 		},
 		{
 			chainId: 'polygon',
 			chainName: 'Pol',
 			icon: PolyIcon,
 			color: '#8247e5',
-			domain: 'polygonscan.com',
+			domain: 'api.polygonscan.com',
 			contractAddress: '0x1b815d120b3ef02039ee11dc2d33de7aa4a8c603',
 		},
 	])
@@ -146,7 +156,6 @@ const App = () => {
 		getWooFiVolume1mSourceInfo()
 		getWoofiEarnInfo()
 		getPorlInfo()
-		// getActivetabState()
 	}, [])
 
 	async function getActivetabState() {
@@ -186,6 +195,19 @@ const App = () => {
 			for (let chainId of chainIds) {
 				let woofiStakedWooInfo: IWoofiStakedWoo = {}
 				woofiStakedWooInfo[chainId] = await fetchWoofiChainStakedInfo(chainId)
+
+				if (woofiStakedWooInfo[chainId].status === 'fail') {
+					woofiStakedWooInfo[chainId] = {
+						data: {
+							woo: {
+								apr: 0,
+								total_staked: '0',
+							},
+							status: 'fetch error',
+						},
+						status: '',
+					}
+				}
 				setWoofiStakedWoo((woofiStakingInfo) => ({
 					...woofiStakingInfo,
 					...woofiStakedWooInfo,
@@ -294,15 +316,6 @@ const App = () => {
 				totalLiabilities += token.usdt_notional
 			})
 			setTotalLiabilities(totalLiabilities)
-
-			console.log('totalAssets ', totalAssets)
-			console.log('totalLiabilities ', totalLiabilities)
-
-			console.log('custodialStorage ', custodialStorage)
-			console.log('totalLiquiditySource ', totalLiquiditySource)
-
-			console.log('fetchedPorlLiabilities ', fetchedPorlLiabilities)
-			console.log('fetchedPorlAssets ', fetchedPorlAssets)
 		} catch (err) {
 			console.log(err)
 		}
@@ -323,7 +336,7 @@ const App = () => {
 	const handleActiveDashboardTabChange = (activeTab: string) => {
 		setActiveDashboardTab(activeTab)
 	}
-
+	console.log('activeTab:', activeTab)
 	return (
 		<>
 			<HeaderField />
@@ -366,18 +379,22 @@ const App = () => {
 									value_3={`$${amountFormatter(wooFuturesOi)} `}
 									value_3_colour=""
 								/>
-								<PorlInfoHeaderField />
-								<InfoField
-									index={2}
-									value_1={`$${amountFormatter(totalAssets)}`}
-									value_2={`${Math.round(
-										(totalAssets / totalLiabilities) * 100
-									)}%`}
-									value_3={`${Math.round(
-										(custodialStorage / totalLiabilities) * 100
-									)}%`}
-									value_3_colour=""
-								/>
+								{totalAssets && totalLiabilities && custodialStorage && (
+									<>
+										<PorlInfoHeaderField />
+										<InfoField
+											index={2}
+											value_1={`$${amountFormatter(totalAssets)}`}
+											value_2={`${Math.round(
+												(totalAssets / totalLiabilities) * 100
+											)}%`}
+											value_3={`${Math.round(
+												(custodialStorage / totalLiabilities) * 100
+											)}%`}
+											value_3_colour=""
+										/>
+									</>
+								)}
 							</>
 						)}
 						{/* <DashboardTabsField
@@ -389,7 +406,7 @@ const App = () => {
 								{Object.keys(woofiStakedWoo).length > 0 &&
 									Object.keys(woofi1mVolumeSources).length > 0 && (
 										<>
-											<PieChartFieldHeader />
+											<PieChartFieldHeader activeTab={activeTab} />
 											<PieChartField
 												chainsInfo={chainsInfo}
 												totalStakedWooAmount={woofiTotalStakedWoo}

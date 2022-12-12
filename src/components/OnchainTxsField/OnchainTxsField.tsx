@@ -26,9 +26,9 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 }) => {
 	const [chartData, setChartData] = useState<any>([{}])
 	const [chartTitleMessage, setChartTitleMessage] = useState<string>('')
-	const [chainTicker, setChainTicker] = useState<string>('Avax')
-	const [domain, setDomain] = useState<string>('snowtrace.io')
-	const [chainColour, setChainColour] = useState<string>('#E84142')
+	const [chainTicker, setChainTicker] = useState<string>('arbitrum')
+	const [domain, setDomain] = useState<string>('arbiscan.io')
+	const [chainColour, setChainColour] = useState<string>('#97BEDD')
 
 	useEffect(() => {
 		getTxData()

@@ -41,15 +41,6 @@ export default function PorlDashboard({}: Props) {
 				totalLiabilities += token.usdt_notional
 			})
 			setTotalLiabilities(totalLiabilities)
-
-			console.log('totalAssets ', totalAssets)
-			console.log('totalLiabilities ', totalLiabilities)
-
-			console.log('custodialStorage ', custodialStorage)
-			console.log('totalLiquiditySource ', totalLiquiditySource)
-
-			console.log('fetchedPorlLiabilities ', fetchedPorlLiabilities)
-			console.log('fetchedPorlAssets ', fetchedPorlAssets)
 		} catch (err) {
 			console.log(err)
 		}

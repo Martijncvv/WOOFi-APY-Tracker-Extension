@@ -2,7 +2,7 @@
 
 - Display WOO Network info and sort WOOFi Earn Pairs by APY, TVL or Name.
 - Check WOOFi volume sources and staked WOO.
-- Follow onchain txs on 5 networks.
+- Follow onchain txs on 6 networks.
 - Check Proof of Reserves & Liability info.
 - Calculate potential Yield rewards.
 - Check WOO trades on Ethereum DEXs.
@@ -17,10 +17,6 @@
 
 <p align="center">
   <img src="woofi-extension-preview_2_1280x800.png" alt="WOOFi APY Tracker" width="800" >
-</p>
-
-<p align="center">
-  <img src="woofi-extension-preview_3_1280x800.png" alt="WOOFi APY Tracker" width="800" >
 </p>
 
 ### To Do

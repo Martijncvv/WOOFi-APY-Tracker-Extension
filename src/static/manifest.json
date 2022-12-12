@@ -1,7 +1,7 @@
 {
 	"name": "WOOnetwork Stats",
 	"description": "Display WOO Network statistics, onchain txs, WOO traded on DEXs, Proof of Reserves & Liability stats and calculate Yield rewards.",
-	"version": "1.5.4",
+	"version": "1.5.5",
 	"manifest_version": 3,
 	"icons": {
 		"16": "images/WOOFi_mcfly_logo_128.png",

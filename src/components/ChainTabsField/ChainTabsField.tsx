@@ -47,9 +47,9 @@ const ChainTabsField: React.FC<ChainsDataProps> = ({
 						src={tab.icon}
 						style={tabStyle(tab.chainId, index)}
 					/>
-					<span className="chain-tab-name" style={tabStyle(tab.chainId, index)}>
+					{/* <span className="chain-tab-name" style={tabStyle(tab.chainId, index)}>
 						{tab.chainName}{' '}
-					</span>
+					</span> */}
 				</div>
 			))}
 		</div>

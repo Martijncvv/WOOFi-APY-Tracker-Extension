@@ -115,7 +115,7 @@ export async function fetchTokenTxs(
 	contractAddress: string
 ): Promise<ITokenTxs> {
 	const res = await fetch(
-		'https://api.' +
+		'https://' +
 			domainName +
 			'/api?module=account&action=tokentx&contractaddress=' +
 			contractAddress +

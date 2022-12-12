@@ -6,6 +6,7 @@ export default interface IWoofiChainStakedWoo {
 		}
 		status: string
 	}
+	status: string
 }
 
 export interface IWoofiStakedWoo {

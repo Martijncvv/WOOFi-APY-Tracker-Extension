@@ -16,7 +16,7 @@ const ChainTabsField: React.FC<ChainsDataProps> = ({
 	tabsReady,
 }) => {
 	useEffect(() => {
-		console.log(activeTab)
+		// console.log(activeTab)
 	}, [activeTab])
 
 	async function handleTabClick(chainId: string) {

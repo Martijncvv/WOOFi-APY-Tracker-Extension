@@ -10,13 +10,11 @@ export function amountFormatter(amount: number): string {
 			return `${(amount / 1000000000).toPrecision(3)} B`
 		case amount > 1000000:
 			return `${(amount / 1000000).toPrecision(3)} M`
-		case amount > 10000:
+		case amount > 100000:
 			return `${(amount / 1000).toPrecision(3)} K`
 		case amount < 0.01:
-			console.log('amount: ', amount)
 			return `${amount.toPrecision(3)}`
 		default:
-			console.log('amount: ', amount)
 			return `${amount.toPrecision(4)}`
 	}
 }

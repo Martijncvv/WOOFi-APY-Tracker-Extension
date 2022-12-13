@@ -11,14 +11,15 @@ import {
 
 import { amountFormatter } from '../../utils/amountFormatter'
 import { IWoofiStakedWoo } from '../../models/IWoofiChainStakedWoo'
-import { IWoofi1mVolumeSources } from '../../models/IWoofiChain1mVolumeSource'
+import IWoofiChain1mVolumeSource from '../../models/IWoofiChain1mVolumeSource'
 import IChainInfo from '../../models/IChainsInfo'
+import { fetchWoofiChain1mVolumeSource } from '../../utils/api'
 
 interface PieChartFieldProps {
 	chainsInfo: IChainInfo[]
 	totalStakedWooAmount: number
 	woofiStakingInfo: IWoofiStakedWoo
-	woofi1mVolumeSources: IWoofi1mVolumeSources
+
 	activeTab: string
 }
 
@@ -27,7 +28,6 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 	chainsInfo,
 	woofiStakingInfo,
 	totalStakedWooAmount,
-	woofi1mVolumeSources,
 }) => {
 	const [activePieIndex, setActivePieIndex] = useState<number>(0)
 	const [stakingData, setStakingData] = useState<any>([])
@@ -36,8 +36,14 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 
 	const [topVolumeSources, setTopVolumeSources] = useState<any>([])
 	const [totalVolume1M, setTotalVolume1M] = useState<number>(0)
+	const [resourceColors, setResourceColors] = useState<string[]>([
+		'#4e8ff7',
+		'#f0f0f0',
+		'#e0a555',
+		'#3ba99c',
+	])
 
-	let resourceColors: string[] = ['#4e8ff7', '#f0f0f0', '#e0a555', '#3ba99c']
+	let defaultColors: string[] = ['#4e8ff7', '#f0f0f0', '#e0a555', '#3ba99c']
 
 	interface IStakingData {
 		apr: string
@@ -45,15 +51,16 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 		chainId: string
 		color: string
 	}
-
+	console.log('activeTab: ', activeTab)
 	useEffect(() => {
+		// getActiveChainColor()
 		getActivePieIndex()
 		getVolumeSourcesChartData()
 	}, [activeTab])
 
 	useEffect(() => {
 		getStakingChartData()
-		getVolumeSourcesChartData()
+		// getVolumeSourcesChartData()
 	}, [woofiStakingInfo])
 
 	async function getStakingColors() {
@@ -83,11 +90,25 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 		let stakingDataCopy = stakingData.slice()
 		setTopStakingChains(stakingDataCopy.sort(compareApr))
 	}
+	async function getActiveChainColor() {
+		for (let chain of chainsInfo) {
+			if (chain.chainId == activeTab) {
+				setResourceColors((resourceColors) => [chain.color, ...defaultColors])
+			}
+		}
+	}
 
 	async function getVolumeSourcesChartData() {
+		let chain1mVolumeSourceInfo: IWoofiChain1mVolumeSource
+		try {
+			chain1mVolumeSourceInfo = await fetchWoofiChain1mVolumeSource(activeTab)
+		} catch (err) {
+			console.log(err)
+		}
+
 		let volumeSourcesData = []
 		let totalVolume1M = 0
-		for (let source of woofi1mVolumeSources[activeTab].data) {
+		for (let source of chain1mVolumeSourceInfo.data) {
 			volumeSourcesData.push({
 				sourceName: `${source.name}`,
 				value: parseInt(source.volume_usd) / 10 ** 18,
@@ -116,8 +137,15 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 			sourceName: `Other`,
 			value: otherVolumeResources,
 		})
-
+		if (topVolumeSources.length < 3) {
+			topVolumeSources.push({
+				sourceName: ``,
+				value: 0,
+			})
+		}
+		console.log('topVolumeSources: ', topVolumeSources)
 		setTopVolumeSources(topVolumeSources)
+		getActiveChainColor()
 	}
 
 	const compareVolume = (a, b) => {
@@ -141,15 +169,8 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 	////////////////////////////////////////
 	////////////////////////////////////////
 	const renderActiveShape = (props) => {
-		const {
-			cx,
-			cy,
-			innerRadius,
-			outerRadius,
-			startAngle,
-			endAngle,
-			fill,
-		} = props
+		const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill } =
+			props
 
 		return (
 			<g>
@@ -279,7 +300,7 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 								</div>
 							)
 					)}
-					{topStakingChains.length > 2 && (
+					{topStakingChains.length > 1 && (
 						<div id="piechart-field-total-staked">
 							{amountFormatter(totalStakedWooAmount)}
 						</div>
@@ -338,7 +359,7 @@ const PieChartField: React.FC<PieChartFieldProps> = ({
 								</div>
 							)
 					)}
-					{topVolumeSources.length > 2 && (
+					{topVolumeSources.length > 1 && (
 						<div id="piechart-field-total-sources">
 							{amountFormatter(totalVolume1M)}
 						</div>

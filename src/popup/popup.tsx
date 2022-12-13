@@ -47,7 +47,7 @@ import IWooFuturesInfo from '../models/IWooFuturesInfo'
 import IWooNetworkTradeInfo from '../models/IWooNetworkTradeInfo'
 import IWoofiChain1dVolume from '../models/IWoofiChain1dVolume'
 import { IWoofiStakedWoo } from '../models/IWoofiChainStakedWoo'
-import { IWoofi1mVolumeSources } from '../models/IWoofiChain1mVolumeSource'
+
 import EarnField from '../components/EarnField'
 import OnchainTxsFieldHeader from '../components/OnchainTxsFieldHeader'
 // import DashboardTabsField from '../components/DashboardTabsField'
@@ -122,8 +122,7 @@ const App = () => {
 		{} as IWoofiEarnChainInfo
 	)
 	const [woofi1dTotalVolume, setWoofi1dTotalVolume] = useState<number>(null)
-	const [woofi1mVolumeSources, setWoofi1mVolumeSources] =
-		useState<IWoofi1mVolumeSources>({})
+
 	const [woofiStakedWoo, setWoofiStakedWoo] = useState<IWoofiStakedWoo>({})
 
 	const [woofiTotalStakedWoo, setWoofiTotalStakedWoo] = useState<number>(null)
@@ -135,6 +134,7 @@ const App = () => {
 	const [sortingOption, setSortingOption] = useState<string>('apy')
 
 	const [activeTab, setActiveTab] = useState<string>('arbitrum')
+	// const [activeTab, setActiveTab] = useState<string>('avax')
 	const [activeDashboardTab, setActiveDashboardTab] = useState<string>(
 		// 'daoDashboard'
 		'chainInfoDashboard'
@@ -144,18 +144,17 @@ const App = () => {
 		useState<boolean>(false)
 
 	const [totalAssets, setTotalAssets] = useState<any>({})
-	const [custodialStorage, setCustodialStorage] = useState<any>({})
-	const [totalLiquiditySource, setTotalLiquiditySource] = useState<any>({})
-	const [totalLiabilities, setTotalLiabilities] = useState<any>({})
+	const [custodialStorage, setCustodialStorage] = useState<any>()
+	const [totalLiquiditySource, setTotalLiquiditySource] = useState<any>()
+	const [totalLiabilities, setTotalLiabilities] = useState<any>()
 
 	useEffect(() => {
 		getWooNetworkTradeInfo()
 		getFuturesInfo()
+		getPorlInfo()
 		getStakedWooInfo()
 		getWooFiVolumesInfo()
-		getWooFiVolume1mSourceInfo()
 		getWoofiEarnInfo()
-		getPorlInfo()
 	}, [])
 
 	async function getActivetabState() {
@@ -165,6 +164,83 @@ const App = () => {
 
 		if (activeTabStorage) {
 			setActiveTab(activeTabStorage)
+		}
+	}
+
+	async function getWooNetworkTradeInfo() {
+		try {
+			setWooNetworkTradeInfo(await fetchWooNetworkTradeInfo())
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
+	async function getFuturesInfo() {
+		try {
+			let totalFuturesVolume: number = 0
+			let totalFuturesOi: number = 0
+			let woofetchedFuturesInfo: IWooFuturesInfo = await fetchWooFutureInfo()
+
+			for (let i = 0; i < woofetchedFuturesInfo.rows.length; i++) {
+				totalFuturesOi +=
+					woofetchedFuturesInfo.rows[i]['open_interest'] *
+					woofetchedFuturesInfo.rows[i]['mark_price']
+				totalFuturesVolume +=
+					woofetchedFuturesInfo.rows[i]['24h_volumn'] *
+					woofetchedFuturesInfo.rows[i]['mark_price']
+			}
+			setWooFuturesVolume(totalFuturesVolume)
+			setWooFuturesOi(totalFuturesOi)
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
+	async function getWooFiVolumesInfo() {
+		try {
+			for (let chainId of chainIds) {
+				let woofichain1dVolumeInfo: IWoofiChain1dVolume =
+					await fetchWoofiChain1dVolume(chainId)
+
+				setWoofi1dTotalVolume(
+					(woofi1dTotalVolume) =>
+						woofi1dTotalVolume +
+						parseInt(woofichain1dVolumeInfo.data['24h_volume_usd'])
+				)
+			}
+		} catch (err) {
+			console.log(err)
+		}
+	}
+	async function getPorlInfo() {
+		try {
+			let fetchedPorlAssets: any = {}
+			fetchedPorlAssets = await fetchPorlAssets()
+			setTotalAssets(fetchedPorlAssets.data.total_usdt_notional)
+
+			let totalLiquiditySource = 0
+			let custodialStorage = 0
+			fetchedPorlAssets.data.venues.forEach((venue) => {
+				if (venue.type == 'Custodian') {
+					custodialStorage += venue.usdt_notional
+				}
+				if (venue.type == 'Exchange') {
+					totalLiquiditySource += venue.usdt_notional
+				}
+			})
+			setCustodialStorage(custodialStorage)
+			// setTotalLiquiditySource(totalLiquiditySource)
+
+			let fetchedPorlLiabilities: any = {}
+			fetchedPorlLiabilities = await fetchPorlLiabilities()
+
+			let totalLiabilities = 0
+			fetchedPorlLiabilities.data.forEach((token) => {
+				totalLiabilities += token.usdt_notional
+			})
+			setTotalLiabilities(totalLiabilities)
+		} catch (err) {
+			console.log(err)
 		}
 	}
 
@@ -225,102 +301,6 @@ const App = () => {
 		}
 	}
 
-	async function getWooNetworkTradeInfo() {
-		try {
-			setWooNetworkTradeInfo(await fetchWooNetworkTradeInfo())
-		} catch (err) {
-			console.log(err)
-		}
-	}
-
-	async function getFuturesInfo() {
-		try {
-			let totalFuturesVolume: number = 0
-			let totalFuturesOi: number = 0
-			let woofetchedFuturesInfo: IWooFuturesInfo = await fetchWooFutureInfo()
-
-			for (let i = 0; i < woofetchedFuturesInfo.rows.length; i++) {
-				totalFuturesOi +=
-					woofetchedFuturesInfo.rows[i]['open_interest'] *
-					woofetchedFuturesInfo.rows[i]['mark_price']
-				totalFuturesVolume +=
-					woofetchedFuturesInfo.rows[i]['24h_volumn'] *
-					woofetchedFuturesInfo.rows[i]['mark_price']
-			}
-			setWooFuturesVolume(totalFuturesVolume)
-			setWooFuturesOi(totalFuturesOi)
-		} catch (err) {
-			console.log(err)
-		}
-	}
-
-	async function getWooFiVolumesInfo() {
-		try {
-			for (let chainId of chainIds) {
-				let woofichain1dVolumeInfo: IWoofiChain1dVolume =
-					await fetchWoofiChain1dVolume(chainId)
-
-				setWoofi1dTotalVolume(
-					(woofi1dTotalVolume) =>
-						woofi1dTotalVolume +
-						parseInt(woofichain1dVolumeInfo.data['24h_volume_usd'])
-				)
-			}
-		} catch (err) {
-			console.log(err)
-		}
-	}
-
-	async function getWooFiVolume1mSourceInfo() {
-		try {
-			for (let chainId of chainIds) {
-				let chainVolumeSourceInfo: IWoofi1mVolumeSources = {}
-				chainVolumeSourceInfo[chainId] = await fetchWoofiChain1mVolumeSource(
-					chainId
-				)
-
-				setWoofi1mVolumeSources((woofi1mVolumeSources) => ({
-					...woofi1mVolumeSources,
-					...chainVolumeSourceInfo,
-				}))
-			}
-		} catch (err) {
-			console.log(err)
-		}
-	}
-
-	async function getPorlInfo() {
-		try {
-			let fetchedPorlAssets: any = {}
-			fetchedPorlAssets = await fetchPorlAssets()
-			setTotalAssets(fetchedPorlAssets.data.total_usdt_notional)
-
-			let totalLiquiditySource = 0
-			let custodialStorage = 0
-			fetchedPorlAssets.data.venues.forEach((venue) => {
-				if (venue.type == 'Custodian') {
-					custodialStorage += venue.usdt_notional
-				}
-				if (venue.type == 'Exchange') {
-					totalLiquiditySource += venue.usdt_notional
-				}
-			})
-			setCustodialStorage(custodialStorage)
-			setTotalLiquiditySource(totalLiquiditySource)
-
-			let fetchedPorlLiabilities: any = {}
-			fetchedPorlLiabilities = await fetchPorlLiabilities()
-
-			let totalLiabilities = 0
-			fetchedPorlLiabilities.data.forEach((token) => {
-				totalLiabilities += token.usdt_notional
-			})
-			setTotalLiabilities(totalLiabilities)
-		} catch (err) {
-			console.log(err)
-		}
-	}
-
 	const handleCalculatorChange = () => {
 		setDisplayCalculator(!displayCalculator)
 	}
@@ -343,75 +323,86 @@ const App = () => {
 			<div id="dashboard">
 				{!displayDexTradesCallback ? (
 					<>
-						{wooNetworkTradeInfo && woofiTVL && wooFuturesOi && (
-							<>
-								<NetworkInfoHeaderField />
-								<VolumeBarField
-									wooxVolume={
-										wooNetworkTradeInfo.data.amount -
-										wooFuturesVolume -
-										woofi1dTotalVolume / 10 ** 18
-									}
-									woofiVolume={woofi1dTotalVolume / 10 ** 18}
-									futuresVolume={wooFuturesVolume}
-								/>
+						{wooNetworkTradeInfo &&
+							woofiTVL &&
+							wooFuturesOi &&
+							totalLiabilities && (
+								<>
+									<NetworkInfoHeaderField />
+									<VolumeBarField
+										wooxVolume={
+											wooNetworkTradeInfo.data.amount -
+											wooFuturesVolume -
+											woofi1dTotalVolume / 10 ** 18
+										}
+										woofiVolume={woofi1dTotalVolume / 10 ** 18}
+										futuresVolume={wooFuturesVolume}
+									/>
 
-								<InfoField
-									index={2}
-									value_1={`$${amountFormatter(
-										wooNetworkTradeInfo.data.amount -
-											woofi1dTotalVolume / 10 ** 18 -
-											wooFuturesVolume
-									)} `}
-									value_2={`$${amountFormatter(woofi1dTotalVolume / 10 ** 18)}`}
-									value_3={`$${amountFormatter(wooFuturesVolume)} `}
-									value_3_colour=""
-								/>
+									<InfoField
+										index={2}
+										value_1={`$${amountFormatter(
+											wooNetworkTradeInfo.data.amount -
+												woofi1dTotalVolume / 10 ** 18 -
+												wooFuturesVolume
+										)} `}
+										value_2={`$${amountFormatter(
+											woofi1dTotalVolume / 10 ** 18
+										)}`}
+										value_3={`$${amountFormatter(wooFuturesVolume)} `}
+										value_3_colour=""
+									/>
 
-								<NetworkInfoSubHeaderField />
+									<NetworkInfoSubHeaderField />
 
-								<InfoField
-									index={2}
-									value_1={`$${amountFormatter(
-										wooNetworkTradeInfo.data.amount
-									)}`}
-									value_2={`$${amountFormatter(woofiTVL)}`}
-									value_3={`$${amountFormatter(wooFuturesOi)} `}
-									value_3_colour=""
-								/>
-								{totalAssets && totalLiabilities && custodialStorage && (
-									<>
-										<PorlInfoHeaderField />
-										<InfoField
-											index={2}
-											value_1={`$${amountFormatter(totalAssets)}`}
-											value_2={`${Math.round(
-												(totalAssets / totalLiabilities) * 100
-											)}%`}
-											value_3={`${Math.round(
-												(custodialStorage / totalLiabilities) * 100
-											)}%`}
-											value_3_colour=""
-										/>
-									</>
-								)}
-							</>
-						)}
+									<InfoField
+										index={2}
+										value_1={`$${amountFormatter(
+											wooNetworkTradeInfo.data.amount
+										)}`}
+										value_2={`$${amountFormatter(woofiTVL)}`}
+										value_3={`$${amountFormatter(wooFuturesOi)} `}
+										value_3_colour=""
+									/>
+									{totalAssets && totalLiabilities && custodialStorage && (
+										<>
+											<PorlInfoHeaderField />
+											<InfoField
+												index={2}
+												value_1={`$${amountFormatter(totalAssets)}`}
+												value_2={`${Math.round(
+													(totalAssets / totalLiabilities) * 100
+												)}%`}
+												value_3={`${Math.round(
+													(custodialStorage / totalLiabilities) * 100
+												)}%`}
+												value_3_colour=""
+											/>
+										</>
+									)}
+								</>
+							)}
+
 						{/* <DashboardTabsField
 							activeDashboardTabCallback={handleActiveDashboardTabChange}
 							activeDashboardTab={activeDashboardTab}
 						/> */}
 						{activeDashboardTab == 'chainInfoDashboard' ? (
 							<>
-								{Object.keys(woofiStakedWoo).length > 0 &&
-									Object.keys(woofi1mVolumeSources).length > 0 && (
+								<ChainTabsField
+									chainsInfo={chainsInfo}
+									activeTabCallback={handleActiveTabChange}
+									activeTab={activeTab}
+									tabsReady={Object.keys(woofiStakedWoo).length}
+								/>
+								{
+									Object.keys(woofiStakedWoo).length > 2 && (
 										<>
 											<PieChartFieldHeader activeTab={activeTab} />
 											<PieChartField
 												chainsInfo={chainsInfo}
 												totalStakedWooAmount={woofiTotalStakedWoo}
 												woofiStakingInfo={woofiStakedWoo}
-												woofi1mVolumeSources={woofi1mVolumeSources}
 												activeTab={activeTab}
 											/>
 											<OnchainTxsFieldHeader />
@@ -419,36 +410,33 @@ const App = () => {
 												activeTab={activeTab}
 												chainsInfo={chainsInfo}
 											/>
-										</>
-									)}
-								<ChainTabsField
-									chainsInfo={chainsInfo}
-									activeTabCallback={handleActiveTabChange}
-									activeTab={activeTab}
-									tabsReady={Object.keys(woofi1mVolumeSources).length}
-								/>
 
-								{displayCalculator && <CalcYieldField />}
+											{displayCalculator && <CalcYieldField />}
 
-								{Object.keys(woofiEarnInfo).length > 0 &&
-									Object.keys(woofiEarnInfo[activeTab].data.auto_compounding)
-										.length > 0 && (
-										<>
-											<EarnFieldHeader
-												value_1={`Vault`}
-												value_2={'TVL'}
-												value_3={'APY'}
-												displayCalculatorCallback={handleCalculatorChange}
-												sortingOptionCallback={handleSortingChange}
-												displayCalculator={displayCalculator}
-											/>
-											<EarnField
-												activeTab={activeTab}
-												sortingOption={sortingOption}
-												woofiEarnInfo={woofiEarnInfo}
-											/>
+											{Object.keys(woofiEarnInfo).length > 0 &&
+												Object.keys(
+													woofiEarnInfo[activeTab].data.auto_compounding
+												).length > 0 && (
+													<>
+														<EarnFieldHeader
+															value_1={`Vault`}
+															value_2={'TVL'}
+															value_3={'APY'}
+															displayCalculatorCallback={handleCalculatorChange}
+															sortingOptionCallback={handleSortingChange}
+															displayCalculator={displayCalculator}
+														/>
+														<EarnField
+															activeTab={activeTab}
+															sortingOption={sortingOption}
+															woofiEarnInfo={woofiEarnInfo}
+														/>
+													</>
+												)}
 										</>
-									)}
+									)
+									// )
+								}
 							</>
 						) : (
 							<>

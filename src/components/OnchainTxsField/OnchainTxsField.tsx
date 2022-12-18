@@ -27,7 +27,8 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 	const [chartData, setChartData] = useState<any>([{}])
 	const [chartTitleMessage, setChartTitleMessage] = useState<string>('')
 	const [chainTicker, setChainTicker] = useState<string>('arbitrum')
-	const [domain, setDomain] = useState<string>('arbiscan.io')
+	const [domain, setDomain] = useState<string>('api.arbiscan.io')
+	const [txInfoDomain, setTxInfoDomain] = useState<string>('arbiscan.io')
 	const [chainColour, setChainColour] = useState<string>('#97BEDD')
 
 	useEffect(() => {
@@ -47,6 +48,7 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 				setChainTicker(chainInfo.chainName)
 				setChainColour(chainInfo.color)
 				setDomain(chainInfo.domain)
+				setTxInfoDomain(chainInfo.txInfoDomain)
 			}
 		}
 
@@ -90,7 +92,7 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 
 	const handleBarClick = (data) => {
 		chrome.tabs.create({
-			url: 'https://' + domain + '/tx/' + data.hash,
+			url: 'https://' + txInfoDomain + '/tx/' + data.hash,
 			selected: false,
 		})
 	}

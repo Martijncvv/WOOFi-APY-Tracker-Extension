@@ -4,5 +4,6 @@ export default interface IChainInfo {
 	icon: string
 	color: string
 	domain: string
+	txInfoDomain: string
 	contractAddress: string
 }

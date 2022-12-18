@@ -71,6 +71,7 @@ const App = () => {
 			icon: ArbIcon,
 			color: '#97BEDD',
 			domain: 'api.arbiscan.io',
+			txInfoDomain: 'arbiscan.io',
 			contractAddress: '0xcAFcD85D8ca7Ad1e1C6F82F651fA15E33AEfD07b',
 		},
 		{
@@ -79,6 +80,7 @@ const App = () => {
 			icon: AvaxIcon,
 			color: '#E84142',
 			domain: 'api.snowtrace.io',
+			txInfoDomain: 'snowtrace.io',
 			contractAddress: '0xabc9547b534519ff73921b1fba6e672b5f58d083',
 		},
 		{
@@ -87,6 +89,7 @@ const App = () => {
 			icon: BnbChainIcon,
 			color: '#F0B90B',
 			domain: 'api.bscscan.com',
+			txInfoDomain: 'bscscan.com',
 			contractAddress: '0x4691937a7508860f876c9c0a2a617e7d9e945d4b',
 		},
 		{
@@ -95,6 +98,7 @@ const App = () => {
 			icon: FtmIcon,
 			color: '#13b5ec',
 			domain: 'api.ftmscan.com',
+			txInfoDomain: 'ftmscan.com',
 			contractAddress: '0x6626c47c00f1d87902fc13eecfac3ed06d5e8d8a',
 		},
 		{
@@ -103,6 +107,7 @@ const App = () => {
 			icon: OptIcon,
 			color: '#FE0420',
 			domain: 'api-optimistic.etherscan.io',
+			txInfoDomain: 'optimistic.etherscan.io',
 			contractAddress: '0x871f2F2ff935FD1eD867842FF2a7bfD051A5E527',
 		},
 		{
@@ -111,6 +116,7 @@ const App = () => {
 			icon: PolyIcon,
 			color: '#8247e5',
 			domain: 'api.polygonscan.com',
+			txInfoDomain: 'polygonscan.com',
 			contractAddress: '0x1b815d120b3ef02039ee11dc2d33de7aa4a8c603',
 		},
 	])

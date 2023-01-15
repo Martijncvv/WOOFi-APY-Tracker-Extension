@@ -39,6 +39,7 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 		let loadedChart: string = ''
 		let domain: string = ''
 		let contractAddress: string = ''
+		let newChainColour: string = 'grey'
 
 		for (const chainInfo of chainsInfo) {
 			if (chainInfo.chainId == activeTab) {
@@ -46,7 +47,7 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 				contractAddress = chainInfo.contractAddress
 				domain = chainInfo.domain
 				setChainTicker(chainInfo.chainName)
-				setChainColour(chainInfo.color)
+				newChainColour = chainInfo.color
 				setDomain(chainInfo.domain)
 				setTxInfoDomain(chainInfo.txInfoDomain)
 			}
@@ -75,6 +76,7 @@ const OnchainTxsField: React.FunctionComponent<IOnchainTxsFieldProps> = ({
 		})
 
 		setChartData(priceData)
+		setChainColour(newChainColour)
 	}
 
 	const dateFormat = (unixTimestamp) => {

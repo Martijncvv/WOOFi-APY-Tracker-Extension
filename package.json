@@ -1,6 +1,6 @@
 {
 	"name": "woonetwork-stats-extension",
-	"version": "1.5.4",
+	"version": "1.5.8",
 	"description": "Display WOO Network and WOOFi statistics, and calculate Yield rewards.",
 	"scripts": {
 		"start": "webpack --watch --progress --config webpack.dev.js",
